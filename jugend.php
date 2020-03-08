@@ -32,46 +32,15 @@ include 'header.php';
 			</section>
 		</div>
 
-<!--
-		<div id="blatt2">
-  			<section id="clubturnier" class="seite">
-				<h2>Ausschreibung Jugendclubmeisterschaften 2019</h2>
-				<p>Liebe Kinder,<br>
-				liebe Jugendliche,</p>
-				<p>wir möchten Euch gerne zu unseren Jugendclubmeisterschaften 2019 einladen.</p>
-				<h3><strong>Termin:</strong> Freitag, 26.04.2019 bis Sonntag, 28.04.2019</h3>
-				<p>In folgenden Altersklassen wollen wir den/die Clubmeister/-in ermitteln:</p>
-				<ul>
-          <li>Knaben (13 – 14 Jahre) </li>
-          <li>Knaben (15 – 18 Jahre)</li>
-          <li>Mädchen (13 – 14 Jahre)</li>
-          <li>Mädchen (15 – 18 Jahre)</li>
-          <li>Bambini (11 – 12 Jahre)</li>
-          <li>Midcourt (7 – 10 Jahre)</li>
-				</ul>
-				<p>Wir freuen uns &uuml;ber sehr viele Anmeldungen und bitten besonders die Mannschaftsspieler, sich 
-				anzumelden. Bitte gebt unbedingt an, in welcher Altersklasse Ihr spielen wollt.</p>
-				<p>Sollte aufgrund von zuwenigen Meldungen eine Konkurrenz nicht zustande kommen, werden wir Altersklassen
-				zusammenlegen.</p>
-				<p><strong>Anmeldeschluss:</strong> Mittwoch, 17.04.2019</p>
-        <p>Die Anmeldung erfolgt per Mail an: <a href="mailto:p.streif@outlook.de">p.streif@outlook.de</a></p>
-        <p>Den Spielplan und die Spielansetzungen bekommt Ihr bis spätestens<strong> Montag, 22.04.2019</strong> per Mail.</p>
-				<p>Die Startgeb&uuml;hr betr&auml;gt f&uuml;r jeden <b>&euro; 5,00</b>.</p>
-
-				<p>F&uuml;r die Erstplatzierten wird es Medaillen geben und jeder Teilnehmer erh&auml;lt einen kleinen Sachpreis.</p>
-				<h3>Turnierbeginn:</h3>
-				<p>Freitag, 26.04.2019 ab 10.00 Uhr</p>
-				<p>Samstag, 27.04.2019 ab 10.00 Uhr</p>
-				<p>Sonntag, 28.04.2019 nach Turnierverlauf und in Absprache</p>
-				<p>Der genaue Zeitplan hängt auch von der Teilnehmerzahl ab.</p>
-				<p>Für Rückfragen stehe ich Euch natürlich gerne unter Tel.: 08142/4482182 oder per E-Mail: p.streif@outlook.de zur Verfügung.</p>
-				<p>Der Vorstand und die Jugendleitung freuen sich über eine rege Teilnahme, faire Spiele und viel Spaß auf unserer Tennisanlage.</p>
-				<p>Liebe Grüße</p>
-				<p>Petra Streif</p>
-				<p>(Jugendsportwart)</p>
+		<div id="blatt1">
+  			<section id="jugendwoche" class="seite">
+				<h2>Impressionen von der Jugendwoche 2019</h2>
+				<p><img alt="Gruppenbild" class="w-100" src="images/Kids/TCO-Jugendwoche19_Pic1_presse.jpg" /></p>
+				<p><img alt="Rückhandtraining" class="w-100" src="images/Kids/TCO-Jugendwoche19_Pic2_presse.jpg" /></p>
+				<p><img alt="Kleinfeldspiel" class="w-100" src="images/Kids/TCO-Jugendwoche19_Pic3_presse.jpg" /></p>
 			</section>
     </div>
--->    
+    
     <div id="blatt2">
   		<section id="clubturnier" class="seite">
         <h6>Pressemeldung vom 2.5.2019</h6>

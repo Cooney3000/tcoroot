@@ -4,11 +4,11 @@
 // -----------------
 //   Parameter:
 //      op - Operation: 
-//            r: Lesen einer Belegung (Parameter i)
-//            ra: Lesen aller Belegungen eines oder mehrerer Tage (Parameter ds bis de, Parameter i wird ggf. ignoriert)
-//            d: Löschen einer Belegung (Parameter i)
+//            r: Lesen einer Belegung (Parameter rid)
+//            ra: Lesen aller Belegungen eines oder mehrerer Tage (Parameter ds bis de, Parameter rid wird ggf. ignoriert)
+//            d: Löschen einer Belegung (Parameter rid)
 //            cu: create/update einer Belegung
-//      i - Einschränkung auf eine bestimmte Belegung
+//      rid - Einschränkung auf eine bestimmte Belegung (record id)
 //      ds - Startdatum
 //      de - Enddatum
 //      uid - user_id des Buchenden
@@ -18,17 +18,20 @@
 //      pr - price (für Gaststunden)
 //
 
-header ('Strict-Transport-Security: max-age=31536000');
-header("Access-Control-Allow-Origin: *");
-header('Content-Type: multipart/form-data; charset=utf-8');
+// header ('Strict-Transport-Security: max-age=31536000');
+// header("Access-Control-Allow-Origin: *");
+// header('Content-Type: multipart/form-data; charset=utf-8');
 session_start();
 require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0){
+if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0)
+{
   //throw new Exception('Request method must be POST!');
-} else {
+}
+else 
+{
   error_log("POST DATA: ".$_POST);
   die("BYE!");
 }
@@ -43,7 +46,8 @@ $userId = $user['id'];
 global $conn;
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 $conn->set_charset("utf8");
-if ($conn->connect_error) {
+if ($conn->connect_error) 
+{
   die($fehlerMsg['dbconnect'] ."\r\n$db_host, $db_user, $db_password, $db_name\r\n". ' ' . $fehlerAction . "\r\n<br>" . $conn->connect_error);
 }
 
@@ -51,7 +55,7 @@ $op = $_GET['op'];
 $json = '{"records":[]}';
 $sql = '';
 
-// error_log(join(' # ',$_GET)."\r\n");
+// error_log("PLATZ-OP: " . join(' # ',$_GET)."\r\n");
 
 switch ($op) {
   case 'r':
@@ -73,15 +77,15 @@ switch ($op) {
     break;
 }
 
-// error_log($json);
-echo $json;
+echo $json; // API-Response
 $conn->close();
 return;
 //END
 
 
 // -------------------------------------------------------
-function execRsql ($sql) {
+function execRsql ($sql) 
+{
   global $conn;
   $json = '';
   $result = $conn->query($sql);
@@ -92,6 +96,7 @@ function execRsql ($sql) {
       $json .= $komma . json_encode($tem);
       $komma = ',';
     }
+    // error_log ($json);
     $json = '{"records":['.$json.']}';
   } else {
     $json = '{"records":[]}';
@@ -100,12 +105,13 @@ function execRsql ($sql) {
 }
 
 
-function readB() {
-  if (! $_GET['i']) {
-    die("platz.php: Keine id angegeben!");
+function readB() 
+{
+  if (! $_GET['rid']) {
+    die("platz.php: Keine record id angegeben!");
   }
 
-  $i = $_GET['i'];
+  $i = $_GET['rid'];
   $p1 = "CONCAT(U1.vorname,' ',";
   $p2 = "CONCAT(U2.vorname,' ',";
   $p3 = "CONCAT(U3.vorname,' ',";
@@ -130,11 +136,12 @@ FROM bookings as B
 WHERE {$where}
 EOT;
 
-  error_log("platz.php: ".$sql);
+  // error_log("platz.php: ".$sql);
   return $sql;
 }
 
-function readaB() {
+function readaB() 
+{
   $p = intval($_GET["p"]);                  // Platznummer 1 - 6
   $ds = $_GET["ds"] . " 00:00:00";          // Start-Datum des Belegungstags
   $de = $_GET["de"] . " 23:59:00";          // Ende-Datum des Belegungstags
@@ -167,14 +174,22 @@ EOT;
   return $sql;
 }
   
-function deleteB() {
+function deleteB() 
+{
+
+  // Löschungen werden nur als gelöscht mit 'D' markiert
+  // Buchungen können nur gelöscht werden, wenn weniger als 30 Minuten der Spielzeit vergangen sind
+
   global $conn;
-  $conn->query("DELETE FROM bookings WHERE id = ".$_GET['i']);
+  $sql = "UPDATE bookings SET booking_state = 'D' WHERE id = " . $_GET['rid'];
+  // error_log("DELETE: " . $sql);
+  $conn->query($sql);
+  // $conn->query("DELETE FROM bookings WHERE id = ".$_GET['rid']);
 }
 
-function createUpdateB() {
-
-  // Eine Belegung erzeugen
+function createUpdateB() 
+{
+  // Eine Belegung erzeugen oder ändern
   //   Die Änderung des Zeitraums einer existierenden Belegung wird wie folgt durchgeführt:
   //    - Anlegen einer temporären Belegung
   //    - Check, ob der Platz in dem gewünschten Zeitraum frei ist
@@ -212,29 +227,28 @@ EOT;
   $sql = <<<EOT
 SELECT B.*
 FROM bookings as B 
-WHERE B.id <> {$_GET['i']} AND B.ta_id = 0 AND B.booking_state="A" AND (B.starts_at < "{$_GET['de']}" AND B.ends_at > "{$_GET['ds']}") AND B.court = {$_GET['c']}
+WHERE B.ta_id = 0 AND B.booking_state="A" AND id <> {$_GET['rid']} AND (B.starts_at < "{$_GET['de']}" AND B.ends_at > "{$_GET['ds']}") AND B.court = {$_GET['c']}
 EOT;
 
   // error_log($sql);
   $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-
+  if ($result->num_rows > 0) 
+  {
     // error_log("platz.php: ZEIT BEREITS BELEGT: \r\n".$sql);
     // In diesem Fall löschen wir die vorhin angelegte Row wieder
     $result = $conn->query("DELETE FROM bookings WHERE id = $current_ta_id");
     
     return '{"records":[ {"returncode":"bereits belegt"}]}';
-    
-  } else {
-
+  }
+  else 
+  {
     // error_log("ZEIT FREI: \r\n".$sql);
     // Jetzt löschen wir eine ggf. vorhandene ursprüngliche Buchung
-    $_GET['i'] ? $conn->query("DELETE FROM bookings WHERE id = {$_GET['i']}") : 0;
+    $_GET['rid'] ? $conn->query("DELETE FROM bookings WHERE id = {$_GET['rid']}") : 0;
     // Updaten der temp. Transaktions-Id auf 0 und machen die neue Belegung dadurch endgültig!
     $result = $conn->query("UPDATE bookings SET ta_id = 0 WHERE id = $current_ta_id");
     
-    return '{"records":[ {"returncode":"ok"}]}';
-
+    return '{"records": [{"id":"' . $current_ta_id . '", "returncode":"ok"}] }';
   }
   
 }

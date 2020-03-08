@@ -9,7 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    
     <!-- Custom styles for this template -->
     <link href="/intern/css/styles.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       
       <div>
-        <img src="/images/tcoplain_0,1x.png" alt="TCO Logo">
+        <a href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
         <div class="klein">
           <?= isset($user['vorname']) ? htmlentities(trim($user['vorname']).' '.trim($user['nachname'])) : "" ?>
         </div>
@@ -35,6 +35,9 @@
           </li>
           <li class="nav-item" id="nav-turnier">
             <a class="nav-link" href="/intern/turnier/index.php">Turnier</a>
+          </li>
+          <li class="nav-item" id="nav-halloffame">
+            <a class="nav-link" href="/intern/halloffame.php">Hall Of Fame</a>
           </li>
           <li class="nav-item" id="nav-tafel">
             <a class="nav-link" href="/intern/tafel/" target="_blank">Platztafel</a>

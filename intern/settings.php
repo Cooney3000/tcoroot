@@ -16,6 +16,7 @@ include("templates/header.inc.php");
     document.getElementById("nav-intern").classList.remove("active");
     document.getElementById("nav-einstellungen").classList.add("active");
     document.getElementById("nav-turnier").classList.remove("active");
+    document.getElementById("nav-halloffame").classList.remove("active");
     document.getElementById("nav-tafel").classList.remove("active");
     document.getElementById("nav-login").classList.remove("active");
     document.getElementById("nav-logout").classList.remove("active");
@@ -175,9 +176,9 @@ endif;
     	<p>Zum Änderen deiner E-Mail-Adresse gib bitte dein aktuelles Passwort sowie die neue E-Mail-Adresse ein.</p>
     	<form action="?save=email" method="post" class="form-horizontal" accept-charset="utf-8">
     		<div class="form-group">
-    			<label for="inputPasswort" class="col-sm-2 control-label">Passwort</label>
+    			<label for="inputPasswortA" class="col-sm-2 control-label">Passwort</label>
     			<div class="col-sm-10">
-    				<input class="form-control" id="inputPasswort" name="passwort" type="password" x-autocompletetype="current-password" required>
+    				<input class="form-control" id="inputPasswortA" name="passwort" type="password" x-autocompletetype="current-password" required>
     			</div>
     		</div>
     		

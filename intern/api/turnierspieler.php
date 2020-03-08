@@ -27,16 +27,17 @@ if ($conn->connect_error) {
 $col = $_GET['col'];
 $value = $_GET['v'];
 $id = $_GET['i'];
+// Ich weiß leider nicht mehr, wozu das gut ist...
 $kaeufer_id = $_GET['col'] == 'kaeufer' ? ",kaeufer_id=" . $_GET['ki'] : "";
 
 $sql = <<<EOT
-UPDATE event_tickets SET $col = '$value' $kaeufer_id WHERE ticketnummer=$id
+UPDATE tournament_players SET $col = '$value' WHERE id=$id
 EOT;
 
 // error_log($sql);
 
 if ($conn->query($sql) === FALSE) {
-  error_log("tickets.php: Kann nicht speichern:" . $sql);
+  error_log("turnierspieler.php: Kann nicht speichern:" . $sql);
 }
 $conn->close();
 

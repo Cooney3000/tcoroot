@@ -37,14 +37,8 @@ include 'header.php';
         <article class="spalte1">
           <h6>Aktuelle Neuigkeiten</h6>
           <ul class="schlaeger">
-            <li>Clubmeisterschaften 2019</li>
-              <p>für Mannschafts- und Freizeitspieler/innen vom 22.5. - 21.9.2019! Zu weiteren <a href="/intern/turnier">Details</a></p>
-            <hr>
-            <li>Fassl-Turnier mit anschließendem Sommerfest am 20.7.2019</li>
-            <hr>
-            <li>Top-Tennis bei den Olching Open vom 30.08. - 01.09.</li>
-            <hr>
-            <li>Players & Friends Night am 12.10.</li>
+            <!-- <li><strong>Players & Friends Night</strong><img class="schlaegerimg" src="images/veranstaltungen/puf.jpg" alt="Players & Friends-Flyer"></li> -->
+            <li><strong>Neuer Trainer Michael Görzen <br><a href="training.php">--> zum Trainer</a></strong></li>
           </ul>
         </article>
 				<article>
@@ -98,10 +92,9 @@ include 'header.php';
 					</p>
 					<ul>
 						<li>Damen (Bezirksklasse 2)		      </li>
-						<li>Damen 30 (Super Bezirksliga)      </li>
 						<li>Herren (Bezirksklasse 3)		  </li>
 						<li>Herren 40 (Bezirksklasse 1)			  </li>
-						<li>Herren 50 (Bezirksklasse 1, Aufstiegskandidat)       </li>
+						<li>Herren 50 (Bezirksklasse 1)       </li>
 						<li>Herren 50 (Bezirksklasse 2)       </li>
 					</ul>
 					<p>
@@ -113,25 +106,35 @@ include 'header.php';
 				</div>
 				<div class="spalte2">
 					<iframe id="lkraceIframe" src="https://mybigpoint.tennis.de/services/?action=lkracenv&verband=BTV&cnt=5&verein=02262"></iframe>
-					<p style="font-size:smaller">Siehe hierzu auch <a href="datenschutzerklaerung.php#dsgvolkrace">DSGVO - LK Race</p>
+					<p style="font-size:smaller">Siehe hierzu auch <a href="datenschutzerklaerung.php#dsgvolkrace">DSGVO - LK Race</a></p>
 				</div>
 			</section>
-		</div>
-<!--
+    </div>
+    
 		<div id="blatt4" class="blatt">
 			<section id="olchingopen" class="seite">
-					<img src="images/oo2018.png" alt="Olching Open" class="breitebilder"/>
+        <article class="spalte1">
+          <img src="images/oo2019.png" alt="Olching Open" class="breitebilder"/>
+        </article>
+        <article>
+          <a href="https://tennispark-gernlinden.de/"><img alt="Tennispark Gernlinden" src="images/sponsoren/tennispark_gernlinden.gif" class="img-thumbnail"></a>
+          <a href="http://www.jgwerbung.de/"><img alt="JG" src="images/sponsoren/JG.jpg" class="img-thumbnail"></a>
+          <a href="http://www.sparkasse-ffb.de/"><img alt="SSK" src="images/sponsoren/SSK.jpg" class="img-thumbnail"></a>
+          <a href="http://auto-rauscher.de/"><img alt="Rauscher" src="images/sponsoren/rauscher2.png" class="img-thumbnail"></a>
+        </article>
+        <article class="clean">
+
 					<h3>Top-Tennis im Tennisclub Olching!</h3>
-					<p>In Olching wurde Tennis der Spitzenklasse <strong>bei freiem Eintritt</strong> präsentiert. 
-					Vom <strong>31. August bis 02. September 2018</strong> richtet der TC Olching e.V. nun zum 27. Mal die Olching Open aus. Bei einem 
+					<p>In Olching wird Tennis der Spitzenklasse <strong>bei freiem Eintritt</strong> präsentiert. 
+					Vom <strong>30. August bis 01. September 2019</strong> richtet der TC Olching e.V. nun zum 28. Mal die Olching Open aus. Bei einem 
 					Preisgeld von 3.000 € erwarten wir erneut ein hochklassiges Teilnehmerfeld und spannende Matches.</p>
 
 					<p>Gespielt wird auf der Anlage des TC Olching, sowie auf Plätzen der befreundeten Vereine TSV Geiselbullach, 
 					TC Gernlinden, TC Puchheim und TC Eichenau.</p>
 					<p>
-						<strong>Komplette Ausschreibung zum Download</strong>: <a href="/downloads/OlchingOpenAusschreibung18.pdf">Ausschreibung</a>.
+						<strong>Komplette Ausschreibung zum Download</strong>: <a href="/downloads/OlchingOpenAusschreibung19.pdf">Ausschreibung</a>.
 					</p>
-					<p><strong>Meldeschluss ist der 27.08.2018</strong>. Anmeldung über <a href="https://mybigpoint.tennis.de/">MyBigPoint</a>.</p>
+					<p><strong>Meldeschluss ist der 26.08.2019</strong>. Anmeldung über <a href="https://mybigpoint.tennis.de/">MyBigPoint</a>.</p>
 					<p><strong>Übernachtungsmöglichkeiten</strong> in Olching findest du <a href="verein.php#uebernachtung">hier</a>.</p>
 
 					<br>
@@ -143,37 +146,11 @@ include 'header.php';
 					<p>Ermöglicht wird dies durch das Engagement einer  Vielzahl an freiwilligen 
 						Helfern und natürlich durch die Unterstützung unserer Sponsoren!
 					</p>
-					<div class="sponsoren">
-						<div class="sponsor">  
-							&nbsp;
-						</div>
-						<div class="sponsor">  
-							<a href="http://www.getraenke-kraemer.de/"><img alt="Kr&auml;mer" src="images/sponsoren/Kraem.jpg"></a>
-						</div>
-						<div class="sponsor">  
-							<a href="http://www.jgwerbung.de/"><img alt="JG" src="images/sponsoren/JG.jpg"></a>
-						</div>
-						<div class="sponsor">  
-							&nbsp;
-						</div>
-						<div class="sponsor">  
-							&nbsp;
-						</div>
-						<div class="sponsor">  
-							<a href="http://www.sparkasse-ffb.de/"><img alt="SSK" src="images/sponsoren/SSK.jpg"></a>
-						</div>
-						<div class="sponsor">  
-							<a href="http://auto-rauscher.de/"><img alt="Rauscher" src="images/sponsoren/rauscher.png"></a>
-						</div>
-						<div class="sponsor">  
-							&nbsp;
-						</div>
-					</div>
 					<img src="images/sponsoren/thomas_stief.png" alt="Design Thomas Stief" class="breitebilder"/>
+          </article>
 
 			</section>
 		</div>
--->
 
 <?php
 include 'footer.php';

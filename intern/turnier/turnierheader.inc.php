@@ -28,7 +28,7 @@ if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS) )
         <a class="btn btn-danger btn-small w-100" href="nichtregistriert.php">Nicht registriert</a>
       </div>
       <div class="col-sm m-1">
-            <a class="btn btn-danger btn-small w-100" href="ticketverkauf.php">Ticketverkauf</a>
+            <a class="btn btn-danger btn-small w-100" href="bereitsAngemeldetEdit.php">Spieler bearbeiten</a>
       </div>
 <?php
 }

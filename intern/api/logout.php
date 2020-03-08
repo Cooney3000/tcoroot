@@ -1,6 +1,5 @@
 <?php
 // header ('Strict-Transport-Security: max-age=31536000');
-header("Access-Control-Allow-Origin: *");
 header('Content-Type: multipart/form-data; charset=utf-8');
 
 session_start();

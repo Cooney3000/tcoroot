@@ -9,15 +9,18 @@ session_start();
 require_once("../inc/functions.inc.php");
 require_once("../inc/config.inc.php");
 
-// Einstieg in den internen Bereich
+// API - User Check In
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 $result = array();
 
-if (is_checked_in()) {
+if (is_checked_in()) 
+{
   $result = check_user();
   $result['retcode'] = 'OK';
-} else {
+}
+else 
+{
   $result['retcode'] = 'NOK';
 }
 echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);

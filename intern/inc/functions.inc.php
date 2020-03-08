@@ -7,56 +7,64 @@
  */
 include_once("password.inc.php");
 
-/**
- * Checks that the user is logged in. 
- * @return Returns the row of the logged in user
- */
+//
+// Checkt, ob der User eingeloggt ist und gibt die User-Id zurück
+//
+
 function check_user() {
 	global $pdo;
-	
-	if(!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
-    $identifier = $_COOKIE['identifier'];
-		$securitytoken = $_COOKIE['securitytoken'];
+  
+  // Testumgebungs-Setting
+  $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
+  // if ($localhost && isset($_SESSION['userid'])) {
+  //   return 211; // Conny Roloffs User-Id in der DB, Testumgebung
+  // }
+
+  // Gibt es bereits eine Session? Oder muss sie neu angelegt werden?
+  if (!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) 
+  {
+    // Es gibt bereits eine aktive Anmeldung
+    $identifier     = $_COOKIE['identifier'];
+		$securitytoken  = $_COOKIE['securitytoken'];
 		
 		$statement = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
-		$result = $statement->execute(array($identifier));
+		$statement->execute(array($identifier));
 		$securitytoken_row = $statement->fetch();
 	
-		if(sha1($securitytoken) !== $securitytoken_row['securitytoken']) {
-			//Vermutlich wurde der Security Token gestohlen
+    if (sha1($securitytoken) !== $securitytoken_row['securitytoken']) 
+    {
+			  //Vermutlich wurde der Security Token gestohlen
         header('Location: /intern/login.php');
         exit; // WICHTIG falls der Browser nicht redirected
-    } else { //Token war korrekt
+    }
+    else //Token war korrekt
+    { 
       //Setze neuen Token
 			$neuer_securitytoken = random_string();
 			$insert = $pdo->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
 			$insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
-			setcookie("identifier",$identifier,time()+(3600*24*365)); //1 Jahr Gültigkeit
-			setcookie("securitytoken",$neuer_securitytoken,time()+(3600*24*365)); //1 Jahr Gültigkeit
+			setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
+      setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
+      
 			//Logge den Benutzer ein
 			$_SESSION['userid'] = $securitytoken_row['user_id'];
     }
 	}
 	
-	if (!isset($_SESSION['userid'])) {
+  if ( ! isset($_SESSION['userid'])) 
+  {
     header('Location: /intern/login.php');
     exit; // WICHTIG falls der Browser nicht redirected
   }
 
-  $statement = $pdo->prepare("SELECT * FROM users WHERE id = :id");
-	$result = $statement->execute(array('id' => $_SESSION['userid']));
-  $user = $statement->fetch(PDO::FETCH_ASSOC);
-  $status = $user['status'];
-  if ($status == 'D') {
-    header('Location: /intern/login.php');
-    exit; // WICHTIG falls der Browser nicht redirected
-  } else if ($status == 'W') {
-    header('Location: /intern/login.php');
-    exit; // WICHTIG falls der Browser nicht redirected
-  }
-
+  // Hier holen wir jetzt die Userdaten...
+  $statement = $pdo->prepare("SELECT * FROM users WHERE id = :id AND NOT (status = 'D' OR status = 'W')");
+	$statement->execute(array('id' => $_SESSION['userid']));
+  $user = $statement->fetch();
+  
+  //... und welche Berechtigungen er hat
   $statement = $pdo->prepare("SELECT * FROM permissions WHERE user_id = :user_id");
-  $result = $statement->execute(array('user_id' => $_SESSION['userid']));
+  $statement->execute(array('user_id' => $_SESSION['userid']));
   $permissions = $statement->fetch();
   $_SESSION['permissions'] = $permissions['permissions'];
 
@@ -73,16 +81,17 @@ function is_checked_in() {
 /**
  * Returns a random string
  */
-function random_string() {
-	if(function_exists('openssl_random_pseudo_bytes')) {
+function random_string() 
+{
+  if (function_exists('openssl_random_pseudo_bytes')) 
+  {
 		$bytes = openssl_random_pseudo_bytes(16);
 		$str = bin2hex($bytes); 
-	} else if(function_exists('mcrypt_create_iv')) {
-		$bytes = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
-		$str = bin2hex($bytes); 
-	} else {
+  } 
+  else 
+  {
 		//Replace your_secret_string with a string of your choice (>12 characters)
-		$str = md5(uniqid('your_secret_string', true));
+		$str = md5(uniqid('jfkfofd#dfoiriPkJhh', true));
 	}	
 	return $str;
 }

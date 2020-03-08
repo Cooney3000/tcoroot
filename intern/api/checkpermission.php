@@ -6,6 +6,8 @@ header('Content-Type: multipart/form-data; charset=utf-8');
 session_start();
 require_once("../inc/permissioncheck.inc.php");
 
+// API-Permission-Check
+
 $result = [];
 
 if (isset($_GET['required'])) {

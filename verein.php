@@ -19,49 +19,46 @@ include 'header.php';
 						</thead>
 						<tbody>
 							<tr>
-								<td>Kind bis 10 Jahre</td><td class="geldbetrag">30,00 EUR</td><td class="mittig">--</td>
+								<td>Kind bis 10 Jahre</td><td class="geldbetrag">35,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Kind bis 14 Jahre</td><td class="geldbetrag">50,00 EUR</td><td class="mittig">--</td>
+								<td>Kind bis 14 Jahre</td><td class="geldbetrag">55,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Jugendlicher bis 18 Jahre</td><td class="geldbetrag">80,00 EUR</td><td class="mittig">--</td>
+								<td>Jugendlicher bis 18 Jahre</td><td class="geldbetrag">85,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Azubis/Studenten bis 26 Jahre *</td><td class="geldbetrag">100,00 EUR</td><td class="mittig">--</td>
+								<td>Azubis/Studenten bis 26 Jahre *</td><td class="geldbetrag">105,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Erwachsener</td><td class="geldbetrag">220,00 EUR </td><td class="mittig">✓</td>
+								<td>Erwachsener</td><td class="geldbetrag">225,00 EUR </td><td class="mittig">✓</td>
 							</tr>
 							<tr>
-								<td>Ehepaar</td><td class="geldbetrag">375,00 EUR</td><td class="mittig">✓</td>
+								<td>Ehepaar</td><td class="geldbetrag">380,00 EUR</td><td class="mittig">✓</td>
 							</tr>
 							<tr>
-								<td>Familie (Kinder bis 18 Jahre)</td><td class="geldbetrag">405,00 EUR</td><td class="mittig">✓</td>
+								<td>Familie (Kinder bis 18 Jahre)</td><td class="geldbetrag">410,00 EUR</td><td class="mittig">✓</td>
 							</tr>
 							<tr>
-								<td>Kind mit vollzahlendem Elternteil</td><td class="geldbetrag">30,00 EUR</td><td class="mittig">--</td>
+								<td>Kind mit vollzahlendem Elternteil</td><td class="geldbetrag">35,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Passiv</td><td class="geldbetrag">50,00 EUR</td><td class="mittig">--</td>
+								<td>Passiv</td><td class="geldbetrag">55,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Schnuppermitglied</td><td class="geldbetrag">50,00 EUR</td><td class="mittig">--</td>
+								<td>Schnuppermitglied</td><td class="geldbetrag">55,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Schnuppermitglied + Mannschaft</td><td class="geldbetrag">90,00 EUR</td><td class="mittig">--</td>
+								<td>Schnuppermitglied + Mannschaft</td><td class="geldbetrag">95,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Schnuppermitglied m. Comebacktraining</td><td class="geldbetrag">115,00 EUR</td><td class="mittig">--</td>
+								<td>Schnuppermitglied m. Comebacktraining</td><td class="geldbetrag">130,00 EUR</td><td class="mittig">--</td>
 							</tr>
 						</tbody>
 					</table>
 					<p>* Um diese Beitragsermäßigung in Anspruch nehmen zu können, müssen die entsprechenden Bescheinigungen/Nachweise 
                 selbstständig und rechtzeitig bis spätestens  31. Dezember eines jeden Jahres dem Verein vorliegen.
                 Nachträglich vorgelegte Bescheinigungen werden nicht rückwirkend berücksichtigt!
-          </p>
-          <p>
-            Auf der Hauptversammlung 2019 wurde eine Erhöhung aller oben aufgeführten Beiträge um 5 EUR beschlossen (Comebacktraining 15 EUR), die 2020 wirksam wird.
           </p>
 				</article>
 			</section>
@@ -94,7 +91,7 @@ include 'header.php';
 					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="mail@tcolching.de">mail@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag_2017.pdf">Aufnahmeantrag</a></strong>.</h3>
+					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag_2020.pdf">Aufnahmeantrag</a></strong>.</h3>
 
 				</article>
 			</section>
@@ -138,14 +135,14 @@ include 'header.php';
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Britta Göttling" src="images/vorstand/britta_goettling.jpg">
+						<img alt="Britta Göttling" src="images/vorstand/britta_goettling.png">
 						<div class="daten">Schriftführerin<br>
 						Britta Göttling<br>
 						<a href="mailto:britta.goettling@tcolching.de">britta.goettling@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.jpg">
+						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.png">
 						<div class="daten">Sportwart und Webmaster<br>
 						Conny Roloff<br>
             <a href="mailto:sportwart@tcolching.de">sportwart@tcolching.de</a>
@@ -278,7 +275,7 @@ include 'header.php';
 					<li><a href="downloads/Satzung_TCO.pdf">Satzung</a></li>
 					<li><a href="downloads/Gastspielordnung_2019.pdf">Gastspielordnung</a></li>
 					<li><a href="downloads/Platzordnung.pdf">Platzordnung</a></li>
-					<li><a href="downloads/TCO-Aufnahmeantrag_2017.pdf">Aufnahmeantrag</a></li>
+					<li><a href="downloads/TCO-Aufnahmeantrag_2020.pdf">Aufnahmeantrag</a></li>
 				</ul>
 			</section>	
 		</div>

@@ -10,6 +10,7 @@ include("templates/header.inc.php")
     document.getElementById("nav-intern").classList.remove("active");
     document.getElementById("nav-einstellungen").classList.remove("active");
     document.getElementById("nav-turnier").classList.remove("active");
+    document.getElementById("nav-halloffame").classList.remove("active");
     document.getElementById("nav-tafel").classList.remove("active");
     document.getElementById("nav-login").classList.remove("active");
     document.getElementById("nav-logout").classList.remove("active");

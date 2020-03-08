@@ -12,6 +12,7 @@ include("templates/header.inc.php")
     document.getElementById("nav-intern").classList.remove("active");
     document.getElementById("nav-einstellungen").classList.remove("active");
     document.getElementById("nav-turnier").classList.remove("active");
+    document.getElementById("nav-halloffame").classList.remove("active");
     document.getElementById("nav-tafel").classList.remove("active");
     document.getElementById("nav-login").classList.remove("active");
     document.getElementById("nav-logout").classList.remove("active");
@@ -110,6 +111,7 @@ EOT;
       $empfaenger = "$email";
       $betreff = "Deine Registrierung beim TCO abschließen";
       $from = "From: " . $CONFIG['webmasterMailAddress'] . "\r\n";
+      $from = "Bcc: " . $CONFIG['webmasterMailAddress'] . "\r\n";
       $from .= "Reply-To: " . $CONFIG['webmasterMailAddress'] . "\r\n";
       $from .= "Content-Type: text/html; charset=utf-8\r\n";
       $text = <<<EOT

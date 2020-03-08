@@ -4,13 +4,11 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "classnames": "^2.2.6",
     "fetch": "^1.1.0",
     "history": "^4.7.2",
     "jquery": "^3.4.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-horizontal-scrolling-menu": "^0.5.8",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
     "react-swipeable-views": "^0.13.1"
@@ -30,22 +28,22 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This project was bootstrapped manually by Conny Roloff.",
   "main": "index.js",
   "devDependencies": {
+    "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.3",
     "react-app-rewired": "^2.1.3",
-    "react-redux": "^6.0.0",
-    "redux": "^4.0.1"
+    "webpack": "^4.32.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cooney3000/tco01.git"
+    "url": "git+https://github.com/Cooney3000/eventverkauf.git"
   },
   "author": "Conny Roloff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Cooney3000/tco01/issues"
+    "url": "https://github.com/Cooney3000/eventverkauf/issues"
   },
-  "homepage": "https://www.tcolching.de/intern/tafel"
+  "homepage": "https://www.tcolching.de/intern/turnier/eventverkauf"
 }

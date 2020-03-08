@@ -38,6 +38,8 @@ SPAN.td
 {
     display:table-cell;
 }
+
+
 strong
 {
 	font-weight:bold;
@@ -129,18 +131,18 @@ nav a:hover
 .nav {
   display: block;
 }
-li 
-{
-  display: block;
-}
 .navcurrent
 {
 	font-weight:bold;
 	text-decoration:underline;
 }
-li
+ul.aufzaehlung
 {
-	line-height:1.7em;
+  list-style: square outside url("/images/icons/tennisschlaeger.gif");
+}
+li.schlaeger
+{
+	line-height:1rem;
 	margin:0 0 0 0;
 }
 #logotcoheader
@@ -173,9 +175,17 @@ li
 	color: red !important;
 	font-weight: bold;
 }
-
+.outside 
+{ 
+  list-style-position: outside; 
+}
+.table td {
+  /* padding: 0.1rem 0.1rem 0.1rem 0.1rem !important; */
+  padding: 0 0 0 0 !important;
+}
 .table td {
   padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  /* padding: 0 0 0 0 !important; */
 }
 .tbl-small
 {
@@ -184,7 +194,7 @@ li
 }
 .tbl-auto
 {
-  table-layout: auto;
+  table-layout: fixed;
 }
 .klein
 {
@@ -210,4 +220,8 @@ li
     line-height: 1.1rem;
   }
 
+}
+.galleria
+{ 
+  width: 700px; height: 400px; background: #000 
 }

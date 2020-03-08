@@ -1,7 +1,7 @@
  <hr>
   <div class="container">
   	  <div  class="blockquote-footer">
-        <p>(c) Copyright by Conny Roloff. Dem TC Olching zur kostenlosen Nutzung zur Verfügung gestellt.</p>
+        <p>(c) Copyright by Conny Roloff, TCO Olching e. V.</p>
 </div>
    </div> 
 

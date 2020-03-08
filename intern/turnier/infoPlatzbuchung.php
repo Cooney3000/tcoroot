@@ -4,9 +4,8 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-if(isset($_SESSION['userid'])) {
-  $user = check_user();
-}
+$user = check_user();
+
 $title = "Turnierplaner - Anleitung";
 include("../templates/header.inc.php");
 $kw = "champ2019";
@@ -27,20 +26,18 @@ $kw = "champ2019";
   require_once("turnierheader.inc.php");
 ?>  
   <h1>Anleitung: DIE REGISTRIERUNG</h1>
-  <h2>Wie du deine Spiele für das Clubturnier 2019 planst und organisierst:</h2>
+  <h2>Wie du deine Platzbuchung mit der elektronischen Platztafel organisierst:</h2>
   <p>
-Damit sich die Turnierspieler einfacher verabreden können und sehen, wann Plätze für ihr Spiel frei sind, 
-habe ich ein Platzbuchungssystem programmiert, das ähnlich aussieht wie unsere Magnettafel am Platz. Somit ist auch immer für alle gut sichtbar, 
+Damit sich die Spieler einfacher verabreden können und sehen, wann Plätze frei sind, 
+habe ich ein Platzbuchungssystem programmiert, das ähnlich aussieht wie unsere alte Magnettafel am Platz. Somit ist auch immer für alle gut sichtbar, 
 wann interessante Begegnungen stattfinden.
   </p>
   <p>
-  <strong class="text-danger">Die Benutzung des Platzbuchungssystems ist Pflicht für Turnierteilnehmer!</strong>
-  <p class="lead">Nicht-Teilnehmer können sich gerne ebenfalls registrieren und so jederzeit einsehen, wann die Plätze durch Punktspiele, 
-    Turnierspiele oder andere Events belegt oder nicht belegt sind.</p>
+  <strong class="text-danger">Die Benutzung des Platzbuchungssystems ist Pflicht ab 2020 für alle Platzbuchungen!</strong>
   </p>
   <h2>Registrierung</h2>
   <p>
-  <strong>Alle Turnierspieler</strong> müssen sich zunächst als Benutzer registrieren: <strong><a href="../register.php">Zur Registrierung</a></strong>
+  <strong>Alle Spieler</strong> müssen sich zunächst als Benutzer registrieren: <strong><a href="../register.php">Zur Registrierung</a></strong>
   <br><strong class="text-danger">Bitte merke dir dein Passwort! Wenn du es vergisst, habe ich Zusatzaufwand, da ich noch keine "Passwort vergessen"-Funktionalität eingebaut habe!</strong>
   </p>
   <h2>Warteraum</h2>

@@ -83,6 +83,11 @@ include("../templates/header.inc.php");
     }
   }
 ?>
+
+
+<p class="h3">Turnierbäume werden nach der Auslosung veröffentlicht</p>
+
+<!--
 <div>
   <h2>Mannschaftsspieler Herren</h2>
   <a href="turnierbaum/mannschaftsspieler.png"><img id="mannschaftsspieler" src="turnierbaum/mannschaftsspieler.png" class="w-100" alt="Mannschaftsspieler"></a>
@@ -97,6 +102,7 @@ include("../templates/header.inc.php");
   <h2>Freizeitspieler</h2>
   <a href="turnierbaum/freizeitspieler.png"><img id="mannschaftsspieler" src="turnierbaum/freizeitspieler.png" class="w-100" alt="Freizeitspieler"></a>
 </div>
+-->
 
 </div>
 

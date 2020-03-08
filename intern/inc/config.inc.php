@@ -1,16 +1,14 @@
 <?php
 
 /**
- * A complete login script with registration and members area.
  *
- * @author: Nils Reimers / http://www.php-einfach.de/experte/php-codebeispiele/loginscript/
- * @license: GNU GPLv3
- * 
+ * Default-Werte ($CONFIG) und DB öffnen
  * genutzt für den TCO von Conny Roloff
  * 
  */
- 
-//Tragt hier eure Verbindungsdaten zur Datenbank ein
+
+
+// Verbindungsdaten zur Datenbank
 // HOSTNAME:DESKTOP-BRGTU5C oder prod?
 $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
 
@@ -35,6 +33,8 @@ $fehlerAction = 'Bitte benachrichtigen Sie conny.roloff@live.de';
 $CONFIG = array (
   'webmasterMailAddress' => 'webmaster@tcolching.de',
   'optinLinkDuration' => 72,
+  'activeTournament' => 3,
+  'turniertyp' => "ts-turnier",
 );
 
 

@@ -27,9 +27,11 @@ include("../templates/header.inc.php")
 <h1>Begegnungen</h1>
 <ul>
   <li><a href="begegnungen.php?order=0">Nach Zeitpunkt</a>                 
+<!--
   <li><a href="begegnungen.php?order=1">Nach Spieler 1</a>      
   <li><a href="begegnungen.php?order=2">Nach Spieler 2</a>      
-  <li><a href="begegnungen.php?order=3">Nach Kategorie, Zeitpunkt</a>                      
+  <li><a href="begegnungen.php?order=3">Nach Kategorie, Zeitpunkt</a>
+-->                 
 </ul>
 <?php
 
@@ -47,22 +49,25 @@ if (isset($_GET["order"])) {
 }
 $orderSQL = $order[$orderIndex];
 
+$turniertyp = $CONFIG["turniertyp"];
 $sql = <<<EOT
 SELECT 
-    b.starts_at as Start,
-	t1.category AS Kategorie,
-    CONCAT(p1.nachname, ' ', p1.vorname) AS Spieler_1,
-    CONCAT(p2.nachname, ' ', p2.vorname) AS Spieler_2,
-    b.comment AS comment
-  FROM bookings AS b 
-  LEFT JOIN users AS p1 ON b.player1 = p1.id
-  LEFT JOIN users AS p2 ON b.player2 = p2.id
-  LEFT JOIN tournament_players AS t1 ON CONCAT(p1.nachname, ' ', p1.vorname) = t1.spielername
-  LEFT JOIN tournament_players AS t2 ON CONCAT(p2.nachname, ' ', p2.vorname) = t2.spielername
-  WHERE b.booking_type = "ts-turnier"
-  ORDER BY $orderSQL
+  b.starts_at AS Start,
+  t1.category AS Kategorie,
+  CONCAT(p1.nachname, ' ', p1.vorname) AS Spieler_1,
+  CONCAT(p2.nachname, ' ', p2.vorname) AS Spieler_2,
+  b.comment AS comment
+FROM bookings AS b 
+LEFT JOIN users AS p1 ON b.player1 = p1.id
+LEFT JOIN users AS p2 ON b.player2 = p2.id
+LEFT JOIN tournament_players AS t1 ON (p1.id = t1.user_id)
+LEFT JOIN tournament_players AS t2 ON (p2.id = t2.user_id)
+WHERE b.booking_type = '$turniertyp'
+ORDER BY $orderSQL
+
+
 EOT;
-// error_log("Begegnungen: ".$sql);
+error_log("Begegnungen: ".$sql);
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
 if($result) {

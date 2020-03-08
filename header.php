@@ -102,6 +102,7 @@
 				<img src="/images/sliders/kids.jpg" alt="Zuschauer">
 			</div>
 			<div id="latest_news">
-        Clubmeisterschaften! <span class="text-success">Die Spiele haben begonnen!</span>
+        <!-- Clubmeisterschaften! <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zum Turnierplaner!</a></span> -->
+        Mitglieder! Check this out:<br><a href="https://www.tcolching.de/intern/halloffame.php">Hall of Fame</a>
 			</div>
 		</section>

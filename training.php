@@ -9,31 +9,33 @@ include 'header.php';
 ?>
 		<div id="blatt1">
 			<section id="trainer" class="seite">
-				<h2>Sascha Glinskiy: Unser Vereinstrainer</h2>
+				<h2>Michael Görzen: Unser Vereinstrainer</h2>
 				<article class="spalte1">
-					<p>Unser Trainer Sascha ist ein erfahrener Diplom-Lizenztrainer und Inhaber der B-Lizenz des Deutschen Tennisbundes.</p>
-					<p>Er hat sowohl den Kindern als auch den Erwachsenen fantastische Fortschritte ermöglicht. Eltern anderer Vereine 
-					bestaunen oft die gute Technik unserer Kinder.
+					<p>Michael ist 34 Jahre alt, ehemaliger 2. Bundesligaspieler und hat in internationalen Turnieren gespielt. Aktuell ist er in der Schweiz auf Position 53 gelistet. </p>
+          <p>Als Trainer arbeitet er seit 14 Jahren. Er kommt aus Aalen, wo sein Ukraine-stämmiger Vater eine Tennisschule hat. 
+          Er spricht Deutsch, Russisch, Englisch und etwas Französisch.</p>
 					</p>
-					<p>Hier findest du Saschas <a href="downloads/sascha_glinskiy.pdf">Lebenslauf</a> 
-					und <a href="downloads/sascha_flyer.jpg">Flyer.<img id="trainerflyer" alt="Trainer-Flyer" src="downloads/sascha_flyer.jpg"/></a></p>
-					
+          <p>Michael ist beim TCO Trainer in Vollzeit und für die Trainerposition nach Olching umgesiedelt.</p>
+          <p><strong>Michaels Kontaktdaten:</strong></p>
+          <p>Email: michael070985@icloud.com</p>
+          <p>Mobil: +49 179 5665353</p>
+
 				</article>
 				<article>
-					<img alt="Trainer Sascha Glinskiy" src="images/trainer/sascha_glinskiy_small.jpg"/>
+					<img alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen.png"/>
 				</article>
 			</section>
 		</div>
 		<div id="blatt2">
 			<section id="kindertraining" class="seite">
-				<h2>Sommertraining 2019 für Kinder und Jugendliche</h2>
+				<h2>Sommertraining 2020 für Kinder und Jugendliche</h2>
 				<article>
 					<table>
 						<tr>
-							<td>Trainer:   </td><td>Sascha Glinsky</td>
+							<td>Trainer:   </td><td>Michael Görzen</td>
 						</tr>
 						<tr>
-							<td>Zeitraum: </td><td>29.04. – 26.07.2018 (nicht in den Pfingstferien)</td>
+							<td>Zeitraum: </td><td>Wird für 2020 erst festgelegt (nicht in den Pfingstferien)</td>
 						</tr>
 						<tr>
 							<td>Leistung: </td><td>11 Stunden Gruppentraining</td>

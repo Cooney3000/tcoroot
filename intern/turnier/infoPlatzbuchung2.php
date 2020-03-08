@@ -4,9 +4,8 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-if(isset($_SESSION['userid'])) {
-  $user = check_user();
-}
+$user = check_user();
+
 $title = "Turnierplaner - Anleitung";
 include("../templates/header.inc.php");
 $kw = "champ2019";

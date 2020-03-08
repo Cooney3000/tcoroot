@@ -403,7 +403,7 @@ h3
 	border: medium; 
 	border-image: none; 
 	width: 744px; 
-	height: 700px; 
+  height: 600px; 
 	/* margin-top: -20px;  */
 	min-height: 500px; 
 	min-width: 740px;
@@ -413,7 +413,7 @@ h3
 	border: medium; 
 	border-image: none; 
 	width: auto; 
-	height: 3104px; 
+	height: 3804px; 
 	min-height: 500px; 
 	min-width: 740px;
 }
@@ -480,6 +480,12 @@ ul.schlaeger
 {
   list-style: square outside url("/images/icons/tennisschlaeger.gif");
 }
+.schlaegerimg
+{
+  width: 80%;
+  height: auto;
+}
+
 .neues hr
 {
   padding: 0 0 0 0;
@@ -488,7 +494,7 @@ ul.schlaeger
 .neues li
 {
   font-weight:bold;
-  font-size:1.6em;
+  font-size:1.5em;
   padding: 0em 0rem 0 0;
   margin: 0.3rem 0 0.3rem 0;
   line-height: 2rem;
@@ -737,7 +743,7 @@ footer h4
 		position:relative;
 		right:auto;
 		top:auto;
-		font-size:2rem;
+		font-size:1.5rem;
 		padding: 0.4rem 0 0 0.4em;
 	}
 	nav ul,nav li
@@ -802,6 +808,11 @@ footer h4
   {
     width:auto;
   }
+  #logotcoheader
+  {
+    width:60px;
+  }
+
 
 }
 
