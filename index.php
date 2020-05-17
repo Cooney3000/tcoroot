@@ -37,8 +37,34 @@ include 'header.php';
         <article class="spalte1">
           <h6>Aktuelle Neuigkeiten</h6>
           <ul class="schlaeger">
+            <li>
+              <strong>Corona-Regeln!</strong>
+              <p>
+                Bitte strengstens beachten!
+              </p>
+              <ul style="font-size: 0.7rem">
+                <li><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a><br>NEU: Doppel: Um Punkte spielen nicht erlaubt</li>
+                <li><a href="https://www.btv.de/dam/jcr:0be26c7f-e989-4517-ac5c-9040b5428cd7/Hygiene-%20und%20Verhaltensregeln%20des%20BTV%20f%C3%BCr%20Spieler%20Plakat.pdf" target="_blank">Hygiene- und
+  Verhaltensregeln des BTV für Spieler und Erziehungsberechtigte</a></li>
+              </ul>
+          </li>
+          </ul>
+          <ul class="schlaeger">
+            <li><strong>Die Magnettafel gibt es nicht mehr!</strong> <p>Plätze ab jetzt online buchen! <a href="/intern/tafel">Zur Buchung</a></p></li>
+          </ul>
+          <ul class="schlaeger">
+            <li><strong>Mannschaftstraining!</strong> <p>Beginnt ab dem 18.5.2020! <a href="/mannschaften.php#platzbelegung">Zum Plan</a></p></li>
+          </ul>
+          <ul class="schlaeger">
+            <li><strong>Das Clubturnier findet statt!</strong> 
+              <p>
+              ...in reduzierter Form, Details kommen bald! <a href="/intern/internal.php">Jetzt anmelden</a>
+              </p>
+            </li>
+          </ul>
+          <ul class="schlaeger">
             <!-- <li><strong>Players & Friends Night</strong><img class="schlaegerimg" src="images/veranstaltungen/puf.jpg" alt="Players & Friends-Flyer"></li> -->
-            <li><strong>Neuer Trainer Michael Görzen <br><a href="training.php">--> zum Trainer</a></strong></li>
+            <li><strong>Neuer Trainer Michael Görzen</strong> <p><a href="training.php">Zum Trainer</a></p></li>
           </ul>
         </article>
 				<article>

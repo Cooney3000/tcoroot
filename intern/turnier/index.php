@@ -39,26 +39,11 @@ include("../templates/header.inc.php");
       <?php
       }
       ?>
-
-      <div class="col-sm">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="infoPlatzbuchung.php">Registrierung</a>
-          <h5 class="h-25 m-2">Registrieren</h5>
-          <p class="h-25 pl-2">Für den internen Bereich registrieren</p>
-        </div>
-      </div>
       <div class="col-sm">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="infoAblauf.php">Ablauf</a>
           <h5 class="h-25 m-2">Ablauf</h5>
           <p class="h-25 pl-2">Bälle, Terminvereinbarung, Regeln, ...</p>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="infoPlatzbuchung2.php">Platzbuchung</a>
-          <h5 class="h-25 m-2">Begegnungen</h5>
-          <p class="h-25 pl-2">Wie du dich verabredest und wo du das einträgst</p>
         </div>
       </div>
     </div>
@@ -86,12 +71,6 @@ include("../templates/header.inc.php");
         <div class="col-sm">
           <div class="h-100 bg-light p-2">
             <a class="btn btn-danger w-100" href="bereitsAngemeldetEdit.php">Spieler bearbeiten</a>
-            <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="h-100 bg-light p-2">
-            <a class="btn btn-danger w-100" href="nichtregistriert.php">Nicht registriert</a>
             <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
           </div>
         </div>
@@ -189,17 +168,12 @@ EOT;
     }
 
     if ($registrieren) {
-
-      $sql = "UPDATE users SET festnetz = '$festnetz', mobil = '$mobil' WHERE id = $user";
-      // error_log("0004: " . $sql);
-      $pdo->query($sql);
-      $sql = <<<EOT
-    INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, lk, comment) VALUES ($ttid, $tuid, $willSpielen, "$lk", "$kommentar") 
-      ON DUPLICATE KEY 
-    UPDATE willing_to_play = $willSpielen, lk = "$lk", comment = "$kommentar"
-EOT;
-      // error_log("0005: " . $sql);
-      $statement = $pdo->query($sql);
+      $statement = $pdo->prepare("UPDATE users SET festnetz = :festnetz, mobil = :mobil WHERE id = :user");
+      $statement->execute(array('festnetz' => $festnetz, 'user' => $user['id'], 'mobil' => $mobil));
+      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, lk, comment) VALUES (:ttid, :tuid, :willSpielen, :lk, :kommentar) 
+        ON DUPLICATE KEY 
+        UPDATE willing_to_play = :willSpielen, lk = :lk, comment = :kommentar");
+      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'lk' => $lk, 'kommentar' => $kommentar));
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
 

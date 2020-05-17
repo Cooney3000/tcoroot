@@ -60,7 +60,6 @@ if($result) {
           <th>Spieler/in</th>
           <!-- <th>Anm.</th> -->
           <!-- <th>Zusage</th> -->
-          <th>Kat</th>
           <th>LK</th>
           <th>Tel</th>
           <th>Spielt</th>
@@ -85,7 +84,6 @@ if($result) {
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
           <!-- <td><?=substr($row['created_at'],8,2).'.'.substr($row['created_at'],5,2).'.'?></td> -->
-          <td><?=$row['category']?></td>
           <td><?=$row['lk']?></td>
           <td><?=$row['mobil']?></td>
           <td class="text-center"><?=$row['willing_to_play']===NULL?'---':$row['willing_to_play']==='1'?'J':'N'?></td>

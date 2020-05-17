@@ -28,10 +28,10 @@
       <button class="navbar-toggler bg-light border-secondary rounded" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse navbar-custom" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" id="nav-menue">
           <li class="nav-item" id="nav-intern">
-            <a class="nav-link" href="/intern/internal.php">Intern</a>
+            <a class="nav-link" href="/intern/internal.php">Events</a>
           </li>
           <li class="nav-item" id="nav-turnier">
             <a class="nav-link" href="/intern/turnier/index.php">Turnier</a>
@@ -40,7 +40,7 @@
             <a class="nav-link" href="/intern/halloffame.php">Hall Of Fame</a>
           </li>
           <li class="nav-item" id="nav-tafel">
-            <a class="nav-link" href="/intern/tafel/" target="_blank">Platztafel</a>
+            <a class="nav-link" href="/intern/tafel/" target="_blank">Platzbuchung</a>
           </li>
           <li class="nav-item" id="nav-einstellungen">
             <a class="nav-link" href="/intern/settings.php">Einstellungen</a>
@@ -51,6 +51,9 @@
           <li class="nav-item" id="nav-logout">
             <a class="nav-link" href="/intern/logout.php">Logout</a>
           </li>
+          <!-- <li class="nav-item" id="nav-logout">
+            <a class="nav-link" href="/intern/hilfe/">Hilfe</a>
+          </li> -->
         </ul>
       </div>         
     </nav>

@@ -76,7 +76,7 @@ include 'header.php';
 					<ul>
 						<li>Teilnahme am &#8222;Drop-In&#8220; (Mixed-Turnier zum Kennenlernen)
 						jeden Montag ab 18:00 Uhr</li>
-						<li>Spielberechtigung wochentags bis 17:00 Uhr (nach 17:00 Uhr
+						<li>Spielberechtigung werktags bis 17:00 Uhr (nach 17:00 Uhr
 						nur bei Verf&#252;gbarkeit der Pl&#228;tze &#8211; Mitglieder haben Vorrang!)</li>
 						<li>Spielberechtigung am Wochenende und an Feiertagen bei
 						Verf&#252;gbarkeit der Pl&#228;tze</li>

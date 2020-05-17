@@ -26,6 +26,8 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
+// error_log("[platz.php, Anfang, GET]".http_build_query($_GET)."\r\n");
+
 if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0)
 {
   //throw new Exception('Request method must be POST!');
@@ -55,7 +57,6 @@ $op = $_GET['op'];
 $json = '{"records":[]}';
 $sql = '';
 
-// error_log("PLATZ-OP: " . join(' # ',$_GET)."\r\n");
 
 switch ($op) {
   case 'r':
@@ -77,7 +78,10 @@ switch ($op) {
     break;
 }
 
+// error_log("[platz.php] $json");
+
 echo $json; // API-Response
+
 $conn->close();
 return;
 //END
@@ -124,6 +128,10 @@ SELECT B.*,
   {$p2}U2.nachname) AS p2, 
   {$p3}U3.nachname) AS p3, 
   {$p4}U4.nachname) AS p4,
+  U1.geburtsdatum AS p1geb,
+  U2.geburtsdatum AS p2geb,
+  U3.geburtsdatum AS p3geb,
+  U4.geburtsdatum AS p4geb,
   B.player1 AS p1id,
   B.player2 AS p2id,
   B.player3 AS p3id,
@@ -160,6 +168,10 @@ function readaB()
   {$p2}U2.nachname) AS p2, 
   {$p3}U3.nachname) AS p3, 
   {$p4}U4.nachname) AS p4,
+  U1.geburtsdatum AS p1geb,
+  U2.geburtsdatum AS p2geb,
+  U3.geburtsdatum AS p3geb,
+  U4.geburtsdatum AS p4geb,
   B.player1 AS p1id,
   B.player2 AS p2id,
   B.player3 AS p3id,

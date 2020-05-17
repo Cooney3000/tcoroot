@@ -16,6 +16,8 @@ if (isset($_GET['required'])) {
   $result['retcode'] = $_SESSION['permissions'];
 }
 
+error_log("[checkpermission.php])" . json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) . "\r\n");
+
 echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 // echo('{"records":[{' . $rc . '}]}');
 

@@ -28,14 +28,16 @@ function check_user() {
 		$securitytoken  = $_COOKIE['securitytoken'];
 		
 		$statement = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
-		$statement->execute(array($identifier));
+    $statement->execute(array($identifier));
+    error_log("SELECT * FROM securitytokens WHERE identifier = $identifier, Security-Cookie:". $_COOKIE['securitytoken']);
 		$securitytoken_row = $statement->fetch();
-	
+        	
     if (sha1($securitytoken) !== $securitytoken_row['securitytoken']) 
     {
-			  //Vermutlich wurde der Security Token gestohlen
-        header('Location: /intern/login.php');
-        exit; // WICHTIG falls der Browser nicht redirected
+      //Vermutlich wurde der Security Token gestohlen
+      header('Location: /intern/login.php');
+      // error_log("[function.inc.php, securityToken gestohlen?] Token: ". sha1($securitytoken) . ", DB-Token: " . $securitytoken_row['securitytoken']);
+      exit; // WICHTIG falls der Browser nicht redirected
     }
     else //Token war korrekt
     { 
@@ -50,6 +52,7 @@ function check_user() {
 			$_SESSION['userid'] = $securitytoken_row['user_id'];
     }
 	}
+error_log("[checkuser.php, op] 33333");
 	
   if ( ! isset($_SESSION['userid'])) 
   {

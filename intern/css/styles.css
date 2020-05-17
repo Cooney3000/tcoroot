@@ -136,6 +136,11 @@ nav a:hover
 	font-weight:bold;
 	text-decoration:underline;
 }
+.navbar-custom
+{
+  line-height: 1rem !important;
+
+}
 ul.aufzaehlung
 {
   list-style: square outside url("/images/icons/tennisschlaeger.gif");
@@ -216,8 +221,8 @@ li.schlaeger
   }
   .tbl-small
   {
-    font-size: 1.1rem;
-    line-height: 1.1rem;
+    font-size: 1rem;
+    line-height: 1rem;
   }
 
 }

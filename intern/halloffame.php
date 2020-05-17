@@ -24,7 +24,7 @@ include("templates/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h1 class="display-3">Hall of Fame</h1>
+  <h1 class="h1">Hall of Fame</h1>
 
   <div class="container mt-4">
     <div class="row">

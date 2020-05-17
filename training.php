@@ -18,7 +18,8 @@ include 'header.php';
           <p>Michael ist beim TCO Trainer in Vollzeit und für die Trainerposition nach Olching umgesiedelt.</p>
           <p><strong>Michaels Kontaktdaten:</strong></p>
           <p>Email: michael070985@icloud.com</p>
-          <p>Mobil: +49 179 5665353</p>
+          <p>WhatsApp: +49 179 5665353</p>
+          <p>Tel mobil (kann sich demnächst noch ändern): +49 176 74815404</p>
 
 				</article>
 				<article>

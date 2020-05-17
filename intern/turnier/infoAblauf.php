@@ -41,8 +41,7 @@ $kw = "champ2019";
  nehmt schnell Kontakt mit Eurem Partner auf, Ihr erleichtert damit die Turnierplanung enorm. 
  Bitte wendet Euch bei der Terminvereinbarung direkt an den Spielpartner und nutzt dafür nicht 
  die WhatsApp-Gruppe. Die <strong>Telefonnummer des Partners findet Ihr <a href="bereitsAngemeldet.php">hier</a></strong>. Der Spieltermin muss im 
- <strong><a href="../tafel/" target="_blank">Platzbuchungssystem</a></strong> mit einer Spieldauer von 2 Stunden eingetragen werden, die Anleitung dazu 
- findest Du <a href="infoPlatzbuchung2.php">hier</a>.</p>
+ <strong><a href="../tafel/" target="_blank">Platzbuchungssystem</a></strong> als Spielartmit einer Spieldauer von 2 Stunden eingetragen werden.</p>
 
 <p>Im Platzbuchungssystem ist erkennbar, wann Plätze für das Turnier frei sind. 
 Montags ab 18 Uhr sind alle Plätze durch das DropIn belegt. Von Dienstag bis Donnerstag 
@@ -53,8 +52,7 @@ Soweit möglich, sollten die Spiele auf Platz 1 stattfinden.</p>
 
 <h2>Der Spieltag</h2>
 
-<p>Der Wirt des Vereinsheims Marco wird am Spieltag die Schilder in die (reale) Magnettafel einhängen. 
-Bitte seid pünktlich zur vereinbarten Zeit spielbereit. Die Erfahrung aus dem letzten Jahr zeigt, dass 
+<p>Bitte seid pünktlich zur vereinbarten Zeit spielbereit. Die Erfahrung aus dem letzten Jahr zeigt, dass 
 immer wieder Interessierte zum Zuschauen vorbeikommen, bitte nutzt auch deshalb die grünen Ergebnistafeln. 
 Ihr findet sie in den Umkleidekabinen.</p>
 
@@ -68,8 +66,7 @@ der 3. Satz als Matchtiebreak bis 10. </p>
 
 <h2>Spielergebnis eintragen</h2>
 
-<p>Das Spielergebnis tragt Ihr bitte einerseits in die am Clubheim 
-aushängenden Listen ein, zusätzlich bitte aber im Turnierplaner/Platztafel. Dazu einfach auf dein 
+<p>Das Spielergebnis tragt Ihr bitte im Kommentar in euren Spieltermin im Platzbuchungssystem ein. Dazu einfach auf dein 
 Spiel klicken/tippen und das Ergebnis in das Kommentarfeld eintragen.</p>
 
 <p>Die Spielergebnisse werden durch die Turnierleitung regelmäßig in den Online-Spielplan übertragen. 
@@ -82,8 +79,9 @@ zeitnah Kontakt mit dem nächsten Spielpartner auf. </p>
 
 <h2>Finaltag – Siegerehrung</h2>
 
-<p>Die Halbfinal- und Finalspiele finden am 21.09.2019 statt.
-<p>Die Sieger werden am 12.10.2019 im Rahmen der Players & Friends – Night geehrt. Diesen Termin sollten sich bitte alle Teilnehmer und auch Nicht-Teilnehmer freihalten. An diesem Tag soll eine große Party mit DJ Marco Tesche stattfinden.
+<p>Die Halbfinal- und Finalspiele finden am (wird noch festgelegt)) statt.
+<p>Die Sieger werden im Rahmen der Players & Friends – Night geehrt. Diesen Termin sollten sich bitte alle Teilnehmer 
+  und auch Nicht-Teilnehmer freihalten. Wie das genau abläuft, geben wir noch bekannt. UNsere urprüngliche vor-Corona-Planung müssen wir noch anpassen.
 
 
 LG Norbert

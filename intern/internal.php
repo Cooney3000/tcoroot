@@ -29,13 +29,72 @@ include("templates/header.inc.php");
   
 <h2>Interner Bereich - du bist angemeldet als <?= htmlentities(trim($user['vorname']) . ' ' . trim($user['nachname'])) ?></h2>
 <br>
-  <p class="h3 text-danger">Clubturnier 2020: <a href="turnier/index.php">Zur Registrierung</a></p>
-  <br>
-  <br>
-  <p class="h3 text-danger">Jetzt anmelden: <a href="aktionen.php">Saisonvorbereitung eine Woche Tennis am Meer</a></p>
-  <br>
 
-  <?php
+<!-- Links zu Events wie Anmeldungen etc. -->
+
+<div class="container mt-4">
+  <div class="row">
+
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="turnier/index.php">Clubturnier 2020</a>
+        <h5>Zur Registrierung</h5>
+        <p class="align-text-bottom">Jetzt registrieren!</p>
+      </div>
+    </div>
+
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="jugendclubmeisterschaften2020.php">Jugend&shy;clubmeister&shy;schaften 2020</a>
+        <h5>Zur Registrierung</h5>
+        <p>Jetzt registrieren!</p>
+      </div>
+    </div>
+
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="sommertraining.php">Jugend-Sommertraining 2020</a>
+        <h5>Zur Anmeldung</h5>
+        <p>Anmelden bis zum 23.3.2020</p>
+      </div>
+    </div>
+    
+    <!-- <div class="col-sm">
+      <div class="h-100 bg-light p-2">
+        <a class="btn btn-success w-100" href="infoPlatzbuchung2.php">Platzbuchung</a>
+        <h5 class="h-25 m-2">Begegnungen</h5>
+        <p class="h-25 pl-2">Wie du dich verabredest und wo du das einträgst</p>
+      </div>
+    </div> -->
+
+  </div>
+    <!-- <div class="row">
+      <div class="col-sm">
+        <div class="h-100 bg-light p-2">
+          <a class="btn btn-success w-100" href="#">xxxxxxx</a>
+          <h5 class="h-25 m-2">xxxxxxx</h5>
+          <p class="h-25 pl-2">xxxxxxx</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="h-100 bg-light p-2">
+          <a class="btn btn-success w-100" href="#">xxxxxxx</a>
+          <h5 class="h-25 m-2">xxxxxxx</h5>
+          <p class="h-25 pl-2">xxxxxxx</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="h-100 bg-light p-2">
+          <a class="btn btn-success w-100" href="#">xxxxxxx</a>
+          <h5 class="h-25 m-2">xxxxxxx</h5>
+          <p class="h-25 pl-2">xxxxxxx</p>
+        </div>
+      </div>
+    </div> row -->
+</div> <!-- container -->
+
+<br><br>
+<?php
   if (checkPermissions(PERMISSIONS::VORSTAND) || checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS)) {
     //
     // Wurde einer der Buttons geklickt?
@@ -89,12 +148,10 @@ include("templates/header.inc.php");
               <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?>
               <td>
                 <?php
-/* MAnuelles Aktivieren nicht nötig, weil der User das selber über den Link in einer Email aktivieren kann                
                 if ($danger) { ?>
                   <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn-sm btn-success btn-block py-0">Aktivieren</button>
                 <?php
                 }
-*/
                 if ($row['status'] == 'A') { ?>
                   <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn-sm btn-danger btn-block py-0">Deaktivieren</button>
                 <?php } ?>

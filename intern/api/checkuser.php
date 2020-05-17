@@ -23,6 +23,9 @@ else
 {
   $result['retcode'] = 'NOK';
 }
+
+// error_log("[checkuser.php])" . json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) . "\r\n");
+
 echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 // echo('{"records":[{' . $rc . '}]}');
 

@@ -34,7 +34,7 @@ include 'header.php';
 
 		<div id="blatt2">
 			<section id="platzbelegung" class="seite">
-				<h2>Platzbelegung Sommer 2019</h2>
+				<h2>Platzbelegung Sommer 2020</h2>
 				<p>Der TC Olching verfügt über 6 Sandplätze.</p>
 				<p><strong>BITTE BEACHTE</strong>, dass während der Punktspielzeit die Plätze an vielen Wochenenden belegt sind. 
 				Die Platzbelegungen des Mannschaftstrainings und des Vereinstrainers findest du im folgenden Plan. 
@@ -43,7 +43,7 @@ include 'header.php';
         <p>
           <strong>ACHTUNG:</strong> Eine Spieler/in darf kein Clubturnier-Match spielen, während sein Mannschaftstraining stattfindet!
 				</p>
-				<img id="platzbelegung" class="breitebilder" src="images/Trainingsplan_Sommer_2019.jpg" alt="Platzbelegung">
+				<img id="platzbelegung" class="breitebilder" src="images/Trainingsplan_Sommer_2020.png" alt="Platzbelegung">
 			</section>
 		</div>
 		<div id="blatt3">

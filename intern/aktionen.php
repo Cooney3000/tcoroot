@@ -39,7 +39,7 @@ include("templates/header.inc.php");
       Ich möchte euch als Saisonvorbereitung <strong>eine Woche Tennis am Meer</strong> anbieten:</p>
       <br>
       <ul class="aufzaehlung">
-        <li>1 Woche Tennis am Meer</li>
+        <li>1 Woche Tennis am Meer in der Türkei</li>
         <li>Zeitraum: 11.4. - 18.4.2020</li>
         <li>Vorbereitungstraining auf die Saison 2020, auch Mannschaftstraining</li>
         <li>mit Flug, Transfer zum Hotel, Hotel und all incl. Verpflegung </li>
@@ -201,7 +201,7 @@ EOT;
 
       <p class="h4">Bereits angemeldet:</p>
 <?php
-$sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 ORDER BY u.nachname, u.vorname";
+$sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
 if($result) {
