@@ -21,7 +21,8 @@ include("../templates/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h2>CLUBMEISTERSCHAFTEN 2020 (13.5. - 19.9.2020)</h2>
+  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2020</h1>
+  <h2 class="mt-0">(13.5. - 19.9.2020)</h2>
 
   <div class="container mt-4">
     <div class="row">
@@ -29,7 +30,7 @@ include("../templates/header.inc.php");
       <?php
       if (isset($_SESSION['userid']) && checkPermissions(PERMISSIONS::NONE)) {
       ?>
-        <div class="col-sm">
+        <div class="col-sm m-1">
           <div class="h-100 bg-light p-2">
             <a class="btn btn-success w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
             <h5 class="h-25 m-2">Anmeldeliste</h5>
@@ -39,7 +40,7 @@ include("../templates/header.inc.php");
       <?php
       }
       ?>
-      <div class="col-sm">
+      <div class="col-sm m-1">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="infoAblauf.php">Ablauf</a>
           <h5 class="h-25 m-2">Ablauf</h5>
@@ -50,14 +51,14 @@ include("../templates/header.inc.php");
     <div class="row">
     </div>
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm m-1">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="turnierbaum.php">Turnierbaum</a>
           <h5 class="h-25 m-2">Turnierbäume</h5>
           <p class="h-25 pl-2">Der aktuelle Turnierstatus</p>
         </div>
       </div>
-      <div class="col-sm">
+      <div class="col-sm m-1">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="begegnungen.php">Begegnungen</a>
           <h5 class="h-25 m-2">Begegnungen</h5>
@@ -68,7 +69,7 @@ include("../templates/header.inc.php");
       // Turnierverantwortliche erhalten mehr Buttons
       if (isset($_SESSION['userid']) && checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS)) {
       ?>
-        <div class="col-sm">
+        <div class="col-sm m-1">
           <div class="h-100 bg-light p-2">
             <a class="btn btn-danger w-100" href="bereitsAngemeldetEdit.php">Spieler bearbeiten</a>
             <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
@@ -86,7 +87,7 @@ include("../templates/header.inc.php");
 
     <?php
 
-    $showFormular = 1;
+    $showFormular = 0;
     $tid = $CONFIG['activeTournament'];
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -195,8 +196,8 @@ EOT;
         </div>
 
 
-        <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Ich spiele beim Clubturnier 2020 vom 13.5. - 19.9.2020 mit:&nbsp;</span>
+        <div class="form-group alert-danger  border border-danger px-3">
+          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2020 vom 13.5. - 19.9.2020 mit:&nbsp;</strong></span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenJA" value="1" <?= ($willSpielen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willSpielenJA">Ja</label>
@@ -232,7 +233,8 @@ EOT;
 
   <h2>Disclaimer</h2>
 
-  <p><strong>Das System ist selbst programmiert</strong> und daher naturgemäß nicht perfekt. Wenn du Fehler findest, bitte ich um Nachsicht und eine Email an
+  <p><strong>Die TCO-Website, der interne Bereich und die Platzbuchung werden ständig aktualisiert und verbessert. 
+    Wenn du Fehler findest oder Verbesserungsvorschläge hast, bitte ich um eine Email an
     <a href="mailto:webmaster@tcolching.de">webmaster@tcolching.de</a>.</p>
   <p>Auch wenn es Probleme irgendwelcher Art gibt, bitte ich um Benachrichtigung. Bitte nicht einfach wegducken,
     wenn du versehentlich Änderungen gemacht hast. Keiner ist böse :-)</p>

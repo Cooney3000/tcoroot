@@ -5,22 +5,18 @@
  * @author: Nils Reimers / http://www.php-einfach.de/experte/php-codebeispiele/loginscript/
  * @license: GNU GPLv3
  */
+
 include_once("password.inc.php");
 
 //
-// Checkt, ob der User eingeloggt ist und gibt die User-Id zurück
+// Checkt, ob der User eingeloggt ist und gibt die User-Id oder false zurück
 //
 
 function check_user() {
 	global $pdo;
-  
   // Testumgebungs-Setting
   $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
-  // if ($localhost && isset($_SESSION['userid'])) {
-  //   return 211; // Conny Roloffs User-Id in der DB, Testumgebung
-  // }
-
-  // Gibt es bereits eine Session? Oder muss sie neu angelegt werden?
+  
   if (!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) 
   {
     // Es gibt bereits eine aktive Anmeldung
@@ -29,14 +25,16 @@ function check_user() {
 		
 		$statement = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
     $statement->execute(array($identifier));
-    error_log("SELECT * FROM securitytokens WHERE identifier = $identifier, Security-Cookie:". $_COOKIE['securitytoken']);
 		$securitytoken_row = $statement->fetch();
-        	
+    
     if (sha1($securitytoken) !== $securitytoken_row['securitytoken']) 
     {
       //Vermutlich wurde der Security Token gestohlen
-      header('Location: /intern/login.php');
-      // error_log("[function.inc.php, securityToken gestohlen?] Token: ". sha1($securitytoken) . ", DB-Token: " . $securitytoken_row['securitytoken']);
+      $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
+      header($targetPage);
+      
+      // Wenn der Request von einer API kommt
+      
       exit; // WICHTIG falls der Browser nicht redirected
     }
     else //Token war korrekt
@@ -49,19 +47,19 @@ function check_user() {
       setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
       
 			//Logge den Benutzer ein
-			$_SESSION['userid'] = $securitytoken_row['user_id'];
-    }
-	}
-error_log("[checkuser.php, op] 33333");
-	
-  if ( ! isset($_SESSION['userid'])) 
-  {
-    header('Location: /intern/login.php');
+      $_SESSION['userid'] = $securitytoken_row['user_id'];
+    } 
+  }
+  
+	if(!isset($_SESSION['userid'])) {
+    // neuer, unbekannter Benutzer
+    $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
+    header($targetPage);
     exit; // WICHTIG falls der Browser nicht redirected
   }
-
+  
   // Hier holen wir jetzt die Userdaten...
-  $statement = $pdo->prepare("SELECT * FROM users WHERE id = :id AND NOT (status = 'D' OR status = 'W')");
+  $statement = $pdo->prepare("SELECT * FROM users WHERE id = :id AND NOT (status = 'D' OR status = 'W' OR status = 'X')");
 	$statement->execute(array('id' => $_SESSION['userid']));
   $user = $statement->fetch();
   
@@ -69,8 +67,10 @@ error_log("[checkuser.php, op] 33333");
   $statement = $pdo->prepare("SELECT * FROM permissions WHERE user_id = :user_id");
   $statement->execute(array('user_id' => $_SESSION['userid']));
   $permissions = $statement->fetch();
-  $_SESSION['permissions'] = $permissions['permissions'];
 
+  $_SESSION['permissions'] = $permissions['permissions'];
+  TLOG(DBG, "${permissions['permissions']}", __LINE__);
+  
 	return $user;
 }
 
@@ -78,9 +78,9 @@ error_log("[checkuser.php, op] 33333");
  * Returns true when the user is checked in, else false
  */
 function is_checked_in() {
-	return isset($_SESSION['userid']);
+  return isset($_SESSION['userid']);
 }
- 
+
 /**
  * Returns a random string
  */
@@ -88,12 +88,12 @@ function random_string()
 {
   if (function_exists('openssl_random_pseudo_bytes')) 
   {
-		$bytes = openssl_random_pseudo_bytes(16);
+    $bytes = openssl_random_pseudo_bytes(16);
 		$str = bin2hex($bytes); 
   } 
   else 
   {
-		//Replace your_secret_string with a string of your choice (>12 characters)
+    //Replace your_secret_string with a string of your choice (>12 characters)
 		$str = md5(uniqid('jfkfofd#dfoiriPkJhh', true));
 	}	
 	return $str;
@@ -103,7 +103,7 @@ function random_string()
  * Returns the URL to the site without the script name
  */
 function getSiteURL() {
-	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+  $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	return $protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/';
 }
 
@@ -111,17 +111,38 @@ function getSiteURL() {
  * Outputs an error message and stops the further exectution of the script.
  */
 function error($error_msg) {
-	include("templates/header.inc.php");
+  include("templates/header.inc.php");
 	include("templates/error.inc.php");
 	include("templates/footer.inc.php");
 	exit();
 }
 function endsWith($haystack, $needle)
 {
-    $length = strlen($needle);
-    if ($length == 0) {
-        return true;
-    }
+  $length = strlen($needle);
+  if ($length == 0) {
+    return true;
+  }
+  
+  return (substr($haystack, -$length) === $needle);
+}
+// function console_log( $data ) {
+  //   echo '<script>';
+  //   echo 'console.log('. json_encode( $data ) .')';
+  //   echo '</script>';
+// }
 
-    return (substr($haystack, -$length) === $needle);
+function TLOG($level, $msg, $line)
+{
+  if ($level <= SHOWLOGS) {
+    $page = basename($_SERVER['PHP_SELF']);
+    error_log("[$page, $line]: $msg");
+  }
+}
+
+function TECHO($level, $msg)
+{
+  if ($level <= SHOWLOGS) {
+    $page = basename($_SERVER['PHP_SELF']);
+    echo("<code class=\"text-dark\">\r\n[$page]: $msg</code>");
+  }
 }

@@ -18,31 +18,33 @@
 //      pr - price (für Gaststunden)
 //
 
-// header ('Strict-Transport-Security: max-age=31536000');
-// header("Access-Control-Allow-Origin: *");
-// header('Content-Type: multipart/form-data; charset=utf-8');
-session_start();
 require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
+session_start();
+
+//Überprüfe, dass der User eingeloggt und berechtigt ist
+//Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
+$user = check_user();
+$userId = $user['id'];
+
+// header('Strict-Transport-Security: max-age=31536000');
+// header("Access-Control-Allow-Origin: *");
+// header('Content-Type: multipart/form-data; charset=utf-8');
+
 
 // error_log("[platz.php, Anfang, GET]".http_build_query($_GET)."\r\n");
+// if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], Anfang, GET:\r\n".http_build_query($_GET));
 
 if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0)
 {
-  //throw new Exception('Request method must be POST!');
+  //throw new Exception('Request method must be GET!');
 }
 else 
 {
   error_log("POST DATA: ".$_POST);
   die("BYE!");
 }
-
-//Überprüfe, dass der User eingeloggt und berechtigt ist
-//Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
-
-$user = check_user();
-$userId = $user['id'];
 
 // Create connection
 global $conn;
@@ -65,6 +67,7 @@ switch ($op) {
     break;
   case 'ra':
     $sql = readaB();
+//    if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], readaB(), sql:\r\n$sql");
     $json = execRsql($sql);
     break;
   case 'd':

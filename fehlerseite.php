@@ -1,4 +1,9 @@
 <?php
+$_aktuell = "navcurrent";
+$_verein="";
+$_mannschaften="";
+$_jugend="";
+$_training="";
 include 'header.php';
 ?>
 		<div id="blatt1">

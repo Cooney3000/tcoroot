@@ -10,12 +10,7 @@ require_once("../inc/permissioncheck.inc.php");
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
-if ( ! is_checked_in()) {
-  header('Location: /intern/login.php');
-  exit; // WICHTIG falls der Browser nicht redirected
-}else {
-  $user = check_user();
-}
+$user = check_user();
 
 $order = ["created_at DESC", "category, created_at DESC", "category, LK, created_at DESC", "category, spielername ASC", "zusage DESC"];
 

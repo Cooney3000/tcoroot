@@ -37,20 +37,20 @@ include 'header.php';
         <article class="spalte1">
           <h6>Aktuelle Neuigkeiten</h6>
           <ul class="schlaeger">
-            <li>
-              <strong>Corona-Regeln!</strong>
-              <p>
-                Bitte strengstens beachten!
-              </p>
-              <ul style="font-size: 0.7rem">
-                <li><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a><br>NEU: Doppel: Um Punkte spielen nicht erlaubt</li>
-                <li><a href="https://www.btv.de/dam/jcr:0be26c7f-e989-4517-ac5c-9040b5428cd7/Hygiene-%20und%20Verhaltensregeln%20des%20BTV%20f%C3%BCr%20Spieler%20Plakat.pdf" target="_blank">Hygiene- und
-  Verhaltensregeln des BTV für Spieler und Erziehungsberechtigte</a></li>
-              </ul>
-          </li>
+            <li><strong>Vereinsgaststätte ab dem 26.5. geöffnet!</strong> <p>Unser Wirt Marco ist wieder bei uns! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
           </ul>
           <ul class="schlaeger">
-            <li><strong>Die Magnettafel gibt es nicht mehr!</strong> <p>Plätze ab jetzt online buchen! <a href="/intern/tafel">Zur Buchung</a></p></li>
+            <li><strong>Tennis zum Ausprobieren!</strong> <p>Schnuppermitgliedschaft ist eine günstige Möglichkeit! <a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p></li>
+          </ul>
+          <ul class="schlaeger">
+            <li>
+              <strong>Corona-Regeln!</strong>
+              <ul style="font-size: 0.7rem">
+                <li><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a></li>
+                <li><a href="https://www.btv.de/dam/jcr:0be26c7f-e989-4517-ac5c-9040b5428cd7/Hygiene-%20und%20Verhaltensregeln%20des%20BTV%20f%C3%BCr%20Spieler%20Plakat.pdf" target="_blank">Hygiene- und
+  Verhaltensregeln</a></li>
+              </ul>
+            </li>
           </ul>
           <ul class="schlaeger">
             <li><strong>Mannschaftstraining!</strong> <p>Beginnt ab dem 18.5.2020! <a href="/mannschaften.php#platzbelegung">Zum Plan</a></p></li>
@@ -100,6 +100,68 @@ include 'header.php';
 						</tr>
 					</table>
 				</article>
+			</section>
+		</div>
+
+		<div id="blatt2" class="blatt">
+			<section id="aktuellesschreiben" class="seite">
+				<h2>Herzlich willkommen beim TC Olching!</h2>
+				<article class="p-3 bg-light">    
+          <h3>Liebe Tennisfreunde,</h3>
+          
+<p>es freut mich sehr, euch mitteilen zu können, dass unsere Vereinsgaststätte ab dem 26.05.2020 geöffnet werden darf. Nach einigem 
+  Schriftverkehr mit verschiedenen Behörden und Ämtern haben wir endlich das OK bekommen.</p>
+  <br>
+<p>Wie ihr euch vorstellen könnt, war und ist es für unseren Wirt Marco keine leichte Zeit. Die Gastronomie ist ja von der momentanen 
+  Krise mit am stärksten betroffen. Unsere Bitte an euch wäre es deshalb, Marco so gut wie möglich zu unterstützen. Nutzt unsere 
+  Vereinsgaststätte, nur so können wir uns langfristig einen Wirt leisten. Nur zur Info, Vereinsgaststätten, die von privaten Mitgliedern 
+  betrieben werden (also Selbstversorgung) dürfen noch nicht geöffnet werden. Hier haben wir also einen großen Vorteil. Momentan darf 
+  auf der Terrasse bis 20 Uhr und im Lokal bis 22 Uhr bewirtet werden.</p>
+  <br>
+<p class="h5">Restaurantregelungen für unsere Terrasse und das Clubheim</p>
+<p>Natürlich gibt es für die Gastronomie aufgrund Covid-19 viele Vorschriften, die Marco mit unserer Unterstützung beachten muss. Hier die 
+wichtigsten Regeln mit der Bitte/Aufforderung diese strikt einzuhalten</p>
+<br>
+<p>1.</p>
+<p>Als oberstes Gebot gilt, wie überall, die Abstandsregel von 1,5 m zwischen den Personen. Dies gilt im Gaststättenbereich, bei den sanitären 
+Einrichtungen genauso wie beim Betreten oder Verlassen der Räumlichkeiten. Personen eines Hausstandes haben die Regel nicht zu befolgen. 
+Zwei Hausstände dürfen ohne Abstandsregelung an einem Tisch sitzen.</p>
+<p>2.</p>
+<p>Personen mit Kontakten zu Covid-19-Fällen in den letzten 14 Tagen oder mit den typischen Symptomen (Schnupfen, Geruchsverlust, Fieber, etc.) 
+haben keinen Zutritt zum Gaststättenbereich.</>
+<br>
+<p>3.</p>
+<p>Gäste haben eine Mund-Nasen-Bedeckung zu tragen. Diese ist auf dem Weg zum Tisch, zu den sanitären Einrichtungen und beim Verlassen des 
+Tisches zu tragen. Am Tisch ist die Mund-Nasen-Bedeckung nicht nötig.</p>
+<br>
+<p>4.</p>
+<p>Vor dem Betreten des Gastronomiebereichs sind bitte die Hände gründlich zu desinfizieren. Die entsprechenden Spender sind vor Ort.</p>
+<br>
+<p>5.</p>
+<p>Beim Verlassen des Tisches bitte die Tischflächen desinfizieren. Wir wissen das dies eigentlich die Aufgabe des Wirtes ist. Da er aber 
+alleine arbeitet, oft in der Küche ist bitten wir euch das für ihn zu übernehmen. Auch hier sind die entsprechenden Spender vor Ort.</p>
+<br>
+<p>6.</p>
+<p>Um Kontaktpersonenermittlung im Falle eines nachträglich identifizierten Covid-19-Falles zu ermöglich, müssen wir Gästelisten führen. Pro 
+Tisch liegt eine solche Liste aus. Bitte tragt euch mit Namen und Telefonnummer und Uhrzeit ein. Gäste müssen auch ihre Adresse eintragen. 
+Keine Angst, die Blätter werden eingesammelt und sind für Dritte nicht einsehbar.</p>
+<br>
+
+<p>Allgemeines:</p>
+<p>Die Regeln vom BTV wurden ja bereits kommuniziert, daher gehen wir hier nicht nochmal darauf ein. Hier zwei weitere Infos.</p>
+<p>Das Doppelspiel um Punkte ist nach wie vor nicht erlaubt. Bitte haltet euch daran, auch wenn man diese Regelung nicht zwingend 
+  verstehen muss. Eine neue Regelung kommt hoffentlich nächste Woche.</p>
+<p>Die Punktspiele wurden nochmals verschoben. Start ist nun ab dem 15.06. Alle Richtlinien hierzu werden wir kommunizieren 
+  sobald wir Infos haben.</p>
+<br>
+<p>Vielen Dank für die Einhaltung der Bestimmungen.</p>
+<p>Für den Vorstand</p>
+TC Olching<br>
+<strong>Heiko Tesche</strong><br>
+1.Vorsitzender</p>
+
+         
+        </article>
 			</section>
 		</div>
 

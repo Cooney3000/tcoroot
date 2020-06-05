@@ -15,12 +15,15 @@ include 'header.php';
           <p>Als Trainer arbeitet er seit 14 Jahren. Er kommt aus Aalen, wo sein Ukraine-stämmiger Vater eine Tennisschule hat. 
           Er spricht Deutsch, Russisch, Englisch und etwas Französisch.</p>
 					</p>
-          <p>Michael ist beim TCO Trainer in Vollzeit und für die Trainerposition nach Olching umgesiedelt.</p>
+          <p>Michael ist beim TCO Trainer in Vollzeit und für die Trainerposition in 2020 nach Olching umgesiedelt.</p>
           <p><strong>Michaels Kontaktdaten:</strong></p>
           <p>Email: michael070985@icloud.com</p>
           <p>WhatsApp: +49 179 5665353</p>
           <p>Tel mobil (kann sich demnächst noch ändern): +49 176 74815404</p>
-
+          <p><strong>Gruppenpreise je Stunde:</strong></p>
+          <p>1 -2 Spieler: 41,00 EUR</p>
+          <p>3 Spieler: 42,00 EUR</p>
+          <p>4 SPieler: 44,00 EUR</p>
 				</article>
 				<article>
 					<img alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen.png"/>
@@ -34,9 +37,6 @@ include 'header.php';
 					<table>
 						<tr>
 							<td>Trainer:   </td><td>Michael Görzen</td>
-						</tr>
-						<tr>
-							<td>Zeitraum: </td><td>Wird für 2020 erst festgelegt (nicht in den Pfingstferien)</td>
 						</tr>
 						<tr>
 							<td>Leistung: </td><td>11 Stunden Gruppentraining</td>

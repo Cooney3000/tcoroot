@@ -3,7 +3,7 @@ header ('Strict-Transport-Security: max-age=31536000');
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: text/html; charset=utf-8');
 
-//Updaten Userdaten, generisch
+//Bereitstellen aller Daten für die Magnettafel
 
 session_start();
 require_once("../inc/config.inc.php");
@@ -27,15 +27,21 @@ if ($conn->connect_error) {
 $col = $_GET['col'];
 $value = $_GET['v'];
 $id = $_GET['i'];
+$uid = $_GET['uid'];
+$fieldlist = "tournament_id, user_id, $col";
+$valuelist = "$tid, $uid, '$value'";
 
-$sql = <<<EOT
-UPDATE users SET $col = '$value' WHERE id=$id
-EOT;
+if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], \$id: " . ($id == ''));
 
-// error_log($sql);
+$sql='';
+if ($id == '') {
+  $sql = "INSERT INTO tournament_players($fieldlist) VALUES ($valuelist)";
+} else {
+  $sql = "UPDATE tournament_players SET $col = '$value' WHERE id=$id"; 
+}
 
-if ($conn->query($sql) === FALSE) {
-  error_log("userUpdate.php: Kann nicht speichern:" . $sql);
+if ($conn->query($sql) === false) {
+  error_log('[' . basename($_SERVER['PHP_SELF']) . "]: Kann nicht speichern:\r\n$sql");
 }
 $conn->close();
 

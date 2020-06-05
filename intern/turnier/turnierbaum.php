@@ -40,12 +40,12 @@ include("../templates/header.inc.php");
       <p>Lieber Norbert,</p>
       <p>so geht's:</p>
       <ol>
-        <li>1. Im Excel alles markieren und kopieren (Strg-A, Strg-C)</li>
-        <li>2. IrfanView aufrufen: Windows-Taste, irf eingeben <br>
+        <li>Im Excel alles markieren und kopieren (Strg-A, Strg-C)</li>
+        <li>IrfanView aufrufen: Windows-Taste, irf eingeben <br>
             (evtl. einmal vorher downloaden und installieren: <a href="https://www.irfanview.de/download-irfanview-64-bit-deutsche-version/)">Download</a>)</li>
-        <li>3. Das kopierte Bild reinkopieren: Strg-V</li>
-        <li>4. Datei - Speichern unter - PNG-Dateityp auswählen<br>
-            Dateinamen müssen korrekt sein: <strong>mannschaftsspieler.png, mannschaftsspielerinnen.png, freizeitspieler.png</strong><br>
+        <li>Das kopierte Bild reinkopieren: Strg-V</li>
+        <li>Datei - Speichern unter - PNG-Dateityp auswählen<br>
+            Dateinamen müssen korrekt sein: <strong>herren.png, damen.png, herrenb.png, damenb.png</strong><br>
             Beim Speichern in dem kleinen Dialog oben rechts darf "Transparente Farbe speichern NICHT ausgewählt sein!
         </li>
       </ol>
@@ -55,12 +55,14 @@ include("../templates/header.inc.php");
         <div class="form-group">
           <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
           <input type="hidden" name="op" value="upload" />
-          <label class="mt-1 " for="m">Upload Mannschaftsspieler</label>
-          <input class="form-control" name="spieler[]" id="m" type="file" />
-          <label for="d">Upload Mannschaftsspielerinnen</label>
+          <label class="mt-1 " for="m">Upload Herren</label>
+          <input class="form-control" name="spieler[]" id="h" type="file" />
+          <label for="d">Upload Damen</label>
           <input class="form-control" name="spieler[]" id="d" type="file" />
-          <label for="f">Upload Freizeitspieler/innen</label>
-          <input class="form-control" name="spieler[]" id="f" type="file" />
+          <label for="hb">Upload Herren B</label>
+          <input class="form-control" name="spieler[]" id="hb" type="file" />
+          <label for="db">Upload Damen B</label>
+          <input class="form-control" name="spieler[]" id="db" type="file" />
           <br>
           <input class="btn btn-secondary" type="submit" value="Datei(en) senden" />
         </div>
@@ -87,17 +89,17 @@ include("../templates/header.inc.php");
 
 <p class="h3">Turnierbäume werden nach der Auslosung veröffentlicht</p>
 
+<div>
+  <h2>Herren</h2>
+  <a href="turnierbaum/herren.png"><img id="herren" src="turnierbaum/herren.png" class="w-100" alt="herren Turnierbaum"></a>
+</div>
+
+<div>
+  <h2>Damen</h2>
+  <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png" class="w-100" alt="Damen Turnierbaum"></a>
+</div>
+
 <!--
-<div>
-  <h2>Mannschaftsspieler Herren</h2>
-  <a href="turnierbaum/mannschaftsspieler.png"><img id="mannschaftsspieler" src="turnierbaum/mannschaftsspieler.png" class="w-100" alt="Mannschaftsspieler"></a>
-</div>
-
-<div>
-  <h2>Mannschaftsspielerinnen Damen</h2>
-  <a href="turnierbaum/mannschaftsspielerinnen.png"><img id="mannschaftsspieler" src="turnierbaum/mannschaftsspielerinnen.png" class="w-100" alt="Mannschaftsspielerinnen"></a>
-</div>
-
 <div>
   <h2>Freizeitspieler</h2>
   <a href="turnierbaum/freizeitspieler.png"><img id="mannschaftsspieler" src="turnierbaum/freizeitspieler.png" class="w-100" alt="Freizeitspieler"></a>

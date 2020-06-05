@@ -90,7 +90,7 @@
 					<li class="<?=$_jugend?>"><a href="jugend.php">Jugend</a></li>
 					<li class="<?=$_training?>"><a href="training.php">Training</a></li>
 					<li><a href="/intern/internal.php">Intern</a></li>
-					<li><a href="/intern/tafel">Platzbuchung</a></li>
+					<li><a href="/intern/tafel/">Platzbuchung</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -103,7 +103,7 @@
 				<img src="/images/sliders/kids.jpg" alt="Zuschauer">
 			</div>
 			<div id="latest_news">
-        <!-- Clubmeisterschaften! <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zum Turnierplaner!</a></span> -->
-        Mitglieder! Check this out:<br><a href="https://www.tcolching.de/intern/halloffame.php">Hall of Fame</a>
+        <!-- Clubmeisterschaften! <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zur Platzbuchung!</a></span> -->
+        Mitglieder!<br><a href="https://www.tcolching.de/intern/turnier/">Clubturnier</a>
 			</div>
 		</section>

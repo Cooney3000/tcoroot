@@ -231,7 +231,7 @@ namespace {
          * @return boolean If the password matches the hash
          */
         function password_verify($password, $hash) {
-          echo("password_verify: $password, $hash");
+          if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "password_verify: $password, $hash\r\n");
             if (!function_exists('crypt')) {
                 trigger_error("Crypt must be loaded for password_verify to function", E_USER_WARNING);
                 return false;

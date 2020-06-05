@@ -27,11 +27,9 @@ include("../templates/header.inc.php")
 <h1>Begegnungen</h1>
 <ul>
   <li><a href="begegnungen.php?order=0">Nach Zeitpunkt</a>                 
-<!--
   <li><a href="begegnungen.php?order=1">Nach Spieler 1</a>      
   <li><a href="begegnungen.php?order=2">Nach Spieler 2</a>      
   <li><a href="begegnungen.php?order=3">Nach Kategorie, Zeitpunkt</a>
--->                 
 </ul>
 <?php
 
@@ -62,7 +60,7 @@ LEFT JOIN users AS p1 ON b.player1 = p1.id
 LEFT JOIN users AS p2 ON b.player2 = p2.id
 LEFT JOIN tournament_players AS t1 ON (p1.id = t1.user_id)
 LEFT JOIN tournament_players AS t2 ON (p2.id = t2.user_id)
-WHERE b.booking_type = '$turniertyp'
+WHERE b.booking_type = '$turniertyp' AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
 ORDER BY $orderSQL
 
 
@@ -74,7 +72,7 @@ if($result) {
 ?>
     <br>
     <div class="mx-3">
-    <table class="table table-bordered table-light tbl-small">
+    <table class="table table-striped tbl-small">
       <thead>
         <tr>
           <th>#</th>
@@ -95,10 +93,11 @@ if($result) {
       $gw = $row[$order[$orderIndex]];
       $lfd = 1;
     }
+    $strDate = date('d.m. H:i', strtotime ($row['Start']));
 ?>
         <tr style="height:1.3rem">
           <td><?=$lfd++?></td>
-          <td><?=substr($row['Start'],8,2).'.'.substr($row['Start'],5,2).'.'.substr($row['Start'],0,4).' '.substr($row['Start'],11,5)?></td>
+          <td><?= $strDate ?></td>
           <td><?=$row['Kategorie']?></td>
           <td><?=$row['Spieler_1']?></td>
           <td><?=$row['Spieler_2']?></td>

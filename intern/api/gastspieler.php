@@ -3,7 +3,7 @@ header ('Strict-Transport-Security: max-age=31536000');
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: text/html; charset=utf-8');
 
-//Updaten Userdaten, generisch
+//Bereitstellen aller Daten für die Magnettafel
 
 session_start();
 require_once("../inc/config.inc.php");
@@ -24,18 +24,15 @@ if ($conn->connect_error) {
   die($fehlerMsg['dbconnect'] ."\r\n$db_host, $db_user, $db_password, $db_name\r\n". ' ' . $fehlerAction . "\r\n<br>" . $conn->connect_error);
 }
 
+$id = $_GET['i'];
 $col = $_GET['col'];
 $value = $_GET['v'];
-$id = $_GET['i'];
 
-$sql = <<<EOT
-UPDATE users SET $col = '$value' WHERE id=$id
-EOT;
+$sql='';
+$sql = "UPDATE bookings SET $col = '$value' WHERE id=$id"; 
 
-// error_log($sql);
-
-if ($conn->query($sql) === FALSE) {
-  error_log("userUpdate.php: Kann nicht speichern:" . $sql);
+if ($conn->query($sql) === false) {
+  LOG(DBG, "SQL-Operation gescheitert:\r\n$sql");
 }
 $conn->close();
 

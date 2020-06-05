@@ -18,8 +18,7 @@
         const ALLDATA_READ = 5;           // kombiniert
         const ALLDATA_WRITE = 8;  
         const ALLDATA_UPDATE = 15;        // kombiniert
-        const VORSTAND = 16;
-        const PERMISSION_FREE_2 = 32;
+        const MANNSCHAFTSFUEHRER = 32;
         const PERMISSION_FREE_3 = 64;
         const T_ALL_PERMISSIONS = 128;    // Turnierverantwortliche
         const T_REGISTER = 256;
@@ -31,6 +30,8 @@
         const PERMISSION_FREE_10 = 16384;
         const PERMISSION_UPDATE = 32768;
         const ADMINISTRATOR = 65535;
+
+        const VORSTAND = 432;             // Mannschaftsführer, Turnierverantwortliche, Vorstand
     };
     function checkPermissions($required) {
         $userPermissions = $_SESSION['permissions'];

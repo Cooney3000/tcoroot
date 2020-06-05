@@ -9,7 +9,7 @@ $user = check_user();
 
 $title = "Turnierspieler bearbeiten";
 include("../templates/header.inc.php");
-if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS) ) 
+if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS | PERMISSIONS::T_ALL_PERMISSIONS) ) 
 {
 ?>
 
@@ -32,42 +32,79 @@ if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS) )
 
   
   <?php
-$delimiter = '§$%';
+$delimiter = '#';
   // Spielerliste erzeugen
   ?>
-  <table class="table table-bordered table-light tbl-small">
+  <table class="table table-light tbl-small">
     <tr>
       <th>#</th>
-      <th>Spielername</th>
-      <th>Kat</th>
+      <th>
+        Spielername<br>
+        <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldetEdit.php?o=spielername&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=spielername&dir=desc"></a>
+      </th>
+      <th>Kat<br>
+        <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldetEdit.php?o=category&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=category&dir=desc"></a>
+      </th>
       <th>Mobil</th>
-      <th>LK</th>
+      <th>LK<br>
+        <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldetEdit.php?o=LK&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=LK&dir=desc"></a>
+      </th>
       <th>Spielt</th>
-      <th>Kom</th>
+      <th>Kommentar</th>
+      <th>Anm-Dat<br>
+        <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldetEdit.php?o=created_at&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=created_at&dir=desc"></a>
+      </th>
+      <th>Aktionen</th>
     </tr> 
   <?php
+  $tournament_id = $CONFIG['activeTournament'];
+
+  $order = (isset($_GET['o'])) ? $_GET['o'] : 'u.id';
+  $direction = (isset($_GET['dir'])) ? $_GET['dir'] : 'asc';
+
   $sql = <<<EOT
-  SELECT 
-      t.*,
-      CONCAT(u.nachname, ' ', u.vorname) AS spielername,
-      u.mobil AS mobil,
-      u.id as uid
-    FROM tournament_players AS t
-    LEFT JOIN users AS u ON u.id = t.user_id
-   WHERE t.tournament_id = 3 ORDER BY spielername
+  SELECT
+  t.*,
+  CONCAT(u.nachname, ' ', u.vorname) AS spielername,
+  u.mobil AS mobil,
+  u.id as uid,
+  t.id AS tid,
+  t.created_at AS created_at
+FROM users AS u
+  LEFT JOIN tournament_players AS t 
+ON u.id = t.user_id
+WHERE u.id>=200 AND (t.tournament_id=$tournament_id OR t.tournament_id IS NULL) AND (u.status='W' OR u.status='A')
+  ORDER BY t.willing_to_play DESC, $order $direction
 EOT;
-  // error_log($sql);
+
+if (DEBUG) error_log('['. basename($_SERVER['PHP_SELF']) . "\r\n$sql");
+date_default_timezone_set('UTC');
 
   foreach ($pdo->query($sql) as $row) {
+    $strDate = date('d.m. h:i', strtotime ($row['created_at']));
+    
     ?>
       <tr>
-        <td><?= $row['uid'] ?></td> 
-        <td style="width: auto"><?= $row['spielername'] ?></td>
-        <td><input class="rounded border-success" style="width: 3rem" onchange="hasChanged(this)" id="<?= $row['id'] . $delimiter . 'category' ?>" type="text" value="<?= $row['category'] ?>"/></td>
-        <td><input class="rounded border-success" style="width: 7rem" onchange="hasChangedUser(this)" id="<?= $row['uid'] . $delimiter . 'mobil' ?>" type="text" value="<?= $row['mobil'] ?>"/></td>
-        <td><input class="rounded border-success" style="width: 3rem" onchange="hasChanged(this)" id="<?= $row['id'] . $delimiter . 'LK' ?>" type="text" value="<?= $row['lk'] ?>"/></td>
-        <td><input class="rounded border-success" style="width: 3rem" onchange="hasChanged(this)" id="<?= $row['id'] . $delimiter . 'willing_to_play' ?>" type="text" value="<?= $row['willing_to_play'] ?>"/></td>
-        <td><input class="rounded border-success" style="width: 5rem" onchange="hasChanged(this)" id="<?= $row['id'] . $delimiter . 'comment' ?>" type="text" value="<?= $row['comment'] ?>"/></td>
+        <td class="align-middle form-control-sm" ><?= $row['uid'] ?></td> 
+        <td class="align-middle form-control-sm" style="width: auto"><?= $row['spielername'] ?></td>
+        <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'category'          . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['category'] ?>"/></td>
+        <td class="align-middle"><input class="form-control form-control-sm" style="width: 7rem" onchange="hasChangedUser(this)" id="<?= $row['uid'] . $delimiter . 'mobil'             . $delimiter . $row['mobil'] ?>"  type="text" value="<?= $row['mobil'] ?>"/></td>
+        <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'LK'                . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['lk'] ?>"/></td>
+        <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'willing_to_play'   . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['willing_to_play'] ?>"/></td>
+        <td class="align-middle"><input class="form-control form-control-sm" style="width: 7rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'comment'           . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['comment'] ?>"/></td>
+        <td class="align-middle form-control-sm" style="width: auto"><?= $strDate ?></td>
+        <td class="align-middle">
+<?php
+    if ( ! is_null($row['willing_to_play'])) {
+?>
+        <button type="submit" class="btn btn-warning btn-sm" style="width: 5rem" onclick="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'rs'             . $delimiter . $row['uid']   ?>"  type="text">Reset</button></td>
+<?php 
+    }
+?>
       </tr>
 <?php
   }
@@ -83,13 +120,15 @@ function hasChanged(e) {
   const p = e.id.split('<?= $delimiter ?>');
   const id = "i=" + p[0];
   const col = "&col=" + p[1];
+  const uid = "&uid=" + p[2];
   const v = "&v=" + e.value;
-  const url = "/intern/api/turnierspieler.php?" + id + col + v;
+  const url = "/intern/api/turnierspieler.php?" + id + col + v + uid;
   // console.log(url);
   fetch(url, {credentials: 'same-origin'})
     .then(result => {
       if (result.ok) {
         // console.log(result);
+        // location.reload();
         return true;
       } else {
         throw new Error('Fehler beim Erzeugen/Updaten der Daten' + this.state.r.id);

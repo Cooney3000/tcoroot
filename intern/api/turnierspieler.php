@@ -27,17 +27,30 @@ if ($conn->connect_error) {
 $col = $_GET['col'];
 $value = $_GET['v'];
 $id = $_GET['i'];
-// Ich weiß leider nicht mehr, wozu das gut ist...
-$kaeufer_id = $_GET['col'] == 'kaeufer' ? ",kaeufer_id=" . $_GET['ki'] : "";
+$uid = $_GET['uid'];
+$tid = $CONFIG['activeTournament'];
+$resetRow = ($col == 'rs');
+$fieldlist = "tournament_id, user_id, $col";
+$valuelist = "$tid, $uid, '$value'";
 
-$sql = <<<EOT
-UPDATE tournament_players SET $col = '$value' WHERE id=$id
-EOT;
 
-// error_log($sql);
+if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], \$id: " . ($id == ''));
 
-if ($conn->query($sql) === FALSE) {
-  error_log("turnierspieler.php: Kann nicht speichern:" . $sql);
+$sql='';
+if ($id == '') {
+  $sql = "INSERT INTO tournament_players($fieldlist) VALUES ($valuelist)";
+} else {
+  if ($resetRow) {
+    $sql = "DELETE FROM tournament_players WHERE tournament_id = '$tid' AND user_id = '$uid'";
+  } else {
+    $sql = "UPDATE tournament_players SET $col = '$value' WHERE id=$id"; 
+  }
+}
+
+if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "] sql:\r\n$sql");
+
+if ($conn->query($sql) === false) {
+  error_log('[' . basename($_SERVER['PHP_SELF']) . "]: SQL-Operation gescheitert:\r\n$sql");
 }
 $conn->close();
 

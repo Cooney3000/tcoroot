@@ -1,12 +1,11 @@
 <?php
 
-/**
- *
- * Default-Werte ($CONFIG) und DB öffnen
- * genutzt für den TCO von Conny Roloff
- * 
- */
-
+// Msg-Levels
+define ("CRITICAL", 10);
+define ("ERROR", 20);
+define ("WARNING", 30);
+define ("INFO", 40);
+define ("DBG", 50);
 
 // Verbindungsdaten zur Datenbank
 // HOSTNAME:DESKTOP-BRGTU5C oder prod?
@@ -14,10 +13,16 @@ $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
 
 if ($localhost) {
   $db_host = 'localhost';
+  define ("SHOWLOGS", DBG);
+  define("DEBUG", true);
+  define ("HOSTNAME", "http://localhost");
 } else {
   $db_host = 'rdbms.strato.de';
+  define ("HOSTNAME", "https://www.tcolching.de");
+  define ("SHOWLOGS", ERROR);
+  define("DEBUG", false);
 }
-// error_log("config.inc.php: ".$db_host);
+
 $db_name = 'DB3601681';
 $db_user = 'U3601681';
 $db_password = 'klaP-54#bf';
@@ -35,7 +40,7 @@ $CONFIG = array (
   'optinLinkDuration' => 72,
   'activeTournament' => 3,
   'turniertyp' => "ts-turnier",
+  'gastId' => 1,
+  'mitgliedId' => 25
 );
-
-
 ?>

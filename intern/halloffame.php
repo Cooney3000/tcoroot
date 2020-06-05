@@ -19,8 +19,8 @@ include("templates/header.inc.php");
     document.getElementById("nav-turnier").classList.remove("active");
     document.getElementById("nav-halloffame").classList.add("active");
     document.getElementById("nav-tafel").classList.remove("active");
-    document.getElementById("nav-login").classList.remove("active");
-    document.getElementById("nav-logout").classList.remove("active");
+    if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
+    if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
 </script>
 
 <div class="container main-container">
@@ -46,7 +46,7 @@ include("templates/header.inc.php");
       </div>
     </div> <!-- row -->
     <p>Das erste Jahr der neuen Clubmeisterschaften, die von Norbert frühzeitig geplant waren und verschiedene Spielklassen einführten. </p>
-  <p>Conny programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt. 
+  <p>Conny Roloff programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt. 
   Dadurch fanden sich an sonst leeren Wochenenden plötzlich Zuschauer ein und es ergaben sich gesellige Nachmittage.</p>
       <a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a>
   </div> <!-- container -->

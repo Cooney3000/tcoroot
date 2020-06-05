@@ -3,8 +3,11 @@ body
 	border-top:5px solid #3cb371;
 	font-family:'Open Sans', sans-serif;
 	color:#222222;
-	background-color:#ccfff5;
+	background-color:#90be6d;
   line-height:2rem;
+}
+.admin {
+  background-color: #f94144 !important;
 }
 p
 {
@@ -17,6 +20,13 @@ a
 	color:#0b5e12;
 	transition:color .5s ease;
 	text-decoration:underline;
+	cursor: pointer;
+}
+th a, th a:visited 
+{
+	color:white;
+	transition:color .5s ease;
+	text-decoration:none;
 	cursor: pointer;
 
 }
@@ -184,13 +194,11 @@ li.schlaeger
 { 
   list-style-position: outside; 
 }
-.table td {
-  /* padding: 0.1rem 0.1rem 0.1rem 0.1rem !important; */
-  padding: 0 0 0 0 !important;
-}
-.table td {
-  padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  /* padding: 0 0 0 0 !important; */
+.table td, .table th {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
 }
 .tbl-small
 {
@@ -229,4 +237,7 @@ li.schlaeger
 .galleria
 { 
   width: 700px; height: 400px; background: #000 
+}
+.text-gefahr {
+  color: #9d0208;
 }

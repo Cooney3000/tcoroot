@@ -36,9 +36,9 @@ if (isset($_POST['email']) && isset($_POST['passwort']))
     //
     if (isset($_POST['angemeldet_bleiben'])) 
     {
+
       $identifier = random_string();
       $securitytoken = random_string();
-error_log("identifir: $identifier");
       $insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
       $insert->execute(array('user_id' => $user['id'], 'identifier' => $identifier, 'securitytoken' => sha1($securitytoken)));
       setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); //Valid for 1 year
@@ -72,22 +72,9 @@ if (isset($_POST['email']))
 {
   $email_value = htmlentities($_POST['email']);
 }
-
 $title = "Login";
-include("templates/header.inc.php");
+include("templates/loginheader.inc.php");
 ?>
-<script>
-  // var element = document.getElementById("nav-intern");
-  // element.classList.add("active");
-  document.getElementById("nav-intern").classList.remove("active");
-  document.getElementById("nav-einstellungen").classList.remove("active");
-  document.getElementById("nav-turnier").classList.remove("active");
-  document.getElementById("nav-halloffame").classList.remove("active");
-  document.getElementById("nav-tafel").classList.remove("active");
-  document.getElementById("nav-login").classList.add("active");
-  document.getElementById("nav-logout").classList.remove("active");
-</script>
-
 <div class="container small-container-330 form-signin">
   <form action="login.php" method="post">
     <h2 class="form-signin-heading">Login mit E-Mail-Adresse und Passwort</h2>
@@ -100,7 +87,7 @@ include("templates/header.inc.php");
     }
     ?>
     <label for="inputEmail" class="sr-only">E-Mail</label>
-    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-Mail" value="<?php echo $email_value; ?>" required autofocus>
+    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-Mail" value="<?= $email_value ?>" required autofocus>
     <label for="inputPassword" class="sr-only">Passwort</label>
     <input type="password" name="passwort" id="inputPassword" class="form-control" placeholder="Passwort" required>
     <div class="checkbox">

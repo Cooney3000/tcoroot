@@ -22,15 +22,21 @@ include("templates/header.inc.php");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
-  document.getElementById("nav-login").classList.remove("active");
-  document.getElementById("nav-logout").classList.remove("active");
+  if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
+  if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
 </script>
 <div class="container main-container">
 
+
+
   <h1>Anmeldung zum Sommertraining 2020!</h1>
+  <h2>Anmeldung abgeschlossen. Bitte an <a href="training.php">Michael Görzen</a> wenden.</h2>
   <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25" alt="Michael Görzen">
 
-  <p><strong>Ort:</strong></p><p class="mb-4">TC Olching e.V.</p> 
+<?php
+/*
+
+<p><strong>Ort:</strong></p><p class="mb-4">TC Olching e.V.</p> 
   <p><strong>Zeitraum:</strong></p><p class="mb-4"> vom 04.05. – 2.10.2020 / Nicht in den Pfingst- und Sommerferien!</p> 
   <p><strong>Leistung:</strong></p><p class="mb-4">14 Stunden</p>
   <p><strong>Uhrzeit:</strong></p><p class="mb-4">Mo. - Fr. ab 14.00 bis 19.00 Uhr</p>                                                                                          
@@ -261,9 +267,12 @@ if($result) {
 ?>
 
 
+*/
+?>
   </div>
 
 </div>
+
 
 <?php
 include("templates/footer.inc.php")

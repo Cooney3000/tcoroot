@@ -22,14 +22,16 @@ include("templates/header.inc.php");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
-  document.getElementById("nav-login").classList.remove("active");
-  document.getElementById("nav-logout").classList.remove("active");
+  if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
+  if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
 </script>
 <div class="container main-container">
 
-  <h1 class="mb-5">Anmeldung zu den Jugend&shy;clubmeister&shy;schaften 2020!</h1>
+<h1 class="mb-5">Anmeldung zu den Jugend&shy;clubmeister&shy;schaften 2020!</h1>
+<h2 class="mb-5 text-danger">----- ENTFÄLLT DIESES JAHR LEIDER WEGEN CORONA ------</h2>
   <img src="/images/jugendmeister2019.jpg" class="rounded float-right w-25" alt="Jugendclubmeister 2019">
-  
+<?php
+/*  
   <p class="h4 mb-2"><u>Termin:</u> Samstag, 25.04.2020 bis Sonntag, 26.04.2020</p> 
   <p>(Ersatztermin: Samstag, 02.05. bis Sonntag, 03.05.2020)</p> 
 
@@ -297,8 +299,10 @@ if($result) {
 
 
     } //Ende von if($showFormular)
-?>
 
+
+*/
+?>
 
   </div>
 

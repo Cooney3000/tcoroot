@@ -18,6 +18,7 @@ include("../templates/header.inc.php")
     document.getElementById("nav-logout").classList.remove("active");
 </script>
 
+
 <div class="container main-container registration-form">
 
 <?php 
@@ -25,50 +26,56 @@ include("../templates/header.inc.php")
 ?> 
 
 <h1>Turnierteilnehmer</h1>
-<!-- <ul>
-  <li><a href="bereitsAngemeldet.php?order=0">Nach Anmeldezeitpunkt (älteste zuerst)</a>          <a href="turnierCSVexport.php?order=0">Excel Export</a></li>
-  <li><a href="bereitsAngemeldet.php?order=1">Nach LK, Anmeldezeitpunkt (älteste zuerst)</a>      <a href="turnierCSVexport.php?order=1">Excel Export</a></li>
-  <li><a href="bereitsAngemeldet.php?order=3">Nach Zusage</a>                                     <a href="turnierCSVexport.php?order=3">Excel Export</a></li>
-</ul> -->
+
 <?php
 
-$order = ["t.created_at ASC", 
-          "LK ASC, t.created_at ASC", 
-          "willing_to_play DESC, nachname ASC, vorname ASC"];
+$order = [
+  "nachname ASC, vorname ASC" => "nachname DESC, vorname DESC", 
+  "LK ASC, t.created_at ASC" => "t.LK DESC, t.created_at ASC",
+  "t.created_at ASC" => "t.created_at DESC"
+  ];
 
-// if (isset($_GET["order"])) {
-//   $orderIndex = $_GET["order"];
-// } else {
-//   $orderIndex = 0;
-// }
-$orderIndex = 2;
+$orderSQL = array_keys($order)[0];
+if (isset($_GET['o'])) {
+  for($i = 0; $i < count($order); $i++) {
+    if ($i == $_GET['o']) {
+      $orderSQL = ($_GET['dir'] == 'asc') ? array_keys($order)[$i] : array_values($order)[$i];
+    }
+  }
+}
 
-$orderSQL = $order[$orderIndex];
-
-$sql = "SELECT * FROM users u, tournament_players t where u.id = user_id ORDER BY ".$orderSQL;
-// error_log("Angemeldete Spieler: ".$sql);
+$sql = "SELECT * FROM users u, tournament_players t WHERE u.id = user_id AND willing_to_play = 1 AND t.tournament_id = " .$CONFIG['activeTournament']. " ORDER BY ".$orderSQL;
+// TECHO(DBG, $sql);
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
 if($result) {
 ?>
     <br>
     <div class="mx-3">
-    <table class="table table-bordered table-light tbl-small">
+    <table class="table table-striped tbl-small">
       <thead>
         <tr>
           <th>#</th>
-          <th>Spieler/in</th>
-          <!-- <th>Anm.</th> -->
-          <!-- <th>Zusage</th> -->
-          <th>LK</th>
-          <th>Tel</th>
-          <th>Spielt</th>
+          <th>Spieler/in<br>
+            <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=0&dir=asc"></a>&nbsp;&nbsp;
+            <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=0&dir=desc"></a>
+          </th>
+          <th>Anm.
+            <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=2&dir=asc"></a>&nbsp;&nbsp;
+            <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=2&dir=desc"></a>
+          </th>
+          <th>LK<br>
+            <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=1&dir=asc"></a>&nbsp;&nbsp;
+            <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=1&dir=desc"></a>
+          </th>
+          <th>Angem. am<br>
+          </th>
           <th>Komm.</th>
         </tr>
       </thead>
 <?php
   $gw = "###first###";
-  $order = ['created_at', 'lk', 'lk', 'lk', 'willing_to_play'];
+  $order = ['nachname', 'lk', 'created_at'];
   $lfd = 1;
   while($row = $statement->fetch()) {
     // Gruppenwechsel - Trennlinie
@@ -83,10 +90,9 @@ if($result) {
         <tr>
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
-          <!-- <td><?=substr($row['created_at'],8,2).'.'.substr($row['created_at'],5,2).'.'?></td> -->
+          <td><?=substr($row['created_at'],8,2).'.'.substr($row['created_at'],5,2).'.'?></td>
           <td><?=$row['lk']?></td>
           <td><?=$row['mobil']?></td>
-          <td class="text-center"><?=$row['willing_to_play']===NULL?'---':$row['willing_to_play']==='1'?'J':'N'?></td>
           <td><?=$row['comment']?></td>
         </tr>
 <?php

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TC Olching <?= $title ?></title>
+    <title><?= $title ?> Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,7 +14,7 @@
     <link href="/intern/css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="admin">
   
     <nav class="navbar navbar-expand-lg navbar-light">
       
@@ -33,33 +33,6 @@
           <li class="nav-item" id="nav-intern">
             <a class="nav-link" href="/intern/internal.php">Events</a>
           </li>
-          <li class="nav-item" id="nav-turnier">
-            <a class="nav-link" href="/intern/turnier/index.php">Turnier</a>
-          </li>
-          <li class="nav-item" id="nav-halloffame">
-            <a class="nav-link" href="/intern/halloffame.php">Hall Of Fame</a>
-          </li>
-          <li class="nav-item" id="nav-tafel">
-            <a class="nav-link" href="/intern/tafel/" target="_blank">Platzbuchung</a>
-          </li>
-          <li class="nav-item" id="nav-einstellungen">
-            <a class="nav-link" href="/intern/settings.php">Einstellungen</a>
-          </li>
-<?php
-      if (isset($user['vorname'])) {
-?>
-          <li class="nav-item" id="nav-logout">
-            <a class="nav-link" href="/intern/logout.php">Logout</a>
-          </li>
-<?php
-      } else {
-?>
-          <li class="nav-item" id="nav-login">
-            <a class="nav-link" href="/intern/login.php">Login</a>
-          </li>
-<?php
-    }
-?>
         </ul>
       </div>         
     </nav>
