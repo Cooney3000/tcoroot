@@ -1,4 +1,10 @@
 <?php
+# In der Navigation den aktuellen Menüpunkt auf bold setzen
+$_aktuell = "";
+$_verein = "";
+$_mannschaften = "";
+$_jugend = "";
+$_training = "";
 include 'header.php';
 ?>
 		<div id="blatt1">
@@ -10,28 +16,31 @@ include 'header.php';
 	$datum = substr($nachricht, 0, 8);
 	$nachricht = substr($nachricht, 9);
 	
-	// Wenn es eine richtige Raetselantwort gibt, speichern wir die Textarea-Eingabe in der Datei
-	$raetselantwort = $_POST['raetselantwort'];
-	if ($raetselantwort != "")
-	{
-		$loesung = $_POST['loesung'];
-		if ($raetselantwort == $loesung)
-		{
-			$nachricht = htmlspecialchars($_POST['nachricht']);
-			file_put_contents($file,date("d.m.y") . "," . $nachricht);
-			echo "Nachricht gespeichert!";
-		} else {
-			echo "Nachricht nicht gespeichert!";
-		}
-	}
+  // Wenn es eine richtige Raetselantwort gibt, speichern wir die Textarea-Eingabe in der Datei
+  if (isset($_POST['raetselantwort'])) {
+    $raetselantwort = $_POST['raetselantwort'];
+    if ($raetselantwort != "")
+    {
+      $loesung = $_POST['loesung'];
+      if ($raetselantwort == $loesung)
+      {
+        $nachricht = htmlspecialchars($_POST['nachricht']);
+        file_put_contents($file,date("d.m.y") . "," . $nachricht);
+        echo '<p class="text-danger"> Nachricht gespeichert! Sie wird bis heute 24:00 Uhr auf der Startseite angezeigt</p>';
+      } else {
+        echo '<p class="text-danger"> Nachricht nicht gespeichert!</p>';
+      }
+    }
+  }
 	// Neues Raetsel erstellen
 	$z1=rand(0, 9);
 	$z2=rand(0, 9);
 ?>
 
 				<form method="post">
-					<p><label class="h2" form="messageForm">Nachricht eingeben oder ändern</label></p>
-					<p>
+          <p><label class="h2" form="messageForm">Nachricht eingeben oder ändern</label></p>
+          <p>Die Nachricht wird nur am heutigen Tag angezeigt.</p>
+					<p> 
 						<label for="nachricht">Nachricht</label> 
 						<textarea name="nachricht" id="nachricht" cols="50" rows="4"><?=$nachricht?></textarea>
 					</p>

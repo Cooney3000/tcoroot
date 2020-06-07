@@ -11,17 +11,8 @@ header('Content-Type: multipart/form-data; charset=utf-8');
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 $result = array();
-
-$result = check_user();
-
-if (is_checked_in()) 
-{
-  $result['retcode'] = ($result) ? 'OK' : 'NOK';
-}
-else 
-{
-  $result['retcode'] = 'NOK';
-}
+$user = check_user_silent();
+$result['retcode'] = ($user) ? 'OK' : 'NOK';
 
 if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], result:\r\n" . json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) . "\r\n");
 

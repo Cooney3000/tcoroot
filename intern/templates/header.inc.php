@@ -46,6 +46,14 @@
             <a class="nav-link" href="/intern/settings.php">Einstellungen</a>
           </li>
 <?php
+      if (checkPermissions(PERMISSIONS::VORSTAND | PERMISSIONS::VORSTAND) ) 
+      {
+?>      
+          <li class="nav-item" id="nav-einstellungen">
+            <a class="nav-link" href="/intern/admin/index.php">Admin</a>
+          </li>
+<?php
+      }
       if (isset($user['vorname'])) {
 ?>
           <li class="nav-item" id="nav-logout">

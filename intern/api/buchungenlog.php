@@ -13,7 +13,11 @@ require_once("../inc/permissioncheck.inc.php");
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 
-$user = check_user();
+$user = check_user_silent();
+if ( ! $user ) {
+  echo ('{"records": [{"returncode":"user not logged in"}] }');
+  exit;
+}
 $userId = $user['id'];
 
 // $line = strftime("%Y-%m-%d %H-%M-%S") . " $_SERVER[REQUEST_URI]";;

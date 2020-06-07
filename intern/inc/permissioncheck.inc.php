@@ -18,20 +18,20 @@
         const ALLDATA_READ = 5;           // kombiniert
         const ALLDATA_WRITE = 8;  
         const ALLDATA_UPDATE = 15;        // kombiniert
-        const MANNSCHAFTSFUEHRER = 32;
+          const MANNSCHAFTSFUEHRER = 32;
         const PERMISSION_FREE_3 = 64;
-        const T_ALL_PERMISSIONS = 128;    // Turnierverantwortliche
-        const T_REGISTER = 256;
+          const T_ALL_PERMISSIONS = 128;    // Turnierverantwortliche
+        const PERMISSION_FREE_4 = 256;
+          const VORSTAND = 432;             // Mannschaftsführer, Turnierverantwortliche, Vorstand
         const PERMISSION_FREE_5 = 512;
         const PERMISSION_FREE_6 = 1024;
         const PERMISSION_FREE_7 = 2048;
         const PERMISSION_FREE_8 = 4096;
         const PERMISSION_FREE_9 = 8192;
         const PERMISSION_FREE_10 = 16384;
-        const PERMISSION_UPDATE = 32768;
-        const ADMINISTRATOR = 65535;
+        const PERMISSION_FREE_11 = 32768;
+          const ADMINISTRATOR = 65535;
 
-        const VORSTAND = 432;             // Mannschaftsführer, Turnierverantwortliche, Vorstand
     };
     function checkPermissions($required) {
         $userPermissions = $_SESSION['permissions'];

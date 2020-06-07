@@ -24,26 +24,20 @@ require_once("../inc/permissioncheck.inc.php");
 session_start();
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
-//Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
-$user = check_user();
-$userId = $user['id'];
-
-// header('Strict-Transport-Security: max-age=31536000');
-// header("Access-Control-Allow-Origin: *");
-// header('Content-Type: multipart/form-data; charset=utf-8');
-
-
-// error_log("[platz.php, Anfang, GET]".http_build_query($_GET)."\r\n");
-// if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], Anfang, GET:\r\n".http_build_query($_GET));
-
-if(strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0)
-{
-  //throw new Exception('Request method must be GET!');
+//Der Aufruf von check_user_silent() muss in alle API-Skripten eingebaut sein
+$user = check_user_silent();
+if ( ! $user ) {
+  echo ('{"records": [{"returncode":"user not logged in"}] }');
+  exit;
 }
-else 
+
+$userId = $user['id'];
+TLOG(DBG, "REQUEST-Method: " . $_SERVER['REQUEST_METHOD'], __LINE__);
+if(strcasecmp($_SERVER['REQUEST_METHOD'], 'GET') != 0)
 {
-  error_log("POST DATA: ".$_POST);
-  die("BYE!");
+  echo ('{"records": [{"returncode":"nok"}] }');
+  throw new Exception('Request method must be GET!');
+  exit;
 }
 
 // Create connection
@@ -71,7 +65,7 @@ switch ($op) {
     $json = execRsql($sql);
     break;
   case 'd':
-    deleteB();
+    $json = deleteB();
     break;
   case 'cu':
     $json = createUpdateB();
@@ -200,6 +194,7 @@ function deleteB()
   // error_log("DELETE: " . $sql);
   $conn->query($sql);
   // $conn->query("DELETE FROM bookings WHERE id = ".$_GET['rid']);
+  return '{"records": [{"id":"' . $_GET['rid'] . '", "returncode":"ok"}] }';
 }
 
 function createUpdateB() 
@@ -260,6 +255,7 @@ EOT;
     // error_log("ZEIT FREI: \r\n".$sql);
     // Jetzt löschen wir eine ggf. vorhandene ursprüngliche Buchung
     $_GET['rid'] ? $conn->query("DELETE FROM bookings WHERE id = {$_GET['rid']}") : 0;
+
     // Updaten der temp. Transaktions-Id auf 0 und machen die neue Belegung dadurch endgültig!
     $result = $conn->query("UPDATE bookings SET ta_id = 0 WHERE id = $current_ta_id");
     

@@ -7,23 +7,19 @@ require_once("../inc/permissioncheck.inc.php");
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 $user = check_user();
 
-$title = "Gastgebühr bearbeiten";
+$title = "TCO Gastgebühr";
 include("header.inc.php");
+$menuid = "nav-" . getFilename(__FILE__);
+?>
+<script>
+  document.getElementById("<?= $menuid ?>").classList.add("active");
+</script>
+
+<?php
 $delimiter = '#';
 if (checkPermissions(PERMISSIONS::VORSTAND | PERMISSIONS::VORSTAND) ) 
 {
 ?>
-
-  <script>
-      document.getElementById("nav-intern").classList.remove("active");
-      document.getElementById("nav-einstellungen").classList.remove("active");
-      document.getElementById("nav-turnier").classList.add("active");
-      document.getElementById("nav-halloffame").classList.remove("active");
-      document.getElementById("nav-tafel").classList.remove("active");
-      document.getElementById("nav-halloffame").classList.remove("active");
-      if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
-      if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
-  </script>
 
   <div class="container main-container registration-form">
 
@@ -139,7 +135,7 @@ EOT;
         </td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $strDateVon ?></td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $strDateBis ?></td>
-        <td class="align-middle form-control-sm" style="width: auto"><?= $spieler[0] ?></td>
+        <td class="align-middle form-control-sm" style="width: auto"><?= $spieler[0]." (".$row['sp1'].")" ?></td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $spieler[1] ?></td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $spieler[2] ?></td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $spieler[3] ?></td>
@@ -164,15 +160,24 @@ function hasChanged(e) {
   const url = "/intern/api/gastspieler.php?" + id + col + v;
   // console.log(url);
   fetch(url, {credentials: 'same-origin'})
-    .then(result => {
-      if (result.ok) {
-        // console.log(result);
-        location.reload();
-        return true;
-      } else {
-        throw new Error('Fehler beim Erzeugen/Updaten der Daten' + this.state.r.id);
-      }
-    });
+  .then(result => {
+    if (result.ok) {
+      return result.json()
+    } else {
+        throw new Error('Fehler beim Erzeugen/Updaten der Belegung ("bezahlt")');
+    }
+  })
+  .then(result => {
+    let rc = result.records[0].returncode;
+    if (rc === 'ok') {
+      return true;
+    } else {
+      throw new Error('Fehler beim Erzeugen/Updaten der Belegung ("bezahlt")');
+    }
+  })
+  .catch((error) => {
+    console.error('Fehler beim Erzeugen/Updaten der Belegung ("bezahlt"):', error);
+  });
 }
 
 </script>

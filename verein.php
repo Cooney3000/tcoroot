@@ -88,7 +88,7 @@ include 'header.php';
 					<p>
 						<strong>Die Schnuppermitgliedschaft ist nur einmal möglich!</strong>
 					</p>
-					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="mail@tcolching.de">mail@tcolching.de</a>. 
+					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
 					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag_2020.pdf">Aufnahmeantrag</a></strong>.</h3>

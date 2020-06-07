@@ -13,8 +13,8 @@ require_once("../inc/permissioncheck.inc.php");
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 
-// $user = check_user();
-// $userId = $user['id'];
+$user = check_user_silent();
+$userId = $user['id'];
 
 // Create connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);

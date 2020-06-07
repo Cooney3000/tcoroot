@@ -9,10 +9,29 @@
 include_once("password.inc.php");
 
 //
-// Checkt, ob der User eingeloggt ist und gibt die User-Id oder false zurück
+// Checkt, ob der User eingeloggt ist und gibt die User-Daten zurück oder macht einen Redirect zur Login-Page
 //
 
 function check_user() {
+
+  $user = check_user_silent();
+
+  if ( ! $user ) {
+    // neuer, unbekannter Benutzer
+    $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
+    header($targetPage);
+    exit; // WICHTIG falls der Browser nicht redirected
+  } 
+  else 
+  {
+    return $user;
+  }
+}
+
+//
+// Checkt, ob der User eingeloggt ist und gibt die User-Daten oder false zurück
+//
+function check_user_silent() {
 	global $pdo;
   // Testumgebungs-Setting
   $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
@@ -27,35 +46,26 @@ function check_user() {
     $statement->execute(array($identifier));
 		$securitytoken_row = $statement->fetch();
     
+    
     if (sha1($securitytoken) !== $securitytoken_row['securitytoken']) 
     {
       //Vermutlich wurde der Security Token gestohlen
-      $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
-      header($targetPage);
-      
-      // Wenn der Request von einer API kommt
-      
-      exit; // WICHTIG falls der Browser nicht redirected
+      return false;
     }
-    else //Token war korrekt
-    { 
-      //Setze neuen Token
-			$neuer_securitytoken = random_string();
-			$insert = $pdo->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
-			$insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
-			setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
-      setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
-      
-			//Logge den Benutzer ein
-      $_SESSION['userid'] = $securitytoken_row['user_id'];
-    } 
+    
+    //Setze neuen Token
+    $neuer_securitytoken = random_string();
+    $insert = $pdo->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
+    $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
+    setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
+    setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); //1 Jahr Gültigkeit
+    
+    //Logge den Benutzer ein
+    $_SESSION['userid'] = $securitytoken_row['user_id'];
   }
   
 	if(!isset($_SESSION['userid'])) {
-    // neuer, unbekannter Benutzer
-    $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
-    header($targetPage);
-    exit; // WICHTIG falls der Browser nicht redirected
+    return false;
   }
   
   // Hier holen wir jetzt die Userdaten...
@@ -69,7 +79,7 @@ function check_user() {
   $permissions = $statement->fetch();
 
   $_SESSION['permissions'] = $permissions['permissions'];
-  TLOG(DBG, "${permissions['permissions']}", __LINE__);
+  // TLOG(DBG, "${permissions['permissions']}", __LINE__);
   
 	return $user;
 }
@@ -145,4 +155,15 @@ function TECHO($level, $msg)
     $page = basename($_SERVER['PHP_SELF']);
     echo("<code class=\"text-dark\">\r\n[$page]: $msg</code>");
   }
+}
+
+function getFilename($fullpath) {
+
+  $a = explode('\\', $fullpath);
+  $a = array_pop($a);
+  $f = explode('.', $a);
+
+  return ($f[0]);
+
+
 }

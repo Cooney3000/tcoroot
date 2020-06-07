@@ -128,7 +128,7 @@ function hasChanged(e) {
     .then(result => {
       if (result.ok) {
         // console.log(result);
-        // location.reload();
+        location.reload(false);
         return true;
       } else {
         throw new Error('Fehler beim Erzeugen/Updaten der Daten' + this.state.r.id);

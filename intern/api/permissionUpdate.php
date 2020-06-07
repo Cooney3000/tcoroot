@@ -10,11 +10,6 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-//****************************************************
-// DIESE API WIRD DERZEIT NOCH NICHT GENUTZT
-//****************************************************
-
-
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 //Der Aufruf von check_user_silent() muss in alle APIs eingebaut sein
 $user = check_user_silent();
@@ -22,7 +17,6 @@ if ( ! $user ) {
   echo ('{"records": [{"returncode":"user not logged in"}] }');
   exit;
 }
-
 
 // Create connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
@@ -34,22 +28,22 @@ if ($conn->connect_error) {
 
 $col = $_GET['col'];
 $value = $_GET['v'];
-$id = $_GET['i'];
 $uid = $_GET['uid'];
-$fieldlist = "tournament_id, user_id, $col";
-$valuelist = "$tid, $uid, '$value'";
-
-if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], \$id: " . ($id == ''));
+$resetRow = ($col == 'rs');
+$fieldlist = "user_id, $col";
+$valuelist = "$uid, '$value'";
 
 $sql='';
-if ($id == '') {
-  $sql = "INSERT INTO tournament_players($fieldlist) VALUES ($valuelist)";
+if ($resetRow) {
+  $sql = "DELETE FROM permissions WHERE user_id = '$uid'";
 } else {
-  $sql = "UPDATE tournament_players SET $col = '$value' WHERE id=$id"; 
+  $sql = "INSERT INTO permissions($fieldlist) VALUES ($valuelist) ON DUPLICATE KEY UPDATE user_id=$uid, $col=$value"; 
 }
 
+TLOG(DBG, "sql:\r\n$sql", __LINE__);
+
 if ($conn->query($sql) === false) {
-  error_log('[' . basename($_SERVER['PHP_SELF']) . "]: Kann nicht speichern:\r\n$sql");
+  TLOG(ERROR, "SQL-Operation gescheitert:\r\n$sql", __LINE__);
 }
 $conn->close();
 

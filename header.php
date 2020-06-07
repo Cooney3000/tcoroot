@@ -90,7 +90,7 @@
 					<li class="<?=$_jugend?>"><a href="jugend.php">Jugend</a></li>
 					<li class="<?=$_training?>"><a href="training.php">Training</a></li>
 					<li><a href="/intern/internal.php">Intern</a></li>
-					<li><a href="/intern/tafel/">Platzbuchung</a></li>
+					<!-- <li><a href="/intern/tafel/">Platzbuchung</a></li> -->
 				</ul>
 			</nav>
 		</div>

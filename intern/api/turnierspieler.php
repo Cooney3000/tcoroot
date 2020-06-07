@@ -11,10 +11,12 @@ require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
-//Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
-
-// $user = check_user();
-// $userId = $user['id'];
+//Der Aufruf von check_user_silent() muss in alle APIs eingebaut sein
+$user = check_user_silent();
+if ( ! $user ) {
+  echo ('{"records": [{"returncode":"user not logged in"}] }');
+  exit;
+}
 
 // Create connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);

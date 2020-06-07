@@ -30,9 +30,24 @@
       </button>
       <div class="collapse navbar-collapse navbar-custom" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto" id="nav-menue">
-          <li class="nav-item" id="nav-intern">
-            <a class="nav-link" href="/intern/internal.php">Events</a>
+          <li class="nav-item" id="nav-internal">
+            <a class="nav-link" href="/intern/internal.php">Zurück</a>
+          </li>
+          <li class="nav-item" id="nav-index">
+            <a class="nav-link" href="/intern/admin/index.php">Berechtigungen</a>
+          </li>
+          <li class="nav-item" id="nav-gastedit">
+            <a class="nav-link" href="/intern/admin/gastedit.php">Gastbuchungen</a>
+          </li>
+          <li class="nav-item" id="nav-logout">
+            <a class="nav-link" href="/intern/logout.php">Logout</a>
           </li>
         </ul>
       </div>         
     </nav>
+<script>
+  document.getElementById("nav-internal").classList.remove("active");
+  document.getElementById("nav-gastedit").classList.remove("active");
+  document.getElementById("nav-index").classList.remove("active");
+  document.getElementById("nav-logout").classList.remove("active");
+</script>

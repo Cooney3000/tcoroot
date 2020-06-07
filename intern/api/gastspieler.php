@@ -10,18 +10,11 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-//Überprüfe, dass der User eingeloggt und berechtigt ist
-//Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
-
-// $user = check_user();
-// $userId = $user['id'];
-
-// Create connection
-$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
-$conn->set_charset("utf8");
-
-if ($conn->connect_error) {
-  die($fehlerMsg['dbconnect'] ."\r\n$db_host, $db_user, $db_password, $db_name\r\n". ' ' . $fehlerAction . "\r\n<br>" . $conn->connect_error);
+//Der Aufruf von check_user_silent() muss in alle API-Skripten eingebaut sein
+$user = check_user_silent();
+if ( ! $user ) {
+  echo ('{"records": [{"returncode":"user not logged in"}] }');
+  exit;
 }
 
 $id = $_GET['i'];
@@ -31,10 +24,16 @@ $value = $_GET['v'];
 $sql='';
 $sql = "UPDATE bookings SET $col = '$value' WHERE id=$id"; 
 
-if ($conn->query($sql) === false) {
-  LOG(DBG, "SQL-Operation gescheitert:\r\n$sql");
+if ($pdo->query($sql) === false) 
+{
+  TLOG(ERROR, "SQL-Operation gescheitert:\r\n$sql", __LINE__);
+  echo ('{"records": [{"returncode":"nok"}] }');
+  exit;
+} 
+else 
+{
+  echo ('{"records": [{"returncode":"ok"}] }');
 }
-$conn->close();
 
 ?>
 
