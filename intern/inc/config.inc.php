@@ -20,7 +20,7 @@ if ($localhost) {
   $db_host = 'rdbms.strato.de';
   define ("HOSTNAME", "https://www.tcolching.de");
   define ("SHOWLOGS", ERROR);
-  define("DEBUG", false);
+  define ("DEBUG", false);
 }
 
 $db_name = 'DB3601681';
@@ -41,6 +41,7 @@ $CONFIG = array (
   'activeTournament' => 3,
   'turniertyp' => "ts-turnier",
   'gastId' => 1,
-  'mitgliedId' => 25
+  'mitgliedId' => 25,
+  'delimiter' => "§§§"
 );
 ?>

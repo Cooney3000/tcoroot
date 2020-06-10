@@ -44,9 +44,8 @@ $menuid = "nav-" . getFilename(__FILE__);
   <div class="container mt-4">
     <div class="row">
 
-<?php
-  // Spielerliste erzeugen
-?>
+<!- Benutzerliste -->
+
   <table class="table table-bordered table-light tbl-small">
     <tr>
       <th>ID<br>
@@ -63,8 +62,8 @@ $menuid = "nav-" . getFilename(__FILE__);
         <a class="fas fa-angle-down fa-1x" href="index.php?o=permname&dir=desc"></a>
       </th>
     </tr> 
+
 <?php
-  $tournament_id = $CONFIG['activeTournament'];
 
   $order = (isset($_GET['o'])) ? $_GET['o'] : 'u.id';
   $direction = (isset($_GET['dir'])) ? $_GET['dir'] : 'asc';
@@ -77,15 +76,15 @@ $menuid = "nav-" . getFilename(__FILE__);
   WHERE u.status = 'A'
   ORDER BY $order $direction
 EOT;
+
 // Ein Array füllen für die möglichen Berechtigungsstufen
+
 $sqlperm = "SELECT * FROM permissionnames";
 $perm_array = Array();
+
 foreach ($pdo->query($sqlperm) as $row) {
   $perm_array [$row['pattern']] = $row['value'];
-  // TLOG(DBG, $row['pattern'].": ".$row['value']."\r\n", __LINE__);
 }
-
-TLOG(DBG, "\r\n$sql", __LINE__);
 
 
 foreach ($pdo->query($sql) as $row) {
@@ -112,6 +111,7 @@ foreach ($pdo->query($sql) as $row) {
 </tr>
 <?php
 }
+
 ?>
   </table>
 </div> <!-- container -->

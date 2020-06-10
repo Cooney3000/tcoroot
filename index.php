@@ -7,8 +7,6 @@ $_jugend="";
 $_training="";
 
 include 'header.php';
-?>
-<?php
 	
 /* 
 	Nachrichtenticker für den Trainer, wenn das Training z. B. in die Halle verlegt wird.
@@ -25,19 +23,33 @@ include 'header.php';
 	if (date("d.m.y") != $datum || trim($nachricht) == "" ) 
 	{ 
 		$smsMsgClass = "hidden";
-	} 
+  }
+  
+  // Jetzt noch die Gaststätte geöffnet/geschlossen-Meldung
+  $file = "work/wirt.txt";
+  $line = trim(file_get_contents($file));
+
+  $wirtStatus = substr($line,0,1);
+  $wirtAktivStatus = substr($line,1,1);
+  $wirtStatusClass = ($wirtStatus) ? "btn-success" : "btn-danger";
+  $wirtStatusText = ($wirtStatus) ? "geöffnet": "geschlossen";
 ?>
 		<div id="blattSmsText">
-			<section id="sms_Message" class="seite <?=$smsMsgClass?>">
+      <section id="sms_Message" class="seite <?=$smsMsgClass?>">
 				<h1>Letzte Meldung:</h1><p><?=$nachricht?></p>
 			</section>
 		</div>
 		<div id="blatt1" class="blatt">
-			<section id="news" class="seite neues">
+      <section id="news" class="seite neues">
         <article class="spalte1">
           <h6>Aktuelle Neuigkeiten</h6>
-          <ul class="schlaeger">
-            <li><strong>Vereinsgaststätte ab dem 26.5. geöffnet!</strong> <p>Unser Wirt Marco ist wieder bei uns! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
+          
+          <?php if ($wirtAktivStatus == '1') {
+            echo "<p>Die Vereinsgaststätte ist <span class=\"$wirtStatusClass px-1\"> $wirtStatusText </span></a></p>";
+          } ?>
+
+            <ul class="schlaeger">
+            <li><strong>Wichtige neue Informationen (10.06.2020)!</strong> <p>Hygieneregeln, Drop-In, Bälle, Gastgebühr! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
           </ul>
           <ul class="schlaeger">
             <li><strong>Tennis zum Ausprobieren!</strong> <p>Schnuppermitgliedschaft ist eine günstige Möglichkeit! <a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p></li>
@@ -51,20 +63,6 @@ include 'header.php';
   Verhaltensregeln</a></li>
               </ul>
             </li>
-          </ul>
-          <ul class="schlaeger">
-            <li><strong>Mannschaftstraining!</strong> <p>Beginnt ab dem 18.5.2020! <a href="/mannschaften.php#platzbelegung">Zum Plan</a></p></li>
-          </ul>
-          <ul class="schlaeger">
-            <li><strong>Das Clubturnier findet statt!</strong> 
-              <p>
-              ...in reduzierter Form, Details kommen bald! <a href="/intern/internal.php">Jetzt anmelden</a>
-              </p>
-            </li>
-          </ul>
-          <ul class="schlaeger">
-            <!-- <li><strong>Players & Friends Night</strong><img class="schlaegerimg" src="images/veranstaltungen/puf.jpg" alt="Players & Friends-Flyer"></li> -->
-            <li><strong>Neuer Trainer Michael Görzen</strong> <p><a href="training.php">Zum Trainer</a></p></li>
           </ul>
         </article>
 				<article>
@@ -109,52 +107,39 @@ include 'header.php';
 				<article class="p-3 bg-light">    
           <h3>Liebe Tennisfreunde,</h3>
           
-<p>es freut mich sehr, euch mitteilen zu können, dass unsere Vereinsgaststätte ab dem 26.05.2020 geöffnet werden darf. Nach einigem 
-  Schriftverkehr mit verschiedenen Behörden und Ämtern haben wir endlich das OK bekommen.</p>
+<p>heute melden wir uns wieder mit ein paar Neuigkeiten und Nachrichten.</p>
   <br>
-<p>Wie ihr euch vorstellen könnt, war und ist es für unseren Wirt Marco keine leichte Zeit. Die Gastronomie ist ja von der momentanen 
-  Krise mit am stärksten betroffen. Unsere Bitte an euch wäre es deshalb, Marco so gut wie möglich zu unterstützen. Nutzt unsere 
-  Vereinsgaststätte, nur so können wir uns langfristig einen Wirt leisten. Nur zur Info, Vereinsgaststätten, die von privaten Mitgliedern 
-  betrieben werden (also Selbstversorgung) dürfen noch nicht geöffnet werden. Hier haben wir also einen großen Vorteil. Momentan darf 
-  auf der Terrasse bis 20 Uhr und im Lokal bis 22 Uhr bewirtet werden.</p>
+<p class="h5"><strong>Kontaktpersonenermittlung bei nachträglich identifiziertem Covid-19-Fall:</strong></p>
   <br>
-<p class="h5">Restaurantregelungen für unsere Terrasse und das Clubheim</p>
-<p>Natürlich gibt es für die Gastronomie aufgrund Covid-19 viele Vorschriften, die Marco mit unserer Unterstützung beachten muss. Hier die 
-wichtigsten Regeln mit der Bitte/Aufforderung diese strikt einzuhalten</p>
+<p>Hier müssen wir in folgende Bereiche unterscheiden:</p>
+<p class="h5"><u>Gastronomie:</u></p>
+<p>Bitte in den am Tisch liegenden Listen eintragen. Bei Mitgliedern reicht der Name. Nichtmitglieder/Gäste müssen sich mit Namen und Telefonnummer eintragen.</p>
+<p class="h5"><u>Training/Privates Tennis:</u></p>
+<p>Dokumentiert über das Online-Buchungsportal. Nochmals meine Bitte an die Mannschaftsführer die teilnehmenden Spieler einzupflegen. Mitglieder die mit Gästen spielen geben bitte den Namen des Gastes ein.</p>
+<p class="h5"><u>Punktspiele:</u></p>
+<p>Diese starten ab dem 20.06. Die Spieler sind dann über die BTV-Systeme dokumentiert (nach der Eingabe der Ergebnisse).</>
+<p class="h5"><u>NEU !!!  Wichtig !!! Tennisanlage:</u></p>
+<p>Ab sofort müssen wir auch alle Mitglieder und Nichtmitglieder dokumentieren die nicht Tennis spielen oder bei unserem Wirt essen, d.h. alle die nur die 
+  Anlage besuchen um z.B. beim Tennis zuzuschauen.
+Hier werden wir im Eingangsbereich Zettel hinterlegen. Dieser ist mit Name, Datum, Ankunftsuhrzeit und Telefonnummer auszufüllen und in den entsprechenden
+ Behälter reinzuschmeißen. Wir müssen die Zettel 4 Wochen aufbewahren, danach werden sie entsorgt.
+Dies ist besonders bei den Punktspielen oder beim Training wichtig, wenn Eltern z.B. zum Zuschauen ihrer Kinder auf der Anlage sind.
+</p>
+<p class="h5"><u>Drop-In:</u></p>
+<p>Am 15.06. starten wir um 18 Uhr mit dem Drop-In. Natürlich unter den gegebenen Umständen. Michi wird euch da erklären wie wir das Umsetzen können. 
+  Die Dokumentation über die teilnehmenden Spieler wird von uns übernommen. Es ist ja Vorschrift das alle Tennisspieler eine Maske mitführen müssen 
+  und diese Aufsetzen müssen, wenn der Abstand von 1,5 Metern kurzfristig nicht eingehalten werden kann. Bitte daran denken.</p>
+<p class="h5"><u>Bälle:</u></p>
+<p>Ab sofort kann man beim Wirt oder einem Vorstandsmitglied Bälle kaufen. Eine Dose der BTV-Bälle kostet 12 Euro.</p>
+<p class="h5"><u>Gastgebühr:</u></p>
+<p>Prinzipiell sind die Mitglieder dafür verantwortlich das die Gastgebühr an den Verein entrichtet wird. Wir bitten euch daher die Gastgebühr innerhalb einer Woche an den Verein zu 
+  überweisen (bevorzugt) oder beim Wirt zu bezahlen. Sollte das Geld nicht innerhalb einer Woche gezahlt worden sein wird die Gastgebühr (plus Bearbeitungskosten ca. 5 Euro) vom Mitglied eingezogen.</p>
 <br>
-<p>1.</p>
-<p>Als oberstes Gebot gilt, wie überall, die Abstandsregel von 1,5 m zwischen den Personen. Dies gilt im Gaststättenbereich, bei den sanitären 
-Einrichtungen genauso wie beim Betreten oder Verlassen der Räumlichkeiten. Personen eines Hausstandes haben die Regel nicht zu befolgen. 
-Zwei Hausstände dürfen ohne Abstandsregelung an einem Tisch sitzen.</p>
-<p>2.</p>
-<p>Personen mit Kontakten zu Covid-19-Fällen in den letzten 14 Tagen oder mit den typischen Symptomen (Schnupfen, Geruchsverlust, Fieber, etc.) 
-haben keinen Zutritt zum Gaststättenbereich.</>
+<p>Wir wissen, es waren wieder viele Informationen. Zur Entspannung empfehlen wir eine Stunde Tennis und danach ein Bier beim Wirt</p>
 <br>
-<p>3.</p>
-<p>Gäste haben eine Mund-Nasen-Bedeckung zu tragen. Diese ist auf dem Weg zum Tisch, zu den sanitären Einrichtungen und beim Verlassen des 
-Tisches zu tragen. Am Tisch ist die Mund-Nasen-Bedeckung nicht nötig.</p>
-<br>
-<p>4.</p>
-<p>Vor dem Betreten des Gastronomiebereichs sind bitte die Hände gründlich zu desinfizieren. Die entsprechenden Spender sind vor Ort.</p>
-<br>
-<p>5.</p>
-<p>Beim Verlassen des Tisches bitte die Tischflächen desinfizieren. Wir wissen das dies eigentlich die Aufgabe des Wirtes ist. Da er aber 
-alleine arbeitet, oft in der Küche ist bitten wir euch das für ihn zu übernehmen. Auch hier sind die entsprechenden Spender vor Ort.</p>
-<br>
-<p>6.</p>
-<p>Um Kontaktpersonenermittlung im Falle eines nachträglich identifizierten Covid-19-Falles zu ermöglich, müssen wir Gästelisten führen. Pro 
-Tisch liegt eine solche Liste aus. Bitte tragt euch mit Namen und Telefonnummer und Uhrzeit ein. Gäste müssen auch ihre Adresse eintragen. 
-Keine Angst, die Blätter werden eingesammelt und sind für Dritte nicht einsehbar.</p>
-<br>
-
-<p>Allgemeines:</p>
-<p>Die Regeln vom BTV wurden ja bereits kommuniziert, daher gehen wir hier nicht nochmal darauf ein. Hier zwei weitere Infos.</p>
-<p>Das Doppelspiel um Punkte ist nach wie vor nicht erlaubt. Bitte haltet euch daran, auch wenn man diese Regelung nicht zwingend 
-  verstehen muss. Eine neue Regelung kommt hoffentlich nächste Woche.</p>
-<p>Die Punktspiele wurden nochmals verschoben. Start ist nun ab dem 15.06. Alle Richtlinien hierzu werden wir kommunizieren 
   sobald wir Infos haben.</p>
 <br>
-<p>Vielen Dank für die Einhaltung der Bestimmungen.</p>
+<p>Bis bald</p>
 <p>Für den Vorstand</p>
 TC Olching<br>
 <strong>Heiko Tesche</strong><br>

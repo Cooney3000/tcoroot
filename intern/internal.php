@@ -34,7 +34,51 @@ include("templates/header.inc.php");
 <div class="container mt-4">
   <div class="row">
 
-  <div class="col-sm mb-2">
+<!-- Für den Wirt -->
+<?php
+
+  if (checkPermissions(PERMISSIONS::WIRT)) {
+    $file = "../work/wirt.txt";
+    $line = trim(file_get_contents($file));
+
+    $wirtStatus = substr($line,0,1);
+    $wirtAktivStatus = substr($line,1,1);
+
+    if (isset($_GET['SWT'])) {
+      $wirtStatus = abs($wirtStatus - 1);
+    } 
+    else if (isset($_GET['SWS'])) {
+      $wirtAktivStatus = abs($wirtAktivStatus - 1);
+    }
+
+    file_put_contents($file, $wirtStatus.$wirtAktivStatus);
+
+    $wirtStatusClass = ($wirtStatus) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
+    $wirtStatusText1 = ($wirtStatus) ? "geöffnet": "geschlossen";
+    $wirtStatusText2 = ($wirtStatus) ? "Schließen": "Öffnen";
+    $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
+    $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
+    $wirtAktivText2 = ($wirtAktivStatus) ? "Dektivieren": "Aktivieren";
+?>
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <span class="btn btn-danger w-100 mb-2">Vereinsgaststätte</span>
+          <p>
+            Anzeige auf der Startseite ist <strong><?= $wirtAktivText1 ?></strong>.<br> 
+            <a href="internal.php?SWS" style="text-decoration: none"><span class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></span></a>
+          </p>
+          <p>
+            Die Vereinsgaststätte ist <strong><?= $wirtStatusText1 ?></strong>.<br>
+            <a href="internal.php?SWT" style="text-decoration: none"><span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></span></a><br>
+          </p>
+      </div>
+    </div>
+<?php
+  }
+?>
+
+
+    <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
         <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
         <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
@@ -136,7 +180,10 @@ include("templates/header.inc.php");
             <th>Mobil</th>
             <th>Geburtsdatum</th>
             <th>Registriert am</th>
-            <th>Aktionen</th><th></th>
+            <?php
+              if (checkPermissions(PERMISSIONS::VORSTAND)) { ?>
+                <th>Aktionen</th><th></th>
+            <?php } ?>
           </tr>
           <?php
           $userCount = 0;
@@ -153,24 +200,27 @@ include("templates/header.inc.php");
               <td class="<?= $classname ?>"><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a></td>
               <td class="<?= $classname ?>"><?= $row['festnetz'] ?></td>
               <td class="<?= $classname ?>"><?= $row['mobil'] ?></td>
-              <td class="<?= $classname ?>"><?= substr($row['geburtsdatum'], 0, 10) ?>
-              <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?>
-              <td>
-                <?php
-                if ($danger) { ?>
-                  <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn btn-success btn-sm btn-block py-0">Aktivieren</button>
-                <?php
-                }
-                if ($row['status'] == 'A') { ?>
-                  <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn btn-danger btn-sm btn-block py-0">Deaktivieren</button>
-                <?php } ?>
-              </td>
-              <td>
-                <?php
-                if ($danger) { ?>
-                  <button type="submit" name="delete" value="<?= $row['id'] ?>-X" class="btn btn-danger btn-sm btn-block py-0">Löschen</button>
-                <?php } ?>
-              </td>
+              <td class="<?= $classname ?>"><?= substr($row['geburtsdatum'], 0, 10) ?></td>
+              <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td>
+              <?php
+              if (checkPermissions(PERMISSIONS::VORSTAND)) { ?>
+                <td>
+                  <?php
+                  if ($danger) { ?>
+                    <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn btn-success btn-sm btn-block py-0">Aktivieren</button>
+                  <?php
+                  }
+                  if ($row['status'] == 'A') { ?>
+                    <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn btn-danger btn-sm btn-block py-0">Deaktivieren</button>
+                  <?php } ?>
+                </td>
+                <td>
+                  <?php
+                  if ($danger) { ?>
+                    <button type="submit" name="delete" value="<?= $row['id'] ?>-X" class="btn btn-danger btn-sm btn-block py-0">Löschen</button>
+                  <?php } ?>
+                </td>
+              <?php } ?>
             </tr>
           <?php
           }
