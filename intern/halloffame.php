@@ -15,12 +15,11 @@ include("templates/header.inc.php");
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
-    document.getElementById("nav-einstellungen").classList.remove("active");
     document.getElementById("nav-turnier").classList.remove("active");
     document.getElementById("nav-halloffame").classList.add("active");
     document.getElementById("nav-tafel").classList.remove("active");
-    if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
-    if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
+    if (document.getElementById("nav-login") !== null) document.getElementById("nav-login").classList.remove("active");
+    if (document.getElementById("nav-logout") !== null) document.getElementById("nav-logout").classList.remove("active");
 </script>
 
 <div class="container main-container">
@@ -45,7 +44,7 @@ include("templates/header.inc.php");
         <div class="h5 mb-2">Hartmut "Hacky" Leihenseder</div>
       </div>
     </div> <!-- row -->
-    <p>Das erste Jahr der neuen Clubmeisterschaften, die von Norbert frühzeitig geplant waren und verschiedene Spielklassen einführten. </p>
+    <p>Das erste Jahr der neuen Clubmeisterschaften, die von Norbert Maier frühzeitig geplant waren und verschiedene Spielklassen einführten. </p>
   <p>Conny Roloff programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt. 
   Dadurch fanden sich an sonst leeren Wochenenden plötzlich Zuschauer ein und es ergaben sich gesellige Nachmittage.</p>
       <a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a>

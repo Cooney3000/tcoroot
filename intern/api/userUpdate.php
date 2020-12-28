@@ -34,7 +34,7 @@ $sql = <<<EOT
 UPDATE users SET $col = '$value' WHERE id=$id
 EOT;
 
-// error_log($sql);
+error_log($sql);
 
 if ($conn->query($sql) === FALSE) {
   error_log("userUpdate.php: Kann nicht speichern:" . $sql);

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d6c9caed78888c60ed3b",
+    "revision": "ff5d6ad260f38550a7a5",
     "url": "/intern/tafel/static/css/main.8d308894.chunk.css"
   },
   {
-    "revision": "d6c9caed78888c60ed3b",
-    "url": "/intern/tafel/static/js/main.d6c9caed.chunk.js"
+    "revision": "ff5d6ad260f38550a7a5",
+    "url": "/intern/tafel/static/js/main.ff5d6ad2.chunk.js"
   },
   {
     "revision": "e3c96d6094f7819f229d",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/intern/tafel/static/js/runtime~main.ba5b68e9.js"
   },
   {
-    "revision": "2287a61a9a273504c5ea8d9068fd3992",
+    "revision": "d184dcfe28b9dc24d732175ff67b961d",
     "url": "/intern/tafel/index.html"
   }
 ];

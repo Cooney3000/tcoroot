@@ -13,7 +13,6 @@ include("../templates/header.inc.php");
   // var element = document.getElementById("nav-intern");
   // element.classList.add("active");
   document.getElementById("nav-intern").classList.remove("active");
-  document.getElementById("nav-einstellungen").classList.remove("active");
   document.getElementById("nav-turnier").classList.add("active");
   document.getElementById("nav-tafel").classList.remove("active");
   document.getElementById("nav-login").classList.remove("active");
@@ -27,19 +26,20 @@ include("../templates/header.inc.php");
   <div class="container mt-4">
     <div class="row">
 
-      <?php
-      if (isset($_SESSION['userid']) && checkPermissions(PERMISSIONS::NONE)) {
-      ?>
-        <div class="col-sm m-1">
-          <div class="h-100 bg-light p-2">
-            <a class="btn btn-success w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
-            <h5 class="h-25 m-2">Anmeldeliste</h5>
-            <p class="h-25 pl-2">Wer eigentlich mitspielt</p>
-          </div>
+      <div class="col-sm m-1">
+        <div class="h-100 bg-light p-2">
+          <a class="btn btn-success w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
+          <h5 class="h-25 m-2">Anmeldeliste</h5>
+          <p class="h-25 pl-2">Wer eigentlich mitspielt</p>
         </div>
-      <?php
-      }
-      ?>
+      </div>
+      <div class="col-sm m-1">
+        <div class="h-100 bg-light p-2">
+          <a class="btn btn-success w-100" href="bereitsAngemeldetB.php">Liste der Spieler (B-Runde)</a>
+          <h5 class="h-25 m-2">Anmeldeliste</h5>
+          <p class="h-25 pl-2">Wer in der B-Runde dabei ist</p>
+        </div>
+      </div>
       <div class="col-sm m-1">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="infoAblauf.php">Ablauf</a>
@@ -67,11 +67,17 @@ include("../templates/header.inc.php");
       </div>
       <?php
       // Turnierverantwortliche erhalten mehr Buttons
-      if (isset($_SESSION['userid']) && checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS)) {
+      if (isset($_SESSION['userid']) && checkPermissions(T_ALL_PERMISSIONS)) {
       ?>
         <div class="col-sm m-1">
           <div class="h-100 bg-light p-2">
             <a class="btn btn-danger w-100" href="bereitsAngemeldetEdit.php">Spieler bearbeiten</a>
+            <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
+          </div>
+        </div>
+        <div class="col-sm m-1">
+          <div class="h-100 bg-light p-2">
+            <a class="btn btn-danger w-100" href="bereitsAngemeldetBEdit.php">Spieler bearbeiten (B-Runde)</a>
             <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
           </div>
         </div>
@@ -87,8 +93,8 @@ include("../templates/header.inc.php");
 
     <?php
 
-    $showFormular = 0;
-    $tid = $CONFIG['activeTournament'];
+    $showFormular = 1;
+    $tid = $CONFIG['activeTournamentB'];
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
 
@@ -181,7 +187,10 @@ EOT;
 
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Turnier-Anmeldung:</p>
+      <br>
+      <p class="h3 mt-4">Deine Turnier-Anmeldung für die B-Runde:</p>
+      <p class="text-groesser">Wenn du in deinem ersten Match des Clubturniers ausgeschieden bist, kannst du dich hier für die B-Runde registrieren. Die Teilnahme ist freiwillig.</p>
+      <br>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -197,7 +206,7 @@ EOT;
 
 
         <div class="form-group alert-danger  border border-danger px-3">
-          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2020 vom 13.5. - 19.9.2020 mit:&nbsp;</strong></span>
+          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2020 in der B-Runde mit:&nbsp;</strong></span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenJA" value="1" <?= ($willSpielen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willSpielenJA">Ja</label>
@@ -233,7 +242,7 @@ EOT;
 
   <h2>Disclaimer</h2>
 
-  <p><strong>Die TCO-Website, der interne Bereich und die Platzbuchung werden ständig aktualisiert und verbessert. 
+  <p>Die TCO-Website, der interne Bereich und die Platzbuchung werden ständig aktualisiert und verbessert. 
     Wenn du Fehler findest oder Verbesserungsvorschläge hast, bitte ich um eine Email an
     <a href="mailto:webmaster@tcolching.de">webmaster@tcolching.de</a>.</p>
   <p>Auch wenn es Probleme irgendwelcher Art gibt, bitte ich um Benachrichtigung. Bitte nicht einfach wegducken,

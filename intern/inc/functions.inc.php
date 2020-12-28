@@ -159,7 +159,12 @@ function TECHO($level, $msg)
 
 function getFilename($fullpath) {
 
-  $a = explode('\\', $fullpath);
+  $delim = '/';
+  if (strpos($fullpath, '\\') !== false) {
+    $delim = '\\';
+  }
+
+  $a = explode($delim, $fullpath);
   $a = array_pop($a);
   $f = explode('.', $a);
 

@@ -48,21 +48,15 @@ include 'header.php';
             echo "<p>Die Vereinsgaststätte ist <span class=\"$wirtStatusClass px-1\"> $wirtStatusText </span></a></p>";
           } ?>
 
-            <ul class="schlaeger">
-            <li><strong>Wichtige neue Informationen (10.06.2020)!</strong> <p>Hygieneregeln, Drop-In, Bälle, Gastgebühr! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
-          </ul>
           <ul class="schlaeger">
+            <li><strong>Clubturnier</strong> <p>B-Rundenauslosung ist online!<a href="/intern/turnier/turnierbaum.php"><br>Zum Tableau</a></p></li>
+            <li><strong>Aktuelle Infos TCO (23.06.2020)!</strong> <p>Duschen, Zuschauen, Punktspiele, Gastro! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
             <li><strong>Tennis zum Ausprobieren!</strong> <p>Schnuppermitgliedschaft ist eine günstige Möglichkeit! <a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p></li>
-          </ul>
-          <ul class="schlaeger">
-            <li>
-              <strong>Corona-Regeln!</strong>
-              <ul style="font-size: 0.7rem">
-                <li><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a></li>
-                <li><a href="https://www.btv.de/dam/jcr:0be26c7f-e989-4517-ac5c-9040b5428cd7/Hygiene-%20und%20Verhaltensregeln%20des%20BTV%20f%C3%BCr%20Spieler%20Plakat.pdf" target="_blank">Hygiene- und
-  Verhaltensregeln</a></li>
-              </ul>
-            </li>
+            <li><strong>Corona-Regeln!</strong>
+                <p><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a></p>
+                <p><a href="https://www.btv.de/dam/jcr:0be26c7f-e989-4517-ac5c-9040b5428cd7/Hygiene-%20und%20Verhaltensregeln%20des%20BTV%20f%C3%BCr%20Spieler%20Plakat.pdf" target="_blank">Hygiene- und
+  Verhaltensregeln</a></p>
+            </li> 
           </ul>
         </article>
 				<article>
@@ -107,45 +101,35 @@ include 'header.php';
 				<article class="p-3 bg-light">    
           <h3>Liebe Tennisfreunde,</h3>
           
-<p>heute melden wir uns wieder mit ein paar Neuigkeiten und Nachrichten.</p>
-  <br>
-<p class="h5"><strong>Kontaktpersonenermittlung bei nachträglich identifiziertem Covid-19-Fall:</strong></p>
-  <br>
-<p>Hier müssen wir in folgende Bereiche unterscheiden:</p>
-<p class="h5"><u>Gastronomie:</u></p>
-<p>Bitte in den am Tisch liegenden Listen eintragen. Bei Mitgliedern reicht der Name. Nichtmitglieder/Gäste müssen sich mit Namen und Telefonnummer eintragen.</p>
-<p class="h5"><u>Training/Privates Tennis:</u></p>
-<p>Dokumentiert über das Online-Buchungsportal. Nochmals meine Bitte an die Mannschaftsführer die teilnehmenden Spieler einzupflegen. Mitglieder die mit Gästen spielen geben bitte den Namen des Gastes ein.</p>
-<p class="h5"><u>Punktspiele:</u></p>
-<p>Diese starten ab dem 20.06. Die Spieler sind dann über die BTV-Systeme dokumentiert (nach der Eingabe der Ergebnisse).</>
-<p class="h5"><u>NEU !!!  Wichtig !!! Tennisanlage:</u></p>
-<p>Ab sofort müssen wir auch alle Mitglieder und Nichtmitglieder dokumentieren die nicht Tennis spielen oder bei unserem Wirt essen, d.h. alle die nur die 
-  Anlage besuchen um z.B. beim Tennis zuzuschauen.
-Hier werden wir im Eingangsbereich Zettel hinterlegen. Dieser ist mit Name, Datum, Ankunftsuhrzeit und Telefonnummer auszufüllen und in den entsprechenden
- Behälter reinzuschmeißen. Wir müssen die Zettel 4 Wochen aufbewahren, danach werden sie entsorgt.
-Dies ist besonders bei den Punktspielen oder beim Training wichtig, wenn Eltern z.B. zum Zuschauen ihrer Kinder auf der Anlage sind.
-</p>
-<p class="h5"><u>Drop-In:</u></p>
-<p>Am 15.06. starten wir um 18 Uhr mit dem Drop-In. Natürlich unter den gegebenen Umständen. Michi wird euch da erklären wie wir das Umsetzen können. 
-  Die Dokumentation über die teilnehmenden Spieler wird von uns übernommen. Es ist ja Vorschrift das alle Tennisspieler eine Maske mitführen müssen 
-  und diese Aufsetzen müssen, wenn der Abstand von 1,5 Metern kurzfristig nicht eingehalten werden kann. Bitte daran denken.</p>
-<p class="h5"><u>Bälle:</u></p>
-<p>Ab sofort kann man beim Wirt oder einem Vorstandsmitglied Bälle kaufen. Eine Dose der BTV-Bälle kostet 12 Euro.</p>
-<p class="h5"><u>Gastgebühr:</u></p>
-<p>Prinzipiell sind die Mitglieder dafür verantwortlich das die Gastgebühr an den Verein entrichtet wird. Wir bitten euch daher die Gastgebühr innerhalb einer Woche an den Verein zu 
-  überweisen (bevorzugt) oder beim Wirt zu bezahlen. Sollte das Geld nicht innerhalb einer Woche gezahlt worden sein wird die Gastgebühr (plus Bearbeitungskosten ca. 5 Euro) vom Mitglied eingezogen.</p>
+<p>und wieder mal ein paar Neuigkeiten.</p>
 <br>
-<p>Wir wissen, es waren wieder viele Informationen. Zur Entspannung empfehlen wir eine Stunde Tennis und danach ein Bier beim Wirt</p>
+<p class="h5">  Sanitäre Einrichtungen</p>
+<p>Es freut uns euch mitteilen zu können, dass die Duschen und Umkleidekabinen ab dem 22.06. genutzt werden dürfen. Der Mindestabstand von 1,5 Metern ist aber zwingend einzuhalten. Vorgesehen sind maximal 4 Personen gleichzeitig pro Umkleidekabine.
+Unsere Bitte an alle. Lüftet die Duschen und Umkleidekabinen während des Aufenthalts, so kann sich die Luft besser austauschen. Auf dem Weg in die Umkleidekabine, in der Kabine und beim Verlassen ist die Mund-Nasen-Bedeckung zu tragen. Das gleiche gilt für die Toiletten.
+Ob ihr die Masken beim Duschen tragen wollt, überlassen wir euch.</p>
 <br>
-  sobald wir Infos haben.</p>
+<p class="h5">Fahrgemeinschaften zu Punktspielen</p>
+<p>Fahrgemeinschaften zu den Punktspielen sind erlaubt. Der BTV schreibt vor, dass hier auch die Mund-Nasen-Bedeckung zu tragen ist.</p>
+<br>
+<p class="h5">Anlagennutzung</p>
+<p>Die Anlage ist nur zum Spielen zu betreten, d.h. reines Zuschauen ist leider momentan nicht gestattet.</p>
+<p>Bei Jugendpunktspielen werden pro Mannschaft zwei Betreuer empfohlen und sind erlaubt.</p>
+<p>Ein Aufenthalt im gastronomischen Bereich ist natürlich möglich. Bitte, wie bisher, in Marcos ausliegende Listen am Tisch eintragen.</p>
+<p>Wir möchten nochmals darauf hinweisen, dass jede Person ab 6 Jahren auf der Anlage eine Maske mitführen muss. Sind die erforderlichen Abstände kurzfristig nicht einzuhalten, muss sie aufgesetzt werden. Gerade an Punktspieltagen mit vielen Mannschaften, wie letzten Sonntag, ist dies erforderlich.</p> 
+<br>
+<p class="h5">Gastronomie</p>
+<p>Seit dem 17.06. sind 10 Personen an einem Tisch ohne Abstände erlaubt.</p>
+<p>Im Innenbereich ist auf dem Weg zum/vom Tisch die Mund-Nasen-Bedeckung zu tragen. Generell wäre es ratsam bei schönem Wetter die Terrasse zu nutzen. Die Ansteckungsgefahr mit Covid-19 ist dadurch sehr viel geringer.</p>
+<br>
+<p>Als Anlage erhaltet ihr noch die neuesten Hygiene- und Verhaltensregeln des BTV mit der Bitte um Beachtung.</p>
+<br>
+<p>Wir möchten uns ganz herzlich bei euch für die bisherige Unterstützung und die Umsetzung und Einhaltung der Maßnahmen bedanken. Bisher haben wir noch keinen gemeldeten Covid-19 Fall. Wenn wir alle zusammenhalten sind wir uns sicher das dies auch so bleibt.</p>
 <br>
 <p>Bis bald</p>
 <p>Für den Vorstand</p>
 TC Olching<br>
 <strong>Heiko Tesche</strong><br>
 1.Vorsitzender</p>
-
-         
         </article>
 			</section>
 		</div>

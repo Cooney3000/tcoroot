@@ -17,6 +17,7 @@ if (isset($_COOKIE['identifier']))
 
   require_once("inc/config.inc.php");
   require_once("inc/functions.inc.php");
+  require_once("inc/permissioncheck.inc.php");
   
   // Jetzt noch in der DB löschen
   $pdo->query("DELETE FROM securitytokens WHERE identifier = '{$_COOKIE['identifier']}'");

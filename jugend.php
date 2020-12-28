@@ -32,6 +32,53 @@ include 'header.php';
 			</section>
 		</div>
 
+		<div id="blatt5">
+  			<section id="clubturnier" class="seite">
+				<h2>Jugendclubturnier 2020</h2>
+				<h3>Liebe Kinder und Jugendliche!</h3>
+
+<p>Leider hat uns Corona einen ordentlichen Strich durch die Rechnung gemacht und wir mussten die diesjährigen Jugendclubmeisterschaften Ende April absagen.</p>
+
+<p>Nachdem wir aber jetzt alle schon wieder voll im Trainingsbetrieb sind und die meisten von Euch auch bei den Punktspielen fleißig 
+  spielen, möchte ich dieses Jahr die Clubmeisterschaften in einer etwas anderen Form für Euch organisieren.</p>
+
+<p><strong>Wie soll der Ablauf sein?</strong></p>
+<p>Wir werden nicht alles geballt an nur einem Wochenende durchführen, sondern über einen Zeitraum von Ende Juli bis Ende September 2020.</p>
+
+<p><strong>Anmeldung?</strong></p>
+<p>Bitte meldet Euch über unsere Homepage unter dem Bereich „intern“ an.</p>
+
+<p><strong>Anmeldeschluss?</strong></p>
+<p>Montag, 20.07.2020
+
+<p><strong>Altersklassen?</strong></p>
+<p>Nachdem es ab nächstem Jahr eine neue Einteilung der Altersklassen seitens des BTV geben wird, passen wir uns dem an und bieten folgende Altersklassen an:</p>
+<ul>
+<li>Midcourt (7 – 10 Jahre)</li>
+<li>Bambini (11 – 12 Jahre)</li>
+<li>Mädchen U 15 (13 – 15 Jahre)</li>
+<li>Mädchen U 18 (16 – 18 Jahre)</li>
+<li>Knaben U 15 (13 – 15 Jahre)</li>
+<li>Knaben U 18 (16 – 18 Jahre)</li>
+</ul>
+
+<p>Bitte gebt bei der Anmeldung unbedingt an, in welcher Altersklasse Ihr spielen wollt und auch wann Ihr im Urlaub seid!
+Sollte aufgrund von zu wenigen Meldungen eine Konkurrenz nicht zustande kommen, werden wir die Altersklassen zusammenlegen!</p>
+
+<p><strong>Preise?</strong></p>
+<p>Für die Erstplatzierten wird es Medaillen geben und jeder Teilnehmer erhält einen kleinen Sachpreis.</p>
+
+<p>Für Rückfragen stehe ich Euch jederzeit gerne unter der Tel.: 08142/4482182 oder per E-Mail: jugendwart@tcolching.de zur Verfügung.</p>
+
+<p>Der Vorstand und die Jugendleitung freuen sich über eine rege Teilnahme, faire Spiele und viel Spaß!</p>
+
+<p>Viele Grüße</p>
+
+<p><strong>Petra Streif</strong></p>
+<p>(Jugendsportwart)</p>
+			</section>
+    </div>
+    
 		<div id="blatt1">
   			<section id="jugendwoche" class="seite">
 				<h2>Impressionen von der Jugendwoche 2019</h2>
@@ -42,7 +89,7 @@ include 'header.php';
     </div>
     
     <div id="blatt2">
-  		<section id="clubturnier" class="seite">
+  		<section id="clubturnier2019" class="seite">
         <h6>Pressemeldung vom 2.5.2019</h6>
         <h2>Erfolgreiche Jugendclubmeisterschaften 2019 des TC Olching e.V.</h2>
         <img alt="Siegerbild" class="w-100" src="images/jugendmeister2019.jpg" />

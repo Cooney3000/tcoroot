@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TC Olching <?= $title ?></title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <!-- Custom styles for this template -->
-    <link href="/intern/css/styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-  
-    <nav class="navbar navbar-expand-lg navbar-light">
-      
-      <div>
-        <a href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
-        <div class="klein">
-          <?= isset($user['vorname']) ? htmlentities(trim($user['vorname']).' '.trim($user['nachname'])) : "" ?>
-        </div>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>TC Olching <?= $title ?></title>
 
-      <button class="navbar-toggler bg-light border-secondary rounded" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="/intern/css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <?php
+  $username = isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : ""
+  ?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="mx-auto order-0">
+      <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
+    </div>
+      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse navbar-custom" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto" id="nav-menue">
+
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" id="nav-menue">
+        <?php if (isset($_SESSION['userid'])) { ?>
           <li class="nav-item" id="nav-intern">
             <a class="nav-link" href="/intern/internal.php">Events</a>
           </li>
@@ -42,32 +45,27 @@
           <li class="nav-item" id="nav-tafel">
             <a class="nav-link" href="/intern/tafel/" target="_blank">Platzbuchung</a>
           </li>
-          <li class="nav-item" id="nav-einstellungen">
-            <a class="nav-link" href="/intern/settings.php">Einstellungen</a>
-          </li>
-<?php
-      if (checkPermissions(PERMISSIONS::VORSTAND | PERMISSIONS::VORSTAND) ) 
-      {
-?>      
-          <li class="nav-item" id="nav-einstellungen">
-            <a class="nav-link" href="/intern/admin/index.php">Admin</a>
-          </li>
-<?php
-      }
-      if (isset($user['vorname'])) {
-?>
+          <?php if (checkPermissions(VORSTAND)) { ?>
+            <li class="nav-item" id="nav-admin">
+              <a class="nav-link" href="/intern/admin/index.php">Admin</a>
+            </li>
+          <?php
+          } ?>
           <li class="nav-item" id="nav-logout">
             <a class="nav-link" href="/intern/logout.php">Logout</a>
           </li>
-<?php
-      } else {
-?>
-          <li class="nav-item" id="nav-login">
-            <a class="nav-link" href="/intern/login.php">Login</a>
-          </li>
-<?php
-    }
-?>
-        </ul>
-      </div>         
-    </nav>
+          <?php } else { ?>
+            <li class="nav-item" id="nav-login">
+              <a class="nav-link" href="/intern/login.php">Login</a>
+            </li>
+            <?php
+        } ?>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav navbar-nav .float-xs-right klein text-center" id="nav-login">
+          <a href="/intern/settings.php"><img src="/intern/images/user.png" alt="<?= $username ?> Bild"><br><?= $username ?></a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </nav>

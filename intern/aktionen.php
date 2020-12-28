@@ -22,45 +22,22 @@ include("templates/header.inc.php");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
-  document.getElementById("nav-login").classList.remove("active");
-  document.getElementById("nav-logout").classList.remove("active");
+  if (document.getElementById("nav-login") !== null) document.getElementById("nav-login").classList.remove("active");
+  if (document.getElementById("nav-logout") !== null) document.getElementById("nav-logout").classList.remove("active");
 </script>
 <div class="container main-container">
 
-  <h1>Saisonvorbereitung: Tennis am Meer!</h1>
+  <h1>Wintertraining!</h1>
 
   <article class="m-3">
       
       <p class="h3">Liebe TCO‘ler</p>
       <br>
-      <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25" alt="Michael Görzen">
-      <p>ich freue mich, als neuer Trainer mit euch in die Saison 2020 starten zu dürfen!</p>
-      <br>
-      Ich möchte euch als Saisonvorbereitung <strong>eine Woche Tennis am Meer</strong> anbieten:</p>
-      <br>
-      <ul class="aufzaehlung">
-        <li>1 Woche Tennis am Meer in der Türkei</li>
-        <li>Zeitraum: 11.4. - 18.4.2020</li>
-        <li>Vorbereitungstraining auf die Saison 2020, auch Mannschaftstraining</li>
-        <li>mit Flug, Transfer zum Hotel, Hotel und all incl. Verpflegung </li>
-        <li>Abflughäfen: München, Nürnberg, Memmingen; eigene Anreise zum Flughafen</li>
-        <li>5 Tage Tennis</li>
-        <li>Tennistraining an 4 Tagen, 2 Mal täglich</li>
-        <li>1 Tag organisiertes Turnier</li>
-        <li>reservierte Tennis-Plätze für unsere Gruppe</li>
-        <li>Bälle und Material werden vom Trainer zur Verfügung gestellt</li>
-        <li>zusätzlich können weitere Sportangebote (wie z.B. Fitness) der Hotelanlage genutzt werden</li>
-      </ul>
-      <br>
-      <p>Preis pro Person Doppelzimmer 850,-€</p>
-      <p>Preis pro Person Einzelzimmer   980,-€</p>
-      <br>
-      <p>Es fallen keine weiteren Kosten an.</p>
-      <br>
-      <p>Mindestteilnehmerzahl: 8</p>
-      <br>
-      <p>Bitte meldet euch an per Email bis spätestens 22.3.2020 bei mir: <a href="mailto:michael070985@icloud.com">michael070985@icloud.com</a> oder hier mit diesem Formular:</p>
-      <p>Unten seht Ihr, wer sich schon über das Formular angemeldet hat.</p>
+      <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25 p-2" alt="Michael Görzen">
+      <p>für den Winter muss ich in Gernlinden die Halle frühzeitig reservieren. Daher möchte ich jetzt schon wissen, ob Ihr in 
+        Erwägung zieht, im Winter bei mir zu trainieren!</p>
+      <p>Bitte meldet euch hier mit diesem Formular an. Eine endgültige Zusage werde ich im Herbst abfragen.</p>
+      <p>Unten seht Ihr auch, wer sich schon über das Formular angemeldet hat.</p>
       
   </article>
 
@@ -69,7 +46,7 @@ include("templates/header.inc.php");
     <?php
 
     $showFormular = 1;
-    $cid = 1; // campaign-Id
+    $cid = 5; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -164,7 +141,7 @@ EOT;
 
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Turnier-Anmeldung:</p>
+      <p class="h3 mt-4">Deine Wintertraining-Anmeldung:</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -180,7 +157,7 @@ EOT;
 
 
         <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Ich fahre mit ans Meer von 11.4. - 18.4.2020:&nbsp;</span>
+          <span class="pr-3" for="inputZusage">Ich möchte im Winter trainieren:&nbsp;</span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willTeilnehmen" id="willTeilnehmenJA" value="1" <?= ($willTeilnehmen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willTeilnehmenJA">Ja</label>
@@ -192,7 +169,7 @@ EOT;
         </div>
 
         <div class="form-group">
-          <label for="kommentar">Bemerkungen (z. B. "Ich habe kein WhatsApp"):</label>
+          <label for="kommentar">Anzahl der Personen + Wunschanzahl der Stunden/Woche (z. B. 2 Kinder, je 1 Stunde)</label>
           <textarea class="form-control" name="kommentar" rows="3"><?= $kommentar ?></textarea>
         </div>
 

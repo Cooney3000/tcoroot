@@ -2,6 +2,7 @@
 session_start();
 require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
+require_once("inc/permissioncheck.inc.php");
 
 //Überprüfe, dass der User eingeloggt ist
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
@@ -14,7 +15,6 @@ include("templates/header.inc.php");
     // var element = document.getElementById("nav-intern");
     // element.classList.add("active");
     document.getElementById("nav-intern").classList.remove("active");
-    document.getElementById("nav-einstellungen").classList.add("active");
     document.getElementById("nav-turnier").classList.remove("active");
     document.getElementById("nav-halloffame").classList.remove("active");
     document.getElementById("nav-tafel").classList.remove("active");
@@ -88,7 +88,9 @@ $user = check_user();
 
 <div class="container main-container">
 
-<h1>Einstellungen</h1>
+<br>
+<p class="align-bottom"><img src="/intern/images/user.png" alt="<?= $username ?> Bild"><span class="align-middle lead pl-2"><?= $username ?></span></p>
+<p class="h1">Einstellungen</p>
 
 <?php 
 if(isset($success_msg) && !empty($success_msg)):
@@ -155,7 +157,7 @@ endif;
 
         <div class="form-group">
     			<div class="col-sm-10">
-            <label for="inputGeburtsdatum">Geburtsdatum (Jahresauswahl geht auch am Handy: Tippe das Jahr an, ist anscheinend etwas diffizil)</label>
+            <label for="inputGeburtsdatum">Geburtsdatum (Jahresauswahl geht auch am Handy: Tippe das Jahr an)</label>
             <input type="date" id="inputGeburtsdatum" name="geburtsdatum" class="form-control date" value="<?php echo htmlentities($user['geburtsdatum']); ?>" x-autocompletetype="bday" required/>
     			</div>
         </div>

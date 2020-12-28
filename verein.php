@@ -149,7 +149,7 @@ include 'header.php';
             </div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Petra Streif" src="images/vorstand/petra.jpg">
+						<img alt="Petra Streif" src="images/vorstand/petra_streif.png">
 						<div class="daten">Jugendsportwartin<br>Petra Streif<br>
 						<a href="mailto:jugendwart@tcolching.de">jugendwart@tcolching.de</a>
 						</div>

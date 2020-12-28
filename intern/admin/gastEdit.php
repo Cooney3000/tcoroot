@@ -17,7 +17,7 @@ $menuid = "nav-" . getFilename(__FILE__);
 
 <?php
 $delimiter = '#';
-if (checkPermissions(PERMISSIONS::VORSTAND | PERMISSIONS::VORSTAND) ) 
+if (checkPermissions(VORSTAND) ) 
 {
 ?>
 
@@ -33,33 +33,33 @@ if (checkPermissions(PERMISSIONS::VORSTAND | PERMISSIONS::VORSTAND) )
   <table class="table table-light tbl-small">
     <tr>
       <th>Bezahlt<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=paid&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=paid&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=paid&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=paid&dir=desc"></a>
       </th>
       <th>Von<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=starts_at&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=ends_at&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=starts_at&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=ends_at&dir=desc"></a>
       </th>
       <th>Bis</th>
       <th>
         Spieler1<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=p1.nachname&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=p1.nachname&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=p1.nachname&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=p1.nachname&dir=desc"></a>
       </th>
       <th>
         Spieler2<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=p2.nachname&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=p2.nachname&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=p2.nachname&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=p2.nachname&dir=desc"></a>
       </th>
       <th>
         Spieler3<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=p3.nachname&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=p3.nachname&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=p3.nachname&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=p3.nachname&dir=desc"></a>
       </th>
       <th>
         Spieler4<br>
-        <a class="fas fa-angle-up fa-1x" href="gastEdit.php?o=p4.nachname&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="gastEdit.php?o=p4.nachname&dir=desc"></a>
+        <a class="fas fa-angle-up fa-1x" href="gastedit.php?o=p4.nachname&dir=asc"></a>&nbsp;&nbsp;
+        <a class="fas fa-angle-down fa-1x" href="gastedit.php?o=p4.nachname&dir=desc"></a>
       </th>
       <th>Kommentar</th>
     </tr> 

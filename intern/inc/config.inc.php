@@ -37,8 +37,13 @@ $fehlerAction = 'Bitte benachrichtigen Sie conny.roloff@live.de';
 
 $CONFIG = array (
   'webmasterMailAddress' => 'webmaster@tcolching.de',
+  'trainerMailAddress' => 'michael070985@icloud.com',
+  'trainerVorname' => 'Michael',
+  'trainerNachname' => 'Görzen',
   'optinLinkDuration' => 72,
   'activeTournament' => 3,
+  'activeTournamentB' => 4,
+  'activeTournamentJ' => 5,
   'turniertyp' => "ts-turnier",
   'gastId' => 1,
   'mitgliedId' => 25,

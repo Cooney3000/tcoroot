@@ -21,8 +21,8 @@ include("templates/header.inc.php");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
-  if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
-  if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
+  if (document.getElementById("nav-login" ) != null) { document.getElementById("nav-login" ).classList.remove("active");}
+  if (document.getElementById("nav-logout" ) != null) { document.getElementById("nav-logout" ).classList.remove("active");}
 </script>
 <div class="container main-container">
   
@@ -34,50 +34,6 @@ include("templates/header.inc.php");
 <div class="container mt-4">
   <div class="row">
 
-<!-- Für den Wirt -->
-<?php
-
-  if (checkPermissions(PERMISSIONS::WIRT)) {
-    $file = "../work/wirt.txt";
-    $line = trim(file_get_contents($file));
-
-    $wirtStatus = substr($line,0,1);
-    $wirtAktivStatus = substr($line,1,1);
-
-    if (isset($_GET['SWT'])) {
-      $wirtStatus = abs($wirtStatus - 1);
-    } 
-    else if (isset($_GET['SWS'])) {
-      $wirtAktivStatus = abs($wirtAktivStatus - 1);
-    }
-
-    file_put_contents($file, $wirtStatus.$wirtAktivStatus);
-
-    $wirtStatusClass = ($wirtStatus) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
-    $wirtStatusText1 = ($wirtStatus) ? "geöffnet": "geschlossen";
-    $wirtStatusText2 = ($wirtStatus) ? "Schließen": "Öffnen";
-    $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
-    $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
-    $wirtAktivText2 = ($wirtAktivStatus) ? "Dektivieren": "Aktivieren";
-?>
-    <div class="col-sm mb-2">
-      <div class="bg-light p-2 h-100">
-        <span class="btn btn-danger w-100 mb-2">Vereinsgaststätte</span>
-          <p>
-            Anzeige auf der Startseite ist <strong><?= $wirtAktivText1 ?></strong>.<br> 
-            <a href="internal.php?SWS" style="text-decoration: none"><span class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></span></a>
-          </p>
-          <p>
-            Die Vereinsgaststätte ist <strong><?= $wirtStatusText1 ?></strong>.<br>
-            <a href="internal.php?SWT" style="text-decoration: none"><span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></span></a><br>
-          </p>
-      </div>
-    </div>
-<?php
-  }
-?>
-
-
     <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
         <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
@@ -88,19 +44,87 @@ include("templates/header.inc.php");
 
     <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
-        <a class="btn btn-success w-100 mb-2" href="turnier/index.php">Clubturnier 2020</a>
-        <h5>Das Turnier hat begonnen!</h5>
-        <p class="align-text-bottom">Zu den Details!</p>
+        <a class="btn btn-success w-100 mb-2" href="/intern/jugendturnier/index.php">Jugendturnier</a>
+        <img class="mw-100" src="/images/jugendmeister2019.jpg" alt="Jugendturnier">
+        <p class="align-text-bottom">Jetzt anmelden!</p>
       </div>
     </div>
 
     <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
-        <a class="btn btn-success w-100 mb-2" href="sommertraining.php">Jugend-Sommertraining 2020</a>
-        <!-- <h5>Zur Anmeldung</h5> -->
-        <p>Anmeldung abgeschlossen</p>
+        <a class="btn btn-success w-100 mb-2" href="/intern/sommercamp.php">Jugend-Sommercamp</a>
+        <img class="mw-100" src="/images/Kids/TCO-Jugendwoche19_Pic3_presse.jpg" alt="Sommercamp">
+        <p class="align-text-bottom">Jetzt anmelden!</p>
       </div>
     </div>
+
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="turnier/index.php">Clubturnier 2020</a>
+        <!-- <h5>Zum Turnier</h5> -->
+        <img class="mw-100" src="/images/intern/turnier.png" alt="Platzbuchung">
+        <!-- <p class="align-text-bottom">Bitte anmelden</p> -->
+      </div>
+    </div>
+
+    <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="/intern/wintertraining.php">Wintertraining</a>
+        <img class="mw-100" src="/images/trainer/gernlinden_halle.png" alt="Wintertraining">
+        <p class="align-text-bottom">Jetzt vorläufig anmelden!<br>Trainer Michael muss die Halle reservieren</p>
+      </div>
+    </div>
+
+    <!-- Für den Wirt -->
+<?php
+
+if ((checkPermissions(WIRT) && (! checkPermissions(VORSTAND))) || checkPermissions(ADMINISTRATOR)) {
+  $file = "../work/wirt.txt";
+  $line = trim(file_get_contents($file));
+
+  $wirtStatus = substr($line,0,1);
+  $wirtAktivStatus = substr($line,1,1);
+
+  if (isset($_GET['SWT'])) {
+    $wirtStatus = abs($wirtStatus - 1);
+  } 
+  else if (isset($_GET['SWS'])) {
+    $wirtAktivStatus = abs($wirtAktivStatus - 1);
+  }
+
+  file_put_contents($file, $wirtStatus.$wirtAktivStatus);
+
+  $wirtStatusClass = ($wirtStatus) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
+  $wirtStatusText1 = ($wirtStatus) ? "geöffnet": "geschlossen";
+  $wirtStatusText2 = ($wirtStatus) ? "Schließen": "Öffnen";
+  $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
+  $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
+  $wirtAktivText2 = ($wirtAktivStatus) ? "Dektivieren": "Aktivieren";
+?>
+  <div class="col-sm mb-2">
+    <div class="bg-light p-2 h-100">
+      <span class="btn btn-danger w-100 mb-2">Vereinsgaststätte</span>
+        <p>
+          Anzeige auf der Startseite ist <strong><?= $wirtAktivText1 ?></strong>.<br> 
+          <a href="internal.php?SWS" style="text-decoration: none"><span class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></span></a>
+        </p>
+        <p>
+          Die Vereinsgaststätte ist <strong><?= $wirtStatusText1 ?></strong>.<br>
+          <a href="internal.php?SWT" style="text-decoration: none"><span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></span></a><br>
+        </p>
+    </div>
+  </div>
+<?php
+}
+?>
+
+    <!-- <div class="col-sm mb-2">
+      <div class="bg-light p-2 h-100">
+        <a class="btn btn-success w-100 mb-2" href="sommertraining.php">Jugend-Sommertraining 2020</a>
+        <h5>Zur Anmeldung</h5>
+        <p>Anmeldung abgeschlossen</p>
+      </div>
+    </div> -->
     
     <!-- <div class="col-sm">
       <div class="h-100 bg-light p-2">
@@ -138,7 +162,7 @@ include("templates/header.inc.php");
 
 <br><br>
 <?php
-  if (checkPermissions(PERMISSIONS::VORSTAND) || checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS)) {
+  if (checkPermissions(VORSTAND) || checkPermissions(T_ALL_PERMISSIONS)) {
     //
     // Wurde einer der Buttons geklickt?
     //
@@ -181,7 +205,7 @@ include("templates/header.inc.php");
             <th>Geburtsdatum</th>
             <th>Registriert am</th>
             <?php
-              if (checkPermissions(PERMISSIONS::VORSTAND)) { ?>
+              if (checkPermissions(VORSTAND)) { ?>
                 <th>Aktionen</th><th></th>
             <?php } ?>
           </tr>
@@ -203,7 +227,7 @@ include("templates/header.inc.php");
               <td class="<?= $classname ?>"><?= substr($row['geburtsdatum'], 0, 10) ?></td>
               <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td>
               <?php
-              if (checkPermissions(PERMISSIONS::VORSTAND)) { ?>
+              if (checkPermissions(VORSTAND)) { ?>
                 <td>
                   <?php
                   if ($danger) { ?>

@@ -11,49 +11,41 @@ require_once("inc/permissioncheck.inc.php");
 $user = check_user();
 // error_log (join(" # ", $user));
 
-$title = "Intern - Sommer- und Herbsttraining";
+$title = "Intern - Aktionen";
 include("templates/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
   // element.classList.add("active");
   document.getElementById("nav-intern").classList.remove("active");
-  document.getElementById("nav-einstellungen").classList.remove("active");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
-  if (typeof(document.getElementById("nav-login").classList.remove("active"))) { document.getElementById("nav-login").classList.remove("active") }
-  if (typeof(document.getElementById("nav-logout").classList.remove("active"))) {document.getElementById("nav-logout").classList.remove("active")}
+  document.getElementById("nav-login").classList.remove("active");
+  document.getElementById("nav-logout").classList.remove("active");
 </script>
 <div class="container main-container">
 
+  <h1>Wintertraining!</h1>
 
-
-  <h1>Anmeldung zum Sommertraining 2020!</h1>
-  <h2>Anmeldung abgeschlossen. Bitte an <a href="training.php">Michael Görzen</a> wenden.</h2>
-  <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25" alt="Michael Görzen">
-
-<?php
-/*
-
-<p><strong>Ort:</strong></p><p class="mb-4">TC Olching e.V.</p> 
-  <p><strong>Zeitraum:</strong></p><p class="mb-4"> vom 04.05. – 2.10.2020 / Nicht in den Pfingst- und Sommerferien!</p> 
-  <p><strong>Leistung:</strong></p><p class="mb-4">14 Stunden</p>
-  <p><strong>Uhrzeit:</strong></p><p class="mb-4">Mo. - Fr. ab 14.00 bis 19.00 Uhr</p>                                                                                          
-  <p class="mb-4">Bei schlechtem Wetter wird das Sommertraining in die Tennishalle nach Gernlinden verlegt. Dabei fallen keine weiteren Kosten an!</p>
-  <p class="mb-4">Bei schlechtem Wetter wird das Herbsttraining um eine Woche nach hinten verschoben</p>
-  <p><strong>Gebühren pro Teilnehmer:</strong></p>
-  <p>4er Gruppe: 168,00 €</p>
-  <p>3er Gruppe: 215,00 €</p>
-  <p class="mb-4">2er Gruppe: 315,00 €</p> 
-  <p class="mb-4"><strong>Anmeldung bitte hier im Formular</strong></p>
+  <article class="m-3">
+      
+      <p class="h3 persoenlich text-gross">Liebe TCO‘ler</p>
+      <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25 p-2" alt="Michael Görzen">
+      <p>für den Winter muss ich in Gernlinden die Halle frühzeitig reservieren. Daher möchte ich jetzt schon wissen, ob Ihr in 
+        Erwägung zieht, im Winter bei mir zu trainieren!</p>
+      <p>Bitte meldet euch hier mit diesem Formular an. Eine endgültige Zusage werde ich im Herbst abfragen.</p>
+      <p>Unten seht Ihr auch, wer sich schon über das Formular angemeldet hat.</p>
+      <p class="persoenlich">Euer Michael</p><br>
+      
+  </article>
 
   <div class="registration-form">
 
     <?php
 
     $showFormular = 1;
-    $cid = 3; // campaign-Id
+    $cid = 5; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -74,9 +66,6 @@ include("templates/header.inc.php");
     $cuid         = "";
     $willTeilnehmen  = 0;
     $kommentar    = "";
-    $nameKind     = "";
-    $ausschluesse = "";
-    $anzahlTage   = "1";
 
     if ($registrieren) {
       // Die Formularwerte übernehmen
@@ -89,9 +78,6 @@ include("templates/header.inc.php");
       $cuid         = $user['id'];
       $willTeilnehmen  = $_POST["willTeilnehmen"] === "1" ? 1 : 0;
       $kommentar    = $_POST["kommentar"];
-      $nameKind     = $_POST["nameKind"];
-      $ausschluesse = $_POST["ausschluesse"];
-      $anzahlTage   = $_POST["anzahlTage"];
       // error_log("0000: $ctid    $cuid");
     } else {
       // Die Werte initial aus der DB lesen
@@ -104,20 +90,14 @@ include("templates/header.inc.php");
           ctid, 
           cuid, 
           wta, 
-          cmt,
-          nameKind,
-          ausschluesse,
-          anzahlTage
+          cmt
         FROM users as u 
         LEFT JOIN (
           SELECT 
             campaign_id AS ctid, 
             user_id AS cuid, 
             willing_to_attend AS wta, 
-            comment AS cmt,
-            info1 AS nameKind,
-            info2 AS ausschluesse,
-            info3 AS anzahlTage 
+            comment AS cmt 
           FROM campaign_users 
           WHERE campaign_id = $cid
           ) AS p
@@ -138,9 +118,6 @@ EOT;
       $cuid       = isset($result["cuid"]) ? $result["cuid"] : "";
       $willTeilnehmen = isset($result["wta"]) ? $result["wta"] : $willTeilnehmen;
       $kommentar  = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
-      $nameKind      = isset($result["nameKind"]) ?     $result["nameKind"] : $kommentar;
-      $ausschluesse  = isset($result["ausschluesse"]) ? $result["ausschluesse"] : $kommentar;
-      $anzahlTage    = isset($result["anzahlTage"]) ?   $result["anzahlTage"] : $kommentar;
 
       error_log("0003 (record): " . http_build_query($result));
     }
@@ -151,10 +128,9 @@ EOT;
       // error_log("0004: " . $sql);
       $pdo->query($sql);
       $sql = <<<EOT
-    INSERT INTO campaign_users (campaign_id, user_id, willing_to_attend, comment, info1, info2, info3) 
-      VALUES ($ctid, $cuid, $willTeilnehmen, "$kommentar", "$nameKind", "$ausschluesse", "$anzahlTage") 
+    INSERT INTO campaign_users (campaign_id, user_id, willing_to_attend, comment) VALUES ($ctid, $cuid, $willTeilnehmen, "$kommentar") 
       ON DUPLICATE KEY 
-    UPDATE willing_to_attend = $willTeilnehmen, comment = "$kommentar", info1 = "$nameKind", info2 = "$ausschluesse", info3 = "$anzahlTage"
+    UPDATE willing_to_attend = $willTeilnehmen, comment = "$kommentar"
 EOT;
       // error_log("0005: " . $sql);
       $statement = $pdo->query($sql);
@@ -164,7 +140,7 @@ EOT;
 
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Anmeldung für das Sommertraining:</p>
+      <p class="h3 mt-4">Deine Wintertraining-Anmeldung:</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -180,7 +156,7 @@ EOT;
 
 
         <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Mein Kind nimmt am Sommertraining teil:&nbsp;</span>
+          <span class="pr-3" for="inputZusage">Ich möchte im Winter trainieren:&nbsp;</span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willTeilnehmen" id="willTeilnehmenJA" value="1" <?= ($willTeilnehmen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willTeilnehmenJA">Ja</label>
@@ -192,22 +168,7 @@ EOT;
         </div>
 
         <div class="form-group">
-          <label for="nameKind">Name des Kindes:</label>
-          <input class="form-control" type="text" id="nameKind" name="nameKind" value="<?= $nameKind ?>">
-        </div>
-
-        <div class="form-group">
-          <label for="ausschluesse">Zeiten, an denen es nicht geht (z. B. "Mittwochnachmittag bis 16h"):</label>
-          <textarea class="form-control" name="ausschluesse" rows="4"><?= $ausschluesse ?></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="anzahlTage">An wie vielen Tagen ist Training gewünscht:</label>
-          <input class="form-control" type="text" id="anzahlTage" name="anzahlTage" value="<?= $anzahlTage ?>">
-        </div>
-
-        <div class="form-group">
-          <label for="kommentar">Sonstige Bemerkungen:</label>
+          <label for="kommentar">Anzahl der Personen + Wunschanzahl der Stunden/Woche (z. B. 2 Kinder, je 1 Stunde)</label>
           <textarea class="form-control" name="kommentar" rows="3"><?= $kommentar ?></textarea>
         </div>
 
@@ -216,11 +177,7 @@ EOT;
 
       <p class="h4">Bereits angemeldet:</p>
 <?php
-$sql = "
-  SELECT *, info1 AS nameKind, info2 AS ausschluesse, info3 AS anzahlTage 
-    FROM users u, campaign_users c 
-    WHERE u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid
-    ORDER BY u.nachname, u.vorname";
+$sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
 if($result) {
@@ -234,10 +191,7 @@ if($result) {
           <th>Teilnehmer/in</th>
           <th>Tel</th>
           <th>Ist dabei</th>
-          <th>Kind</th>
-          <th>Ausschlüsse</th>
-          <th>Anzahl Tage</th>
-          <th>Kommentar</th>
+          <th>Komm.</th>
         </tr>
       </thead>
 <?php
@@ -249,9 +203,6 @@ if($result) {
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
           <td><?=$row['mobil']?></td>
           <td class="text-center"><?=$row['willing_to_attend']===NULL?'---':$row['willing_to_attend']==='1'?'J':'N'?></td>
-          <td><?=$row['nameKind']?></td>
-          <td><?=str_replace("\r\n","<br>",$row['ausschluesse'])?></td>
-          <td><?=$row['anzahlTage']?></td>
           <td><?=$row['comment']?></td>
         </tr>
 <?php
@@ -267,12 +218,9 @@ if($result) {
 ?>
 
 
-*/
-?>
   </div>
 
 </div>
-
 
 <?php
 include("templates/footer.inc.php")

@@ -68,7 +68,7 @@ if($result) {
             <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=1&dir=asc"></a>&nbsp;&nbsp;
             <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=1&dir=desc"></a>
           </th>
-          <th>Angem. am<br>
+          <th>Telefon<br>
           </th>
           <th>Komm.</th>
         </tr>

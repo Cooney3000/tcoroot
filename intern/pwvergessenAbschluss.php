@@ -12,8 +12,8 @@ include("templates/header.inc.php")
     document.getElementById("nav-turnier").classList.remove("active");
     document.getElementById("nav-halloffame").classList.remove("active");
     document.getElementById("nav-tafel").classList.remove("active");
-    document.getElementById("nav-login").classList.remove("active");
-    document.getElementById("nav-logout").classList.remove("active");
+    if (document.getElementById("nav-login") !== null) document.getElementById("nav-login").classList.remove("active");
+    if (document.getElementById("nav-logout") !== null) document.getElementById("nav-logout").classList.remove("active");
 </script>
 
 <div class="container main-container">
@@ -72,19 +72,26 @@ if (isset($_GET['t']))
   if ($showFormular) {	
 
 ?>
+  <br>
+  <p class="h4">Gute Passwörter</p>
+  <p> sind wichtig, auch wenn Du vielleicht denkst, dass die TCO-Website keine große Relevanz hat. </p>
+  <p>Allerdings: Wenn dein Account gehackt wird, hat der Hacker immerhin 
+  schon Zugriff auf alle Mitgliedernamen und viele Email-Adressen sowie Telefonnummern und er weiß, wer wann mit wem Tennis spielt. 
+  Alle anderen Mitglieder werden es Dir danken, wenn du sie durch Anwendung eines guten Passworts davor bewahrst.</p>
 
-  <p class = "h4">Bitte gib dein Passwort zweimal ein</p>
-  <form action="?pwreset=1&t=<?= $token ?>" method="post" accept-charset="utf-8">
+  <p>Bitte gib dein Passwort zweimal ein. Das Passwort muss mindestens 10 und maximal 14 Zeichen lang sein. 
+  Es muss aus den Zeichen <mark> a-z A-Z 0-9 ! @ # $ % ^ & * _ = + - </mark> bestehen. Ein Großbuchstabe, 
+  ein Sonderzeichen und eine Ziffer müssen jeweils mindestens vorkommen</p>
 
-    <div class="form-group">
-    <label for="inputPasswort">Passwort:</label>
-    <input type="password" id="inputPasswort" name="passwort" class="form-control" x-autocompletetype="new-password" required>
-    </div> 
+  <div class="form-group">
+<label for="inputPasswort">Passwort:</label>
+<input type="password" id="inputPasswort" name="passwort" minlength="10" maxlength="14" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-.,]).{10,14}$" class="form-control" x-autocompletetype="new-password" required>
+</div> 
 
-    <div class="form-group">
-    <label for="inputPasswort2">Passwort wiederholen:</label>
-    <input type="password" id="inputPasswort2" name="passwort2" class="form-control" x-autocompletetype="new-password" required>
-    </div> 
+<div class="form-group">
+<label for="inputPasswort2">Passwort wiederholen:</label>
+<input type="password" id="inputPasswort2" name="passwort2" minlength="10" maxlength="14" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-.,]).{10,14}$" class="form-control" x-autocompletetype="new-password" required>
+</div> 
 
     <button type="submit" class="btn btn-lg btn-primary btn-block">Jetzt zurücksetzen</button>
   </form>

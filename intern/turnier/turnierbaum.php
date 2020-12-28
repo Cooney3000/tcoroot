@@ -33,7 +33,7 @@ include("../templates/header.inc.php");
 
 <h3>Die aktuellen Turnierbäume</h3>
 <?php
-  // if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS) ) {
+  // if (checkPermissions(T_ALL_PERMISSIONS) ) {
   if ($user['id'] == 211 || $user['id'] == 212 ) {
 ?>
     <div class="editor">
@@ -97,6 +97,16 @@ include("../templates/header.inc.php");
 <div>
   <h2>Damen</h2>
   <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png" class="w-100" alt="Damen Turnierbaum"></a>
+</div>
+
+<div>
+  <h2>Herren</h2>
+  <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png" class="w-75" alt="Herren B Turnierbaum"></a>
+</div>
+
+<div>
+  <h2>Damen</h2>
+  <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png" class="w-50" alt="Damen B Turnierbaum"></a>
 </div>
 
 <!--

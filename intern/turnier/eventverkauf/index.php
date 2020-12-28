@@ -9,7 +9,7 @@ $user = check_user();
 
 $title = "Ticketverkauf";
 include("../templates/header.inc.php");
-if (checkPermissions(PERMISSIONS::T_ALL_PERMISSIONS) ) 
+if (checkPermissions(T_ALL_PERMISSIONS) ) 
 {
 ?>
 

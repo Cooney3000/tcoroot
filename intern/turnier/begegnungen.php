@@ -48,6 +48,7 @@ if (isset($_GET["order"])) {
 $orderSQL = $order[$orderIndex];
 
 $turniertyp = $CONFIG["turniertyp"];
+$turnier = $CONFIG["activeTournament"];
 $sql = <<<EOT
 SELECT 
   b.starts_at AS Start,
@@ -60,12 +61,29 @@ LEFT JOIN users AS p1 ON b.player1 = p1.id
 LEFT JOIN users AS p2 ON b.player2 = p2.id
 LEFT JOIN tournament_players AS t1 ON (p1.id = t1.user_id)
 LEFT JOIN tournament_players AS t2 ON (p2.id = t2.user_id)
-WHERE b.booking_type = '$turniertyp' AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
+WHERE b.booking_type = '$turniertyp' AND t1.tournament_id = t2.tournament_id AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
 ORDER BY $orderSQL
 
 
 EOT;
-error_log("Begegnungen: ".$sql);
+
+
+$sql = <<<EOT
+SELECT 
+b.starts_at AS Start,
+' ' AS Kategorie ,
+CONCAT(p1.nachname, ' ', p1.vorname) AS Spieler_1,
+CONCAT(p2.nachname, ' ', p2.vorname) AS Spieler_2,
+b.comment AS comment
+FROM bookings AS b 
+JOIN users AS p1 ON b.player1 = p1.id
+JOIN users AS p2 ON b.player2 = p2.id
+WHERE b.booking_type = '$turniertyp' AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
+ORDER BY $orderSQL
+
+EOT;
+
+TLOG(DBG, $sql, __LINE__);
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
 if($result) {
@@ -77,7 +95,7 @@ if($result) {
         <tr>
           <th>#</th>
           <th>Start</th>
-          <th>Kat</th>
+          <!-- <th>Kat</th> -->
           <th>Spieler 1</th>
           <th>Spieler 2</th>
           <th>Kommentar</th>
@@ -97,8 +115,8 @@ if($result) {
 ?>
         <tr style="height:1.3rem">
           <td><?=$lfd++?></td>
-          <td><?= $strDate ?></td>
-          <td><?=$row['Kategorie']?></td>
+          <td class="text-nowrap"><?= $strDate ?></td>
+          <!-- <td><?=$row['Kategorie']?></td> -->
           <td><?=$row['Spieler_1']?></td>
           <td><?=$row['Spieler_2']?></td>
           <td><?=$row['comment']?></td>

@@ -17,6 +17,11 @@ if ( ! $user ) {
   echo ('{"records": [{"returncode":"user not logged in"}] }');
   exit;
 }
+if (!checkPermissions(VORSTAND)) {
+    TECHO(DBG, "Keine Berechtigung");
+    exit;
+}
+
 
 // Create connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);

@@ -14,7 +14,6 @@ p
 	margin:5px 0 10px 0;	
 	line-height:1.2em;
 }
-
 a
 {
 	color:#0b5e12;
@@ -52,7 +51,7 @@ SPAN.td
 
 strong
 {
-	font-weight:bold;
+	font-weight:0,600;
 }
 /* HEADER */
 header
@@ -60,7 +59,7 @@ header
 	position:relative;
 	overflow:hidden;
 	width:auto;
-	max-width:900px;
+	/* max-width:900px; */
 	margin:0 auto 0px auto;
 	padding:5px 0 5px 0;
 }
@@ -88,42 +87,38 @@ h3
 	font-weight:bold;
   margin: 1.2rem 0 1.2rem 0;
 }
+.navcurrent
+{
+	font-weight:bold;
+	text-decoration:underline;
+}
 nav
 {
+  display: block;
 	width:auto;
-	max-width:900px;
 	margin:0 auto 0px auto;
 	padding:5px 0 5px 0;
 }
-nav ul .smSection
-{
-	line-height: 1em;
-}
-nav li 
-{
-	padding: 0 10px 0 10px ;
-}
-th
-{
-	text-align: left;
-	color: white;
-	background-color: grey;
-}
-nav ul .smSection a
-{
-	text-transform: none;
-	font-size: 0.9em;
-}
 nav a
 {
-	text-decoration:none;
+  text-decoration:none;
 	text-transform:uppercase;
 	color:#222222;
 	transition:all .25s ease;
 }
 nav a:hover
 {
-	color:#c44014;
+  color:#c44014;
+} 
+.nav-link
+{
+  padding: 0;
+}
+th
+{
+  text-align: left;
+  color: white;
+  background-color: grey;
 }
 
 .betont tr:nth-child(even) {
@@ -138,18 +133,19 @@ nav a:hover
 	height: auto;
 	padding: 5px;
 }
-.nav {
-  display: block;
-}
-.navcurrent
-{
-	font-weight:bold;
-	text-decoration:underline;
-}
-.navbar-custom
-{
-  line-height: 1rem !important;
 
+.persoenlich
+{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.4rem;
+}
+.text-gross
+{
+  font-size: 2rem;
+}
+.text-groesser
+{
+  font-size: 1.2rem;
 }
 ul.aufzaehlung
 {
@@ -211,7 +207,7 @@ li.schlaeger
 }
 .klein
 {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height:0.9rem;
 }
 .editor
@@ -222,22 +218,22 @@ li.schlaeger
   background-color: #ffd4c5;
 }
 
-@media (min-width: 992px)
-{
-  .container {
-      max-width: 900px;
-  }
-  .tbl-small
+  @media (min-width: 992px)
   {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
+    /* .container {
+        max-width: 900px;
+    } */
+    .tbl-small
+    {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
 
-}
-.galleria
-{ 
-  width: 700px; height: 400px; background: #000 
-}
-.text-gefahr {
-  color: #9d0208;
-}
+  }
+  .galleria
+  { 
+    width: 700px; height: 400px; background: #000 
+  }
+  .text-gefahr {
+    color: #9d0208;
+  }

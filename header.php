@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Sans:700italic' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<script src="/js/vendor/modernizr.min.js"></script>
 		<script src="/js/vendor/respond.min.js"></script>
 
@@ -104,6 +104,6 @@
 			</div>
 			<div id="latest_news">
         <!-- Clubmeisterschaften! <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zur Platzbuchung!</a></span> -->
-        Mitglieder!<br><a href="https://www.tcolching.de/intern/turnier/">Clubturnier</a>
+        Trainer Michael<br><a href="https://www.tcolching.de/training.php">Auch im August verfügbar</a>
 			</div>
 		</section>

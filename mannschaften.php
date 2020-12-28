@@ -53,7 +53,818 @@ include 'header.php';
 				belegt i.&nbsp;d.&nbsp;R. immer mindestens 3 Plätze, 
 				eine 4er-Mannschaft mindestens 2. Hier sind die Spieltermine:</p>
 				<div class="border border-dark" id="nuLigaIframeBcontainer">
-				<iframe id="nuLigaIframeB" src="https://btv.liga.nu/cgi-bin/WebObjects/nuLigaTENDEBTV.woa/1/wa/b2sClubMeetings?searchTimeRange=1&amp;searchTimeRangeFrom=<?=date("d.m.Y",time())?>&amp;federation=BTV&amp;searchType=1&amp;searchMeetings=Suchen&amp;club=02262&amp;%24part=Vereine.content.clubDaten.clubInfoRouter&amp;searchTimeRangeTo=31.7.<?=date("Y",time())?>&amp;useHttps=true&amp;embedded=true" scrolling="yes"></iframe>
+				<!-- <iframe id="nuLigaIframeB" src="https://btv.liga.nu/cgi-bin/WebObjects/nuLigaTENDEBTV.woa/1/wa/b2sClubMeetings?searchTimeRange=1&amp;searchTimeRangeFrom=<?=date("d.m.Y",time())?>&amp;federation=BTV&amp;searchType=1&amp;searchMeetings=Suchen&amp;club=02262&amp;%24part=Vereine.content.clubDaten.clubInfoRouter&amp;searchTimeRangeTo=31.7.<?=date("Y",time())?>&amp;useHttps=true&amp;embedded=true" scrolling="yes"></iframe> -->
+<!-- ################################################################################################################################# -->
+
+
+
+
+
+
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  .spielplanP {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 8pt;
+    margin: 0pt;
+  }
+
+  .s1 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 8pt;
+  }
+
+  .s2 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 8pt;
+  }
+
+  table,
+  tbody {
+    vertical-align: top;
+    overflow: visible;
+  }
+</style>
+</head>
+
+<body>
+  <p class="spielplanP"  style="padding-top: 3pt;padding-bottom: 2pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">Termin Liga
+    Heimmannschaft Gastmannschaft</p>
+  <table style="border-collapse:collapse;margin-left:5.90286pt" cellspacing="0">
+    <tr style="height:34pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 20.06.2020 09:00B2</p>
+        <p class="spielplanP"  class="s1"
+          style="padding-left: 79pt;padding-right: 6pt;text-indent: -79pt;line-height: 11pt;text-align: right;">09:00
+          14:00 B1 BL</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Schwabhausen</p>
+        <p class="spielplanP"  class="s2" style="padding-top: 2pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">Mädchen 16 (4er)</p>
+        <p class="spielplanP"  class="s1" style="padding-top: 2pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Kreuzlinger Forst
+        </p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Junioren 18 (4er)</p>
+        <p class="spielplanP"  class="s1" style="padding-top: 2pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Schwabing</p>
+        <p class="spielplanP"  class="s2" style="padding-top: 2pt;padding-left: 2pt;text-indent: 0pt;text-align: left;">Damen 40</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 21.06.2020 09:00B2</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Mammendorf</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 14:00 15:00 KL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 30 (4er) (4er)</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SV Althegnenberg II TC</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">BL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 40 Midcourt</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Harlaching München TC</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">B1</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">U10 (4er)</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Eichenau</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Di. 23.06.2020 15:30 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Münchner Sportclub III</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Knaben 14 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Mi. 24.06.2020 18:00 B2</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Puchheim II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Fr. 26.06.2020 15:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Puchheim</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Bambini 12 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 27.06.2020 09:00B2</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Junioren 18 (4er)</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Eichenau II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 09:00 14:00B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Knaben 14 (4er) <span
+            class="s1">SV</span></p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SV Lohhof <b>Mädchen</b></p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Lochhausen TF</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">16 (4er) Herren 30</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">KL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Fürstenfeldbruck</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">(4er) (4er) <span class="s1">SV
+            Weichs</span></p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">BL</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 40</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  style="text-indent: 0pt;text-align: left;"><br /></p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 28.06.2020 09:00B3</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SV Lochhausen II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 14:00 14:00B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Amperpark Emmering II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 15:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Gernlinden</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Inning</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">BL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen 40</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TeG Blumenau-Großhadern</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">B1</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SC Eching</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Midcourt U10 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Fr. 03.07.2020 15:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Bambini 12 (4er)</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TV Altomünster</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 04.07.2020 09:00B2</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Grafrath</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Junioren 18 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 09:00 14:00B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Schwabhausen</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Knaben 14 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 14:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Mädchen 16 (4er)</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Ottobrunn</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">BL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Gauting <b>Herren</b></p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 40</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">50</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SV Kranzberg</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">BL</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SV Hohenfurch</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Damen 40</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 05.07.2020 09:00B3</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Schwabing</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 14:00 B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Türkenfeld</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+    </tr>
+    <tr style="height:17pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">KL</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 30 (4er) (4er)</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">FC Seestall</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Di. 07.07.2020 16:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 50</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Mammendorf</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Fr. 10.07.2020 15:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">ASV Dachau</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Bambini 12 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 11.07.2020 09:00 B1</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SpVgg Zolling</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Knaben 14 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 KL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 30 (4er) (4er)</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TSV Finning</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 50</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Scheyern</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B2</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Schondorf</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 12.07.2020 09:00 B1</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Bambini 12 (4er)</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Gernlinden</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B3</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Karlsfeld am See</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Eichenau</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 BL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TCE Gröbenzell</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 40</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  style="text-indent: 0pt;text-align: left;"><br /></p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Spielort: 1. SC Gröbenzell</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  style="text-indent: 0pt;text-align: left;"><br /></p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">15:00 B1</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TCE Gröbenzell</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Midcourt U10 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Fr. 17.07.2020 15:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TCE Gröbenzell</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Bambini 12 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 18.07.2020 09:00 B2</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Junioren 18 (4er)</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Gernlinden</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Knaben 14 (4er)</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SC Eching</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Puchheim</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Mädchen 16 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 KL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SV Kottgeisering</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 30 (4er) (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 BL</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SC Weßling</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 40</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 19.07.2020 09:00 B3</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Puchheim II</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">SG Oberzeitlbach</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 BL</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen 40</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Amperpark Emmering</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Utting</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">15:00 B1</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Midcourt U10 (4er)</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TG Germerswang</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td
+        style="width:96pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Mo. 20.07.2020 15:00 B1</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Türkenfeld</p>
+      </td>
+      <td
+        style="width:123pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Mädchen 16 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 25.07.2020 11:00 B1</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Allershausen</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B2</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TSV Schondorf</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Junioren 18 (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  style="text-indent: 0pt;text-align: left;"><br /></p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">» ursprünglich 11.07.2020 09:00</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  style="text-indent: 0pt;text-align: left;"><br /></p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 BL</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen 40</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TSV Schäftlarn</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 26.07.2020 09:00 B3</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">SV Esting</p>
+      </td>
+    </tr>
+    <tr style="height:13pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B2</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC TP Herrsching</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">Sa. 01.08.2020 14:00 KL</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TC Eching</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 30 (4er) (4er)</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B1</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">TV Nandlstadt</p>
+      </td>
+      <td style="width:123pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren 50</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">14:00 B2</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Herren 50 II</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TCE Gröbenzell II</p>
+      </td>
+    </tr>
+    <tr style="height:11pt">
+      <td style="width:96pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">So. 02.08.2020 09:00 B3</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">STK Garching IV</p>
+      </td>
+      <td style="width:123pt;border-top-style:solid;border-top-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">Herren</p>
+      </td>
+    </tr>
+    <tr style="height:12pt">
+      <td style="width:96pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-right: 6pt;text-indent: 0pt;text-align: right;">09:00 B2</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Damen</p>
+      </td>
+      <td style="width:123pt;border-bottom-style:solid;border-bottom-width:1pt">
+        <p class="spielplanP"  class="s1" style="padding-left: 2pt;text-indent: 0pt;text-align: left;">TC Rot-Weiß Eschenried III</p>
+      </td>
+    </tr>
+  </table>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ################################################################################################################################# -->
 				</div>
 			</section>
 		</div>

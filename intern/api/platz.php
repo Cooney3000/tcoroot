@@ -129,6 +129,10 @@ SELECT B.*,
   U2.geburtsdatum AS p2geb,
   U3.geburtsdatum AS p3geb,
   U4.geburtsdatum AS p4geb,
+  U1.schnupper AS schnupper1,
+  U2.schnupper AS schnupper2,
+  U3.schnupper AS schnupper3,
+  U4.schnupper AS schnupper4,
   B.player1 AS p1id,
   B.player2 AS p2id,
   B.player3 AS p3id,
@@ -152,32 +156,45 @@ function readaB()
   $de = $_GET["de"] . " 23:59:00";          // Ende-Datum des Belegungstags
   // error_log("Platz: $p, Tag: " . $d);
   // $p1 = $p2 = $p3 = $p4 = '(';
-  $p1 = "CONCAT(SUBSTRING(U1.vorname, 1, 1), '. ',";
-  $p2 = "CONCAT(SUBSTRING(U2.vorname, 1, 1), '. ',";
-  $p3 = "CONCAT(SUBSTRING(U3.vorname, 1, 1), '. ',";
-  $p4 = "CONCAT(SUBSTRING(U4.vorname, 1, 1), '. ',";
+  // $p1 = "CONCAT(SUBSTRING(U1.vorname, 1, 1), '. ',";
+  // $p2 = "CONCAT(SUBSTRING(U2.vorname, 1, 1), '. ',";
+  // $p3 = "CONCAT(SUBSTRING(U3.vorname, 1, 1), '. ',";
+  // $p4 = "CONCAT(SUBSTRING(U4.vorname, 1, 1), '. ',";
+
+  $p1 = "CONCAT(U1.vorname, ' ', ";
+  $p2 = "CONCAT(U2.vorname, ' ', ";
+  $p3 = "CONCAT(U3.vorname, ' ', ";
+  $p4 = "CONCAT(U4.vorname, ' ', ";
 
   $where = 'B.ta_id = 0 AND B.booking_state="A" AND B.starts_at > "'.$ds.'" AND B.ends_at < "'.$de.'" AND B.court = '.$p;
   $sql = <<<EOT
   
   SELECT B.*, 
-  {$p1}U1.nachname) as p1, 
-  {$p2}U2.nachname) AS p2, 
-  {$p3}U3.nachname) AS p3, 
-  {$p4}U4.nachname) AS p4,
-  U1.geburtsdatum AS p1geb,
-  U2.geburtsdatum AS p2geb,
-  U3.geburtsdatum AS p3geb,
-  U4.geburtsdatum AS p4geb,
-  B.player1 AS p1id,
-  B.player2 AS p2id,
-  B.player3 AS p3id,
-  B.player4 AS p4id
+    U1.nachname as p1nn, 
+    U2.nachname AS p2nn, 
+    U3.nachname AS p3nn, 
+    U4.nachname AS p4nn,
+    U1.vorname as p1vn, 
+    U2.vorname AS p2vn, 
+    U3.vorname AS p3vn, 
+    U4.vorname AS p4vn,
+    U1.schnupper AS schnupper1,
+    U2.schnupper AS schnupper2,
+    U3.schnupper AS schnupper3,
+    U4.schnupper AS schnupper4,
+    U1.geburtsdatum AS p1geb,
+    U2.geburtsdatum AS p2geb,
+    U3.geburtsdatum AS p3geb,
+    U4.geburtsdatum AS p4geb,
+    B.player1 AS p1id,
+    B.player2 AS p2id,
+    B.player3 AS p3id,
+    B.player4 AS p4id
   FROM bookings as B 
-  LEFT JOIN users as U1 ON B.player1=U1.id
-  LEFT JOIN users as U2 ON B.player2=U2.id
-  LEFT JOIN users as U3 ON B.player3=U3.id
-  LEFT JOIN users as U4 ON B.player4=U4.id
+    LEFT JOIN users as U1 ON B.player1=U1.id
+    LEFT JOIN users as U2 ON B.player2=U2.id
+    LEFT JOIN users as U3 ON B.player3=U3.id
+    LEFT JOIN users as U4 ON B.player4=U4.id
   WHERE $where
 EOT;
   return $sql;
@@ -223,7 +240,7 @@ INSERT INTO bookings
   ({$ta_id}, 'A', '{$dt}', '{$dt}', {$_GET['uid']}, {$_GET['p1']}, {$_GET['p2']}, {$_GET['p3']}, {$_GET['p4']}, {$_GET['c']}, '{$_GET['ds']}', '{$_GET['de']}', '{$_GET['t']}', '{$_GET['cmt']}', {$_GET['pr']})
 EOT;
 
-  //error_log($sql);
+  error_log($sql);
   if ($conn->query($sql) === TRUE) {
       $current_ta_id = $conn->insert_id;
       // error_log("Transaktions-Zeile ". $ta_id ." geschrieben");
