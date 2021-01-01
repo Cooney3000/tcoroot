@@ -33,6 +33,11 @@ function check_user() {
 //
 function check_user_silent() {
 	global $pdo;
+  
+  // Serverdatum für die Javascript-App, z. B. zum Überprüfen des aktuellen Tags (Benutzer stellen Ihr Handy-Datum um, um im Voraus buchen zu können)
+  //   Javascript-Zeit sind Millisekunden, daher * 1000
+  setcookie("servertime", time() * 1000, time() + (3600 * 24 * 365), "/intern/"); //Valid for 1 year
+  
   // Testumgebungs-Setting
   $localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
   
