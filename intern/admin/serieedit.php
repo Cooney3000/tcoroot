@@ -13,7 +13,7 @@ if (!checkPermissions(MANNSCHAFTSFUEHRER)) {
   die("Keine Berechtigung");
 }
 
-$title = "TCO Serie erfassen ";
+$title = "TCO Serie buchen";
 include("header.inc.php");
 $menuid = "nav-" . getFilename(__FILE__);
 ?>
@@ -22,138 +22,282 @@ $menuid = "nav-" . getFilename(__FILE__);
 </script>
 
 
-
-<div class="container main-container">
-  <h2 class="h1">Serienbuchung eingeben</h2>
-
-  <div class="container mt-4">
-    <div class="row">
-
-      <!-- <div class="col-sm">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="woandershin.php">Woanders</a>
-          <h5 class="h-25 m-2">Woandershin...</h5>
-          <p class="h-25 pl-2">Wer eigentlich ....</p>
-        </div>
-      </div> -->
-    </div>
-  </div> <!-- container -->
-
-  <br>
-
-  <div class="container mt-4">
-    <div class="row">
-
-<!- Buchungsliste -->
-
-  <table class="table table-bordered table-light tbl-small">
-    <tr>
-      <th>ID<br>
-        <a class="fas fa-angle-up fa-1x" href="permissionsedit2.php?o=uid&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="permissionsedit2.php?o=uid&dir=desc"></a>
-      </th>
-      <th>
-        Spielername<br>
-        <a class="fas fa-angle-up fa-1x" href="permissionsedit2.php?o=spielername&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="permissionsedit2.php?o=spielername&dir=desc"></a>
-      </th>
-      <th>Berechtigung<br>
-        <a class="fas fa-angle-up fa-1x" href="permissionsedit2.php?o=permname&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="permissionsedit2.php?o=permname&dir=desc"></a>
-      </th>
-    </tr> 
-
 <?php
 
-  $order = (isset($_GET['o'])) ? $_GET['o'] : 'u.id';
-  $direction = (isset($_GET['dir'])) ? $_GET['dir'] : 'asc';
+$showFormular = 1;
+
+$serieedit = isset($_GET["serieedit"]) ? 1 : 0;
+$userid = $user['id'];
+
+
+if ($serieedit) {
+  // if (true) {
+  // Die Formularwerte übernehmen
+  $wtag = [];
+  $platz = [];
+  $seriesid        = isset($_GET["seriesid"]) ?    $_GET["seriesid"] : '';
+  $datumVon        = isset($_GET["datumvon"]) ?    $_GET["datumvon"] : '';
+  $datumBis        = isset($_GET["datumbis"]) ?    $_GET["datumbis"] : '';
+  $zeitvon         = isset($_GET["zeitvon"]) ?     $_GET["zeitvon"] : '';
+  $zeitbis         = isset($_GET["zeitbis"]) ?     $_GET["zeitbis"] : '';
+  $spieler1        = isset($_GET["spieler1"]) ?    $_GET["spieler1"] : 0;
+  $spieler2        = isset($_GET["spieler2"]) ?    $_GET["spieler2"] : 0;
+  $spieler3        = isset($_GET["spieler3"]) ?    $_GET["spieler3"] : 0;
+  $spieler4        = isset($_GET["spieler4"]) ?    $_GET["spieler4"] : 0;
+  $wtag[0]         = isset($_GET["montag"]) ?      '0' : '';
+  $wtag[1]         = isset($_GET["dienstag"]) ?    '1' : '';
+  $wtag[2]         = isset($_GET["mittwoch"]) ?    '2' : '';
+  $wtag[3]         = isset($_GET["donnerstag"]) ?  '3' : '';
+  $wtag[4]         = isset($_GET["freitag"]) ?     '4' : '';
+  $wtag[5]         = isset($_GET["samstag"]) ?     '5' : '';
+  $wtag[6]         = isset($_GET["sonntag"]) ?     '6' : '';
+  $platz[0]        = isset($_GET["platz1"]) ?      $_GET["platz1"] : 0;
+  $platz[1]        = isset($_GET["platz2"]) ?      $_GET["platz2"] : 0;
+  $platz[2]        = isset($_GET["platz3"]) ?      $_GET["platz3"] : 0;
+  $platz[3]        = isset($_GET["platz4"]) ?      $_GET["platz4"] : 0;
+  $platz[4]        = isset($_GET["platz5"]) ?      $_GET["platz5"] : 0;
+  $platz[5]        = isset($_GET["platz6"]) ?      $_GET["platz6"] : 0;
+  $bookingType     = isset($_GET["bookingType"]) ? $_GET["bookingType"] : '';
+  $kommentar       = isset($_GET["kommentar"]) ?   $_GET["kommentar"] : '';
+
+
+
+  //   $sql = <<<EOT
+  // INSERT INTO campaign_users (campaign_id, user_id, willing_to_attend, comment, info1, info2, info3) 
+  //   VALUES ($ctid, $cuid, $willTeilnehmen, "$kommentar", "$nameKind", "$ausschluesse", "$anzahlTage") 
+  //   ON DUPLICATE KEY 
+  // UPDATE willing_to_attend = $willTeilnehmen, comment = "$kommentar", info1 = "$nameKind", info2 = "$ausschluesse", info3 = "$anzahlTage"
+  // EOT;
+  // error_log("0005: " . $sql);
+  // AKTIVIEREN: $statement = $pdo->query($sql);
 
   $sql = <<<EOT
-  SELECT
-    b.id AS id, 
-    b.starts_at AS Start,
-    b.ends_at AS End,
-    b.booking_type AS btype,
-    b.comment AS comment,
-    b.player1 AS sp1,
-    b.player2 AS sp2,
-    b.player1 AS sp3,
-    b.player2 AS sp4,
-    p1.vorname AS pv1,
-    p2.vorname AS pv2,
-    p3.vorname AS pv3,
-    p4.vorname AS pv4,
-    p1.nachname AS pn1,
-    p2.nachname AS pn2,
-    p3.nachname AS pn3,
-    p4.nachname AS pn4
-  FROM bookings AS b 
-  LEFT JOIN users AS p1 ON b.player1 = p1.id
-  LEFT JOIN users AS p2 ON b.player2 = p2.id
-  LEFT JOIN users AS p3 ON b.player3 = p3.id
-  LEFT JOIN users AS p4 ON b.player4 = p4.id
-  WHERE b.booking_state='A' AND (b.starts_at > '$start' AND b.ends_at > '$ende' AND ) <<<<<< ##################################
-    ORDER BY $order $direction
+INSERT INTO bookings (
+  `id`, `ta_id`, `booking_state`, `series_id`, 
+  `created_at`, `updated_at`, `user_id`, `updated_by`, 
+  `player1`, `player2`, `player3`, `player4`, 
+  `court`, `starts_at`, `ends_at`, `booking_type`, 
+  `comment`, `price`, `paid`) 
+VALUES 
 EOT;
 
+  // Über den Zeitraum iterieren
 
-// Ein Array füllen für die möglichen Berechtigungsstufen
+  $bookingEnd = new DateTime($datumBis);
 
-$sqlperm = "SELECT * FROM permissionnames";
-$perm_array = Array();
+  // Die Iteration muss am ersten Tag der Woche des Startdatums beginnen
 
-foreach ($pdo->query($sqlperm) as $row) {
-  $perm_array [$row['pattern']] = $row['value'];
-}
+  // TECHO(DEBUG, $datumVon.": ".date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
+  $ersterTagDerWoche = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
+// TECHO(DEBUG, date_diff($ersterTagDerWoche, $bookingEnd)->format('%R%a').'<br>');
 
+  $jetzt = date('Y-m-d H:m');
+  for ($bookingDay = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon))))); 
+       date_diff($bookingDay, $bookingEnd)->format('%R%a') >= 0; 
+       $bookingDay = date_modify($bookingDay, '+1 week')) {
+    // TECHO(DEBUG, $datumVon . ", " . date_format($bookingDay, 'Y-m-d') . ", $datumBis, " . date_diff($bookingDay, $bookingEnd)->format('%R%a') . "<br>");
 
-foreach ($pdo->query($sql) as $row) {
-?>
-    <tr>
-      <td><?= $row['uid'] ?></td> 
-      <td style="width: auto"><?= $row['spielername'] ?></td>
-<?php
-/*
-      <td><input class="rounded" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'category'          . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['category'] ?>"/></td>
-*/
-?>
-      <td> 
-        <select class="custom-select custom-select-sm" id="<?= $row['uid'] ?>" onchange="hasChanged(this)">
-          <option value="0">---</option>
-<?php
-    foreach(array_keys($perm_array) as $pattern) {
-        $selected = ($pattern == $row['perm']) ? ' selected' : '';
-        echo ("<option". $selected .' value="'. $pattern .'">'. $perm_array[$pattern] . "</option>\r\n");
-    }
-?>
-        </select>    
-      </td>
-</tr>
-<?php
-}
+    for ($wDays = 0; $wDays <= 6; $wDays++) {
+      
+      if ($wtag[$wDays] != '') {
+        
+        $modifiedDate = new DateTime(date_format($bookingDay, 'Y-m-d'));
+        $bDay = date_format(date_modify($modifiedDate, "+$wDays day"), 'Y-m-d');
 
-?>
-  </table>
-</div> <!-- container -->
-<?php
-  include("footer.inc.php");
-?>
-
-<!-- <script>
-function hasChanged(e) {
-  const uid = "uid=" + e.id;
-  const col = "&col=" + 'permissions';
-  const v = "&v=" + e.value;
-  const url = "/intern/api/permissionUpdate.php?" + uid + col + v;
-  fetch(url, {credentials: 'same-origin'})
-    .then(result => {
-      if (result.ok) {
-        location.reload(false);
-        return true;
-      } else {
-        throw new Error('Fehler beim Erzeugen/Updaten der Daten' + this.state.r.id);
+        for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
+          if ($platz[$pI] != '') {
+            $platzTmp = $pI + 1;
+            $sql .= <<<EOT
+(0,0,'A','$seriesid',
+'$jetzt','$jetzt',$userid,$userid,
+$spieler1,$spieler2,$spieler3,$spieler4,
+$platzTmp,'$bDay $zeitvon','$bDay $zeitbis','$bookingType',
+'$kommentar','0','0'),
+EOT;
+          }
+        }
       }
-    });
+    }
+  }
+  // Das letzte Komma entfernen
+  $sql = rtrim($sql, ',');
+  // TECHO(DEBUG, $sql);
+  $statement = $pdo->prepare($sql);
+  $result = $statement->execute();
 }
 
-</script> -->
+if ($showFormular) {
+?>
+
+
+
+  <div class="container main-container">
+    <h2 class="h1">Plätze - Serienbuchung eingeben</h2>
+
+    <form id="editSerieForm" class="formwidth" action="?serieedit=1" method="GET">
+      <input type="hidden" id="serieedit" name="serieedit" value="1">
+      <div class="form-group">
+        <label for="seriesid">Serien-ID: </label>
+        <input class="form-control" type="text" id="seriesid" name="seriesid" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="datumvon">Datum von: </label>
+        <input class="form-control" type="date" id="datumvon" name="datumvon" value="TT.MM.JJJJ">
+        <label for="datumbis">bis: </label>
+        <input class="form-control" type="date" id="datumbis" name="datumbis" value="TT.MM.JJJJ">
+      </div>
+
+      <div class="form-group">
+        <label for="zeitvon">Zeit von: </label>
+        <input class="form-control" type="text" id="zeitvon" name="zeitvon" value="00:00">
+        <label for="zeitbis">bis: </label>
+        <input class="form-control" type="text" id="zeitbis" name="zeitbis" value="00:00">
+      </div>
+
+      <div class="form-group">
+        <label for="spieler1">Spieler 1: </label>
+        <select id="spieler1" name="spieler1" class="form-control" value="0" required>
+          <?php
+          $optionsSpieler = "";
+          $sqlselect = "
+SELECT id, vorname, nachname FROM users
+  ORDER BY nachname, vorname";
+          $statement = $pdo->prepare($sqlselect);
+          $result = $statement->execute();
+          if ($result) {
+
+            while ($row = $statement->fetch()) {
+              $rid = $row['id'] == '24' ? '0' : $row['id'];
+              $optionsSpieler .= ('<option value="' . $rid . '">' . $row['nachname'] . " " . $row['vorname'] . '</option>');
+            }
+          }
+          echo ($optionsSpieler);
+          ?>
+        </select>
+        <select id="spieler2" name="spieler2" class="form-control" value="0" >
+          <?= $optionsSpieler ?>
+        </select>
+        <select id="spieler3" name="spieler3" class="form-control" value="0" >
+          <?= $optionsSpieler ?>
+        </select>
+        <select id="spieler4" name="spieler4" class="form-control" value="0" >
+          <?= $optionsSpieler ?>
+        </select>
+
+
+        <div class="form-group">
+          <label for="typ">Typ:</label>
+          <select id="bookingType" name="bookingType" class="form-controlcustom-select custom-select" required>
+            <option value="">- bitte auswählen -</option>
+            <option value="ts-einzel">Einzel</option>
+            <option value="ts-doppel">Doppel</option>
+            <option value="ts-turnier">Turnier</option>
+            <option value="ts-veranstaltung">Veranstaltung</option>
+            <option value="ts-training">Training</option>
+            <option value="ts-punktspiele">Punktspiele</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" name="montag" id="montag">
+            <label class="form-check-label" for="flexCheckChecked">
+              Montag
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="2" name="dienstag" id="dienstag">
+            <label class="form-check-label" for="flexCheckChecked">
+              Dienstag
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="3" name="mittwoch" id="mittwoch">
+            <label class="form-check-label" for="flexCheckChecked">
+              Mittwoch
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="4" name="donnerstag" id="donnerstag">
+            <label class="form-check-label" for="flexCheckChecked">
+              Donnerstag
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="5" name="freitag" id="freitag">
+            <label class="form-check-label" for="flexCheckChecked">
+              Freitag
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="6" name="samstag" id="samstag">
+            <label class="form-check-label" for="flexCheckChecked">
+              Samstag
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="7" name="sonntag" id="sonntag">
+            <label class="form-check-label" for="flexCheckDefault">
+              Sonntag
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz1" id="platz1">
+          <label class="form-check-label" for="flexCheckDefault">
+            Platz 1
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz2" id="platz2">
+          <label class="form-check-label" for="flexCheckChecked">
+            Platz 2
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz3" id="platz3">
+          <label class="form-check-label" for="flexCheckChecked">
+            Platz 3
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz4" id="platz4">
+          <label class="form-check-label" for="flexCheckChecked">
+            Platz 4
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz5" id="platz5">
+          <label class="form-check-label" for="flexCheckChecked">
+            Platz 5
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="platz6" id="platz6">
+          <label class="form-check-label" for="flexCheckChecked">
+            Platz 6
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="kommentar">Kommentarfeld-Text:</label>
+        <textarea class="form-control" name="kommentar" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-success btn-block">Absenden</button>
+    </form>
+
+  <?php
+
+} //Ende von if($showFormular)
+  ?>
+
+
+  <?php
+  include("footer.inc.php");
+  ?>

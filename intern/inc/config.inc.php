@@ -47,6 +47,7 @@ $CONFIG = array (
   'turniertyp' => "ts-turnier",
   'gastId' => 1,
   'mitgliedId' => 25,
-  'delimiter' => "§§§"
+  'delimiter' => "§§§",
+  'anzahlPlaetze' => 6
 );
 ?>

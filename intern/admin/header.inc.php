@@ -48,9 +48,15 @@
         <li class="nav-item" id="nav-gastedit">
           <a class="nav-link" href="/intern/admin/gastedit.php">Gastbuchungen</a>
         </li>
+<?php
+      if (checkPermissions(ADMINISTRATOR)) {
+?>
         <li class="nav-item" id="nav-serieedit">
-          <a class="nav-link" href="/intern/admin/gastedit.php">Serienbuchung eingeben</a>
+          <a class="nav-link" href="/intern/admin/serieedit.php">Serienbuchung eingeben</a>
         </li>
+        <?php
+      }
+        ?>
         <li class="nav-item" id="nav-permissionsedit">
           <a class="nav-link" href="/intern/admin/permissionsedit.php">Berechtigungen</a>
         </li>

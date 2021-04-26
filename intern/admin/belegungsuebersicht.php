@@ -31,7 +31,7 @@ if (checkPermissions(VORSTAND) )
   
   <?php
   // Spielerliste erzeugen
-  $filter = ' AND b.starts_at LIKE "2020%"';
+  $filter = ' AND b.starts_at LIKE "2021%"';
   ?>
   <table class="display" style="font-size: 0.9rem" id="tcolist">
   <!-- <table class="table table-light tbl-small" id="tcolist"> -->

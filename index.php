@@ -45,12 +45,14 @@ include 'header.php';
           <h6>Aktuelle Neuigkeiten</h6>
           
           <?php if ($wirtAktivStatus == '1') {
-            echo "<p>Die Vereinsgaststätte ist <span class=\"$wirtStatusClass px-1\"> $wirtStatusText </span></a></p>";
+            echo "<p>Die Vereinsgaststätte ist <span class=\"$wirtStatusClass px-1\"> $wirtStatusText </span></p>";
+          } else {
+            echo "<p>&nbsp;</p>";
           } ?>
 
           <ul class="schlaeger">
-            <li><strong>Clubturnier</strong> <p>B-Rundenauslosung ist online!<a href="/intern/turnier/turnierbaum.php"><br>Zum Tableau</a></p></li>
-            <li><strong>Aktuelle Infos TCO (23.06.2020)!</strong> <p>Duschen, Zuschauen, Punktspiele, Gastro! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li>
+            <!-- <li><strong>Clubturnier</strong> <p>B-Rundenauslosung ist online!<a href="/intern/turnier/turnierbaum.php"><br>Zum Tableau</a></p></li>
+            <li><strong>Aktuelle Infos TCO (23.06.2020)!</strong> <p>Duschen, Zuschauen, Punktspiele, Gastro! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li> -->
             <li><strong>Tennis zum Ausprobieren!</strong> <p>Schnuppermitgliedschaft ist eine günstige Möglichkeit! <a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p></li>
             <li><strong>Corona-Regeln!</strong>
                 <p><a href="https://www.btv.de/de/aktuelles/corona.html" target="_blank">Alle BTV Corona-News</a></p>

@@ -1,13 +1,13 @@
 {
   "main.css": "/intern/tafel/static/css/main.8d308894.chunk.css",
-  "main.js": "/intern/tafel/static/js/main.23a3a900.chunk.js",
-  "main.js.map": "/intern/tafel/static/js/main.23a3a900.chunk.js.map",
-  "static/js/1.98fc7dad.chunk.js": "/intern/tafel/static/js/1.98fc7dad.chunk.js",
-  "static/js/1.98fc7dad.chunk.js.map": "/intern/tafel/static/js/1.98fc7dad.chunk.js.map",
+  "main.js": "/intern/tafel/static/js/main.b67c9e23.chunk.js",
+  "main.js.map": "/intern/tafel/static/js/main.b67c9e23.chunk.js.map",
+  "static/js/1.2ec7a16d.chunk.js": "/intern/tafel/static/js/1.2ec7a16d.chunk.js",
+  "static/js/1.2ec7a16d.chunk.js.map": "/intern/tafel/static/js/1.2ec7a16d.chunk.js.map",
   "runtime~main.js": "/intern/tafel/static/js/runtime~main.ba5b68e9.js",
   "runtime~main.js.map": "/intern/tafel/static/js/runtime~main.ba5b68e9.js.map",
   "static/css/main.8d308894.chunk.css.map": "/intern/tafel/static/css/main.8d308894.chunk.css.map",
   "index.html": "/intern/tafel/index.html",
-  "precache-manifest.23bf16a07a944eb8dd53469c1ea5bd6b.js": "/intern/tafel/precache-manifest.23bf16a07a944eb8dd53469c1ea5bd6b.js",
+  "precache-manifest.5e75cb381162f053d43f69ad5a1471af.js": "/intern/tafel/precache-manifest.5e75cb381162f053d43f69ad5a1471af.js",
   "service-worker.js": "/intern/tafel/service-worker.js"
 }

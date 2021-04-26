@@ -74,7 +74,8 @@ if (isset($_GET['pwreset']))
     $from .= "Bcc: " . $CONFIG['webmasterMailAddress'] . "\r\n";
     $from .= "Reply-To: " . $CONFIG['webmasterMailAddress'] . "\r\n";
     $from .= "Content-Type: text/html; charset=utf-8\r\n";
-    $text = <<<EOT
+
+  $text = <<<EOT
 <p>Hallo $vorname $nachname,</p>
 
 <p>

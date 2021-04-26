@@ -17,7 +17,6 @@ include("templates/header.inc.php");
   // var element = document.getElementById("nav-intern");
   // element.classList.add("active");
   document.getElementById("nav-intern").classList.add("active");
-  document.getElementById("nav-einstellungen").classList.remove("active");
   document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
@@ -42,6 +41,8 @@ include("templates/header.inc.php");
       </div>
     </div>
 
+<?php
+/*
     <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
         <a class="btn btn-success w-100 mb-2" href="/intern/jugendturnier/index.php">Jugendturnier</a>
@@ -74,6 +75,9 @@ include("templates/header.inc.php");
         <p class="align-text-bottom">Jetzt vorläufig anmelden!<br>Trainer Michael muss die Halle reservieren</p>
       </div>
     </div>
+*/
+?>
+
 
     <!-- Für den Wirt -->
 <?php
