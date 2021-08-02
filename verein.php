@@ -49,10 +49,7 @@ include 'header.php';
 								<td>Schnuppermitglied</td><td class="geldbetrag">55,00 EUR</td><td class="mittig">--</td>
 							</tr>
 							<tr>
-								<td>Schnuppermitglied + Mannschaft</td><td class="geldbetrag">95,00 EUR</td><td class="mittig">--</td>
-							</tr>
-							<tr>
-								<td>Schnuppermitglied m. Comebacktraining</td><td class="geldbetrag">130,00 EUR</td><td class="mittig">--</td>
+								<td>Schnuppermitglied** + Mannschaft</td><td class="geldbetrag">95,00 EUR</td><td class="mittig">--</td>
 							</tr>
 						</tbody>
 					</table>
@@ -60,18 +57,21 @@ include 'header.php';
                 selbstständig und rechtzeitig bis spätestens  31. Dezember eines jeden Jahres dem Verein vorliegen.
                 Nachträglich vorgelegte Bescheinigungen werden nicht rückwirkend berücksichtigt!
           </p>
+					<p>** Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
+                Wird bis zu diesem Datum die reguläre Mitgliedschaft beantragt, kann bis zum Saisonende ohne Mehrkosten gespielt werden.
+          </p>
+					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
 		<div id="blatt2">
 			<section id="schnuppern" class="seite">
-				<h2>Schnuppermitgliedschaft - "Comeback"-Training</h2>
+				<h2>Schnuppermitgliedschaft</h2>
 				<article>
 					<p>
 						Der TC Olching bietet auch dieses Jahr wieder allen Interessierten eine 
 						Schnuppermitgliedschaft für 55 EUR,  Schnuppermitgliedschaft 
-						für Mannschaftsspieler für 95 EUR, sowie das sogenannte Comeback-Training 
-						(= Schnuppermitgliedschaft + 7 Gruppentrainerstunden) für 130 EUR an. 
+						für Mannschaftsspieler für 95 EUR an. 
 					</p>
 					<ul>
 						<li>Teilnahme am &#8222;Drop-In&#8220; (Mixed-Turnier zum Kennenlernen)
@@ -85,14 +85,18 @@ include 'header.php';
 						<li>Bei Teilnahme an Punktspielen erh&#246;ht sich der Beitrag
 						(Preis auf Anfrage)</li>
 					</ul>
+          <p>
+          Ein Training für Anfängergruppen vermitteln wir gerne. 
+          Bitte gehe auf Britta Göttling zu:  (08142) 12451, Mail <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>
+          </p>
 					<p>
-						<strong>Die Schnuppermitgliedschaft ist nur einmal möglich!</strong>
+						<strong>Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
+                Wird bis zu diesem Datum die reguläre Mitgliedschaft für das Folgejahr beantragt, kann bis zum Saisonende ohne Mehrkosten weitergespielt werden!</strong>
 					</p>
 					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag_2020.pdf">Aufnahmeantrag</a></strong>.</h3>
-
+					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
@@ -273,9 +277,9 @@ include 'header.php';
 				<h3>Satzung, Gastspielordnung, Platzordnung und mehr zum Download</h3>
 				<ul>
 					<li><a href="downloads/Satzung_TCO.pdf">Satzung</a></li>
-					<li><a href="downloads/Gastspielordnung_2019.pdf">Gastspielordnung</a></li>
-					<li><a href="downloads/Platzordnung.pdf">Platzordnung</a></li>
-					<li><a href="downloads/TCO-Aufnahmeantrag_2020.pdf">Aufnahmeantrag</a></li>
+					<li><a href="downloads/Gastspielordnung_2021.pdf">Gastspielordnung</a></li>
+					<li><a href="downloads/Platzordnung_2021.pdf">Platzordnung</a></li>
+					<li><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></li>
 				</ul>
 			</section>	
 		</div>

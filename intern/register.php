@@ -114,6 +114,7 @@ EOT;
       $from .= "Bcc: " . $CONFIG['webmasterMailAddress'] . "\r\n";
       $from .= "Reply-To: " . $CONFIG['webmasterMailAddress'] . "\r\n";
       $from .= "Content-Type: text/html; charset=utf-8\r\n";
+  
       $text = <<<EOT
 <p>Hallo $vorname $nachname,</p>
 
@@ -126,7 +127,7 @@ Danach kannst du dich mit deiner E-Mail-Adresse und deinem Passwort einloggen.
 <p>Viele Grüße</p>
 <p>Der TC Olching e.V.</p>
 EOT;
-      if (mail($empfaenger, $betreff, $text, $from)) {
+    if (mail($empfaenger, $betreff, $text, $from)) {
         echo '<div class="h5 my-2">Vielen Dank! Du wurdest erfolgreich registriert und erhältst in Kürze eine Mail. Dein Account wird aktiviert, sobald du auf den Link in der Mail klickst.</div>';
         $showFormular = false;
       } else {

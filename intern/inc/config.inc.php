@@ -41,12 +41,14 @@ $CONFIG = array (
   'trainerVorname' => 'Michael',
   'trainerNachname' => 'Görzen',
   'optinLinkDuration' => 72,
-  'activeTournament' => 3,
-  'activeTournamentB' => 4,
+  'activeTournament' => 6,
+  'activeTournamentB' => 7,
   'activeTournamentJ' => 5,
   'turniertyp' => "ts-turnier",
   'gastId' => 1,
+  'gastJugId' => 28,
   'mitgliedId' => 25,
+  'mitgliedJugId' => 29,
   'delimiter' => "§§§",
   'anzahlPlaetze' => 6
 );

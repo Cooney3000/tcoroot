@@ -85,7 +85,7 @@ Danach kannst dein neues Passwort eingeben.
 </p>
 <p>
 Wenn du KEIN Zurücksetzen des Passworts veranlasst hast, ignoriere diese Email. Dein altes Passwort ist nach wie vor gültig.
-
+</p>
 <p>Viele Grüße</p>
 <p>Der TC Olching e.V.</p>
 EOT;

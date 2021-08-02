@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
@@ -11,82 +11,55 @@ include("../templates/header.inc.php");
 $kw = "champ2019";
 ?>
 <script>
-    // var element = document.getElementById("nav-intern");
-    // element.classList.add("active");
-    document.getElementById("nav-intern").classList.remove("active");
-    document.getElementById("nav-einstellungen").classList.remove("active");
-    document.getElementById("nav-turnier").classList.add("active");
-    document.getElementById("nav-tafel").classList.remove("active");
-    document.getElementById("nav-login").classList.remove("active");
-    document.getElementById("nav-logout").classList.remove("active");
+  // var element = document.getElementById("nav-intern");
+  // element.classList.add("active");
+  document.getElementById("nav-intern").classList.remove("active");
+  document.getElementById("nav-einstellungen").classList.remove("active");
+  document.getElementById("nav-turnier").classList.add("active");
+  document.getElementById("nav-tafel").classList.remove("active");
+  document.getElementById("nav-login").classList.remove("active");
+  document.getElementById("nav-logout").classList.remove("active");
 </script>
 
 <div class="container main-container">
-<?php 
+  <?php
   require_once("turnierheader.inc.php");
-?>  
+  ?>
+  <h1>Turnierablauf</h1>
+  </p>
+  <h2>Termine</h2>
+  <p>Wegen des Corona-bedingten verspäteten Starts der Punktspielsaison kann das Turnier 2021 nicht in der gewohnten Form stattfinden. 
+  Wir haben daher beschlossen, das Turnier auf ein Wochenende zu konzentrieren:
+    
+    <div class="h3">Freitag, 10. September bis Sonntag, 12. September</div>
 
-<h1>Turnierablauf</h1>
+    Ausnahme: Bei mehr als 16 Teilnehmern in einer Kategorie wird die erste Runde im Zeitraum 01.08.-09.09.21 nach freier Zeiteinteilung gespielt.
+  </p>
+  <h2>Anmeldung / Auslosung</h2>
+  <p>
+    Die Anmeldung zum Clubturnier erfolgt über den internen Bereich. Anmeldezeitraum ist ab sofort bis 30. Juli. Sofern in einer 
+    Kategorie weniger als 16 Spieler/Spielerinnen gemeldet sind, kann bis 7. September noch nachgemeldet werden.
+    Die Auslosung ist abhängig von der Anzahl der bis 30.07.21 gemeldeten Teilnehmer:
+    Mehr als 16 Teilnehmer: Auslosung 31. Juli
+    Weniger als 16 Teilnehmer: Auslosung 8. September
+  </p>
+  <h2>Kategorien / Modus</h2>
+  <p>
+    Es wird eine Herren- und eine Damen-Kategorie geben. Gespielt wird im einfachen k.o.-System. Wer sein erstes Spiel verliert, spielt in der B-Runde weiter.
+  </p>
+  <h2>Konkrete Zeitplanung</h2>
+  <p>
+    Eine mögliche erste Runde bei mehr als 16 Teilnehmern findet mit freier Zeiteinteilung statt. Dazu vereinbart ihr bitte bis spätestens 3 Tage nach Auslosung mit eurem Partner einen Spieltermin und tragt ihn im Platzbuchungssystem ein.
+    Die Spiele ab dem Achtelfinale (Runde der letzten 16) finden ab Freitag, 10. September nachmittags statt. Bitte plant diesen Tag nach Möglichkeit als Spieltag mit ein. Es werden vermutlich nicht alle Achtelfinals am Freitag stattfinden können, die restlichen werden dann Samstag Vormittag gespielt. Das Viertelfinale ist für Samstag nachmittags vorgesehen, Halbfinale und Finale dann am Sonntag.
+    Die B-Runde findet am Samstag und Sonntag statt.
+  </p>
+  <h2>Sonstiges</h2>
+  <p>
+    Bälle bringt bitte jeder selbst mit. Grundsätzlich ist als Turnierball der für Punktspiele vorgesehene Dunlop-Ball btv 1.0 zu verwenden. Ihr könnt euch aber auch auf jeden anderen Ball einigen. Die Bälle sollten neu oder neuwertig sein, aber auch hier könnt ihr euch einfach absprechen.
+  </p>
+  LG Norbert
+</div>
 
-<h2>Kommunikation</h2>
-
-<p>Die Kommunikation läuft über eine separate WhatsApp-Gruppe je Kategorie, um die Flut der
- Nachrichten etwas einzudämmen. </p>
-
-<h2>Terminvereinbarung</h2>
-
-<p>Wenn eine Partie feststeht, dann vereinbart bitte schnell mit 
-  eurem Partner den Spieltermin und tragt ihn sofort ein, auch wenn das Spiel erst später stattfinden kann. <strong>Damit 
-    erleichtert Ihr uns die Turnierplanung enorm, weil 
-  wir dann sehen können, dass Ihr euch abgesprochen habt.</strong> 
- Bitte wendet euch bei der Terminvereinbarung direkt an den Spielpartner und nutzt dafür nicht 
- die WhatsApp-Gruppe. 
- 
- <p>Die <strong>Telefonnummer des Partners findet Ihr <a href="bereitsAngemeldet.php">hier</a></strong>.</p>
- 
- <p>Der Spieltermin muss im <strong><a href="../tafel/" target="_blank">Platzbuchungssystem</a></strong> als Spielart 
- "Turnier" mit einer Spieldauer von 2 Stunden eingetragen werden.</p>
-
- <p>Wenn Ihr das Spiel in der Platzbuchung eingetragen habt, erscheint es automatisch in der Liste der Begegnungen.</p>
-
-<p>Die Spiele sollten nach Möglichkeit an Freitagen, Feiertagen und Wochenenden stattfinden. 
-Auch während der Punktspielsaison sind an den Wochenenden fast immer Plätze verfügbar.  
-Soweit möglich, sollten die Spiele auf Platz 1 stattfinden.</p>
-
-<h2>Der Spieltag</h2>
-
-<p>Bitte seid pünktlich zur vereinbarten Zeit spielbereit. Die Erfahrung aus dem letzten Jahr zeigt, dass 
-immer wieder Interessierte zum Zuschauen vorbeikommen, bitte nutzt auch deshalb die grünen Ergebnistafeln. 
-Ihr findet sie im Vereinsheim.</p>
-
-<p><strong>Bälle</strong> bringt jeder selbst mit. Grundsätzlich ist als Turnierball der für Punktspiele und 
-Turniere vorgesehene Dunlop-Ball btv 1.0 zu verwenden. Ihr könnt euch aber auch auf jeden anderen 
-Ball einigen. Die Bälle sollten neu oder neuwertig sein, aber auch hierbei könnt Ihr euch einfach 
-absprechen.</p>
-
-<p>Gespielt wird nach den üblichen Regeln: 2 Gewinnsätze, die beiden ersten Sätze normal (bei 6:6 Tiebreak), 
-der 3. Satz als Matchtiebreak bis 10. </p>
-
-<h2>Spielergebnis eintragen</h2>
-
-<p>Das Spielergebnis tragt Ihr bitte im Kommentar in euren Spieltermin im Platzbuchungssystem ein. Dazu einfach auf dein 
-Spiel klicken/tippen und das Ergebnis in das Kommentarfeld eintragen.</p>
-
-<p>Die Spielergebnisse werden durch die Turnierleitung regelmäßig in den Online-Spielplan übertragen.</p>
-
-<h2>Nach dem Spiel ist vor dem Spiel</h2>
-
-<p>Bitte schaut nach jedem Spiel im Spielplan nach, wie es für euch weiter geht und nehmt wiederum 
-zeitnah Kontakt mit dem nächsten Spielpartner auf. </p>
-
-<h2>Finaltag – Siegerehrung</h2>
-
-<p>Die Finalspiele finden nach Möglichkeit am 25. September 2020 statt.
-<p>Die Sieger werden im Rahmen der Players & Friends–Night geehrt (2020, wenn Corona es zulässt, oder 2021). 
-
-
-LG Norbert
-
-<?php 
+<?php
 include("../templates/footer.inc.php")
 ?>

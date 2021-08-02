@@ -20,8 +20,8 @@ include("../templates/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2020</h1>
-  <h2 class="mt-0">(13.5. - 19.9.2020)</h2>
+  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2021</h1>
+  <h2 class="mt-0">(10.9. - 12.9.2021)</h2>
 
   <div class="container mt-4">
     <div class="row">
@@ -37,7 +37,7 @@ include("../templates/header.inc.php");
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="bereitsAngemeldetB.php">Liste der Spieler (B-Runde)</a>
           <h5 class="h-25 m-2">Anmeldeliste</h5>
-          <p class="h-25 pl-2">Wer in der B-Runde dabei ist</p>
+          <p class="h-25 pl-2">Wer in der B-Runde dabei ist (Auslosung nach der 1. Runde)</p>
         </div>
       </div>
       <div class="col-sm m-1">
@@ -94,7 +94,7 @@ include("../templates/header.inc.php");
     <?php
 
     $showFormular = 1;
-    $tid = $CONFIG['activeTournamentB'];
+    $tid = $CONFIG['activeTournament'];
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
 
@@ -113,7 +113,6 @@ include("../templates/header.inc.php");
     $ttid         = "";
     $tuid         = "";
     $willSpielen  = 0;
-    $lk           = "";
     $kommentar    = "";
 
     if ($registrieren) {
@@ -126,7 +125,6 @@ include("../templates/header.inc.php");
       $ttid         = $tid;
       $tuid         = $user;
       $willSpielen  = $_POST["willSpielen"] === "1" ? 1 : 0;
-      $lk           = $_POST["lk"];
       $kommentar    = $_POST["kommentar"];
     } else {
       // Die Werte initial aus der DB lesen
@@ -138,7 +136,6 @@ include("../templates/header.inc.php");
           u.mobil as mn, 
           ttid, 
           tuid, 
-          lk, 
           wtp, 
           cmt
         FROM users as u 
@@ -147,7 +144,6 @@ include("../templates/header.inc.php");
             tournament_id AS ttid, 
             user_id AS tuid, 
             willing_to_play AS wtp, 
-            lk, 
             comment AS cmt 
           FROM tournament_players 
           WHERE tournament_id = $tid
@@ -168,19 +164,17 @@ EOT;
       $ttid       = isset($result["ttid"]) ? $result["ttid"] : "";
       $tuid       = isset($result["tuid"]) ? $result["tuid"] : "";
       $willSpielen = isset($result["wtp"]) ? $result["wtp"] : $willSpielen;
-      $lk         = isset($result["lk"]) ? $result["lk"] : $lk;
       $kommentar  = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
 
-      // error_log("0003 (record): " . http_build_query($result));
     }
 
     if ($registrieren) {
       $statement = $pdo->prepare("UPDATE users SET festnetz = :festnetz, mobil = :mobil WHERE id = :user");
       $statement->execute(array('festnetz' => $festnetz, 'user' => $user['id'], 'mobil' => $mobil));
-      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, lk, comment) VALUES (:ttid, :tuid, :willSpielen, :lk, :kommentar) 
+      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, comment) VALUES (:ttid, :tuid, :willSpielen, :kommentar) 
         ON DUPLICATE KEY 
-        UPDATE willing_to_play = :willSpielen, lk = :lk, comment = :kommentar");
-      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'lk' => $lk, 'kommentar' => $kommentar));
+        UPDATE willing_to_play = :willSpielen, comment = :kommentar");
+      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'kommentar' => $kommentar));
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
 
@@ -188,8 +182,12 @@ EOT;
     if ($showFormular) {
     ?>
       <br>
-      <p class="h3 mt-4">Deine Turnier-Anmeldung für die B-Runde:</p>
-      <p class="text-groesser">Wenn du in deinem ersten Match des Clubturniers ausgeschieden bist, kannst du dich hier für die B-Runde registrieren. Die Teilnahme ist freiwillig.</p>
+      <p class="h3 mt-4">Deine Turnier-Anmeldung:</p>
+      <p class="text-groesser">Es gibt nur zwei Kategorien: Damen und Herren. Du wirst automatisch zugeordnet. 
+      Du glaubst, noch nicht gut genug für eine Turnierteilnahme zu sein? Wenn du ein oder zwei Jahre Spielpraxis
+       und schon im Training das eine oder andere Match gespielt hast, dann spiel mit. Ein Turnierspiel 
+       ist immer eine ganz neue Erfahrung und du lernst neue Leute kennen!
+       Solltest du in der ersten Runde verlieren, kannst du in der B-Runde mitspielen und hast so auf jeden Fall eine zweite Begegnung!</p>
       <br>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
@@ -205,8 +203,8 @@ EOT;
         </div>
 
 
-        <div class="form-group alert-danger  border border-danger px-3">
-          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2020 in der B-Runde mit:&nbsp;</strong></span>
+        <div class="form-control alert-danger border border-danger px-3">
+          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2021mit:&nbsp;</strong></span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenJA" value="1" <?= ($willSpielen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willSpielenJA">Ja</label>
@@ -215,20 +213,6 @@ EOT;
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenNEIN" value="0" <?= (!$willSpielen ? 'checked' : '') ?>>
             <label class="form-check-label" for="willSpielenNEIN">Nein</label>
           </div>
-        </div>
-
-        <div class="form-group">
-          <label for="inputLk">Meine LK:</label>
-          <select id="inputLk" name="lk" class="form-controlcustom-select custom-select-sm" required>
-            <option value="">- bitte auswählen -</option>
-            <option value="0">Freizeitspieler</option>
-            <?php
-            for ($i = 23; $i > 0; $i--) {
-              $sel = ("LK$i" === $lk) ? " selected" : "";
-              echo ("  <option$sel value=\"LK{$i}\">LK{$i}</option>");
-            }
-            ?>
-          </select>
         </div>
 
         <div class="form-group">

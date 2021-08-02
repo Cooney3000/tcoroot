@@ -6,7 +6,7 @@ require_once("../inc/permissioncheck.inc.php");
 
 $user = check_user();
 
-if (!checkPermissions(MANNSCHAFTSFUEHRER)) {
+if (!checkPermissions(T_ALL_PERMISSIONS)) {
   echo ("<html><body>");
   TECHO(DBG, "Für diese Seite besitzt du leider nicht die nötige Berechtigung", __LINE__);
   echo ("</body></html>");
@@ -26,7 +26,7 @@ $menuid = "nav-" . getFilename(__FILE__);
 
 $showFormular = 1;
 
-$serieedit = isset($_GET["serieedit"]) ? 1 : 0;
+$serieedit = isset($_POST["serieedit"]) ? 1 : 0;
 $userid = $user['id'];
 
 
@@ -35,41 +35,36 @@ if ($serieedit) {
   // Die Formularwerte übernehmen
   $wtag = [];
   $platz = [];
-  $seriesid        = isset($_GET["seriesid"]) ?    $_GET["seriesid"] : '';
-  $datumVon        = isset($_GET["datumvon"]) ?    $_GET["datumvon"] : '';
-  $datumBis        = isset($_GET["datumbis"]) ?    $_GET["datumbis"] : '';
-  $zeitvon         = isset($_GET["zeitvon"]) ?     $_GET["zeitvon"] : '';
-  $zeitbis         = isset($_GET["zeitbis"]) ?     $_GET["zeitbis"] : '';
-  $spieler1        = isset($_GET["spieler1"]) ?    $_GET["spieler1"] : 0;
-  $spieler2        = isset($_GET["spieler2"]) ?    $_GET["spieler2"] : 0;
-  $spieler3        = isset($_GET["spieler3"]) ?    $_GET["spieler3"] : 0;
-  $spieler4        = isset($_GET["spieler4"]) ?    $_GET["spieler4"] : 0;
-  $wtag[0]         = isset($_GET["montag"]) ?      '0' : '';
-  $wtag[1]         = isset($_GET["dienstag"]) ?    '1' : '';
-  $wtag[2]         = isset($_GET["mittwoch"]) ?    '2' : '';
-  $wtag[3]         = isset($_GET["donnerstag"]) ?  '3' : '';
-  $wtag[4]         = isset($_GET["freitag"]) ?     '4' : '';
-  $wtag[5]         = isset($_GET["samstag"]) ?     '5' : '';
-  $wtag[6]         = isset($_GET["sonntag"]) ?     '6' : '';
-  $platz[0]        = isset($_GET["platz1"]) ?      $_GET["platz1"] : 0;
-  $platz[1]        = isset($_GET["platz2"]) ?      $_GET["platz2"] : 0;
-  $platz[2]        = isset($_GET["platz3"]) ?      $_GET["platz3"] : 0;
-  $platz[3]        = isset($_GET["platz4"]) ?      $_GET["platz4"] : 0;
-  $platz[4]        = isset($_GET["platz5"]) ?      $_GET["platz5"] : 0;
-  $platz[5]        = isset($_GET["platz6"]) ?      $_GET["platz6"] : 0;
-  $bookingType     = isset($_GET["bookingType"]) ? $_GET["bookingType"] : '';
-  $kommentar       = isset($_GET["kommentar"]) ?   $_GET["kommentar"] : '';
+  $seriesid        = isset($_POST["seriesid"]) ?        $_POST["seriesid"] : '';
+  $spieler1        = isset($_POST["spieler1"]) ?        $_POST["spieler1"] : 0;
+  $spieler2        = isset($_POST["spieler2"]) ?        $_POST["spieler2"] : 0;
+  $spieler3        = isset($_POST["spieler3"]) ?        $_POST["spieler3"] : 0;
+  $spieler4        = isset($_POST["spieler4"]) ?        $_POST["spieler4"] : 0;
+  $zeitvon         = isset($_POST["zeitvon"]) ?         $_POST["zeitvon"] : '';
+  $zeitbis         = isset($_POST["zeitbis"]) ?         $_POST["zeitbis"] : '';
+  $platz[0]        = isset($_POST["platz1"]) ?          $_POST["platz1"] : 0;
+  $platz[1]        = isset($_POST["platz2"]) ?          $_POST["platz2"] : 0;
+  $platz[2]        = isset($_POST["platz3"]) ?          $_POST["platz3"] : 0;
+  $platz[3]        = isset($_POST["platz4"]) ?          $_POST["platz4"] : 0;
+  $platz[4]        = isset($_POST["platz5"]) ?          $_POST["platz5"] : 0;
+  $platz[5]        = isset($_POST["platz6"]) ?          $_POST["platz6"] : 0;
+  $bookingType     = isset($_POST["bookingType"]) ?     $_POST["bookingType"] : '';
+  $kommentar       = isset($_POST["kommentar"]) ?       $_POST["kommentar"] : '';
+  $zeitraum        = isset($_POST["zeitraum"]) ?        $_POST["zeitraum"] : '';
+  $datumVon        = isset($_POST["datumvon"]) ?        $_POST["datumvon"] : '';
+  $datumBis        = isset($_POST["datumbis"]) ?        $_POST["datumbis"] : '';
+  $wtag[0]         = isset($_POST["montag"]) ?          '0' : '';
+  $wtag[1]         = isset($_POST["dienstag"]) ?        '1' : '';
+  $wtag[2]         = isset($_POST["mittwoch"]) ?        '2' : '';
+  $wtag[3]         = isset($_POST["donnerstag"]) ?      '3' : '';
+  $wtag[4]         = isset($_POST["freitag"]) ?         '4' : '';
+  $wtag[5]         = isset($_POST["samstag"]) ?         '5' : '';
+  $wtag[6]         = isset($_POST["sonntag"]) ?         '6' : '';
+  $einzelDatum    = isset($_POST["einzeldatum"]) ?    $_POST["einzeldatum"] : '';
 
 
+  // TECHO(DEBUG, http_build_query($_POST), __LINE__);
 
-  //   $sql = <<<EOT
-  // INSERT INTO campaign_users (campaign_id, user_id, willing_to_attend, comment, info1, info2, info3) 
-  //   VALUES ($ctid, $cuid, $willTeilnehmen, "$kommentar", "$nameKind", "$ausschluesse", "$anzahlTage") 
-  //   ON DUPLICATE KEY 
-  // UPDATE willing_to_attend = $willTeilnehmen, comment = "$kommentar", info1 = "$nameKind", info2 = "$ausschluesse", info3 = "$anzahlTage"
-  // EOT;
-  // error_log("0005: " . $sql);
-  // AKTIVIEREN: $statement = $pdo->query($sql);
 
   $sql = <<<EOT
 INSERT INTO bookings (
@@ -80,79 +75,208 @@ INSERT INTO bookings (
   `comment`, `price`, `paid`) 
 VALUES 
 EOT;
-
-  // Über den Zeitraum iterieren
-
-  $bookingEnd = new DateTime($datumBis);
-
-  // Die Iteration muss am ersten Tag der Woche des Startdatums beginnen
-
-  // TECHO(DEBUG, $datumVon.": ".date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
-  $ersterTagDerWoche = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
-// TECHO(DEBUG, date_diff($ersterTagDerWoche, $bookingEnd)->format('%R%a').'<br>');
-
+  $bereitsBelegt = "";
   $jetzt = date('Y-m-d H:m');
-  for ($bookingDay = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon))))); 
-       date_diff($bookingDay, $bookingEnd)->format('%R%a') >= 0; 
-       $bookingDay = date_modify($bookingDay, '+1 week')) {
-    // TECHO(DEBUG, $datumVon . ", " . date_format($bookingDay, 'Y-m-d') . ", $datumBis, " . date_diff($bookingDay, $bookingEnd)->format('%R%a') . "<br>");
+  
+  //*****
+  // Zeitraum als INSERT-Zeilen erzeugen
+  //
 
-    for ($wDays = 0; $wDays <= 6; $wDays++) {
-      
-      if ($wtag[$wDays] != '') {
-        
-        $modifiedDate = new DateTime(date_format($bookingDay, 'Y-m-d'));
-        $bDay = date_format(date_modify($modifiedDate, "+$wDays day"), 'Y-m-d');
+  if ($datumVon != "") {
+    // Über den Zeitraum iterieren
 
-        for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
-          if ($platz[$pI] != '') {
-            $platzTmp = $pI + 1;
-            $sql .= <<<EOT
-(0,0,'A','$seriesid',
-'$jetzt','$jetzt',$userid,$userid,
-$spieler1,$spieler2,$spieler3,$spieler4,
-$platzTmp,'$bDay $zeitvon','$bDay $zeitbis','$bookingType',
-'$kommentar','0','0'),
+    $bookingEnd = new DateTime($datumBis);
+
+    // Die Iteration muss am ersten Tag der Woche des Startdatums beginnen
+
+    // TECHO(DEBUG, $datumVon.": ".date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
+    $ersterTagDerWoche = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
+    // TECHO(DEBUG, date_diff($ersterTagDerWoche, $bookingEnd)->format('%R%a').'<br>');
+
+    $atLeastOne = false;
+    for (
+      $bookingDay = new DateTime(date('Y-m-d', strtotime(date('o-\WW', strtotime($datumVon)))));
+      date_diff($bookingDay, $bookingEnd)->format('%R%a') >= 0;
+      $bookingDay = date_modify($bookingDay, '+1 week')
+    ) {
+      // TECHO(DEBUG, $datumVon . ", " . date_format($bookingDay, 'Y-m-d') . ", $datumBis, " . date_diff($bookingDay, $bookingEnd)->format('%R%a') . "<br>");
+
+      for ($wDays = 0; $wDays <= 6; $wDays++) {
+
+        if ($wtag[$wDays] != '') {
+
+          $modifiedDate = new DateTime(date_format($bookingDay, 'Y-m-d'));
+          $bDay = date_format(date_modify($modifiedDate, "+$wDays day"), 'Y-m-d');
+
+          for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
+            if ($platz[$pI] != '') {
+              $platzTmp = $pI + 1;
+
+              $zeile = <<<EOT
+(0,0,'A','$seriesid', '$jetzt','$jetzt',$userid,$userid, $spieler1,$spieler2,$spieler3,$spieler4, $platzTmp,'$bDay $zeitvon','$bDay $zeitbis','$bookingType', '$kommentar','0','0'),
 EOT;
+              // Ist der Platz frei??
+              $sqlCheckPlatz = <<<EOT
+            SELECT B.*
+            FROM bookings as B 
+            WHERE B.booking_state="A" AND (B.starts_at < '$bDay $zeitbis' AND B.ends_at > '$bDay $zeitvon') AND B.court = $platzTmp
+EOT;
+              $rowCount = $pdo->query($sqlCheckPlatz)->rowCount();
+              // TECHO(DEBUG, "Count: $rowCount\r\n sqlCheckPlatz: $sqlCheckPlatz\r\n"); echo "<br>";
+              if ($rowCount > 0) {
+                $bereitsBelegt .= $zeile . "\r\n";
+              } else {
+                $sql .= $zeile;
+                $atLeastOne = true;
+              }
+            }
           }
         }
       }
     }
   }
-  // Das letzte Komma entfernen
-  $sql = rtrim($sql, ',');
-  // TECHO(DEBUG, $sql);
-  $statement = $pdo->prepare($sql);
-  $result = $statement->execute();
+  //*****
+  // Einzeltage als INSERT-Zeilen erzeugen
+  //
+  foreach ($einzelDatum as $einzelDay) {
+    if ($einzelDay != "") {
+      $bDay = implode ('-' , array_reverse (explode ('.' , $einzelDay)));
+      // TECHO(DEBUG, $bDay);
+      for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
+        if ($platz[$pI] != '') {
+          $platzTmp = $pI + 1;
+
+          $zeile = <<<EOT
+(0,0,'A','$seriesid', '$jetzt','$jetzt',$userid,$userid, $spieler1,$spieler2,$spieler3,$spieler4, $platzTmp,'$bDay $zeitvon','$bDay $zeitbis','$bookingType', '$kommentar','0','0'),
+EOT;
+          // Ist der Platz frei??
+          $sqlCheckPlatz = <<<EOT
+        SELECT B.*
+        FROM bookings as B 
+        WHERE B.booking_state="A" AND (B.starts_at < '$bDay $zeitbis' AND B.ends_at > '$bDay $zeitvon') AND B.court = $platzTmp
+EOT;
+          $rowCount = $pdo->query($sqlCheckPlatz)->rowCount();
+          // TECHO(DEBUG, "Count: $rowCount\r\n sqlCheckPlatz: $sqlCheckPlatz\r\n"); echo "<br>";
+          if ($rowCount > 0) {
+            $bereitsBelegt .= $zeile . "\r\n";
+          } else {
+            $sql .= $zeile;
+            $atLeastOne = true;
+          }
+        }
+      }
+
+    }
+  }
+  if ($atLeastOne) {
+    $sql = rtrim($sql, ',');
+    // TECHO(DEBUG, $sql);
+    $statement = $pdo->prepare($sql);
+    $result = $statement->execute();
+  }
+
+
+  if ($bereitsBelegt != "") {
+?>
+    <h2>Folgende Zeilen wurden nicht übernommen, da bereits überschneidende Belegungen existieren:</h2>
+    <pre><?= $bereitsBelegt ?></pre>
+  <?php
+  }
 }
 
 if ($showFormular) {
-?>
-
+  ?>
 
 
   <div class="container main-container">
-    <h2 class="h1">Plätze - Serienbuchung eingeben</h2>
+    <h1>Serienbuchungen</h1>
+    <h2>Bestehende Serien</h2>
+    <p>
+      <?php
 
-    <form id="editSerieForm" class="formwidth" action="?serieedit=1" method="GET">
+      $yyyy = date("Y");
+      $sql = "SELECT DISTINCT series_id FROM  bookings where  NOT series_id IS NULL AND starts_at LIKE '{$yyyy}%'";
+      foreach ($pdo->query($sql) as $row) {
+        if ($row['series_id'] > '') {
+      ?>
+          <span><a class="btn btn-secondary py-0 my-1" href="seriedetails.php?sid=<?= $row['series_id'] ?>"><?= $row['series_id'] ?></a> </span>
+      <?php
+        }
+      }
+      ?>
+    </p>
+    <h2>Neue Serienbuchung eingeben</h2>
+
+    <form id="editSerieForm" class="formwidth" action="?serieedit=1" method="POST">
       <input type="hidden" id="serieedit" name="serieedit" value="1">
       <div class="form-group">
-        <label for="seriesid">Serien-ID: </label>
+        <label for="seriesid">Serien-ID (bitte eine sprechende, neue, eindeutige ID wählen, z.B. "DropIn-2020"): </label>
         <input class="form-control" type="text" id="seriesid" name="seriesid" value="">
       </div>
 
       <div class="form-group">
-        <label for="datumvon">Datum von: </label>
-        <input class="form-control" type="date" id="datumvon" name="datumvon" value="TT.MM.JJJJ">
-        <label for="datumbis">bis: </label>
-        <input class="form-control" type="date" id="datumbis" name="datumbis" value="TT.MM.JJJJ">
-      </div>
-
-      <div class="form-group">
         <label for="zeitvon">Zeit von: </label>
-        <input class="form-control" type="text" id="zeitvon" name="zeitvon" value="00:00">
+        <select id="zeitvon" name="zeitvon" class="form-control">
+          <option value="08:00">08:00h</option>
+          <option value="08:30">08:30h</option>
+          <option value="09:00">09:00h</option>
+          <option value="09:30">09:30h</option>
+          <option value="10:00">10:00h</option>
+          <option value="10:30">10:30h</option>
+          <option value="11:00">11:00h</option>
+          <option value="11:30">11:30h</option>
+          <option value="12:00">12:00h</option>
+          <option value="12:30">12:30h</option>
+          <option value="13:00">13:00h</option>
+          <option value="13:30">13:30h</option>
+          <option value="14:00">14:00h</option>
+          <option value="14:30">14:30h</option>
+          <option value="15:00">15:00h</option>
+          <option value="15:30">15:30h</option>
+          <option value="16:00">16:00h</option>
+          <option value="16:30">16:30h</option>
+          <option value="17:00">17:00h</option>
+          <option value="17:30">17:30h</option>
+          <option value="18:00">18:00h</option>
+          <option value="18:30">18:30h</option>
+          <option value="19:00">19:00h</option>
+          <option value="19:30">19:30h</option>
+          <option value="20:00">20:00h</option>
+          <option value="20:30">20:30h</option>
+          <option value="21:00">21:00h</option>
+        </select>
+
+
         <label for="zeitbis">bis: </label>
-        <input class="form-control" type="text" id="zeitbis" name="zeitbis" value="00:00">
+        <select id="zeitbis" name="zeitbis" class="form-control">
+          <option value="08:00">08:00h</option>
+          <option value="08:30">08:30h</option>
+          <option value="09:00">09:00h</option>
+          <option value="09:30">09:30h</option>
+          <option value="10:00">10:00h</option>
+          <option value="10:30">10:30h</option>
+          <option value="11:00">11:00h</option>
+          <option value="11:30">11:30h</option>
+          <option value="12:00">12:00h</option>
+          <option value="12:30">12:30h</option>
+          <option value="13:00">13:00h</option>
+          <option value="13:30">13:30h</option>
+          <option value="14:00">14:00h</option>
+          <option value="14:30">14:30h</option>
+          <option value="15:00">15:00h</option>
+          <option value="15:30">15:30h</option>
+          <option value="16:00">16:00h</option>
+          <option value="16:30">16:30h</option>
+          <option value="17:00">17:00h</option>
+          <option value="17:30">17:30h</option>
+          <option value="18:00">18:00h</option>
+          <option value="18:30">18:30h</option>
+          <option value="19:00">19:00h</option>
+          <option value="19:30">19:30h</option>
+          <option value="20:00">20:00h</option>
+          <option value="20:30">20:30h</option>
+          <option value="21:00">21:00h</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -175,77 +299,33 @@ SELECT id, vorname, nachname FROM users
           echo ($optionsSpieler);
           ?>
         </select>
-        <select id="spieler2" name="spieler2" class="form-control" value="0" >
+        <select id="spieler2" name="spieler2" class="form-control" value="0">
           <?= $optionsSpieler ?>
         </select>
-        <select id="spieler3" name="spieler3" class="form-control" value="0" >
+        <select id="spieler3" name="spieler3" class="form-control" value="0">
           <?= $optionsSpieler ?>
         </select>
-        <select id="spieler4" name="spieler4" class="form-control" value="0" >
+        <select id="spieler4" name="spieler4" class="form-control" value="0">
           <?= $optionsSpieler ?>
         </select>
-
-
-        <div class="form-group">
-          <label for="typ">Typ:</label>
-          <select id="bookingType" name="bookingType" class="form-controlcustom-select custom-select" required>
-            <option value="">- bitte auswählen -</option>
-            <option value="ts-einzel">Einzel</option>
-            <option value="ts-doppel">Doppel</option>
-            <option value="ts-turnier">Turnier</option>
-            <option value="ts-veranstaltung">Veranstaltung</option>
-            <option value="ts-training">Training</option>
-            <option value="ts-punktspiele">Punktspiele</option>
-          </select>
-        </div>
-
-
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" name="montag" id="montag">
-            <label class="form-check-label" for="flexCheckChecked">
-              Montag
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="2" name="dienstag" id="dienstag">
-            <label class="form-check-label" for="flexCheckChecked">
-              Dienstag
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="3" name="mittwoch" id="mittwoch">
-            <label class="form-check-label" for="flexCheckChecked">
-              Mittwoch
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="4" name="donnerstag" id="donnerstag">
-            <label class="form-check-label" for="flexCheckChecked">
-              Donnerstag
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="5" name="freitag" id="freitag">
-            <label class="form-check-label" for="flexCheckChecked">
-              Freitag
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="6" name="samstag" id="samstag">
-            <label class="form-check-label" for="flexCheckChecked">
-              Samstag
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="7" name="sonntag" id="sonntag">
-            <label class="form-check-label" for="flexCheckDefault">
-              Sonntag
-            </label>
-          </div>
-        </div>
       </div>
+
+
+
       <div class="form-group">
+        <label for="typ">Typ:</label>
+        <select id="bookingType" name="bookingType" class="form-control custom-select custom-select" required>
+          <option value="">- bitte auswählen -</option>
+          <option value="ts-einzel">Einzel</option>
+          <option value="ts-doppel">Doppel</option>
+          <option value="ts-turnier">Turnier</option>
+          <option value="ts-veranstaltung">Veranstaltung</option>
+          <option value="ts-training">Training</option>
+          <option value="ts-punktspiele">Punktspiele</option>
+        </select>
+      </div>
+
+      <div class="form-group mt-3">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="platz1" id="platz1">
           <label class="form-check-label" for="flexCheckDefault">
@@ -283,21 +363,112 @@ SELECT id, vorname, nachname FROM users
           </label>
         </div>
       </div>
-
       <div class="form-group">
         <label for="kommentar">Kommentarfeld-Text:</label>
         <textarea class="form-control" name="kommentar" rows="3"></textarea>
       </div>
 
+      <!-- Buchungszeitraum und/oder Einzeltage -->
+      <p class="my-3">
+        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZeitraum" aria-expanded="false" aria-controls="collapseZeitraum">
+          Zeitraum hinzufügen
+        </button>
+      </p>
+
+      <div class="collapse" id="collapseZeitraum">
+        <div class="card card-body">
+          <div class="form-group">
+            <label for="datumvon">Datum von: </label>
+            <input class="form-control" type="date" id="datumvon" name="datumvon" placeholder="TT.MM.JJJJ" value="">
+            <label for="datumbis">bis: </label>
+            <input class="form-control" type="date" id="datumbis" name="datumbis" placeholder="TT.MM.JJJJ" value="">
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="1" name="montag" id="montag">
+              <label class="form-check-label" for="flexCheckChecked">
+                Montag
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="2" name="dienstag" id="dienstag">
+              <label class="form-check-label" for="flexCheckChecked">
+                Dienstag
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="3" name="mittwoch" id="mittwoch">
+              <label class="form-check-label" for="flexCheckChecked">
+                Mittwoch
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="4" name="donnerstag" id="donnerstag">
+              <label class="form-check-label" for="flexCheckChecked">
+                Donnerstag
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="5" name="freitag" id="freitag">
+              <label class="form-check-label" for="flexCheckChecked">
+                Freitag
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="6" name="samstag" id="samstag">
+              <label class="form-check-label" for="flexCheckChecked">
+                Samstag
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="7" name="sonntag" id="sonntag">
+              <label class="form-check-label" for="flexCheckDefault">
+                Sonntag
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="my-3">
+        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEinzeltermine" aria-expanded="false" aria-controls="collapseEinzeltermine">
+          Einzeltermine hinzufügen
+        </button>
+      </p>
+
+      <div class="collapse" id="collapseEinzeltermine">
+        <div class="card card-body">
+          <div class="form-group">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+            <input class="form-control" type="date" name="einzeldatum[]" placeholder="TT.MM.JJJJ" value="">
+          </div>
+        </div>
+      </div>
+
       <button type="submit" class="btn btn-lg btn-success btn-block">Absenden</button>
     </form>
+  </div>
 
-  <?php
+<?php
 
 } //Ende von if($showFormular)
-  ?>
+?>
 
 
-  <?php
-  include("footer.inc.php");
-  ?>
+<?php
+include("footer.inc.php");
+?>

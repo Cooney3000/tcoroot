@@ -112,7 +112,8 @@ Sollte aufgrund von zu wenigen Meldungen eine Konkurrenz nicht zustande kommen, 
       </section>
     </div>
 
-		<div id="blatt3">
+
+		<!-- <div id="blatt3">
 			<section id="kidsday" class="seite">
         <h2>Kid's Day 2019</h2>
         <p>Liebe Kinder,</p>
@@ -136,12 +137,13 @@ Sollte aufgrund von zu wenigen Meldungen eine Konkurrenz nicht zustande kommen, 
           Solltet ihr schon vorab Interesse daran haben, wendet euch an kindertennis@tcolching.de. 
           Wir freuen uns über eure Fragen und Anmeldungen.</p>
 
-        <p>Monika Traub, Ursula Hochholzer & Petra Streif</p>
+        <p>Monika Traub & Petra Streif</p>
 
 
 
 			</section>
 		</div>
+ -->
       <div id="blatt4">
 			<section id="jugendleitung" class="seite">
 				<h2>KINDER UND JUGEND BEIM TC OLCHING</h2>
@@ -159,9 +161,9 @@ Sollte aufgrund von zu wenigen Meldungen eine Konkurrenz nicht zustande kommen, 
 					</ul>
 					<p>Um den unterschiedlichen Anspr&uuml;chen und Spielst&auml;rken gerecht zu werden, bieten wir den Kindern und Jugendlichen folgende M&ouml;glichkeiten:</p>
 
-					<p>F&uuml;r die Kleinsten und Anf&auml;nger zwischen 4 - 9 Jahre sind Moni und Ursi mit unserer Tennisballschule zust&auml;ndig. Uns ist es sehr wichtig, die Kinder mit viel Spa&szlig;, Freude und Motivation an den Tennissport heranzuf&uuml;hren. Tennis macht aber nicht nur Spa&szlig;, sondern f&ouml;rdert auch die Konzentration, die mentale St&auml;rke sowie die motorischen F&auml;higkeiten wie Koordination, Schnelligkeit, Reaktionsf&auml;higkeit und Ausdauer.</p>
+					<p>F&uuml;r die Kleinsten und Anf&auml;nger zwischen 4 - 9 Jahre ist Moni mit unserer Tennisballschule zust&auml;ndig. Uns ist es sehr wichtig, die Kinder mit viel Spa&szlig;, Freude und Motivation an den Tennissport heranzuf&uuml;hren. Tennis macht aber nicht nur Spa&szlig;, sondern f&ouml;rdert auch die Konzentration, die mentale St&auml;rke sowie die motorischen F&auml;higkeiten wie Koordination, Schnelligkeit, Reaktionsf&auml;higkeit und Ausdauer.</p>
 					<p>Weitere und genauere Informationen findet Ihr unter der Rubrik <a href="training.php">Training</a>.</p>
-					<p>F&uuml;r die Kinder, die Spa&szlig; am Tennissport gefunden haben oder bereits schon Tennis spielen, m&ouml;chten wir das Jugendtraining bei unserem Vereinstrainer Sascha Glinskiy ans Herz legen. Tennis ist eine sehr technische Sportart und daher ist es &auml;u&szlig;erst wichtig, von Anfang an eine fundierte Technikausbildung zu bekommen. Dadurch wird es viel einfacher und befriedigender diese Sportart auszu&uuml;ben.</p>
+					<p>F&uuml;r die Kinder, die Spa&szlig; am Tennissport gefunden haben oder bereits schon Tennis spielen, m&ouml;chten wir das Jugendtraining bei unserem Vereinstrainer Michael Görzen ans Herz legen. Tennis ist eine sehr technische Sportart und daher ist es &auml;u&szlig;erst wichtig, von Anfang an eine fundierte Technikausbildung zu bekommen. Dadurch wird es viel einfacher und befriedigender diese Sportart auszu&uuml;ben.</p>
 
 					<p>F&uuml;r Fragen, Anregungen und Probleme stehen wir Euch jederzeit sehr gerne zur Verf&uuml;gung. Nachfolgend alle Ansprechpartner im Jugendsportbereich, damit Ihr uns direkt erreichen k&ouml;nnt:</p>
 
@@ -179,10 +181,6 @@ Sollte aufgrund von zu wenigen Meldungen eine Konkurrenz nicht zustande kommen, 
 						<tr>
 							<td>Monika Traub</td><td><a href="kindertennis@tcolching.de">kindertennis@tcolching.de</a></td>
 							<td>Tel.: 08142/6699661</td>
-						</tr>
-						<tr>
-							<td>Ursula Hochholzer</td><td><a href="kindertennis@tcolching.de">kindertennis@tcolching.de</a></td>
-							<td>Tel.: 08142/445633</td>
 						</tr>
 					</table>
 					<div>

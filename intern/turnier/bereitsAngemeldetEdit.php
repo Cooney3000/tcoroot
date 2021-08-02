@@ -48,10 +48,6 @@ $delimiter = '#';
         <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=category&dir=desc"></a>
       </th>
       <th>Mobil</th>
-      <th>LK<br>
-        <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldetEdit.php?o=LK&dir=asc"></a>&nbsp;&nbsp;
-        <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldetEdit.php?o=LK&dir=desc"></a>
-      </th>
       <th>Spielt</th>
       <th>Kommentar</th>
       <th>Anm-Dat<br>
@@ -77,7 +73,7 @@ $delimiter = '#';
 FROM users AS u
   LEFT JOIN tournament_players AS t 
 ON u.id = t.user_id
-WHERE u.id>=200 AND (t.tournament_id=$tournament_id OR t.tournament_id IS NULL) AND (u.status='W' OR u.status='A')
+WHERE u.id>=200 AND (t.tournament_id=$tournament_id) AND (u.status='A')
   ORDER BY t.willing_to_play DESC, $order $direction
 EOT;
 
@@ -93,7 +89,6 @@ date_default_timezone_set('UTC');
         <td class="align-middle form-control-sm" style="width: auto"><?= $row['spielername'] ?></td>
         <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'category'          . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['category'] ?>"/></td>
         <td class="align-middle"><input class="form-control form-control-sm" style="width: 7rem" onchange="hasChangedUser(this)" id="<?= $row['uid'] . $delimiter . 'mobil'             . $delimiter . $row['mobil'] ?>"  type="text" value="<?= $row['mobil'] ?>"/></td>
-        <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'LK'                . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['lk'] ?>"/></td>
         <td class="align-middle"><input class="form-control form-control-sm" style="width: 3rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'willing_to_play'   . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['willing_to_play'] ?>"/></td>
         <td class="align-middle"><input class="form-control form-control-sm" style="width: 7rem" onchange="hasChanged(this)"     id="<?= $row['tid'] . $delimiter . 'comment'           . $delimiter . $row['uid']   ?>"  type="text" value="<?= $row['comment'] ?>"/></td>
         <td class="align-middle form-control-sm" style="width: auto"><?= $strDate ?></td>

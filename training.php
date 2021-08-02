@@ -8,7 +8,7 @@ $_jugend="";
 include 'header.php';
 ?>
 		<div id="blatt5">
-			<section id="sommer" class="seite">
+			<section id="trainer" class="seite">
         <article>
 					<img style="float:left; padding-right:10px" alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen_portrait.png"/>
           <h2>Michael Görzen: Unser Vereinstrainer</h2>
@@ -20,11 +20,11 @@ include 'header.php';
 			<section id="sommer" class="seite">
 				<h2>Training während des Sommercamps</h2>
 				<article>
-          Liebe TCO'ler, ich bin auch während des Sommercamps (17.8. - 21.8., siehe unten) ab 13 Uhr für Euch da!
+          Liebe TCO'ler, ich bin auch während des Sommercamps für Euch da!
         </article>
       </section>
 		</div>
-    <div id="blatt2">
+    <!-- <div id="blatt2">
 			<section id="sommercamp" class="seite">
 				<h2>Jugend-Sommercamp 2020!</h2>
 				<article>
@@ -47,7 +47,7 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
   <p class="mb-4 persoenlich">Euer Michael</p>
 				</article>
 			</section>
-		</div>
+		</div> -->
 		<div id="blatt3">
 			<section id="trainer" class="seite">
 				<h1>Michael Görzen: Unser Vereinstrainer</h1>
@@ -75,20 +75,22 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 		</div>
 		<div id="blatt4">
 			<section id="kindertraining" class="seite">
-				<h2>Sommertraining 2020 für Kinder und Jugendliche</h2>
+				<h2>Sommertraining 2021 für Kinder und Jugendliche</h2>
 				<article>
 					<table>
 						<tr>
 							<td>Trainer:   </td><td>Michael Görzen</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>Leistung: </td><td>11 Stunden Gruppentraining</td>
-						</tr>
+						</tr> -->
 					</table>
-					<p>Bei schlechtem Wetter wird das Training in die Tennishalle nach Gernlinden verlegt.</p>
+					<!-- 
+            <p>Bei schlechtem Wetter wird das Training in die Tennishalle nach Gernlinden verlegt.</p> 
+          -->
 					<p>Die Trainingsgruppen werden nach Alter, Spielstärke und Mannschaftskonstellation zusammengestellt.<br>
 					<br>
-					<a href="downloads/Plakat_Kindertennis_02.pdf">Flyer Kindertennis</a>
+					<!-- <a href="downloads/Plakat_Kindertennis_02.pdf">Flyer Kindertennis</a> -->
 				</article>
       </section>
 		</div><?php

@@ -4,7 +4,6 @@
   require_once("inc/functions.inc.php");
   require_once("inc/permissioncheck.inc.php");
 
-
   $user = check_user_silent();
 
   if ( ! $user ) {

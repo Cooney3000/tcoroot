@@ -45,7 +45,7 @@ include("templates/header.inc.php");
     <?php
 
     $showFormular = 1;
-    $cid = 5; // campaign-Id
+    $cid = 7; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);

@@ -67,7 +67,9 @@ include("templates/header.inc.php");
         <!-- <p class="align-text-bottom">Bitte anmelden</p> -->
       </div>
     </div>
-
+    
+*/
+?>
     <div class="col-sm mb-2">
       <div class="bg-light p-2 h-100">
         <a class="btn btn-success w-100 mb-2" href="/intern/wintertraining.php">Wintertraining</a>
@@ -75,8 +77,6 @@ include("templates/header.inc.php");
         <p class="align-text-bottom">Jetzt vorläufig anmelden!<br>Trainer Michael muss die Halle reservieren</p>
       </div>
     </div>
-*/
-?>
 
 
     <!-- Für den Wirt -->

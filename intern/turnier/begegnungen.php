@@ -61,7 +61,7 @@ LEFT JOIN users AS p1 ON b.player1 = p1.id
 LEFT JOIN users AS p2 ON b.player2 = p2.id
 LEFT JOIN tournament_players AS t1 ON (p1.id = t1.user_id)
 LEFT JOIN tournament_players AS t2 ON (p2.id = t2.user_id)
-WHERE b.booking_type = '$turniertyp' AND t1.tournament_id = t2.tournament_id AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
+WHERE b.booking_type = '$turniertyp' AND t1.tournament_id = t2.tournament_id AND starts_at > '2021-06-01' AND b.booking_state = 'A' 
 ORDER BY $orderSQL
 
 
@@ -78,7 +78,7 @@ b.comment AS comment
 FROM bookings AS b 
 JOIN users AS p1 ON b.player1 = p1.id
 JOIN users AS p2 ON b.player2 = p2.id
-WHERE b.booking_type = '$turniertyp' AND starts_at > '2020-06-01' AND b.booking_state = 'A' 
+WHERE b.booking_type = '$turniertyp' AND starts_at > '2021-06-01' AND b.booking_state = 'A' 
 ORDER BY $orderSQL
 
 EOT;

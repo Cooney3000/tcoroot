@@ -9,8 +9,8 @@
   <title><?= $title ?> Admin</title>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link href="/intern/css/styles.css" rel="stylesheet">
 
@@ -48,15 +48,9 @@
         <li class="nav-item" id="nav-gastedit">
           <a class="nav-link" href="/intern/admin/gastedit.php">Gastbuchungen</a>
         </li>
-<?php
-      if (checkPermissions(ADMINISTRATOR)) {
-?>
         <li class="nav-item" id="nav-serieedit">
-          <a class="nav-link" href="/intern/admin/serieedit.php">Serienbuchung eingeben</a>
+          <a class="nav-link" href="/intern/admin/serieedit.php">Serienbuchungen</a>
         </li>
-        <?php
-      }
-        ?>
         <li class="nav-item" id="nav-permissionsedit">
           <a class="nav-link" href="/intern/admin/permissionsedit.php">Berechtigungen</a>
         </li>
