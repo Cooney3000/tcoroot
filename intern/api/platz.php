@@ -133,6 +133,7 @@ SELECT B.*,
   U2.schnupper AS schnupper2,
   U3.schnupper AS schnupper3,
   U4.schnupper AS schnupper4,
+  B.series_id AS series_id,
   B.player1 AS p1id,
   B.player2 AS p2id,
   B.player3 AS p3id,
@@ -186,6 +187,7 @@ function readaB()
     U2.geburtsdatum AS p2geb,
     U3.geburtsdatum AS p3geb,
     U4.geburtsdatum AS p4geb,
+    B.series_id AS series_id,
     B.player1 AS p1id,
     B.player2 AS p2id,
     B.player3 AS p3id,
@@ -235,9 +237,9 @@ function createUpdateB()
 
   $sql = <<<EOT
 INSERT INTO bookings 
-  (ta_id, booking_state, created_at, updated_at, user_id, player1, player2, player3, player4, court, starts_at, ends_at, booking_type, comment, price) 
+  (ta_id, booking_state, created_at, updated_at, user_id, series_id, player1, player2, player3, player4, court, starts_at, ends_at, booking_type, comment, price) 
   VALUES
-  ({$ta_id}, 'A', '{$dt}', '{$dt}', {$_GET['uid']}, {$_GET['p1']}, {$_GET['p2']}, {$_GET['p3']}, {$_GET['p4']}, {$_GET['c']}, '{$_GET['ds']}', '{$_GET['de']}', '{$_GET['t']}', '{$_GET['cmt']}', {$_GET['pr']})
+  ({$ta_id}, 'A', '{$dt}', '{$dt}', {$_GET['uid']}, '{$_GET['sid']}', {$_GET['p1']}, {$_GET['p2']}, {$_GET['p3']}, {$_GET['p4']}, {$_GET['c']}, '{$_GET['ds']}', '{$_GET['de']}', '{$_GET['t']}', '{$_GET['cmt']}', {$_GET['pr']})
 EOT;
 
   error_log($sql);

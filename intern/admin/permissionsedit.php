@@ -90,7 +90,7 @@ $perm_value = array_flip($perm_pattern);
       <?php
           foreach(array_values($perm_pattern) as $pa_value) {
             if ($perm_value[$pa_value] != 0) {
-              echo "<th>$pa_value</th>\r\n";
+              echo "<th>$pa_value<br>&nbsp;</th>\r\n";
             }
           }
       ?>

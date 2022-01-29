@@ -23,7 +23,7 @@ a {
 }
 
 th a, th a:visited {
-  color: white;
+  color: black;
   transition: color .5s ease;
   text-decoration: none;
   cursor: pointer;
@@ -115,7 +115,7 @@ nav a:hover {
 
 th {
   text-align: left;
-  color: white;
+  color: black;
   background-color: grey;
 }
 

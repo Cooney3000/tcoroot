@@ -32,15 +32,16 @@
     <div class="mx-auto order-0">
       <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
     </div>
-    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" id="nav-menue">
 
-        <li class="nav-item" id="nav-internal">
-          <a class="nav-link" href="/intern/internal.php">Zurück</a>
+        <li class="nav-item" id="nav-zurueck">
+          <a class="nav-link" href="/intern/index.php">Zurück</a>
         </li>
         <li class="nav-item" id="nav-index">
           <a class="nav-link" href="/intern/admin/index.php">Mitglieder</a>
@@ -53,6 +54,9 @@
         </li>
         <li class="nav-item" id="nav-permissionsedit">
           <a class="nav-link" href="/intern/admin/permissionsedit.php">Berechtigungen</a>
+        </li>
+        <li class="nav-item" id="nav-funktionen">
+          <a class="nav-link" href="/intern/admin/funktionen.php">Funktionen</a>
         </li>
         <li class="nav-item" id="nav-logout">
           <a class="nav-link" href="/intern/logout.php">Logout</a>
@@ -67,9 +71,9 @@
 
   </nav>
   <script>
-    document.getElementById("nav-internal").classList.remove("active");
     document.getElementById("nav-index").classList.remove("active");
     document.getElementById("nav-gastedit").classList.remove("active");
     document.getElementById("nav-permissionsedit").classList.remove("active");
+    document.getElementById("nav-funktionen").classList.remove("active");
     document.getElementById("nav-logout").classList.remove("active");
   </script>

@@ -64,7 +64,8 @@ if (checkPermissions(VORSTAND) )
       <th>Kommentar</th>
     </tr> 
   <?php
-  $gast = $CONFIG['gastId'];
+  $gast = $CONFIG['gastId'] ;
+  $gastJug = $CONFIG['gastJugId'] ;
   $mitglied = $CONFIG['mitgliedId'];
 
 
@@ -97,12 +98,12 @@ $sql = <<<EOT
   LEFT JOIN users AS p2 ON b.player2 = p2.id
   LEFT JOIN users AS p3 ON b.player3 = p3.id
   LEFT JOIN users AS p4 ON b.player4 = p4.id
-  WHERE b.booking_state='A' AND (b.player1 = $gast OR b.player2 = $gast OR b.player3 = $gast OR b.player4 = $gast 
+  WHERE b.booking_state='A' AND (b.player1 IN ($gast, $gastJug) OR b.player2  IN ($gast, $gastJug)  OR b.player3  IN ($gast, $gastJug)  OR b.player4  IN ($gast, $gastJug)  
         OR b.player1 = $mitglied OR b.player2 = $mitglied OR b.player3 = $mitglied OR b.player4 = $mitglied)
     ORDER BY $order $direction
 EOT;
 
-  // TLOG(DBG, "\r\n$sql", __LINE__);
+// TECHO(DBG, "\r\n$sql", __LINE__);
 
   date_default_timezone_set('UTC');
 

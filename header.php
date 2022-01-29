@@ -103,7 +103,6 @@
 				<img src="/images/sliders/kids.jpg" alt="Zuschauer">
 			</div>
 			<div id="latest_news">
-        <!-- Clubmeisterschaften! <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zur Platzbuchung!</a></span> -->
-        Trainer Michael<br><a href="https://www.tcolching.de/training.php">Auch im August verfügbar</a>
+        <span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Zur Platzbuchung (intern)!</a></span>
 			</div>
 		</section>

@@ -13,7 +13,7 @@ if (!checkPermissions(T_ALL_PERMISSIONS)) {
   die("Keine Berechtigung");
 }
 
-$title = "TCO Serie buchen";
+$title = "TCO Serie bearbeiten";
 include("header.inc.php");
 $menuid = "nav-serieedit";
 ?>
@@ -34,9 +34,12 @@ foreach(['deleteSeries', 'deleteRow'] as $k) {
   }
 }
 // TECHO (DEBUG, "$k\r\n");
+// TECHO (DEBUG, http_build_query($_POST)."\r\n");
 $sql = "";
 if ($buttonkey == "deleteSeries") {
   $sql = "DELETE FROM bookings WHERE starts_at LIKE '$yyyy%' AND series_id = '$sid'";
+  $sql2 = "DELETE FROM seriesnames WHERE series_id = '$sid'";
+  $pdo->query($sql2);
 }
 else if ($buttonkey == "deleteRow") {
   $deleteId = $_POST[$buttonkey];
@@ -80,7 +83,9 @@ if ($sql != "") $pdo->query($sql);
       WHERE  b.series_id = '$sid' AND b.starts_at LIKE '{$yyyy}%'
       ORDER BY b.starts_at
 EOT;
-        foreach ($pdo->query($sql) as $row) {
+// TLOG (DEBUG, "$sql\r\n", __LINE__);
+
+foreach ($pdo->query($sql) as $row) {
           $strDatum = date('d.m.Y', strtotime($row['Start']));
           $strZeit = date('H:i', strtotime($row['Start'])) . '-' . date('H:i', strtotime($row['End']));
 

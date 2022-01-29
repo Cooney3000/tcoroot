@@ -48,9 +48,6 @@ include 'header.php';
 							<tr>
 								<td>Schnuppermitglied</td><td class="geldbetrag">55,00 EUR</td><td class="mittig">--</td>
 							</tr>
-							<tr>
-								<td>Schnuppermitglied** + Mannschaft</td><td class="geldbetrag">95,00 EUR</td><td class="mittig">--</td>
-							</tr>
 						</tbody>
 					</table>
 					<p>* Um diese Beitragsermäßigung in Anspruch nehmen zu können, müssen die entsprechenden Bescheinigungen/Nachweise 
@@ -60,7 +57,7 @@ include 'header.php';
 					<p>** Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
                 Wird bis zu diesem Datum die reguläre Mitgliedschaft beantragt, kann bis zum Saisonende ohne Mehrkosten gespielt werden.
           </p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></strong>.</h3>
+					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
@@ -70,8 +67,7 @@ include 'header.php';
 				<article>
 					<p>
 						Der TC Olching bietet auch dieses Jahr wieder allen Interessierten eine 
-						Schnuppermitgliedschaft für 55 EUR,  Schnuppermitgliedschaft 
-						für Mannschaftsspieler für 95 EUR an. 
+						Schnuppermitgliedschaft für 55 EUR. 
 					</p>
 					<ul>
 						<li>Teilnahme am &#8222;Drop-In&#8220; (Mixed-Turnier zum Kennenlernen)
@@ -82,8 +78,6 @@ include 'header.php';
 						Verf&#252;gbarkeit der Pl&#228;tze</li>
 						<li>Ab Mitte Juli (nach Ende der Punktspielsaison)
 						Spielberechtigung wie jedes andere aktive Mitglied</li>
-						<li>Bei Teilnahme an Punktspielen erh&#246;ht sich der Beitrag
-						(Preis auf Anfrage)</li>
 					</ul>
           <p>
           Ein Training für Anfängergruppen vermitteln wir gerne. 
@@ -96,7 +90,7 @@ include 'header.php';
 					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></strong>.</h3>
+					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
@@ -279,7 +273,7 @@ include 'header.php';
 					<li><a href="downloads/Satzung_TCO.pdf">Satzung</a></li>
 					<li><a href="downloads/Gastspielordnung_2021.pdf">Gastspielordnung</a></li>
 					<li><a href="downloads/Platzordnung_2021.pdf">Platzordnung</a></li>
-					<li><a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a></li>
+					<li><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></li>
 				</ul>
 			</section>	
 		</div>

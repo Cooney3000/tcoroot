@@ -14,16 +14,59 @@ $title = "Intern Hall Of Fame";
 include("templates/header.inc.php");
 ?>
 <script>
-    document.getElementById("nav-intern").classList.remove("active");
-    document.getElementById("nav-turnier").classList.remove("active");
-    document.getElementById("nav-halloffame").classList.add("active");
-    document.getElementById("nav-tafel").classList.remove("active");
-    if (document.getElementById("nav-login") !== null) document.getElementById("nav-login").classList.remove("active");
-    if (document.getElementById("nav-logout") !== null) document.getElementById("nav-logout").classList.remove("active");
+  document.getElementById("nav-intern").classList.remove("active");
+  document.getElementById("nav-turnier").classList.remove("active");
+  document.getElementById("nav-halloffame").classList.add("active");
+  document.getElementById("nav-tafel").classList.remove("active");
+  if (document.getElementById("nav-login") !== null) document.getElementById("nav-login").classList.remove("active");
+  if (document.getElementById("nav-logout") !== null) document.getElementById("nav-logout").classList.remove("active");
 </script>
 
 <div class="container main-container">
   <h1 class="h1">Hall of Fame</h1>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2021&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
+      <div class="col-sm">
+        <div class="klein my-2">Damen:</div>
+        <img class="breitebilder" src="/intern/history/turnier2021/images/luna_streif.png" alt="Luna Streif" />
+        <div class="h5 mb-2">Luna Streif</div>
+      </div>
+      <div class="col-sm">
+        <div class="klein my-2">Herren:</div>
+        <img class="breitebilder" src="/intern/history/turnier2021/images/ulf_henke.jpeg" alt="Ulf Henke" />
+        <div class="h5 mb-2">Ulf Henke</div>
+      </div>
+    </div> <!-- row -->
+    <p>2021 stand immer noch unter dem Einfluss Corona, doch die Erleichterungen durch den Impffortschritt
+      waren schon zu spüren. Planungen waren aber nach wie vor ein Glücksspiel, daher entschieden wir uns
+      wieder zu einem Wochenende mit k.o.-System und B-Runde.
+      Das Wetter spielte mit und so wurde es ein vielfach gelobter Vereins-Event. Besonders interessant: Bei den Damen gab es einen Generationenwechsel!</p>
+    <h2 class="display-5"><a href="/intern/history/turnier2021/">Zu weiteren Turnierdetails</a></h2>
+  </div> <!-- container -->
+
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2020&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
+      <div class="col-sm">
+        <div class="klein my-2">Damen:</div>
+        <img class="breitebilder" src="/intern/history/turnier2020/images/petra_streif.png" alt="Petra Streif" />
+        <div class="h5 mb-2">Petra Streif</div>
+      </div>
+      <div class="col-sm">
+        <div class="klein my-2">Herren:</div>
+        <img class="breitebilder" src="/intern/history/turnier2020/images/toni_weber.png" alt="Toni Weber" />
+        <div class="h5 mb-2">Toni Weber</div>
+      </div>
+    </div> <!-- row -->
+    <p>2020 war das erste Jahr unter Corona mit vielen Einschränkungen für die Tennissaison. Die Mannschaftsspiele wurden verzögert gestartet,
+      das Clubturnier wurde an einem Wochenende als k.o.-System mit B-Runde ausgetragen.
+      Corona zum Trotz wurde das Turnier gut angenommen und wurde so ein Erfolg.</p>
+    <h2 class="display-5"><a href="/intern/history/turnier2020/">Zu weiteren Turnierdetails</a></h2>
+  </div> <!-- container -->
+
 
   <div class="container mt-4">
     <div class="row">
@@ -45,9 +88,9 @@ include("templates/header.inc.php");
       </div>
     </div> <!-- row -->
     <p>Das erste Jahr der neuen Clubmeisterschaften, die von Norbert Maier frühzeitig geplant waren und verschiedene Spielklassen einführten. </p>
-  <p>Conny Roloff programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt. 
-  Dadurch fanden sich an sonst leeren Wochenenden plötzlich Zuschauer ein und es ergaben sich gesellige Nachmittage.</p>
-      <a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a>
+    <p>Conny Roloff programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt.
+      Dadurch fanden sich an sonst leeren Wochenenden plötzlich Zuschauer ein und es ergaben sich gesellige Nachmittage.</p>
+    <h2 class="display-5"><a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
 
@@ -60,15 +103,14 @@ include("templates/header.inc.php");
         <div class="h5 mb-2">Niko Rieber</div>
       </div>
     </div> <!-- row -->
-        <p>Das war der erste Versuchsballon für ein Clubturnier. Unheimlich kurfristig auf die Beine gestellt, allerdings nur mit den Spielern der Herrenmannschaften. 
-            Deswegen gab es auch noch kein Plakat oder sonstige Zusatzorganisation.</p>
-        <p>Die Online-Unterstützung für die Spielerpaarungen lief noch über ein geteiltes Excel und war etwas hakelig.</p>
-        <a href="/intern/history/turnier2018/">Zu weiteren Turnierdetails</a>
+    <p>Das war der erste Versuchsballon für ein Clubturnier. Unheimlich kurfristig auf die Beine gestellt, allerdings nur mit den Spielern der Herrenmannschaften.
+      Deswegen gab es auch noch kein Plakat oder sonstige Zusatzorganisation.</p>
+    <p>Die Online-Unterstützung für die Spielerpaarungen lief noch über ein geteiltes Excel und war etwas hakelig.</p>
+    <h2 class="display-5"><a href="/intern/history/turnier2018/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
 
 </div>
-<?php 
+<?php
 include("templates/footer.inc.php")
 ?>
-

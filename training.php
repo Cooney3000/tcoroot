@@ -7,6 +7,7 @@ $_mannschaften="";
 $_jugend="";
 include 'header.php';
 ?>
+<!-- 
 		<div id="blatt5">
 			<section id="trainer" class="seite">
         <article>
@@ -24,6 +25,7 @@ include 'header.php';
         </article>
       </section>
 		</div>
+ -->
     <!-- <div id="blatt2">
 			<section id="sommercamp" class="seite">
 				<h2>Jugend-Sommercamp 2020!</h2>
@@ -53,10 +55,9 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				<h1>Michael Görzen: Unser Vereinstrainer</h1>
 				<h2>Liebe TCO'ler</h2>
 				<article class="spalte1">
-          <h3>Mein Profil</h3>
           <p>Ich bin beim TCO Trainer in Vollzeit und für die Trainerposition in 2020 nach Olching umgesiedelt.</p>
-					<p>Ich bin 34 Jahre alt, ehemaliger 2. Bundesligaspieler und habe in internationalen Turnieren gespielt. Aktuell bin ich in der Schweiz auf Position 53 gelistet. </p>
-          <p>Als Trainer arbeite ich seit 14 Jahren. Ich komme aus Aalen, wo mein Ukraine-stämmiger Vater eine Tennisschule hat. 
+					<p>Ich bin 36 Jahre alt, ehemaliger 2. Bundesligaspieler und habe in internationalen Turnieren gespielt. </p>
+          <p>Als Trainer arbeite ich seit 16 Jahren. Ich komme aus Aalen, wo mein Ukraine-stämmiger Vater eine Tennisschule hat. 
           Ich spreche Deutsch, Russisch, Englisch und etwas Französisch.</p>
 					</p>
           <p><strong>Meine Kontaktdaten:</strong></p>
@@ -69,28 +70,29 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
           <p>4 SPieler: 44,00 EUR</p>
 				</article>
 				<article>
-					<img alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen.png"/>
+					<img alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen_portrait.png"/>
 				</article>
 			</section>
 		</div>
 		<div id="blatt4">
 			<section id="kindertraining" class="seite">
-				<h2>Sommertraining 2021 für Kinder und Jugendliche</h2>
+				<h2>Wintertraining 2021/22 für Kinder und Jugendliche</h2>
 				<article>
-					<table>
+          <p>Die Einteilung für das Wintertraining ist abgeschlossen. Bitte direkt auf den Trainer zugehen, falls du noch mitmachen willst</p>
+					<!-- <table>
 						<tr>
 							<td>Trainer:   </td><td>Michael Görzen</td>
 						</tr>
-						<!-- <tr>
+						<tr>
 							<td>Leistung: </td><td>11 Stunden Gruppentraining</td>
-						</tr> -->
+						</tr>
 					</table>
-					<!-- 
+					
             <p>Bei schlechtem Wetter wird das Training in die Tennishalle nach Gernlinden verlegt.</p> 
-          -->
+         
 					<p>Die Trainingsgruppen werden nach Alter, Spielstärke und Mannschaftskonstellation zusammengestellt.<br>
 					<br>
-					<!-- <a href="downloads/Plakat_Kindertennis_02.pdf">Flyer Kindertennis</a> -->
+					<a href="downloads/Plakat_Kindertennis_02.pdf">Flyer Kindertennis</a> -->
 				</article>
       </section>
 		</div><?php
