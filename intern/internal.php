@@ -37,14 +37,6 @@ include("templates/header.inc.php");
 
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="/intern/saisonabschluss.php">Saisonabschluss</a>
-          <img class="w-100" src="/intern/images/saisonabschluss.jpg" alt="Saisonabschluss">
-          <!-- <p class="align-text-bottom">Jetzt anmelden!</p> -->
-        </div>
-      </div>
-
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
           <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
           <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
           <!-- <p class="align-text-bottom">Jetzt registrieren!</p> -->

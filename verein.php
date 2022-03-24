@@ -113,9 +113,9 @@ include 'header.php';
 				<h2>Der Vorstand</h2>
 				<article id="visitenkarten">
 					<div class="visitenkarte">
-						<img alt="Heiko Tesche" src="images/vorstand/heiko_tesche.jpg">
-						<div class="daten">1. Vorsitzender<br>Heiko Tesche<br>
-							<a href="mailto:heiko.tesche@tcolching.de">heiko.tesche@tcolching.de</a>
+						<img alt="Dr. Benjamin Vollrath" src="images/vorstand/benjamin_vollrath.png">
+						<div class="daten">1. Vorsitzender<br>Dr. Benjamin Vollrath<br>
+							<a href="mailto:benjamin.vollrath@tcolching.de">benjamin.vollrath@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
@@ -133,22 +133,21 @@ include 'header.php';
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Britta Göttling" src="images/vorstand/britta_goettling.png">
-						<div class="daten">Schriftführerin<br>
-						Britta Göttling<br>
-						<a href="mailto:britta.goettling@tcolching.de">britta.goettling@tcolching.de</a>
-						</div>
-					</div>
-					<div class="visitenkarte">
 						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.png">
-						<div class="daten">Sportwart und Webmaster<br>
+						<div class="daten">Schriftführer und Webmaster<br>
 						Conny Roloff<br>
-            <a href="mailto:sportwart@tcolching.de">sportwart@tcolching.de</a>
+            <a href="mailto:schriftführer@tcolching.de">schriftführer@tcolching.de</a>
             </div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Petra Streif" src="images/vorstand/petra_streif.png">
-						<div class="daten">Jugendsportwartin<br>Petra Streif<br>
+						<img alt="Conny Dutka" src="images/vorstand/conny_dutka.png">
+						<div class="daten">Sportwartin<br>Conny Dutka<br>
+						<a href="mailto:sportwart@tcolching.de">sportwart@tcolching.de</a>
+						</div>
+					</div>
+					<div class="visitenkarte">
+						<img alt="Moni Traub" src="images/vorstand/moni_traub.png">
+						<div class="daten">Jugendwartin<br>Moni Traub<br>
 						<a href="mailto:jugendwart@tcolching.de">jugendwart@tcolching.de</a>
 						</div>
 					</div>

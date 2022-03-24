@@ -90,9 +90,7 @@ include 'header.php';
           Solltet ihr schon vorab Interesse daran haben, wendet euch an kindertennis@tcolching.de. 
           Wir freuen uns über eure Fragen und Anmeldungen.</p>
 
-        <p>Monika Traub & Petra Streif</p>
-
-
+        <p>Monika Traub & Conny Dutka</p>
 
 			</section>
 		</div>
@@ -126,7 +124,7 @@ include 'header.php';
 							<td><strong>Jugendwartin:</strong></td>
 						</tr>
 						<tr>
-							<td>Petra Streif</td><td><a href="jugendwart@tcolching.de">jugendwart@tcolching.de</a></td>
+							<td>Moni Traub und Conny Dutka</td><td><a href="jugendwart@tcolching.de">jugendwart@tcolching.de</a></td>
 							<td>Tel.: 08142/4482182</td>
 						</tr>
 						<tr>
@@ -152,7 +150,7 @@ include 'header.php';
 				<p>
 				Vereinsmeister bei den Junioren/Knaben wurde nach spannenden Duellen Rico Streif vor seinen Mannschaftskameraden Nico Hochholzer und Tim Küstner. Clubmeisterin der Mädchen wurde Luna Streif. Platz 2 und 3 belegten hier Hanna Roloff und Fiona Roes. Die elf- und zwölfjährigen männlichen Bambini lieferten sich ebenfalls einige enge Matches. Am Ende konnte sich Niklas Vogt vor Michael Moll und Alexander Vogt durchsetzen. Auch die Kleinsten, die Sieben- bis Zehnjährigen, kämpften um jeden Punkt. Sieger in dieser Kategorie wurde schließlich, wie bereits 2016, Bastian Hochholzer. Die weiteren Plätze belegten Paul Rietschel und Tim Schreyer. Die Kinder konnten sich über Medaillen, Urkunden und Sachpreise freuen. Außerdem wurden unter allen Teilnehmern noch 2 Karten für ein Spiel des FC Bayern München verlost. „Alle Kinder und Jugendliche waren mit großer Freude sowie viel Spaß und Engagement dabei, auch das Wetter hat gepasst. Alles in allem also ein tolles Wochenende. Die Spieler und Spielerinnen können mit sich zufrieden sein und der TC Olching ist stolz auf seinen Nachwuchs.“ freute sich Jugendwartin und Organisatorin Petra Streif.
 				</p>
-				<p>Petra Streif, Jugendwartin</p>
+				<p>Petra Streif, Jugendwartin (bis 2021)</p>
 				<!--
 					<a haref="http://www.amper-kurier.de/aktuell/aus-den-vereinen/jugendclubmeisterschaften-des-tc-olching-7555" alt="Amper-Kurier">Bericht im Amper-Kurier</a>
 				-->

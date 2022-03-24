@@ -13,31 +13,18 @@ include 'header.php';
 				<article>
           <p>Für die Mannschaftsführer: <a href="https://www.btv.de/dam/jcr:2b0c670b-2ecd-4b1f-9564-f4f39a0f7e0d/btv_regeln_2019_IV_Wettspielbestimmungen%20(WSB)_200119_mon-2.pdf"> Die Durchführungsbestimmungen 2019</a></p>
           <p><a href="https://www.btv.de/de/mein-verein/vereinsseite/tc-olching.html#Mannschaften">Die Mannschaften des TC Olching beim BTV</a></p>
-          <!-- <ul>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2411537" target="_blank" rel="noopener">Herren Bezirksklasse 3 Gr. 030</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2451942" target="_blank" rel="noopener">Herren 30 Kreisliga (4-er) Gr. 132</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2414253" target="_blank" rel="noopener">Herren 40 Bezirksliga Gr. 138</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2410555" target="_blank" rel="noopener">Herren 50 Bezirksklasse 1 Gr. 186</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2412946" target="_blank" rel="noopener">Herren 50 Bezirksklasse 2 Gr. 190</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2412296" target="_blank" rel="noopener">Damen Bezirksklasse 2 Gr. 078</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2413327" target="_blank" rel="noopener">Damen 40 Bezirksliga Gr. 268</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2451941" target="_blank" rel="noopener">Damen 50 Bezirksliga Gr. 293</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2453726" target="_blank" rel="noopener">Junioren 18 Bezirksklasse 2 Jugend Gr. 352</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2451943" target="_blank" rel="noopener">Mädchen 16 Bezirksklasse 1 Jugend Gr. 456</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2412235" target="_blank" rel="noopener">Knaben 14 Bezirksklasse 1 Jugend Gr. 398</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2411329" target="_blank" rel="noopener">Bambini 12 Bezirksklasse 1 Jugend Gr. 487</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/teamportrait.html?teamid=2411621" target="_blank" rel="noopener">Midcourt U10 Bezirksklasse 1 Gr. 573</a></li>
-          </ul> -->
+          <ul>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742421" target="_blank" rel="noopener">Herren 55  </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742354" target="_blank" rel="noopener">Herren 50 I </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742386" target="_blank" rel="noopener">Herren 50 II</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742323" target="_blank" rel="noopener">Herren 40  </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742296" target="_blank" rel="noopener">Herren 30  </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742099" target="_blank" rel="noopener">Herren    </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742204" target="_blank" rel="noopener">Damen    </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1741118" target="_blank" rel="noopener">Damen 40  </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742522" target="_blank" rel="noopener">Damen 50  </a></li>
+          </ul>
 				</article>
-
-
-
-
-
-
-
-
-
 
 			</section>
 		</div>
