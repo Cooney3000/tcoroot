@@ -20,13 +20,13 @@ include("../templates/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2021</h1>
-  <h2 class="mt-0">(10.9. - 12.9.2021)</h2>
+  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2022</h1>
+  <!-- <h2 class="mt-0">(10.9. - 12.9.2021)</h2> -->
 
   <div class="container mt-4">
     <div class="row">
 
-      <div class="col-sm m-1">
+      <!-- <div class="col-sm m-1">
         <div class="h-100 bg-light p-2">
           <a class="btn btn-success w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
           <h5 class="h-25 m-2">Anmeldeliste</h5>
@@ -64,7 +64,7 @@ include("../templates/header.inc.php");
           <h5 class="h-25 m-2">Begegnungen</h5>
           <p class="h-25 pl-2">Wer wann gegen wen spielt</p>
         </div>
-      </div>
+      </div> -->
       <?php
       // Turnierverantwortliche erhalten mehr Buttons
       if (isset($_SESSION['userid']) && checkPermissions(T_ALL_PERMISSIONS)) {
@@ -75,12 +75,12 @@ include("../templates/header.inc.php");
             <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
           </div>
         </div>
-        <div class="col-sm m-1">
+        <!-- <div class="col-sm m-1">
           <div class="h-100 bg-light p-2">
             <a class="btn btn-danger w-100" href="bereitsAngemeldetBEdit.php">Spieler bearbeiten (B-Runde)</a>
             <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
           </div>
-        </div>
+        </div> -->
       <?php
       }
       ?>
@@ -112,6 +112,7 @@ include("../templates/header.inc.php");
     $mobil        = "";
     $ttid         = "";
     $tuid         = "";
+    $kategorie    = "";
     $willSpielen  = 0;
     $kommentar    = "";
 
@@ -124,6 +125,7 @@ include("../templates/header.inc.php");
       $mobil        = $_POST["mobil"];
       $ttid         = $tid;
       $tuid         = $user;
+      $kategorie    = $_POST["kategorie"];
       $willSpielen  = $_POST["willSpielen"] === "1" ? 1 : 0;
       $kommentar    = $_POST["kommentar"];
     } else {
@@ -136,6 +138,7 @@ include("../templates/header.inc.php");
           u.mobil as mn, 
           ttid, 
           tuid, 
+          category,
           wtp, 
           cmt
         FROM users as u 
@@ -144,6 +147,7 @@ include("../templates/header.inc.php");
             tournament_id AS ttid, 
             user_id AS tuid, 
             willing_to_play AS wtp, 
+            category AS category,
             comment AS cmt 
           FROM tournament_players 
           WHERE tournament_id = $tid
@@ -152,7 +156,7 @@ include("../templates/header.inc.php");
         WHERE u.id = {$user['id']}
 EOT;
       // $u=http_build_query($user);
-      // echo("<pre>$user</pre>");
+      // echo("<pre>$u</pre>");
       // error_log("0002: " . $sql);
       $statement  = $pdo->query($sql);
       // Das sollte genau eine Ergebniszeile liefern
@@ -163,18 +167,18 @@ EOT;
       $mobil      = $result["mn"];
       $ttid       = isset($result["ttid"]) ? $result["ttid"] : "";
       $tuid       = isset($result["tuid"]) ? $result["tuid"] : "";
+      $kategorie  = isset($result["category"]) ? $result["category"] : $kategorie;
       $willSpielen = isset($result["wtp"]) ? $result["wtp"] : $willSpielen;
       $kommentar  = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
-
     }
 
     if ($registrieren) {
       $statement = $pdo->prepare("UPDATE users SET festnetz = :festnetz, mobil = :mobil WHERE id = :user");
       $statement->execute(array('festnetz' => $festnetz, 'user' => $user['id'], 'mobil' => $mobil));
-      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, comment) VALUES (:ttid, :tuid, :willSpielen, :kommentar) 
+      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, category, willing_to_play, comment) VALUES (:ttid, :tuid, :kategorie, :willSpielen, :kommentar) 
         ON DUPLICATE KEY 
-        UPDATE willing_to_play = :willSpielen, comment = :kommentar");
-      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'kommentar' => $kommentar));
+        UPDATE willing_to_play = :willSpielen, category = :kategorie, comment = :kommentar");
+      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'kategorie' => $kategorie, 'kommentar' => $kommentar));
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
 
@@ -183,12 +187,9 @@ EOT;
     ?>
       <br>
       <p class="h3 mt-4">Deine Turnier-Anmeldung:</p>
-      <p class="text-groesser">Es gibt nur zwei Kategorien: Damen und Herren. Du wirst automatisch zugeordnet. 
-      Du glaubst, noch nicht gut genug für eine Turnierteilnahme zu sein? Wenn du ein oder zwei Jahre Spielpraxis
-       und schon im Training das eine oder andere Match gespielt hast, dann spiel mit. Ein Turnierspiel 
-       ist immer eine ganz neue Erfahrung und du lernst neue Leute kennen!
-       Solltest du in der ersten Runde verlieren, kannst du in der B-Runde mitspielen und hast so auf jeden Fall eine zweite Begegnung!</p>
-      <br>
+      <p class="text-groesser">Du glaubst, noch nicht gut genug für eine Turnierteilnahme zu sein? Wenn du ein oder zwei Jahre Spielpraxis
+        und schon im Training das eine oder andere Match gespielt hast, dann spiel mit! Ein Turnierspiel
+        ist immer eine ganz neue Erfahrung und du lernst neue Leute kennen!</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -202,9 +203,25 @@ EOT;
           <input class="form-control" type="text" id="festnetz" name="festnetz" value="<?= $festnetz ?>">
         </div>
 
+        <div class="form-group">
+          <label for="kategorie">Du kannst angeben, ob du auch die Besten herausfordern willst (A-Spieler:innen)
+            oder das lieber vermeiden möchtest (B-Spieler:innen). Es ist zurzeit allerdings noch völlig offen, ob wir getrennte Gruppen machen.<?=$kategorie?></label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="kategorie" id="kategorieA" value="A" <?= ($kategorie ==="A" ? 'checked' : '') ?> >
+            <label class="form-check-label" for="kategorieA">
+              A
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="kategorie" id="kategorieB" value="B" <?= ($kategorie ==="B" ? 'checked' : '') ?>>
+            <label class="form-check-label" for="kategorieB">
+              B
+            </label>
+          </div>
+        </div>
 
         <div class="form-control alert-danger border border-danger px-3">
-          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2021mit:&nbsp;</strong></span>
+          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2022 mit:&nbsp;</strong></span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenJA" value="1" <?= ($willSpielen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willSpielenJA">Ja</label>
@@ -226,9 +243,10 @@ EOT;
 
   <h2>Disclaimer</h2>
 
-  <p>Die TCO-Website, der interne Bereich und die Platzbuchung werden ständig aktualisiert und verbessert. 
+  <p>Die TCO-Website, der interne Bereich und die Platzbuchung werden ständig aktualisiert und verbessert.
     Wenn du Fehler findest oder Verbesserungsvorschläge hast, bitte ich um eine Email an
-    <a href="mailto:webmaster@tcolching.de">webmaster@tcolching.de</a>.</p>
+    <a href="mailto:webmaster@tcolching.de">webmaster@tcolching.de</a>.
+  </p>
   <p>Auch wenn es Probleme irgendwelcher Art gibt, bitte ich um Benachrichtigung. Bitte nicht einfach wegducken,
     wenn du versehentlich Änderungen gemacht hast. Keiner ist böse :-)</p>
   <p>Viel Spaß mit dem System!</p>

@@ -14,18 +14,18 @@ include 'header.php';
           <p>Für die Mannschaftsführer: <a href="https://www.btv.de/dam/jcr:2b0c670b-2ecd-4b1f-9564-f4f39a0f7e0d/btv_regeln_2019_IV_Wettspielbestimmungen%20(WSB)_200119_mon-2.pdf"> Die Durchführungsbestimmungen 2019</a></p>
           <p><a href="https://www.btv.de/de/mein-verein/vereinsseite/tc-olching.html#Mannschaften">Die Mannschaften des TC Olching beim BTV</a></p>
           <ul>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742421" target="_blank" rel="noopener">Herren 55  </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742354" target="_blank" rel="noopener">Herren 50 I </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742421" target="_blank" rel="noopener">Herren 55 (5er)</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742354" target="_blank" rel="noopener">Herren 50</a></li>
           <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742386" target="_blank" rel="noopener">Herren 50 II</a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742323" target="_blank" rel="noopener">Herren 40  </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742296" target="_blank" rel="noopener">Herren 30  </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742099" target="_blank" rel="noopener">Herren    </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742204" target="_blank" rel="noopener">Damen    </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1741118" target="_blank" rel="noopener">Damen 40  </a></li>
-          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742522" target="_blank" rel="noopener">Damen 50  </a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742323" target="_blank" rel="noopener">Herren 40</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742296" target="_blank" rel="noopener">Herren 30 (4er)</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742099" target="_blank" rel="noopener">Herren</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742204" target="_blank" rel="noopener">Damen</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1741118" target="_blank" rel="noopener">Damen 40</a></li>
+          <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742522" target="_blank" rel="noopener">Damen 50 (4er)</a></li>
+          <!-- <li><a href="https://www.btv.de/de/spielbetrieb/tabelle-spielplan.html?groupid=1742993" target="_blank" rel="noopener">Freizeit-Damen Doppel 60</a></li> -->
           </ul>
 				</article>
-
 			</section>
 		</div>
 
@@ -40,7 +40,7 @@ include 'header.php';
         <p>
           <strong>ACHTUNG:</strong> Eine Spieler/in darf kein Clubturnier-Match spielen, während sein Mannschaftstraining stattfindet!
 				</p>
-				<img id="platzbelegung" class="breitebilder" src="images/trainingsplan_2021.png" alt="Platzbelegung">
+				<img id="platzbelegung" class="breitebilder" src="images/trainingsplan_2022.png" alt="Platzbelegung">
 			</section>
 		</div>
 		<!-- <div id="blatt3">

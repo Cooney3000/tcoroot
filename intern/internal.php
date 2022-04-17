@@ -35,20 +35,27 @@ include("templates/header.inc.php");
   <div class="container mt-4">
     <div class="row">
 
-      <div class="col-sm mb-2">
+    <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
           <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
           <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
-          <!-- <p class="align-text-bottom">Jetzt registrieren!</p> -->
+          <p class="align-text-bottom">Neu: Platzbuchung jetzt schon 24h vorher möglich</p>
+        </div>
+      </div>
+
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="/intern/turnier/">Clubturnier '22</a>
+          <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
+          <p class="align-text-bottom">Jetzt schon anmelden!</p>
         </div>
       </div>
 
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
           <a class="btn btn-success w-100 mb-2" href="halloffame.php">Hall of Fame</a>
-          <h5>Ergebnisse, Sieger, Fotogalerien der Clubmeisterschaften</h5>
           <img class="mw-100" src="/intern/images/turniersieger/sieger2021.jpg" alt="Hall of Fame">
-          <!-- <p class="align-text-bottom">Bitte anmelden</p> -->
+          <p class="align-text-bottom">Ergebnisse, Sieger, Fotogalerien der Clubmeisterschaften</p>
         </div>
       </div>
 
@@ -97,13 +104,18 @@ include("templates/header.inc.php");
   </div> <!-- container -->
 
   <h2>Rundschreiben</h2>
-    <span><a class= " btn btn-secondary btn-sm" href ="rundschreiben/rundschreiben-2021-08-06.pdf">Rundschreiben vom 06.08.2021</a></span>
-    <span><a class= " btn btn-secondary btn-sm" href ="rundschreiben/rundschreiben-2021-06-12.pdf">Rundschreiben vom 12.06.2021</a></span>
-    <span><a class= " btn btn-secondary btn-sm" href ="rundschreiben/rundschreiben-2021-05-22.pdf">Rundschreiben vom 22.05.2021</a></span>
-    <span><a class= " btn btn-secondary btn-sm" href ="rundschreiben/rundschreiben-2021-05-19.pdf">Rundschreiben vom 19.05.2021</a></span>
+  <?php
+	
+	foreach (scandir("rundschreiben", SCANDIR_SORT_DESCENDING) as $file) {
+	  if ($file === ".." or $file === ".") continue;
+		preg_match_all('!\d+!', $file, $datum);
+	echo "<span><a class= \" btn btn-secondary btn-sm\" href =\"rundschreiben/$file\">Rundschreiben vom {$datum[0][2]}.{$datum[0][1]}.{$datum[0][0]}</a></span>\n";
+	}	
+  
+  ?>
 
   <?php
-  if (checkPermissions(VORSTAND)) {
+  if (checkPermissions(MANNSCHAFTSFUEHRER)) {
     //
     // Wurde einer der Buttons geklickt?
     //
