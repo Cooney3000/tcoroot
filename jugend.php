@@ -125,14 +125,12 @@ include 'header.php';
 						</tr>
 						<tr>
 							<td>Moni Traub und Conny Dutka</td><td><a href="jugendwart@tcolching.de">jugendwart@tcolching.de</a></td>
-							<td>Tel.: 08142/4482182</td>
 						</tr>
 						<tr>
 							<td><strong>Tennisballschule:</strong></td>
 						</tr>
 						<tr>
 							<td>Monika Traub</td><td><a href="kindertennis@tcolching.de">kindertennis@tcolching.de</a></td>
-							<td>Tel.: 08142/6699661</td>
 						</tr>
 					</table>
 					<div>

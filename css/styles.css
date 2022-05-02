@@ -189,6 +189,11 @@ th
 {
 	font-weight:bold;
 }
+.tbl-small 
+{
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
 li
 {
 	line-height:1.7em;

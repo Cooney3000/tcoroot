@@ -143,7 +143,7 @@ include("templates/header.inc.php");
     $statement = $pdo->prepare('(SELECT * FROM users WHERE status <> "T" AND status <> "X" ORDER BY status DESC, nachname, vorname)');
     $result = $statement->execute();
   ?>
-    <h2>Aktuell registrierte Benutzer</h2>
+    <h2>Aktuell registrierte Benutzer (nur für Mannschaftsführer sichtbar)</h2>
     <h3>(A = Aktiv, P = Passiv, D = Deaktiviert, W = Wartet auf Aktivierung)</h3>
     <div class="mx-3">
       <form action="internal.php" method="post">
@@ -156,8 +156,8 @@ include("templates/header.inc.php");
             <th>E-Mail</th>
             <th>Festnetz</th>
             <th>Mobil</th>
-            <th>Geburtsdatum</th>
-            <th>Registriert am</th>
+            <th>Geburtsjahr</th>
+            <!-- <th>Registriert am</th> -->
             <?php
             if (checkPermissions(VORSTAND)) { ?>
               <th>Aktionen</th>
@@ -179,8 +179,8 @@ include("templates/header.inc.php");
               <td class="<?= $classname ?>"><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a></td>
               <td class="<?= $classname ?>"><?= $row['festnetz'] ?></td>
               <td class="<?= $classname ?>"><?= $row['mobil'] ?></td>
-              <td class="<?= $classname ?>"><?= substr($row['geburtsdatum'], 0, 10) ?></td>
-              <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td>
+              <td class="<?= $classname ?> text-center"><?= substr($row['geburtsdatum'], 0, 4) ?></td>
+              <!-- <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td> -->
               <?php
               if (checkPermissions(VORSTAND)) { ?>
                 <td>

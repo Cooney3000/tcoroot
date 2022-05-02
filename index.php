@@ -51,18 +51,14 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
       } ?>
 
       <ul class="schlaeger">
-        <!-- <li><strong>Clubturnier</strong> <p>B-Rundenauslosung ist online!<a href="/intern/turnier/turnierbaum.php"><br>Zum Tableau</a></p></li>
-            <li><strong>Aktuelle Infos TCO (23.06.2020)!</strong> <p>Duschen, Zuschauen, Punktspiele, Gastro! <a href="#aktuellesschreiben">Zum Schreiben unseres Vorstandsvorsitzenden</a></p></li> -->
-        <li><strong>Abziehen, spritzen, Löcher ausgleichen!</strong>
-          <p>Am Anfang einer Saison sind die Plätze noch relativ weich – dieses Jahr durch die letzten Wetterkapriolen ganz besonders!
-<strong>Daher ist regelmäßiges Abziehen und Bewässern der Plätze enorm wichtig.</strong> Bitte am Anfang noch keine  Punktkämpfe austragen und Löcher und Unebenheiten sofort mit dem Fuß ausgleichen.
-</p>
-        </li>
-        <li><strong>Neuer Vorstand im Amt!</strong>
-          <p><a href="vorstand.php#vorstand">Hier geht's zu den neuen Vorstandsmitgliedern</a></p>
+        <li><strong>Drop-In-Start am 2. Mai ab 18 Uhr!</strong></li>
+        <li><strong>Clubturnier 2022 - Jetzt anmelden!</strong>
+          <p>Bitte meldet euch für unser diesjähriges Turnier an. Je früher, desto besser. Keine Startgebühr!</p>
+		  <p><a href="https://www.tcolching.de/intern/turnier/index.php">Zur Anmeldeseite</a></p>
         </li>
         <li><strong>Tennis zum Ausprobieren!</strong>
-          <p>Schnuppermitgliedschaft ist eine günstige Möglichkeit! <a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p>
+          <p>Die Schnuppermitgliedschaft ist eine günstige Möglichkeit für Neueinsteiger!</p>
+		  <p><a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p>
         </li>
         <li><strong>Clubturnier 2021</strong>
           <p><a href="#clubturnier">Presseartikel</a></p>

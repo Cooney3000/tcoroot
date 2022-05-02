@@ -56,14 +56,14 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				<h2>Liebe TCO'ler</h2>
 				<article class="spalte1">
           <p>Ich bin beim TCO Trainer in Vollzeit und für die Trainerposition in 2020 nach Olching umgesiedelt.</p>
-					<p>Ich bin 36 Jahre alt, ehemaliger 2. Bundesligaspieler und habe in internationalen Turnieren gespielt. </p>
-          <p>Als Trainer arbeite ich seit 16 Jahren. Ich komme aus Aalen, wo mein Ukraine-stämmiger Vater eine Tennisschule hat. 
+					<p>Ich bin 38 Jahre alt, ehemaliger 2. Bundesligaspieler und habe in internationalen Turnieren gespielt. </p>
+          <p>Als Trainer arbeite ich seit 18 Jahren. Ich komme aus Aalen, wo mein Ukraine-stämmiger Vater eine Tennisschule hat. 
           Ich spreche Deutsch, Russisch, Englisch und etwas Französisch.</p>
 					</p>
           <p><strong>Meine Kontaktdaten:</strong></p>
           <p>Email: michael070985@icloud.com</p>
           <p>WhatsApp: +49 179 5665353</p>
-          <p>Tel mobil (kann sich demnächst noch ändern): +49 176 74815404</p>
+          <p>Tel mobil: +49 176 74815404</p>
           <p><strong>Gruppenpreise je Stunde:</strong></p>
           <p>1 -2 Spieler: 41,00 EUR</p>
           <p>3 Spieler: 42,00 EUR</p>
@@ -75,11 +75,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			</section>
 		</div>
 		<div id="blatt4">
-			<section id="kindertraining" class="seite">
+<!--			<section id="kindertraining" class="seite">
 				<h2>Wintertraining 2021/22 für Kinder und Jugendliche</h2>
 				<article>
           <p>Die Einteilung für das Wintertraining ist abgeschlossen. Bitte direkt auf den Trainer zugehen, falls du noch mitmachen willst</p>
-					<!-- <table>
+					<table>
 						<tr>
 							<td>Trainer:   </td><td>Michael Görzen</td>
 						</tr>
