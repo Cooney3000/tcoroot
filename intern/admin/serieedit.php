@@ -203,7 +203,7 @@ EOT;
   }
   if ($atLeastOne) {
     $sql = rtrim($sql, ',');
-    // TECHO(DEBUG, $sql);
+    TECHO(DEBUG, $sql);
     $statement = $pdo->prepare($sql);
     $statement->execute();
 

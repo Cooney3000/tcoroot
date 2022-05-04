@@ -14,43 +14,43 @@ $title = "Upload Turnierbaum";
 include("../templates/header.inc.php");
 
 ?>
-<script src="../js/functions.js" ></script>
+<script src="../js/functions.js"></script>
 <script>
-    // var element = document.getElementById("nav-intern");
-    // element.classList.add("active");
-    document.getElementById("nav-intern").classList.add("active");
-    document.getElementById("nav-einstellungen").classList.remove("active");
-    document.getElementById("nav-turnier").classList.remove("active");
-    document.getElementById("nav-tafel").classList.remove("active");
-    document.getElementById("nav-login").classList.remove("active");
-    document.getElementById("nav-logout").classList.remove("active");
+  // var element = document.getElementById("nav-intern");
+  // element.classList.add("active");
+  document.getElementById("nav-intern").classList.add("active");
+  document.getElementById("nav-einstellungen").classList.remove("active");
+  document.getElementById("nav-turnier").classList.remove("active");
+  document.getElementById("nav-tafel").classList.remove("active");
+  document.getElementById("nav-login").classList.remove("active");
+  document.getElementById("nav-logout").classList.remove("active");
 </script>
 
 <div class="container main-container">
-<?php 
+  <?php
   require_once("turnierheader.inc.php");
-?>  
+  ?>
 
-<h3>Die aktuellen Turnierbäume</h3>
-<?php
+  <h3>Die aktuellen Turnierbäume</h3>
+  <?php
   // if (checkPermissions(T_ALL_PERMISSIONS) ) {
-  if ($user['id'] == 211 || $user['id'] == 212 ) {
-?>
+  if ($user['id'] == 211 || $user['id'] == 212) {
+  ?>
     <div class="editor">
       <p>Lieber Norbert,</p>
       <p>so geht's:</p>
       <ol>
         <li>Im Excel alles markieren und kopieren (Strg-A, Strg-C)</li>
         <li>IrfanView aufrufen: Windows-Taste, irf eingeben <br>
-            (evtl. einmal vorher downloaden und installieren: <a href="https://www.irfanview.de/download-irfanview-64-bit-deutsche-version/)">Download</a>)</li>
+          (evtl. einmal vorher downloaden und installieren: <a href="https://www.irfanview.de/download-irfanview-64-bit-deutsche-version/)">Download</a>)</li>
         <li>Das kopierte Bild reinkopieren: Strg-V</li>
         <li>Datei - Speichern unter - PNG-Dateityp auswählen<br>
-            Dateinamen müssen korrekt sein: <strong>herren.png, damen.png, herrenb.png, damenb.png</strong><br>
-            Beim Speichern in dem kleinen Dialog oben rechts darf "Transparente Farbe speichern NICHT ausgewählt sein!
+          Dateinamen müssen korrekt sein: <strong>herren.png, damen.png, herrenb.png, damenb.png</strong><br>
+          Beim Speichern in dem kleinen Dialog oben rechts darf "Transparente Farbe speichern NICHT ausgewählt sein!
         </li>
       </ol>
       <p>Jetzt kannst du die Dateien hier im Formular hochladen.</p>
-  </pre>
+      </pre>
       <form enctype="multipart/form-data" action="turnierbaum.php" method="POST">
         <div class="form-group">
           <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
@@ -67,7 +67,7 @@ include("../templates/header.inc.php");
           <input class="btn btn-secondary" type="submit" value="Datei(en) senden" />
         </div>
       </form>
-  </div>
+    </div>
   <?php
   }
   if (isset($_POST['op'])) {
@@ -78,38 +78,38 @@ include("../templates/header.inc.php");
           // basename() kann Directory Traversal Angriffe verhindern; weitere
           // Gültigkeitsprüfung/Bereinigung des Dateinamens kann angebracht sein
           $name = basename($_FILES["spieler"]["name"][$key]);
-          error_log ("tmp_name: $tmp_name, name: $name");
+          error_log("tmp_name: $tmp_name, name: $name");
           move_uploaded_file($tmp_name, "turnierbaum/$name");
         }
       }
     }
   }
-?>
+  ?>
 
 
-<p class="h3">Turnierbäume werden nach der Auslosung veröffentlicht</p>
+  <p class="h3">Turnierbäume werden nach der Auslosung veröffentlicht</p>
 
-<div>
-  <h2>Herren</h2>
-  <a href="turnierbaum/herren.png"><img id="herren" src="turnierbaum/herren.png" class="w-100" alt="herren Turnierbaum"></a>
-</div>
+  <div>
+    <h2>Herren</h2>
+    <a href="turnierbaum/herren.png"><img id="herren" src="turnierbaum/herren.png" class="w-100" alt="herren Turnierbaum"></a>
+  </div>
 
-<div>
-  <h2>Damen</h2>
-  <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png" class="w-100" alt="Damen Turnierbaum"></a>
-</div>
+  <div>
+    <h2>Damen</h2>
+    <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png" class="w-100" alt="Damen Turnierbaum"></a>
+  </div>
 
-<div>
-  <h2>Herren</h2>
-  <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png" class="w-75" alt="Herren B Turnierbaum"></a>
-</div>
+  <div>
+    <h2>Herren</h2>
+    <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png" class="w-75" alt="Herren B Turnierbaum"></a>
+  </div>
 
-<div>
-  <h2>Damen</h2>
-  <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png" class="w-50" alt="Damen B Turnierbaum"></a>
-</div>
+  <div>
+    <h2>Damen</h2>
+    <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png" class="w-50" alt="Damen B Turnierbaum"></a>
+  </div>
 
-<!--
+  <!--
 <div>
   <h2>Freizeitspieler</h2>
   <a href="turnierbaum/freizeitspieler.png"><img id="mannschaftsspieler" src="turnierbaum/freizeitspieler.png" class="w-100" alt="Freizeitspieler"></a>
@@ -118,6 +118,6 @@ include("../templates/header.inc.php");
 
 </div>
 
-<?php 
+<?php
 include("../templates/footer.inc.php")
 ?>
