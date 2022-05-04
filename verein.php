@@ -81,13 +81,13 @@ include 'header.php';
 					</ul>
           <p>
           Ein Training für Anfängergruppen vermitteln wir gerne. 
-          Bitte gehe auf Britta Göttling zu:  (08142) 12451, Mail <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>
+          Bitte gehe auf Petra Eder zu:  (08142) 667869, Mail <a href="petra.eder@tcolching.de">petra.eder@tcolching.de</a>
           </p>
 					<p>
 						<strong>Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
                 Wird bis zu diesem Datum die reguläre Mitgliedschaft für das Folgejahr beantragt, kann bis zum Saisonende ohne Mehrkosten weitergespielt werden!</strong>
 					</p>
-					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 12451, per E-Mail unter <a href="schriftfuehrer@tcolching.de">schriftfuehrer@tcolching.de</a>. 
+					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 667869, per E-Mail unter <a href="petra.eder@tcolching.de">petra.eder@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
 					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></strong>.</h3>
