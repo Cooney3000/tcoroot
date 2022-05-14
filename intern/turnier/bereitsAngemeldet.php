@@ -64,10 +64,6 @@ if($result) {
             <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=2&dir=asc"></a>&nbsp;&nbsp;
             <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=2&dir=desc"></a>
           </th>
-          <th>LK<br>
-            <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=1&dir=asc"></a>&nbsp;&nbsp;
-            <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=1&dir=desc"></a>
-          </th>
           <th>Telefon<br>
           </th>
           <th>Komm.</th>
@@ -91,7 +87,7 @@ if($result) {
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
           <td><?=substr($row['created_at'],8,2).'.'.substr($row['created_at'],5,2).'.'?></td>
-          <td><?=$row['lk']?></td>
+          <!-- <td><?=$row['lk']?></td> -->
           <td><?=$row['mobil']?></td>
           <td><?=$row['comment']?></td>
         </tr>

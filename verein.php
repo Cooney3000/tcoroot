@@ -77,7 +77,8 @@ include 'header.php';
 						<li>Spielberechtigung am Wochenende und an Feiertagen bei
 						Verf&#252;gbarkeit der Pl&#228;tze</li>
 						<li>Ab Mitte Juli (nach Ende der Punktspielsaison)
-						Spielberechtigung wie jedes andere aktive Mitglied</li>
+						Spielberechtigung wie jedes andere aktive Mitglied, wenn ein 
+						Mitgliedsantrag für das Folgejahr vorliegt (siehe unten)</li>
 					</ul>
           <p>
           Ein Training für Anfängergruppen vermitteln wir gerne. 
@@ -113,7 +114,7 @@ include 'header.php';
 				<h2>Der Vorstand</h2>
 				<article id="visitenkarten">
 					<div class="visitenkarte">
-						<img alt="Dr. Benjamin Vollrath" src="images/vorstand/benjamin_vollrath.png">
+						<img alt="Dr. Benjamin Vollrath" src="images/vorstand/benjamin_vollrath.jpg">
 						<div class="daten">1. Vorsitzender<br>Dr. Benjamin Vollrath<br>
 							<a href="mailto:benjamin.vollrath@tcolching.de">benjamin.vollrath@tcolching.de</a>
 						</div>
@@ -133,26 +134,26 @@ include 'header.php';
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.png">
+						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.jpg">
 						<div class="daten">Schriftführer und Webmaster<br>
 						Conny Roloff<br>
             <a href="mailto:schriftführer@tcolching.de">schriftführer@tcolching.de</a>
             </div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Conny Dutka" src="images/vorstand/conny_dutka.png">
+						<img alt="Conny Dutka" src="images/vorstand/conny_dutka.jpg">
 						<div class="daten">Sportwartin<br>Conny Dutka<br>
 						<a href="mailto:sportwart@tcolching.de">sportwart@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Moni Traub" src="images/vorstand/moni_traub.png">
+						<img alt="Moni Traub" src="images/vorstand/moni_traub.jpg">
 						<div class="daten">Jugendwartin<br>Moni Traub<br>
 						<a href="mailto:jugendwart@tcolching.de">jugendwart@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Thomas Stief" src="images/vorstand/Tommy-Buidl.jpg">
+						<img alt="Thomas Stief" src="images/vorstand/thomas_stief.jpg">
 						<div class="daten">Beisitzer Pressearbeit<br>
 						Thomas Stief<br>
             <a href="mailto:presse@tcolching.de">presse@tcolching.de</a>
