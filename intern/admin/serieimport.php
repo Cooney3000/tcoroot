@@ -36,7 +36,7 @@ VALUES
 EOT;
 
 $jetzt = date('Y-m-d H:m');
-$serieID = "Punktspiele";
+$serieID = "Punktspiele 2022";
 $file = "spielplan2022.csv";
 $openfile = fopen($file, "r");
 $fileArray = explode("\r\n", fread($openfile, filesize($file)));
@@ -53,11 +53,12 @@ foreach($fileArray as $line) {
   $platzArray = explode(",", $colArray[0]);
   foreach($platzArray as $platz) {
 // (0,0,'A','test', '2022-05-03 20:05','2022-05-03 20:05',211,211, 9,0,0,0, 1,'2022-05-02 08:00','2022-05-02 10:30','ts-punktspiele', '','0','0'),
-    $data .= "(0,0,'A','$serieID','$jetzt','$jetzt',211,211,'". $colArray[1] ."',0,0,0,$platz,'". $colArray[6] ."','". $colArray[7] ."','ts-punktspiele', '','0','0'),\r\n";
+    $data .= "(0,0,'A','$serieID','$jetzt','$jetzt',211,211,'". $colArray[1] ."',0,0,0,$platz,'". $colArray[6] ."','". $colArray[7] ."','ts-punktspiele', '". $colArray[10] ."','0','0'),\r\n";
   }
 }
 
 $sql .= substr($data,0,strlen($data) - 3);
+// TECHO(DEBUG, "<pre>$sql</pre>");
 $statement = $pdo->prepare($sql);
 $statement->execute();
 
