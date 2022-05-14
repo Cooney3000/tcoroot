@@ -269,7 +269,7 @@ if ($showFormular) {
 
       <div class="form-group">
         <label for="comment">Kommentar (Erläuterung, was das für eine Serie ist): </label>
-        <input class="form-control" type="text" id="comment" name="comment" value="" required>
+        <input class="form-control" type="text" id="comment" name="comment" value="">
       </div>
 
       <div class="form-group">

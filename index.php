@@ -51,6 +51,9 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
       } ?>
 
       <ul class="schlaeger">
+        <li><strong>Kid's Day ein voller Erfolg!</strong>
+          <p><a href="jugend.php#kidsday">Zur Pressemeldung</a></p>
+      </li>
         <li><strong>Drop-In-Start am 2. Mai ab 18 Uhr!</strong></li>
         <li><strong>Clubturnier 2022 - Jetzt anmelden!</strong>
           <p>Bitte meldet euch für unser diesjähriges Turnier an. Je früher, desto besser. Keine Startgebühr!</p>

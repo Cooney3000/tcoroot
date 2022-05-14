@@ -22,71 +22,9 @@ include("../templates/header.inc.php");
 <div class="container main-container">
   <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2022</h1>
   <!-- <h2 class="mt-0">(10.9. - 12.9.2021)</h2> -->
-
-  <div class="container mt-4">
-    <div class="row">
-
-      <!-- <div class="col-sm m-1">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
-          <h5 class="h-25 m-2">Anmeldeliste</h5>
-          <p class="h-25 pl-2">Wer eigentlich mitspielt</p>
-        </div>
-      </div>
-      <div class="col-sm m-1">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="bereitsAngemeldetB.php">Liste der Spieler (B-Runde)</a>
-          <h5 class="h-25 m-2">Anmeldeliste</h5>
-          <p class="h-25 pl-2">Wer in der B-Runde dabei ist (Auslosung nach der 1. Runde)</p>
-        </div>
-      </div>
-      <div class="col-sm m-1">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="infoAblauf.php">Ablauf</a>
-          <h5 class="h-25 m-2">Ablauf</h5>
-          <p class="h-25 pl-2">Bälle, Terminvereinbarung, Regeln, ...</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-    </div>
-    <div class="row">
-      <div class="col-sm m-1">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="turnierbaum.php">Turnierbaum</a>
-          <h5 class="h-25 m-2">Turnierbäume</h5>
-          <p class="h-25 pl-2">Der aktuelle Turnierstatus</p>
-        </div>
-      </div>
-      <div class="col-sm m-1">
-        <div class="h-100 bg-light p-2">
-          <a class="btn btn-success w-100" href="begegnungen.php">Begegnungen</a>
-          <h5 class="h-25 m-2">Begegnungen</h5>
-          <p class="h-25 pl-2">Wer wann gegen wen spielt</p>
-        </div>
-      </div> -->
-      <?php
-      // Turnierverantwortliche erhalten mehr Buttons
-      if (isset($_SESSION['userid']) && checkPermissions(T_ALL_PERMISSIONS)) {
-      ?>
-        <div class="col-sm m-1">
-          <div class="h-100 bg-light p-2">
-            <a class="btn btn-danger w-100" href="bereitsAngemeldetEdit.php">Spieler bearbeiten</a>
-            <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
-          </div>
-        </div>
-        <!-- <div class="col-sm m-1">
-          <div class="h-100 bg-light p-2">
-            <a class="btn btn-danger w-100" href="bereitsAngemeldetBEdit.php">Spieler bearbeiten (B-Runde)</a>
-            <p class="h-25 pl-2">(Nur für Admins sichtbar)</p>
-          </div>
-        </div> -->
-      <?php
-      }
-      ?>
-    </div> <!-- row -->
-  </div> <!-- container -->
-
+<?php 
+  require_once("turnierheader.inc.php");
+?> 
 
   <!-- <h2>Turnieranmeldung (Registrierung geschlossen)</h2> -->
   <div class="registration-form">
@@ -203,7 +141,7 @@ EOT;
           <input class="form-control" type="text" id="festnetz" name="festnetz" value="<?= $festnetz ?>">
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="kategorie">Du kannst angeben, ob du auch die Besten herausfordern willst (A-Spieler:innen)
             oder das lieber vermeiden möchtest (B-Spieler:innen). Es ist zurzeit allerdings noch völlig offen, ob wir getrennte Gruppen machen.<?=$kategorie?></label>
           <div class="form-check">
@@ -218,7 +156,7 @@ EOT;
               B
             </label>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-control alert-danger border border-danger px-3">
           <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2022 mit:&nbsp;</strong></span>
