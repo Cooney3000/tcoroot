@@ -17,7 +17,7 @@ $menuid = "nav-" . getFilename(__FILE__);
 </script>
 
 <?php
-if (checkPermissions(VORSTAND)) {
+if (checkPermissions(KASSIER)) {
 ?>
 
   <div class="container main-container registration-form">

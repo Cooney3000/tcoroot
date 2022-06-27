@@ -26,12 +26,12 @@ include("../templates/header.inc.php");
   require_once("turnierheader.inc.php");
 ?> 
 
-  <!-- <h2>Turnieranmeldung (Registrierung geschlossen)</h2> -->
+  <h2>Turnieranmeldung (Registrierung geschlossen)</h2>
   <div class="registration-form">
 
     <?php
 
-    $showFormular = 1;
+    $showFormular = 0;
     $tid = $CONFIG['activeTournament'];
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
