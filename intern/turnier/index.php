@@ -63,7 +63,7 @@ include("../templates/header.inc.php");
       $mobil        = $_POST["mobil"];
       $ttid         = $tid;
       $tuid         = $user;
-      $kategorie    = $_POST["kategorie"];
+      // $kategorie    = $_POST["kategorie"];
       $willSpielen  = $_POST["willSpielen"] === "1" ? 1 : 0;
       $kommentar    = $_POST["kommentar"];
     } else {
@@ -105,7 +105,7 @@ EOT;
       $mobil      = $result["mn"];
       $ttid       = isset($result["ttid"]) ? $result["ttid"] : "";
       $tuid       = isset($result["tuid"]) ? $result["tuid"] : "";
-      $kategorie  = isset($result["category"]) ? $result["category"] : $kategorie;
+      // $kategorie  = isset($result["category"]) ? $result["category"] : $kategorie;
       $willSpielen = isset($result["wtp"]) ? $result["wtp"] : $willSpielen;
       $kommentar  = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
     }
@@ -113,10 +113,10 @@ EOT;
     if ($registrieren) {
       $statement = $pdo->prepare("UPDATE users SET festnetz = :festnetz, mobil = :mobil WHERE id = :user");
       $statement->execute(array('festnetz' => $festnetz, 'user' => $user['id'], 'mobil' => $mobil));
-      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, category, willing_to_play, comment) VALUES (:ttid, :tuid, :kategorie, :willSpielen, :kommentar) 
+      $statement = $pdo->prepare("INSERT INTO tournament_players (tournament_id, user_id, willing_to_play, comment) VALUES (:ttid, :tuid, :willSpielen, :kommentar) 
         ON DUPLICATE KEY 
-        UPDATE willing_to_play = :willSpielen, category = :kategorie, comment = :kommentar");
-      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'kategorie' => $kategorie, 'kommentar' => $kommentar));
+        UPDATE willing_to_play = :willSpielen, comment = :kommentar");
+      $statement->execute(array('ttid' => $ttid, 'tuid' => $tuid['id'], 'willSpielen' => $willSpielen, 'kommentar' => $kommentar));
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
 
