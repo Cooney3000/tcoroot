@@ -16,12 +16,12 @@ $menuid = "nav-" . getFilename(__FILE__);
   document.getElementById("<?= $menuid ?>").classList.add("active");
 </script>
 
-<?php
-if (checkPermissions(VORSTAND)) {
-?>
-
   <div class="container main-container registration-form">
     <h1>Funktionen</h1>
+
+<?php
+if (checkPermissions(KASSIER)) {
+?>
 
     <!-- <form action="index.php" method="post"> -->
     <h3> Registrierungscode</h3>
@@ -48,8 +48,9 @@ if (checkPermissions(VORSTAND)) {
     </div>
 
     <!-- </form> -->
-
-
+<?php
+}
+?>
 
 
   </div>
@@ -95,6 +96,5 @@ if (checkPermissions(VORSTAND)) {
   </script>
 
 <?php
-}
 include("footer.inc.php");
 ?>

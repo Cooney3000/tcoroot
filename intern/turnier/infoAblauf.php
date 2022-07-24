@@ -27,37 +27,31 @@ $kw = "champ2019";
   ?>
   <h1>Turnierablauf</h1>
   </p>
-  <h2>Termine</h2>
-  <p>Wegen des Corona-bedingten verspäteten Starts der Punktspielsaison kann das Turnier 2021 nicht in der gewohnten Form stattfinden. 
-  Wir haben daher beschlossen, das Turnier auf ein Wochenende zu konzentrieren:
+  <h2>Auslosung</h2>
+  <p>Die Auslosung ist im Turnierbaum zu finden, sobald verfügbar, siehe ggf. oben in der Navigation</p>
     
-    <div class="h3">Freitag, 10. September bis Sonntag, 12. September</div>
-
-    Ausnahme: Bei mehr als 16 Teilnehmern in einer Kategorie wird die erste Runde im Zeitraum 01.08.-09.09.21 nach freier Zeiteinteilung gespielt.
-  </p>
-  <h2>Anmeldung / Auslosung</h2>
+  <h2>Spieltermine selbst vereinbaren!</h2>
   <p>
-    Die Anmeldung zum Clubturnier erfolgt über den internen Bereich. Anmeldezeitraum ist ab sofort bis 30. Juli. Sofern in einer 
-    Kategorie weniger als 16 Spieler/Spielerinnen gemeldet sind, kann bis 7. September noch nachgemeldet werden.
-    Die Auslosung ist abhängig von der Anzahl der bis 30.07.21 gemeldeten Teilnehmer:
-    Mehr als 16 Teilnehmer: Auslosung 31. Juli
-    Weniger als 16 Teilnehmer: Auslosung 8. September
+Das Turnier findet während der Saison statt. Halbfinale und Finale werden an einem Septemberwoche gespielt. Alle Spiele bis dahin 
+werden eigenverantwortlich mit den Gegnern vereinbart und in der Platzbuchung eingetragen. </p>
+<p><strong>Bitte beachten:</strong></p>
+<ul>
+  <li>In der Platzbuchung als "Turnier" eintragen. Das geht auch, wenn es weiter in der Zukunft liegt.</li>
+  <li>Bitte möglichst Platz 1 buchen. Wenn es nicht anders geht: Platz 2. Ein Turnierspiel ist immer attraktiv für Zuschauer, 
+      auch wenn Ihr das anders seht.</li>
+  <li>Bälle: Bitte einigt euch auf Bälle. Idealerweise sind sie neu.</li>
+</ul>
+
+
   </p>
   <h2>Kategorien / Modus</h2>
   <p>
-    Es wird eine Herren- und eine Damen-Kategorie geben. Gespielt wird im einfachen k.o.-System. Wer sein erstes Spiel verliert, spielt in der B-Runde weiter.
+    Es gibt eine Herren- und eine Damen-Kategorie. Gespielt wird im einfachen k.o.-System. Wer sein erstes Spiel verliert, 
+    kann in der B-Runde weiterspielen.
   </p>
-  <h2>Konkrete Zeitplanung</h2>
-  <p>
-    Eine mögliche erste Runde bei mehr als 16 Teilnehmern findet mit freier Zeiteinteilung statt. Dazu vereinbart ihr bitte bis spätestens 3 Tage nach Auslosung mit eurem Partner einen Spieltermin und tragt ihn im Platzbuchungssystem ein.
-    Die Spiele ab dem Achtelfinale (Runde der letzten 16) finden ab Freitag, 10. September nachmittags statt. Bitte plant diesen Tag nach Möglichkeit als Spieltag mit ein. Es werden vermutlich nicht alle Achtelfinals am Freitag stattfinden können, die restlichen werden dann Samstag Vormittag gespielt. Das Viertelfinale ist für Samstag nachmittags vorgesehen, Halbfinale und Finale dann am Sonntag.
-    Die B-Runde findet am Samstag und Sonntag statt.
-  </p>
-  <h2>Sonstiges</h2>
-  <p>
-    Bälle bringt bitte jeder selbst mit. Grundsätzlich ist als Turnierball der für Punktspiele vorgesehene Dunlop-Ball btv 1.0 zu verwenden. Ihr könnt euch aber auch auf jeden anderen Ball einigen. Die Bälle sollten neu oder neuwertig sein, aber auch hier könnt ihr euch einfach absprechen.
-  </p>
-  LG Norbert
+  <h2>Auslosung nach DTB-Turnierregeln</h2>
+  <p>Es wurde streng nach den DTB-Turnierregeln vorgegangen: Qualifikanten wurden nach Erfahrung der Turnierleitung bestimmt. Gesetzt wurden 
+    die nach aktueller LK acht stärksten Spieler. Alle anderen Positionen wurden nach Zufall ausgelost.</p>
 </div>
 
 <?php

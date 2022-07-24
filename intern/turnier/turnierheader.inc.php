@@ -8,18 +8,18 @@
       <div class="col-sm m-1">
           <a class="btn btn-success btn-small w-100" href="bereitsAngemeldet.php">Liste der Spieler</a>
       </div>
-<!--
       <div class="col-sm m-1">
-          <a class="btn btn-success btn-small w-100" href="bereitsAngemeldetB.php">Liste der Spieler (B-Runde)</a>
-      </div>
-      <div class="col-sm m-1">
-            <a class="btn btn-success btn-small w-100" href="infoAblauf.php">Ablauf</a>
+            <a class="btn btn-success btn-small w-100" href="infoAblauf.php">INFO Ablauf</a>
       </div>
       <div class="col-sm m-1">
             <a class="btn btn-success btn-small w-100" href="turnierbaum.php">Turnierbaum</a>
       </div>
       <div class="col-sm m-1">
             <a class="btn btn-success btn-small w-100" href="begegnungen.php">Begegnungen</a>
+      </div>
+<!--
+      <div class="col-sm m-1">
+          <a class="btn btn-success btn-small w-100" href="bereitsAngemeldetB.php">Liste der Spieler (B-Runde)</a>
       </div>
 -->
 <?php

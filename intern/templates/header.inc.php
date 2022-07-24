@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="cache-control" content="no-cache">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>TC Olching <?= $title ?></title>
@@ -26,9 +27,9 @@
     <div class="mx-auto order-0">
       <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
     </div>
-      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" id="nav-menue">
@@ -54,11 +55,11 @@
           <li class="nav-item" id="nav-logout">
             <a class="nav-link" href="/intern/logout.php">Logout</a>
           </li>
-          <?php } else { ?>
-            <li class="nav-item" id="nav-login">
-              <a class="nav-link" href="/intern/login.php">Login</a>
-            </li>
-            <?php
+        <?php } else { ?>
+          <li class="nav-item" id="nav-login">
+            <a class="nav-link" href="/intern/login.php">Login</a>
+          </li>
+        <?php
         } ?>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -66,6 +67,6 @@
           <a href="/intern/settings.php"><img src="/intern/images/user.png" alt="<?= $username ?> Bild"><br><?= $username ?></a>
         </li>
       </ul>
-      </div>
+    </div>
     </div>
   </nav>
