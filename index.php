@@ -51,6 +51,9 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
       } ?>
 
       <ul class="schlaeger">
+      <li><strong>DTB-Turnier: Olching Open vom 2. - 4 September 2022!</strong>
+          <p><a href="#olchingopen">Zur Info</a></p>
+      </li>
       <li><strong>Kreismeisterschaften beim TCO und TC Gernlinden vom 15. bis zum 18. September 2022!</strong>
           <p><a href="#kreism">Zur Ausschreibung</a></p>
       </li>
