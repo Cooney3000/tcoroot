@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/intern/tafel/static/css/main.82f24b2e.chunk.css",
-    "main.js": "/intern/tafel/static/js/main.9d5822dd.chunk.js",
-    "main.js.map": "/intern/tafel/static/js/main.9d5822dd.chunk.js.map",
+    "main.js": "/intern/tafel/static/js/main.06070cdf.chunk.js",
+    "main.js.map": "/intern/tafel/static/js/main.06070cdf.chunk.js.map",
     "runtime-main.js": "/intern/tafel/static/js/runtime-main.4380a16e.js",
     "runtime-main.js.map": "/intern/tafel/static/js/runtime-main.4380a16e.js.map",
     "static/js/2.2c995182.chunk.js": "/intern/tafel/static/js/2.2c995182.chunk.js",
     "static/js/2.2c995182.chunk.js.map": "/intern/tafel/static/js/2.2c995182.chunk.js.map",
     "index.html": "/intern/tafel/index.html",
-    "precache-manifest.e14d2adad60749f082bf8fbf43074392.js": "/intern/tafel/precache-manifest.e14d2adad60749f082bf8fbf43074392.js",
+    "precache-manifest.ac1ef3e97f7b5ff2625201047a3fa810.js": "/intern/tafel/precache-manifest.ac1ef3e97f7b5ff2625201047a3fa810.js",
     "service-worker.js": "/intern/tafel/service-worker.js",
     "static/css/main.82f24b2e.chunk.css.map": "/intern/tafel/static/css/main.82f24b2e.chunk.css.map",
     "static/js/2.2c995182.chunk.js.LICENSE.txt": "/intern/tafel/static/js/2.2c995182.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4380a16e.js",
     "static/js/2.2c995182.chunk.js",
     "static/css/main.82f24b2e.chunk.css",
-    "static/js/main.9d5822dd.chunk.js"
+    "static/js/main.06070cdf.chunk.js"
   ]
 }
