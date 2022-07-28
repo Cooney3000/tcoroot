@@ -99,17 +99,17 @@ include("../templates/header.inc.php");
     <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png?rnd=<?php echo time(); ?>" class="w-100" alt="Damen Turnierbaum"></a>
   </div>
 
-  <!-- <div>
-    <h2>Herren</h2>
+  <div>
+    <h2>Herren B</h2>
     <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png?rnd=<?php echo time(); ?>" class="w-75" alt="Herren B Turnierbaum"></a>
   </div>
 
-  <div>
+  <!-- <div>
     <h2>Damen</h2>
     <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png?rnd=<?php echo time(); ?>" class="w-50" alt="Damen B Turnierbaum"></a>
   </div> -->
 
-  <!--
+<!--
 <div>
   <h2>Freizeitspieler</h2>
   <a href="turnierbaum/freizeitspieler.png"><img id="mannschaftsspieler" src="turnierbaum/freizeitspieler.png?rnd=<?php echo time(); ?>" class="w-100" alt="Freizeitspieler"></a>

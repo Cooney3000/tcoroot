@@ -51,14 +51,13 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
       } ?>
 
       <ul class="schlaeger">
-        <li><strong>Kid's Day ein voller Erfolg!</strong>
+      <li><strong>Kreismeisterschaften beim TCO und TC Gernlinden vom 15. bis zum 18. September 2022!</strong>
+          <p><a href="#kreism">Zur Ausschreibung</a></p>
+      </li>
+      <li><strong>Kid's Day ein voller Erfolg!</strong>
           <p><a href="jugend.php#kidsday">Zur Pressemeldung</a></p>
       </li>
-        <li><strong>Drop-In-Start am 2. Mai ab 18 Uhr!</strong></li>
-        <li><strong>Clubturnier 2022 - Jetzt anmelden!</strong>
-          <p>Bitte meldet euch für unser diesjähriges Turnier an. Je früher, desto besser. Keine Startgebühr!</p>
-		  <p><a href="https://www.tcolching.de/intern/turnier/index.php">Zur Anmeldeseite</a></p>
-        </li>
+        <li><strong>Drop-In jeden Montag ab 18 Uhr!</strong></li>
         <li><strong>Tennis zum Ausprobieren!</strong>
           <p>Die Schnuppermitgliedschaft ist eine günstige Möglichkeit für Neueinsteiger!</p>
 		  <p><a href="/verein.php#mitgliedschaft">Zur Übersicht</a></p>
@@ -122,6 +121,22 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 				</div> -->
   </section>
 </div>
+
+
+
+<div id="blatt5" class="blatt">
+<section id="kreism" class="seite">
+    <article>
+      <img src="images/kreism/ausschreibung.png" alt="Kreismeisterschaften 2022" class="breitebilder" />
+    </article>
+    <article>
+      <a href="/downloads/Ausschreibung Kreismeisterschaften2022_v220601-1220.pdf">Download der gesamten Ausschreibung</a>
+    </article>
+  </section>
+</div>
+
+
+
 <div id="blatt4" class="blatt">
   <section id="clubturnier" class="seite">
     <article>
@@ -138,8 +153,7 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 
 
 
-
-<div id="blatt5" class="blatt">
+<div id="blatt6" class="blatt">
   <section id="olchingopen" class="seite">
     <article class="spalte1">
       <img src="images/OlchingOpen/fahnen.png" alt="Olching Open" class="breitebilder" />
@@ -153,13 +167,14 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 
     <article class="clean">
 
-      <h3>Top-Tennis beim DTB-Turnier im Tennisclub Olching!</h3>
+      <h3>In 2022 wieder Top-Tennis beim DTB-Turnier im Tennisclub Olching!</h3>
       <p>
         <!-- In Olching wird Tennis der Spitzenklasse <strong>bei freiem Eintritt</strong> präsentiert.  -->
-        Jedes Jahr richtet der TC Olching e.V. die Olching Open aus. Bei einem
-        Preisgeld von 3.000 € haben wir immer ein hochklassiges Teilnehmerfeld mit DTB-Ranglistenspieler:innen und spannende Matches.
+        Jedes Jahr richtet der TC Olching e.V. die Olching Open aus. Wir haben wie immer ein hochklassiges Teilnehmerfeld mit DTB-Ranglistenspieler:innen und spannenden Matches.
       </p>
-      <p>In den Jahren 2020/2021 musste das Turnier Corona-bedingt leider ausfallen. Wir sind zuversichtlich, dass es 2022 wieder stattfinden wird!</p>
+      <p>In den Jahren 2020/2021 musste das Turnier Corona-bedingt leider ausfallen. In 2022 wird es wieder stattfinden, und zwar
+        <h3>von 02. bis 04. September!</h3>
+      </p>
 
       <p>Gespielt wird auf der Anlage des TC Olching, sowie auf Plätzen der befreundeten Vereine TSV Geiselbullach,
         TC Gernlinden, TC Puchheim und TC Eichenau.</p>
