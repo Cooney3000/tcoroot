@@ -34,7 +34,17 @@
 				Hier kannst du dich direkt an den TC Olching wenden.<br>
 					Anregungen und Hinweise zur Website bitte an unseren <a href="mailto://webmaster@tcolching.de">Webmaster Conny Roloff</a>.
 				</p>
-				<p>
+				<h3>Der TC Olching in den sozialen Medien</h3>
+				<article class="zweiSpalten">
+				<div class="spalte1">
+						<h4>Instagram:</h4>
+						<a href="https://instagram.com/tcolching?igshid=MzRlODBiNWFlZA=="><img src="/images/socialmedia/QR_Code_Instagram.png?rnd=<?php echo time(); ?>"></a>
+					</div>
+					<div class="spalte2">
+						<h4>Facebook:</h4>
+						<a href="https://www.facebook.com/profile.php?id=100095247892556"><img src="/images/socialmedia/QR_Codes_Facebook.png?rnd=<?php echo time(); ?>"></a>
+					</div>
+				</article>				<p>
 					<h3>Sitemap</h3>
 
 					<div class="siteMapAbschnitt">

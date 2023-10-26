@@ -73,7 +73,7 @@ if (isset($_POST['email']))
   $email_value = htmlentities($_POST['email']);
 }
 $title = "Login";
-include("templates/loginheader.inc.php");
+include("inc/loginheader.inc.php");
 ?>
 <div class="container small-container-330 form-signin">
   <form action="login.php" method="post">
@@ -105,5 +105,5 @@ include("templates/loginheader.inc.php");
 
 
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

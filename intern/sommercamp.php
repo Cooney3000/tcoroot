@@ -12,7 +12,7 @@ $user = check_user();
 // error_log (join(" # ", $user));
 
 $title = "Sommercamp";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -282,5 +282,5 @@ if($result) {
 
 
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

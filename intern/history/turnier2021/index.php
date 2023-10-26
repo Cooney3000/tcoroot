@@ -11,7 +11,7 @@ require_once("../../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Intern Historie Turnier 2019";
-include("../../templates/header.inc.php");
+include("../../inc/header.inc.php");
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
@@ -184,6 +184,6 @@ include("../../templates/header.inc.php");
   </article>
 </div>
 <?php 
-include("../../templates/footer.inc.php")
+include("../../inc/footer.inc.php")
 ?>
 

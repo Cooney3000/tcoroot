@@ -111,7 +111,7 @@ EOT;
           $bDay = date_format(date_modify($modifiedDate, "+$wDays day"), 'Y-m-d');
 
           for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
-            if ($platz[$pI] != '') {
+            if ($platz[$pI] != 0) {
               $platzTmp = $pI + 1;
 
 
@@ -177,7 +177,7 @@ EOT;
       $bDay = implode('-', array_reverse(explode('.', $einzelDay)));
       // TECHO(DEBUG, $bDay);
       for ($pI = 0; $pI < $CONFIG['anzahlPlaetze']; $pI++) {
-        if ($platz[$pI] != '') {
+        if ($platz[$pI] != 0) {
           $platzTmp = $pI + 1;
 
           $zeile = <<<EOT
@@ -203,7 +203,7 @@ EOT;
   }
   if ($atLeastOne) {
     $sql = rtrim($sql, ',');
-    TECHO(DEBUG, $sql);
+    // TECHO(DEBUG, $sql);
     $statement = $pdo->prepare($sql);
     $statement->execute();
 

@@ -4,7 +4,7 @@ require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
 
 $title = "Passwort neu vergeben";
-include("templates/header.inc.php")
+include("inc/header.inc.php")
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
@@ -117,5 +117,5 @@ else
 
 </div>
 <?php 
-include("templates/footer.inc.php");
+include("inc/footer.inc.php");
 ?>

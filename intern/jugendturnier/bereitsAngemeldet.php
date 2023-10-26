@@ -8,7 +8,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Angemeldete Spieler";
-include("../templates/header.inc.php")
+include("../inc/header.inc.php")
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
@@ -106,5 +106,5 @@ if($result) {
 ?>
 </div>
 <?php 
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

@@ -4,7 +4,7 @@ require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
 
 $title = "Passwort zurücksetzen";
-include("templates/header.inc.php")
+include("inc/header.inc.php")
 ?>
 <script>
     // var element = document.getElementById("nav-intern");
@@ -132,6 +132,6 @@ if ($showFormular)
 ?>
 </div>
 <?php 
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>
 

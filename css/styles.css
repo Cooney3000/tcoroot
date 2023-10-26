@@ -112,6 +112,10 @@ th
 	color: white;
 	background-color: grey;
 }
+.sms-danger
+{
+	background-color:#ff3300;
+}
 .smSection
 {
 	display: none;
@@ -255,13 +259,14 @@ h3
 }
 #sms_Message
 {
+	width: auto;
 	border:0.15em solid white;
 	border-radius: 0.5em;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	color:white;
 	text-align: center;
-	vertical-align: center;
+	vertical-align: middle;
 }
 #sms_Message h1	
 {
@@ -306,7 +311,7 @@ h3
 	width:250px;
 	height:auto;
 	text-align:center;
-	margin: 10px auto 10px auto;
+	margin: 10px auto 10px 10px;
 }
 #datenschutz
 {
@@ -334,7 +339,7 @@ h3
 	text-decoration:underline;
 }
 
-#blattSmsText
+.bg-danger
 {
 	background-color:#ff3300;
 }
@@ -708,7 +713,19 @@ footer h4
 {
 	clear:both;
 }
-
+.zweiSpalten .spalte1, .spalte2
+{
+	float:left;
+	width:50%;
+	max-width:500px;
+	padding: 10px;
+	margin:auto;
+}
+.zweiSpalten spalte2
+{
+	clear:both;
+	margin:auto;
+}
 
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT */
 

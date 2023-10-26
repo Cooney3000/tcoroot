@@ -7,7 +7,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Platzbuchung - Anleitung";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 $kw = "champ2019";
 ?>
 <script>
@@ -55,5 +55,5 @@ werden eigenverantwortlich mit den Gegnern vereinbart und in der Platzbuchung ei
 </div>
 
 <?php
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

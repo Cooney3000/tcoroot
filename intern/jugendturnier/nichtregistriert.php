@@ -8,7 +8,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Norberts Seite";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 if (checkPermissions(T_ALL_PERMISSIONS) ) 
 {
 ?>
@@ -63,6 +63,6 @@ EOT;
 ?>
   </div>
 <?php 
-  include("../templates/footer.inc.php");
+  include("../inc/footer.inc.php");
 }
 ?>

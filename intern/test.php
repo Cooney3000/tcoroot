@@ -12,7 +12,7 @@ $user = check_user();
 // error_log (join(" # ", $user));
 
 $title = "Intern - Aktionen";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 
 <h1>Platzbelegungen</h1>

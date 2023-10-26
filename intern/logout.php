@@ -27,7 +27,7 @@ if (isset($_COOKIE['identifier']))
 
 
 $title = "Logout";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 
 <script>
@@ -44,5 +44,5 @@ Der Logout war erfolgreich. <a href="login.php">Zurück zum Login</a>.
 </div>
 
 <?php 
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

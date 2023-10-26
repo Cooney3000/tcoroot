@@ -12,7 +12,7 @@ $user = check_user();
 // error_log (join(" # ", $user));
 
 $title = "Intern - Aktionen";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -31,7 +31,7 @@ include("templates/header.inc.php");
   <article class="m-3">
       
       <p class="h3 persoenlich text-gross">Liebe TCO‘ler</p>
-      <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25 p-2" alt="Michael Görzen">
+      <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-right w-25 p-2" alt="Michael Görzen">
       <p>für den Winter muss ich in Gernlinden die Halle frühzeitig reservieren. Daher möchte ich jetzt schon wissen, ob Ihr in 
         Erwägung zieht, im Winter bei mir zu trainieren!</p>
       <p>Bitte meldet euch hier mit diesem Formular an. Eine endgültige Zusage werde ich im Herbst abfragen.</p>
@@ -45,7 +45,7 @@ include("templates/header.inc.php");
     <?php
 
     $showFormular = 1;
-    $cid = 7; // campaign-Id
+    $cid = 9; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -79,7 +79,8 @@ include("templates/header.inc.php");
       $willTeilnehmen  = $_POST["willTeilnehmen"] === "1" ? 1 : 0;
       $kommentar    = $_POST["kommentar"];
       // error_log("0000: $ctid    $cuid");
-    } else {
+    }
+    else {
       // Die Werte initial aus der DB lesen
       $sql = <<<EOT
       SELECT 
@@ -121,7 +122,6 @@ EOT;
 
       error_log("0003 (record): " . http_build_query($result));
     }
-
     if ($registrieren) {
 
       $sql = "UPDATE users SET festnetz = '$festnetz', mobil = '$mobil' WHERE id = {$user['id']}";
@@ -136,8 +136,6 @@ EOT;
       $statement = $pdo->query($sql);
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
-
-
     if ($showFormular) {
     ?>
       <p class="h3 mt-4">Deine Wintertraining-Anmeldung:</p>
@@ -180,33 +178,51 @@ EOT;
 $sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
 $statement = $pdo->prepare($sql);
 $result = $statement->execute();
+
+//echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
+
 if($result) {
-?>
+  ?>
     <br>
     <div class="mx-3">
-    <table class="table table-bordered table-light tbl-small">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Teilnehmer/in</th>
-          <th>Tel</th>
-          <th>Ist dabei</th>
-          <th>Komm.</th>
-        </tr>
-      </thead>
-<?php
+      <table class="table table-bordered table-light tbl-small">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Teilnehmer/in</th>
+            <th>Tel</th>
+            <th>Ist dabei</th>
+            <th>Komm.</th>
+          </tr>
+        </thead>
+        <?php
+  
+  
+  
+/*
+  try {
+    $row = $statement->fetch();
+  } catch (PDOException $Exception) {
+    echo "<p>". $Exception->getMessage() . "</p>";
+  }
+*/
+
+
+
   $lfd = 1;
   while($row = $statement->fetch()) {
-?>
+    ?>
         <tr>
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
           <td><?=$row['mobil']?></td>
-          <td class="text-center"><?=$row['willing_to_attend']===NULL?'---':$row['willing_to_attend']==='1'?'J':'N'?></td>
+          <td class="text-center"><?=($row['willing_to_attend']===NULL?'---':($row['willing_to_attend']==='1'?'J':'N'))?></td>
           <td><?=$row['comment']?></td>
         </tr>
 <?php
   }
+/*  ############## TESTEN ###############
+############## TESTEN ############### */
   echo '</table>';
 } else {
   echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
@@ -214,7 +230,7 @@ if($result) {
 
 
 
-    } //Ende von if($showFormular)
+} //Ende von if($showFormular)
 ?>
 
 
@@ -223,5 +239,5 @@ if($result) {
 </div>
 
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

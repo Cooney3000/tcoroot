@@ -11,7 +11,7 @@ require_once("inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Intern Hall Of Fame";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
   document.getElementById("nav-intern").classList.remove("active");
@@ -41,7 +41,7 @@ include("templates/header.inc.php");
     </div> <!-- row -->
     <p>2021 stand immer noch unter dem Einfluss Corona, doch die Erleichterungen durch den Impffortschritt
       waren schon zu spüren. Planungen waren aber nach wie vor ein Glücksspiel, daher entschieden wir uns
-      wieder zu einem Wochenende mit k.o.-System und B-Runde.
+      zu einem Wochenende mit k.o.-System und B-Runde.
       Das Wetter spielte mit und so wurde es ein vielfach gelobter Vereins-Event. Besonders interessant: Bei den Damen gab es einen Generationenwechsel!</p>
     <h2 class="display-5"><a href="/intern/history/turnier2021/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
@@ -62,7 +62,7 @@ include("templates/header.inc.php");
       </div>
     </div> <!-- row -->
     <p>2020 war das erste Jahr unter Corona mit vielen Einschränkungen für die Tennissaison. Die Mannschaftsspiele wurden verzögert gestartet,
-      das Clubturnier wurde an einem Wochenende als k.o.-System mit B-Runde ausgetragen.
+      das Clubturnier begann erst im Juni wurde als k.o.-System mit B-Runde ausgetragen.
       Corona zum Trotz wurde das Turnier gut angenommen und wurde so ein Erfolg.</p>
     <h2 class="display-5"><a href="/intern/history/turnier2020/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
@@ -112,5 +112,5 @@ include("templates/header.inc.php");
 
 </div>
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

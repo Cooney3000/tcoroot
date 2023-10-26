@@ -4,7 +4,7 @@ require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
 
 $title = "Registrierung";
-include("templates/header.inc.php")
+include("inc/header.inc.php")
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -164,7 +164,8 @@ EOT;
     <form action="?register=1" method="post" accept-charset="utf-8">
 
       <div class="form-group">
-        <label for="inputRegCode">Registrierungscode (bekommst du, nachdem du deinen ersten Beitrag bezahlt hast -> <a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a>):</label>
+        <p>Einen Registrierungscode bekommst du, nachdem du deinen ersten Beitrag bezahlt hast (-> <a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a>). Bist du bereits Mitglied und ist dein Registrierungscode abgelaufen, dann beantrage bitte per formloser Mail an <a href="mailto:anmeldung@tcolching.de">anmeldung@tcolching.de</a> einen neuen.</p>
+        <label for="inputRegCode">Registrierungscode:</label>
         <input type="text" id="inputRegCode" name="regcode" class="form-control" required>
       </div>
 
@@ -236,5 +237,5 @@ EOT;
   ?>
 </div>
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

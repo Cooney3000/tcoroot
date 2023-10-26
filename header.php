@@ -105,6 +105,6 @@
 			<img src="/images/sliders/kids.jpg" alt="Zuschauer">
 		</div>
 		<div id="latest_news">
-			<span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Neu: Platzbuchung jetzt schon 24h vorher möglich </a></span>
+			<span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Direkt zur Platzbuchung<br>für Mitglieder</a></span>
 		</div>
 	</section>

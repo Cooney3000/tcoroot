@@ -11,7 +11,7 @@ require_once("inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Intern Startseite";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -34,30 +34,6 @@ include("templates/header.inc.php");
 
   <div class="container mt-4">
     <div class="row">
-
-    <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
-          <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
-          <p class="align-text-bottom">Neu: Platzbuchung jetzt schon 24h vorher möglich</p>
-        </div>
-      </div>
-
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="/intern/turnier/">Clubturnier '22</a>
-          <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
-          <p class="align-text-bottom">Jetzt schon anmelden!</p>
-        </div>
-      </div>
-
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="halloffame.php">Hall of Fame</a>
-          <img class="mw-100" src="/intern/images/turniersieger/sieger2021.jpg" alt="Hall of Fame">
-          <p class="align-text-bottom">Ergebnisse, Sieger, Fotogalerien der Clubmeisterschaften</p>
-        </div>
-      </div>
 
       <!-- Für den Wirt -->
       <?php
@@ -82,7 +58,7 @@ include("templates/header.inc.php");
         $wirtStatusText2 = ($wirtStatus) ? "Schließen" : "Öffnen";
         $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
         $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
-        $wirtAktivText2 = ($wirtAktivStatus) ? "Dektivieren" : "Aktivieren";
+        $wirtAktivText2 = ($wirtAktivStatus) ? "Deaktivieren" : "Aktivieren";
       ?>
         <div class="col-sm mb-2">
           <div class="bg-light p-2 h-100">
@@ -100,6 +76,39 @@ include("templates/header.inc.php");
       <?php
       }
       ?>
+      
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
+          <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
+          <p class="align-text-bottom">Platzbuchung bis zu 24h vorher möglich</p>
+        </div>
+      </div>
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="wintertraining.php">Wintertraining</a>
+          <img class="mw-100" src="/images/intern/halle.jpg" alt="Wintertraining">
+          <p class="align-text-bottom"><br><strong>Zur Anmeldung</strong></p>
+        </div>
+      </div>
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="/intern/turnier/">Clubturnier '23</a>
+          <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
+<!--
+            <p class="align-text-bottom">Jetzt schon anmelden!</p>
+-->
+        </div>
+      </div>
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="halloffame.php">Hall of Fame</a>
+          <img class="mw-100" src="/intern/images/turniersieger/sieger2021.jpg" alt="Hall of Fame">
+          <p class="align-text-bottom">Ergebnisse, Sieger, Fotogalerien der Clubmeisterschaften</p>
+        </div>
+      </div>
+
+
     </div>
   </div> <!-- container -->
 
@@ -109,7 +118,10 @@ include("templates/header.inc.php");
 	foreach (scandir("rundschreiben", SCANDIR_SORT_DESCENDING) as $file) {
 	  if ($file === ".." or $file === ".") continue;
 		preg_match_all('!\d+!', $file, $datum);
-	echo "<span><a class= \" btn btn-secondary btn-sm\" href =\"rundschreiben/$file\">Rundschreiben vom {$datum[0][2]}.{$datum[0][1]}.{$datum[0][0]}</a></span>\n";
+    if(isset($datum[0][0]) && isset($datum[0][2]) && isset($datum[0][2])) 
+    {
+      echo "<span><a class= \" btn btn-secondary btn-sm\" href =\"rundschreiben/$file\">Rundschreiben vom {$datum[0][2]}.{$datum[0][1]}.{$datum[0][0]}</a></span>\n";
+    }
 	}	
   
   ?>
@@ -215,5 +227,5 @@ include("templates/header.inc.php");
 
 </div>
 <?php
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

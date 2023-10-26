@@ -4,7 +4,7 @@ require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
 
 $title = "Bestätigung der Registrierung";
-include("templates/header.inc.php")
+include("inc/header.inc.php")
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
@@ -47,5 +47,5 @@ if(!$error) {
 ?>
 </div>
 <?php 
-include("templates/footer.inc.php");
+include("inc/footer.inc.php");
 ?>

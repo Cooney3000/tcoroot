@@ -32,13 +32,48 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 	</section>
 </div>
 
-<div id="blatt1">
+<div id="blatt5">
+	<section id="kidsday22" class="seite">
+		<h2>Alle Trainingsangebote für Jugendliche:
+			<strong><a href="training.php">zur Trainer-Seite</a></strong>
+		</h2>
+	</section>
+</div>
+
+<div id="blatt3">
 	<section id="kidsday" class="seite">
+		<h2>Kid's Day 2023</h2>
+		<img alt="Kids Day" class="w-100" src="images/Kids/kidsday23.png" />
+		<article>
+			<strong>
+				<p>für alle Kinder von 4 - 9 Jahren, die Lust haben auf:</p>
+				<ul>
+					<li>Bewegung und Spaß</li>
+					<li>Spiele mit dem Ball</li>
+					<li>Spiele in der Gruppe</li>
+				</ul>
+			</strong>
+			<img alt="Kids Day" class="w-100" src="images/Kids/kidsday23_vorteile.png" />
+			<strong>
+				<p>9 x Tennisballschule ab Montag, 15.5.23 16.00 – 17.00 Uhr</p>
+				<p>70 € (keine Mitgliedschaft erforderlich – bei Regen fällt es aus)</p>
+				<p>Weitere Infos: kindertennis@tcolching.de</p>
+				<p>Außerdem bieten wir Tennistraining für Anfänger und Fortgeschrittene in Kleingruppen für jedes Alter bei unserem Vereinstrainer Michael an.</p>
+				</p>
+			</strong>
+
+			<p>kindertennis@tcolching.de</p>
+
+		</article>
+	</section>
+</div>
+
+<div id="blatt1">
+	<section id="kidsday22" class="seite">
 		<h2>Kid's Day 2022</h2>
 		<p><img alt="Presseartikel FFB Tagblatt" class="w-100" src="images/Kids/2022-05-11_Tagblatt-Sport.png" /></br>Aus dem Amperkurier vom 26.8.2021</p>
 	</section>
 </div>
-
 
 <div id="blatt2">
 	<section id="jugendwoche" class="seite">
@@ -49,6 +84,7 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 	</section>
 </div>
 
+<!--
 <div id="blatt3">
 	<section id="clubturnier2019" class="seite">
 		<h6>Pressemeldung vom 2.5.2019</h6>
@@ -72,37 +108,8 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 
 	</section>
 </div>
+-->
 
-
-<!-- <div id="blatt3">
-			<section id="kidsday" class="seite">
-        <h2>Kid's Day 2019</h2>
-        <p>Liebe Kinder,</p>
-        <p>wir vom Tennisclub Olching möchten euch zu unserem <strong>Kids-Day 2019 am Montag, 29.04.2019 von 16.00 – 17.30 Uhr</strong> recht herzlich 
-        auf unsere Anlage in den Amperauen 14 in Olching einladen.</p>
-        <p>Tennis</p>
-        <ul>
-          <li>macht Spaß</li>
-          <li>fördert die Konzentration</li>
-          <li>fördert die mentale Stärke</li>
-          <li>fördert die motorischen Fähigkeiten (Koordination, Schnelligkeit, Reaktionsfähigkeit, Ausdauer)</li>
-        </ul>
-
-        <p>An unserem Kids-Day werden wir mit euch Spiele und Übungen rund ums Tennis durchführen und mit euch natürlich 
-          auch Tennis spielen. Durch spezielle Bälle werdet ihr sehr schnell positive Erfolgserlebnisse feiern und ein 
-          Gefühl für Schläger und Ball entwickeln.</p>
-
-        <p>Wer Lust hat, kann einfach vorbeikommen. Wir freuen uns auf Dich!</p>
-
-        <p><strong>Ab 06. Mai 2019 bis Ende Juli</strong> (10x) findet <strong>montags von 16.00 – 17.00 Uhr</strong> unser Kindertennistraining statt. Kosten: € 90,00. 
-          Solltet ihr schon vorab Interesse daran haben, wendet euch an kindertennis@tcolching.de. 
-          Wir freuen uns über eure Fragen und Anmeldungen.</p>
-
-        <p>Monika Traub & Conny Dutka</p>
-
-			</section>
-		</div>
- -->
 <div id="blatt4">
 	<section id="jugendleitung" class="seite">
 		<h2>KINDER UND JUGEND BEIM TC OLCHING</h2>
@@ -149,21 +156,7 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 		</article>
 	</section>
 </div>
-<div id="blatt5">
-	<section id="clubturnier" class="seite">
-		<h2>Jugendclubmeisterschaften 2017</h2>
-		<img class="breitebilder" alt="Sieger Jugend 2017" src="images/Kids/jugendturnier_2017_gewinner_1.jpg" />
-		<p>Am Wochenende des 17. und 18. Juni fanden auf der Anlage des Tennisclub Olching e.V. die Jugendclubmeisterschaften 2017 statt. Dabei spielten die Kids in vier Altersklassen um den jeweiligen Titel.
-		</p>
-		<p>
-			Vereinsmeister bei den Junioren/Knaben wurde nach spannenden Duellen Rico Streif vor seinen Mannschaftskameraden Nico Hochholzer und Tim Küstner. Clubmeisterin der Mädchen wurde Luna Streif. Platz 2 und 3 belegten hier Hanna Roloff und Fiona Roes. Die elf- und zwölfjährigen männlichen Bambini lieferten sich ebenfalls einige enge Matches. Am Ende konnte sich Niklas Vogt vor Michael Moll und Alexander Vogt durchsetzen. Auch die Kleinsten, die Sieben- bis Zehnjährigen, kämpften um jeden Punkt. Sieger in dieser Kategorie wurde schließlich, wie bereits 2016, Bastian Hochholzer. Die weiteren Plätze belegten Paul Rietschel und Tim Schreyer. Die Kinder konnten sich über Medaillen, Urkunden und Sachpreise freuen. Außerdem wurden unter allen Teilnehmern noch 2 Karten für ein Spiel des FC Bayern München verlost. „Alle Kinder und Jugendliche waren mit großer Freude sowie viel Spaß und Engagement dabei, auch das Wetter hat gepasst. Alles in allem also ein tolles Wochenende. Die Spieler und Spielerinnen können mit sich zufrieden sein und der TC Olching ist stolz auf seinen Nachwuchs.“ freute sich Jugendwartin und Organisatorin Petra Streif.
-		</p>
-		<p>Petra Streif, Jugendwartin (bis 2021)</p>
-		<!--
-					<a haref="http://www.amper-kurier.de/aktuell/aus-den-vereinen/jugendclubmeisterschaften-des-tc-olching-7555" alt="Amper-Kurier">Bericht im Amper-Kurier</a>
-				-->
-	</section>
-</div>
+
 
 <?php
 $diese_seite = "Aktuell";

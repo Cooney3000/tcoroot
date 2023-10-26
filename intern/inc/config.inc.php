@@ -9,7 +9,9 @@ define ("DBG", 50);
 
 // Verbindungsdaten zur Datenbank
 // HOSTNAME:DESKTOP-BRGTU5C oder prod?
-$localhost = gethostname() == 'DESKTOP-BRGTU5C' ? TRUE : FALSE;
+$localhost = gethostname() == 'JOIN-GM9H6G3' ? TRUE : FALSE;
+
+
 
 if ($localhost) {
   $db_host = 'localhost';
@@ -41,7 +43,7 @@ $CONFIG = array (
   'trainerVorname' => 'Michael',
   'trainerNachname' => 'Görzen',
   'optinLinkDuration' => 72,
-  'activeTournament' => 8,
+  'activeTournament' => 9,
   // 'activeTournamentB' => 7,
   // 'activeTournamentJ' => 5,
   'turniertyp' => "ts-turnier",

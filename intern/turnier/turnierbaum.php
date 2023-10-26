@@ -11,7 +11,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Upload Turnierbaum";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 
 ?>
 <script src="../js/functions.js"></script>
@@ -87,8 +87,6 @@ include("../templates/header.inc.php");
   ?>
 
 
-  <p class="h3">Turnierbäume werden nach der Auslosung veröffentlicht</p>
-
   <div>
     <h2>Herren</h2>
     <a href="turnierbaum/herren.png"><img id="herren" src="turnierbaum/herren.png?rnd=<?php echo time(); ?>" class="w-100" alt="herren Turnierbaum"></a>
@@ -104,10 +102,11 @@ include("../templates/header.inc.php");
     <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png?rnd=<?php echo time(); ?>" class="w-75" alt="Herren B Turnierbaum"></a>
   </div>
 
-  <!-- <div>
-    <h2>Damen</h2>
-    <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png?rnd=<?php echo time(); ?>" class="w-50" alt="Damen B Turnierbaum"></a>
-  </div> -->
+  <div>
+    <h2>Damen B</h2>
+    <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png?rnd=<?php echo time(); ?>" class="w-75" alt="Damen B Turnierbaum"></a>
+  </div>
+
 
 <!--
 <div>
@@ -119,5 +118,5 @@ include("../templates/header.inc.php");
 </div>
 
 <?php
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

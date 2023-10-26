@@ -8,7 +8,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Turnierspieler bearbeiten";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 if (checkPermissions(T_ALL_PERMISSIONS | T_ALL_PERMISSIONS) ) 
 {
 ?>
@@ -107,7 +107,7 @@ date_default_timezone_set('UTC');
 </table>
 <?php
 } // check_permissions
-include("../templates/footer.inc.php");
+include("../inc/footer.inc.php");
 ?>
 
 <script>

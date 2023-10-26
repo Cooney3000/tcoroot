@@ -126,9 +126,9 @@ function getSiteURL() {
  * Outputs an error message and stops the further exectution of the script.
  */
 function error($error_msg) {
-  include("templates/header.inc.php");
-	include("templates/error.inc.php");
-	include("templates/footer.inc.php");
+  include("inc/header.inc.php");
+	include("inc/error.inc.php");
+	include("inc/footer.inc.php");
 	exit();
 }
 function endsWith($haystack, $needle)

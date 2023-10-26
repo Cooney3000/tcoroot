@@ -36,8 +36,8 @@ VALUES
 EOT;
 
 $jetzt = date('Y-m-d H:m');
-$serieID = "Punktspiele 2022";
-$file = "spielplan2022.csv";
+$serieID = "Punktspiele 2023";
+$file = "spielplan2023.csv";
 $openfile = fopen($file, "r");
 $fileArray = explode("\r\n", fread($openfile, filesize($file)));
 $firstLine = true;

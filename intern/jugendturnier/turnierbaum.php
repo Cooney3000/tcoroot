@@ -11,7 +11,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Upload Turnierbaum";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 
 ?>
 <script src="../js/functions.js" ></script>
@@ -111,5 +111,5 @@ include("../templates/header.inc.php");
 </div>
 
 <?php 
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

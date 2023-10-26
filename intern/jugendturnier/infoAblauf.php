@@ -7,7 +7,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Platzbuchung Clubturnier - Anleitung";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 $kw = "champ2020";
 ?>
 <script>
@@ -88,5 +88,5 @@ zeitnah Kontakt mit dem nächsten Spielpartner auf. </p>
 LG Norbert
 
 <?php 
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

@@ -12,7 +12,7 @@ $user = check_user();
 // error_log (join(" # ", $user));
 
 $title = "Saisonabschluss";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -246,5 +246,5 @@ EOT;
 
 
 <?php
-include("templates/footer.inc.php");
+include("inc/footer.inc.php");
 ?>

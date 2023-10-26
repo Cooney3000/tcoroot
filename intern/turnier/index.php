@@ -7,7 +7,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Turnierregistrierung";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
@@ -20,13 +20,12 @@ include("../templates/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2022</h1>
+  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2023</h1>
   <!-- <h2 class="mt-0">(10.9. - 12.9.2021)</h2> -->
 <?php 
   require_once("turnierheader.inc.php");
 ?> 
 
-  <h2>Turnieranmeldung (Registrierung geschlossen)</h2>
   <div class="registration-form">
 
     <?php
@@ -123,6 +122,7 @@ EOT;
 
     if ($showFormular) {
     ?>
+      <h2>Turnieranmeldung</h2>
       <br>
       <p class="h3 mt-4">Deine Turnier-Anmeldung:</p>
       <p class="text-groesser">Du glaubst, noch nicht gut genug für eine Turnierteilnahme zu sein? Wenn du ein oder zwei Jahre Spielpraxis
@@ -159,7 +159,7 @@ EOT;
         </div> -->
 
         <div class="form-control alert-danger border border-danger px-3">
-          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 2022 mit:&nbsp;</strong></span>
+          <span class="pr-3" for="inputZusage"><strong>Ich spiele beim Clubturnier 3 mit:&nbsp;</strong></span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willSpielen" id="willSpielenJA" value="1" <?= ($willSpielen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willSpielenJA">Ja</label>
@@ -199,5 +199,5 @@ EOT;
 
 
 <?php
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

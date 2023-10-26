@@ -7,7 +7,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Platzbuchung - Anleitung";
-include("../templates/header.inc.php");
+include("../inc/header.inc.php");
 ?>
 <script>
     document.getElementById("nav-intern").classList.remove("active");
@@ -22,7 +22,7 @@ include("../templates/header.inc.php");
 
 <div class="container main-container">
 <?php 
-  require_once("../templates/header.inc.php");
+  require_once("../inc/header.inc.php");
 ?>  
  
   <h1>Anleitung: DAS PLATZBUCHUNGSSYSTEM</h1>
@@ -65,5 +65,5 @@ include("../templates/header.inc.php");
   <p>Euer Conny Roloff</p>
 
 <?php 
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

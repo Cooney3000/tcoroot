@@ -9,7 +9,7 @@ require_once("inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Einstellungen";
-include("templates/header.inc.php");
+include("inc/header.inc.php");
 ?>
 <script>
     // var element = document.getElementById("nav-intern");
@@ -248,5 +248,5 @@ endif;
 
 </div>
 <?php 
-include("templates/footer.inc.php")
+include("inc/footer.inc.php")
 ?>

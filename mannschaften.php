@@ -37,7 +37,7 @@ include 'header.php';
 
 		<div id="blatt2">
 			<section id="platzbelegung" class="seite">
-				<h2>Platzbelegung Sommer 2022</h2>
+				<h2>Platzbelegung Sommer 2023</h2>
 				<p>Der TC Olching verfügt über 6 Sandplätze.</p>
 				<p><strong>BITTE BEACHTE</strong>, dass während der Punktspielzeit die Plätze an vielen Wochenenden belegt sind. 
 				Die Platzbelegungen des Mannschaftstrainings und des Vereinstrainers findest du im folgenden Plan. 
@@ -46,12 +46,12 @@ include 'header.php';
         <p>
           <strong>ACHTUNG:</strong> Eine Spieler/in darf kein Clubturnier-Match spielen, während sein Mannschaftstraining stattfindet!
 				</p>
-				<img id="platzbelegung" class="breitebilder" src="images/trainingsplan_2022.png" alt="Platzbelegung">
+				<img id="platzbelegung" class="breitebilder" src="images/trainingsplan_2023.png" alt="Platzbelegung">
 			</section>
 		</div>
 		<div id="blatt3">
 			<section id="begegnungen" class="seite">
-				<h2>Die Spiele des TC Olching in 2022</h2>
+				<h2>Die Spiele des TC Olching in 2023</h2>
 				<p>Zusätzlich zu den Trainingszeiten gibt es Platzbelegungen an Wochenenden und Feiertagen. Eine Begegnung dauert durchschnittlich 5 Stunden, also von 09:00 bis 14:00 Uhr oder von 14 Uhr bis 19 Uhr, kann sich aber auch länger ziehen. Eine 6er-Mannschaft 
 				belegt i.&nbsp;d.&nbsp;R. immer mindestens 3 Plätze, 
 				eine 4er-Mannschaft mindestens 2. Hier sind die Spieltermine:</p>
@@ -59,97 +59,107 @@ include 'header.php';
           <thead>
             <tr>	<th>	Termin	</th>	<th>	Liga	</th>	<th>	Heimmannschaft	</th>	<th>	Gastmannschaft	</th>	</tr>
           </thead>
-          <tr>	<td align="right">	Fr. 06.05.2022 16:00	</td>	<td>	S3	</td>	<td><strong>	Knaben 15 (4er)	</strong></td>	<td>	TC Puchheim	</td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td>	TF Dachau III		<td><strong>	Knaben 15 II (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Sa. 07.05.2022 09:00	</td>	<td>	S4	</td>	<td><strong>	Bambini 12 (4er)	</strong></td>	<td>	TV Stockdorf II	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td><strong>	Herren 40	</strong></td>	<td>	TF Dachau II	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td>	1. SC Gröbenzell		<td><strong>	Damen 50 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 08.05.2022 10:00	</td>	<td>	S3	</td>	<td><strong>	Damen	</strong></td>	<td>	TC Gernlinden II	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td><strong>	Herren 50 II	</strong></td>	<td>	TSV Leitershofen	</td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td>	TC Puchheim II		<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Fr. 13.05.2022 16:00	</td>	<td>	S3	</td>	<td><strong>	Knaben 15 (4er)	</strong></td>	<td>	Münchner Sportclub III	</td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td>	SV Haspelmoor		<td><strong>	Knaben 15 II (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Sa. 14.05.2022 09:00	</td>	<td>	S3	</td>	<td><strong>	Juniorinnen 18 (4er)	</strong></td>	<td>	TC Gernlinden	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	SV Lohhof		<td><strong>	Junioren 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	TSV Geiselbullach		<td><strong>	Bambini 12 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	13:00	</td>	<td>	LL2	</td>	<td>	TC Peiting		<td>	Damen 40	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td><strong>	Herren 50	</strong></td>	<td>	TF Fürstenfeldbruck	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	TC Kissing		<td><strong>	Herren 50 II	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td><strong>	Damen 50 (4er)	</strong></td>	<td>	ASV Dachau	</td>	</tr>
-          <tr>	<td align="right">	So. 15.05.2022 10:00	</td>	<td>	S4	</td>	<td><strong>	Herren	</strong></td>	<td>	TC Lauterbach 1973 II	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S3	</td>	<td>	TSV Türkenfeld		<td><strong>	Damen	</strong></td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S4	</td>	<td>	TC Landsberied		<td><strong>	Herren 30 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Fr. 20.05.2022 16:00	</td>	<td>	S3	</td>	<td>	SV Lochhausen		<td><strong>	Knaben 15 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td><strong>	Knaben 15 II (4er)	</strong></td>	<td>	TC Gernlinden III	</td>	</tr>
-          <tr>	<td align="right">	Sa. 21.05.2022 09:00	</td>	<td>	S3	</td>	<td>	TF Dachau		<td><strong>	Juniorinnen 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td><strong>	Junioren 18 (4er)	</strong></td>	<td>	GW Luitpoldpark München III	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	TC Gernlinden		<td><strong>	Bambini 12 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td><strong>	Herren 55 (5er)	</strong></td>	<td>	TC Puchheim	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td><strong>	Herren 50	</strong></td>	<td>	TC Scheyern	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td>	TG Germerswang		<td><strong>	Herren 30 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	SV Bergheim		<td><strong>	Herren 50 II	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 22.05.2022 10:00	</td>	<td>	S4	</td>	<td><strong>	Herren	</strong></td>	<td>	TSV Geiselbullach	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S3	</td>	<td>	MTV Berg		<td><strong>	Damen	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td><strong>	Herren 40	</strong></td>	<td>	SV Weichs	</td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	<td>	TG Germerswang	</td>	</tr>
-          <tr>	<td align="right">	Do. 26.05.2022 10:00	</td>	<td>	LL2	</td>	<td>	Damen 40		<td>	TSV Oberbeuren	</td>	</tr>
-          <tr>	<td align="right">	Sa. 28.05.2022 09:00	</td>	<td>	S3	</td>	<td>	TSV Eintracht Karlsfeld		<td><strong>	Juniorinnen 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td><strong>	Junioren 18 (4er)	</strong></td>	<td>	TSV Moosach München	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td><strong>	Bambini 12 (4er)	</strong></td>	<td>	TC Puchheim III	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	TC Eching		<td><strong>	Herren 55 (5er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	TC Puchheim		<td><strong>	Herren 50	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td><strong>	Herren 40	</strong></td>	<td>	TV Altomünster	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td><strong>	Herren 30 (4er)	</strong></td>	<td>	TC Puchheim II	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	DJK Augsburg-Lechhausen II		<td><strong>	Herren 50 II	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td>	TSV Gilching		<td><strong>	Damen 50 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 29.05.2022 10:00	</td>	<td>	S4	</td>	<td>	TC Gernlinden IV		<td><strong>	Herren	</strong></td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	LL2	</td>	<td>	TC Murnau		<td>	Damen 40	</td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td>	1. SC Gröbenzell		<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Mo. 20.06.2022 10:00	</td>	<td>	S1	</td>	<td><strong>	Freizeit-Damen Doppel 60	</strong></td>	<td>	TC Eichenau	</td>	</tr>
-          <tr>	<td align="right">	Fr. 24.06.2022 16:00	</td>	<td>	S3	</td>	<td><strong>	Knaben 15 (4er)	</strong></td>	<td>	Ausstellungspark München II	</td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td>	TSV Moorenweis		<td><strong>	Knaben 15 II (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Sa. 25.06.2022 09:00	</td>	<td>	S3	</td>	<td><strong>	Juniorinnen 18 (4er)	</strong></td>	<td>	VfL Egenburg	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td><strong>	Junioren 18 (4er)	</strong></td>	<td>	TC Schleißheim	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	TCE Gröbenzell II		<td><strong>	Bambini 12 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	13:00	</td>	<td>	LL2	</td>	<td>	Damen 40		<td>	TC Gernlinden II	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td><strong>	Damen 50 (4er)	</strong></td>	<td>	SV Lochhausen	</td>	</tr>
-          <tr>	<td align="right">	So. 26.06.2022 10:00	</td>	<td>	S1	</td>	<td><strong>	Herren 55 (5er)	</strong></td>	<td>	TC Gernlinden II	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S4	</td>	<td>	TSV Bergkirchen		<td><strong>	Herren	</strong></td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S3	</td>	<td><strong>	Damen	</strong></td>	<td>	TC Lauterbach 1973	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td>	TC Gernlinden		<td><strong>	Herren 40	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td><strong>	Herren 50 II	</strong></td>	<td>	TC Friedberg III	</td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	<td>	TC Fürstenfeldbruck	</td>	</tr>
-          <tr>	<td align="right">	Fr. 01.07.2022 16:00	</td>	<td>	S3	</td>	<td>	ESV Spfrd.Neuaubing		<td><strong>	Knaben 15 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td><strong>	Knaben 15 II (4er)	</strong></td>	<td>	TC Mammendorf	</td>	</tr>
-          <tr>	<td align="right">	Sa. 02.07.2022 09:00	</td>	<td>	S3	</td>	<td>	TSV Schwabhausen		<td><strong>	Juniorinnen 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	TC Dachau 1950 II		<td><strong>	Junioren 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	13:00	</td>	<td>	LL2	</td>	<td>	Damen 40		<td>	TC Weilheim	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	TC Eichenau		<td><strong>	Herren 55 (5er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td><strong>	Herren 30 (4er)	</strong></td>	<td>	SV Kottgeisering	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	SV Lochhausen		<td><strong>	Herren 50	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td>	TC Puchheim II		<td><strong>	Herren 40	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 03.07.2022 10:00	</td>	<td>	S3	</td>	<td><strong>	Damen	</strong></td>	<td>	1. SC Gröbenzell	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S4	</td>	<td>	TF Fürstenfeldbruck II		<td><strong>	Herren	</strong></td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S2	</td>	<td><strong>	Damen 50 (4er)	</strong></td>	<td>	SV Odelzhausen	</td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td>	TTC Geltendorf II		<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	Fr. 08.07.2022 16:00	</td>	<td>	S3	</td>	<td>	TCE Gröbenzell		<td><strong>	Knaben 15 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	16:00	</td>	<td>	S5	</td>	<td><strong>	Knaben 15 II (4er)	</strong></td>	<td>	SV Sulzemoos	</td>	</tr>
-          <tr>	<td align="right">	Sa. 09.07.2022 09:00	</td>	<td>	S3	</td>	<td><strong>	Juniorinnen 18 (4er)	</strong></td>	<td>	BC Adelzhausen	</td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	TC Lauterbach 1973		<td><strong>	Junioren 18 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td><strong>	Bambini 12 (4er)	</strong></td>	<td>	TF Dachau II	</td>	</tr>
-          <tr>	<td align="right">	13:00	</td>	<td>	LL2	</td>	<td>	TSV Schondorf		<td>	Damen 40	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td><strong>	Herren 55 (5er)	</strong></td>	<td>	TV Hörzhausen	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td><strong>	Herren 50	</strong></td>	<td>	1. SC Gröbenzell	</td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S2	</td>	<td>	TC Rot-Weiß Eschenried		<td><strong>	Herren 40	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 10.07.2022 10:00	</td>	<td>	S3	</td>	<td>	TC Kreuzlinger Forst		<td><strong>	Damen	</strong></td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S4	</td>	<td><strong>	Herren 30 (4er)	</strong></td>	<td>	SV Althegnenberg II	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S4	</td>	<td><strong>	Herren	</strong></td>	<td>	SV Haspelmoor	</td>	</tr>
-          <tr>	<td align="right">	10:00	</td>	<td>	S2	</td>	<td>	TC Eichenau III		<td><strong>	Damen 50 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	15:30	</td>	<td>	S2	</td>	<td><strong>	Dunlop Midcourt U10 (4er)	</strong></td>	<td>	TSV Geiselbullach	</td>	</tr>
-          <tr>	<td align="right">	Sa. 16.07.2022 14:00	</td>	<td>	S1	</td>	<td>	SV Ilmmünster		<td><strong>	Herren 55 (5er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td>	TF Fürstenfeldbruck		<td><strong>	Herren 30 (4er)	</strong></td>	</tr>
-          <tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	TSV/TC Haunstetten II		<td><strong>	Herren 50	</strong></td>	</tr>
-          <tr>	<td align="right">	So. 17.07.2022 10:00	</td>	<td>	S3	</td>	<td>	TCE Gröbenzell		<td><strong>	Damen	</strong></td>	</tr>
+          <tr>	<td align="right">	Fr. 05.05.2023 15:00	</td>	<td>	S3	</td>	<td>		TSV Eintracht Karlsfeld		</td>	<td>	<strong>	Mädchen 15 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Sa. 06.05.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	<td>		TC Dachau 1950 II		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	<td>		TC Eichenau II		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Damen 40	</strong>	</td>	<td>		TCE Gröbenzell		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td>		TC Puchheim II		</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TC Augsburg Siebentisch		</td>	<td>	<strong>	Herren 40	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	<td>		TSV Deuringen		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		SV Söcking		</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		SC Oberweikertshofen		</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	So. 07.05.2023 09:00	</td>	<td>	S4	</td>	<td>		TG Germerswang		</td>	<td>	<strong>	Herren	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		TC Gernlinden II		</td>	<td>	<strong>	Damen	</strong>	</td>	</tr>
+<tr>	<td align="right">	10:00	</td>	<td>	LL2	</td>	<td>	<strong>	Herren 50	</strong>	</td>	<td>		TCE Gröbenzell		</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	<td>		TF Dachau		</td>	</tr>
+<tr>	<td align="right">	Mo. 08.05.2023 10:00	</td>	<td>	S1	</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	<td>		TC Utting		</td>	</tr>
+<tr>	<td align="right">	Fr. 12.05.2023 15:00	</td>	<td>	S5	</td>	<td>		TG Germerswang		</td>	<td>	<strong>	Knaben 15 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S3	</td>	<td>	<strong>	Mädchen 15 (4er)	</strong>	</td>	<td>		SV Stadtwerke München		</td>	</tr>
+<tr>	<td align="right">	Sa. 13.05.2023 09:00	</td>	<td>	S3	</td>	<td>		TG Germerswang		</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>		TSV Geiselbullach		</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		TF Dachau		</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>		TSV Schwabmünchen		</td>	<td>	<strong>	Herren 50	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td>		TSC WWK		</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 40	</strong>	</td>	<td>		BC Schretzheim		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>		TC Friedberg III		</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	<td>		TP Starnberg 1987		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		SpVgg Erdweg II		</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	So. 14.05.2023 09:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren	</strong>	</td>	<td>		TF Dachau II		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		1. SC Gröbenzell		</td>	<td>	<strong>	Damen	</strong>	</td>	</tr>
+<tr>	<td align="right">	10:00	</td>	<td>	LL2	</td>	<td>		TC Blutenburg München		</td>	<td>	<strong>	Damen 40	</strong>	</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>		TSV Eintracht Karlsfeld		</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Mo. 15.05.2023 10:00	</td>	<td>	S1	</td>	<td>		1. SC Gröbenzell		</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	</tr>
+<tr>	<td align="right">	Fr. 19.05.2023 15:00	</td>	<td>	S5	</td>	<td>	<strong>	Knaben 15 (4er)	</strong>	</td>	<td>		TC Gernlinden IV		</td>	</tr>
+<tr>	<td align="right">	Sa. 20.05.2023 09:00	</td>	<td>	S4	</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	<td>		TCE Gröbenzell II		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		TF Dachau III		</td>	<td>	<strong>	Mädchen 15 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>		TC Rot-Weiß Krumbach		</td>	<td>	<strong>	Herren 50	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Damen 40	</strong>	</td>	<td>		TC Tutzing		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	<td>		SC Mühlried		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TeG Rothtal		</td>	<td>	<strong>	Herren 40	</strong>	</td>	</tr>
+<tr>	<td align="right">		</td>	<td>	0	</td>	<td>		Spielort: SpVgg Auerbach-...		</td>	<td>		0		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>		TSV Bergkirchen		</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TSC WWK		</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	So. 21.05.2023 09:00	</td>	<td>	S4	</td>	<td>		TC Karlsfeld am See		</td>	<td>	<strong>	Herren	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	<strong>	Damen	</strong>	</td>	<td>		MTV 1879 München		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S1	</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	<td>		TC Mering		</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>		SV Petershausen		</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Mo. 22.05.2023 10:00	</td>	<td>	S1	</td>	<td>		TC Gernlinden		</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	</tr>
+<tr>	<td align="right">	Mo. 12.06.2023 10:00	</td>	<td>	S1	</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	<td>		TCE Gröbenzell		</td>	</tr>
+<tr>	<td align="right">	Fr. 16.06.2023 15:00	</td>	<td>	S5	</td>	<td>	<strong>	Knaben 15 (4er)	</strong>	</td>	<td>		VfL Egenburg		</td>	</tr>
+<tr>	<td align="right">	Sa. 17.06.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	<td>		TC Gernlinden		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	<td>		TC Blutenburg München II		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>		TC Fürstenfeldbruck		</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Herren 50	</strong>	</td>	<td>		TC Friedberg II		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	<td>		SV Sulzemoos		</td>	</tr>
+<tr>	<td align="right">	So. 18.06.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Damen	</strong>	</td>	<td>		TCE Gröbenzell		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>		TC Gerolsbach		</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TC Gernlinden II		</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Fr. 23.06.2023 15:00	</td>	<td>	S3	</td>	<td>	<strong>	Mädchen 15 (4er)	</strong>	</td>	<td>		TSV Moosach München		</td>	</tr>
+<tr>	<td align="right">	Sa. 24.06.2023 09:00	</td>	<td>	S3	</td>	<td>		Münchner Sportclub II		</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	<td>		TC Puchheim		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	<td>		TC Lauterbach 1973		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 40	</strong>	</td>	<td>		TC Marxheim		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	<td>		TSV Schondorf		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>		TSV Harburg		</td>	<td>	<strong>	Herren 50	</strong>	</td>	</tr>
+<tr>	<td align="right">	So. 25.06.2023 09:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren	</strong>	</td>	<td>		TC Gernlinden IV		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		Münchner Sportclub III		</td>	<td>	<strong>	Damen	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S1	</td>	<td>		TC Puchheim II		</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	10:00	</td>	<td>	LL2	</td>	<td>		TC Grün-Weiß Gräfelfing		</td>	<td>	<strong>	Damen 40	</strong>	</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	<td>		TSV Indersdorf		</td>	</tr>
+<tr>	<td align="right">	Mo. 26.06.2023 10:00	</td>	<td>	S1	</td>	<td>		SC Oberweikertshofen		</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	</tr>
+<tr>	<td align="right">	Fr. 30.06.2023 15:00	</td>	<td>	S5	</td>	<td>	<strong>	Knaben 15 (4er)	</strong>	</td>	<td>		TSV Geiselbullach II		</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S3	</td>	<td>		Münchner Sportclub II		</td>	<td>	<strong>	Mädchen 15 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Sa. 01.07.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	<td>		TC Mammendorf		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		TV Altomünster		</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Damen 40	</strong>	</td>	<td>		DJK Würmtal München		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TSV Königsbrunn		</td>	<td>	<strong>	Herren 40	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TSV Gilching		</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>		TSV Eintracht Karlsfeld III		</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	<td>		TC Eching		</td>	</tr>
+<tr>	<td align="right">	So. 02.07.2023 09:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren	</strong>	</td>	<td>		TC Rot-Weiß Eschenried III		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	<td>		FC Tandern		</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	<td>		TC Dachau 1950		</td>	</tr>
+<tr>	<td align="right">	Mo. 03.07.2023 10:00	</td>	<td>	S1	</td>	<td>	<strong>	Freizeit-Damen Doppel 60	</strong>	</td>	<td>		TC Augsburg Siebentisch		</td>	</tr>
+<tr>	<td align="right">	Fr. 07.07.2023 15:00	</td>	<td>	S5	</td>	<td>		SV Sulzemoos II		</td>	<td>	<strong>	Knaben 15 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Sa. 08.07.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	<td>		1. SC Gröbenzell		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>		ESV München Sportpark II		</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>		TC Schießgraben Augsburg		</td>	<td>	<strong>	Herren 50	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Damen 40	</strong>	</td>	<td>		ASV Dachau		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>		TeG Lech-Schmuttertal		</td>	<td>	<strong>	Herren 40	</strong>	</td>	</tr>
+<tr>	<td align="right">		</td>	<td>	0	</td>	<td>		Spielort: FC Langweid		</td>	<td>		0		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 55 (5er)	</strong>	</td>	<td>		TC Eichenau		</td>	</tr>
+<tr>	<td align="right">	So. 09.07.2023 09:00	</td>	<td>	S3	</td>	<td>	<strong>	Damen	</strong>	</td>	<td>		TC Schwabing		</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>	<strong>	Herren 30 (4er)	</strong>	</td>	<td>		SV Sulzemoos		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S3	</td>	<td>	<strong>	Herren 50 II	</strong>	</td>	<td>		SV Bergheim		</td>	</tr>
+<tr>	<td align="right">	15:00	</td>	<td>	S2	</td>	<td>		TSV Geiselbullach		</td>	<td>	<strong>	Dunlop Midcourt U10 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	Sa. 15.07.2023 09:00	</td>	<td>	S3	</td>	<td>		TC Schleißheim		</td>	<td>	<strong>	Junioren 18 (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S4	</td>	<td>		TF Fürstenfeldbruck		</td>	<td>	<strong>	Junioren 18 II (4er)	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S3	</td>	<td>	<strong>	Bambini 12 (4er)	</strong>	</td>	<td>		TC Eichenau II		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>	<strong>	Herren 50	</strong>	</td>	<td>		DJK Augsburg-Lechhausen		</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	LL2	</td>	<td>		TC Weilheim		</td>	<td>	<strong>	Damen 40	</strong>	</td>	</tr>
+<tr>	<td align="right">	14:00	</td>	<td>	S1	</td>	<td>	<strong>	Damen 50 (4er)	</strong>	</td>	<td>		TC Inning		</td>	</tr>
+<tr>	<td align="right">	So. 16.07.2023 09:00	</td>	<td>	S4	</td>	<td>		TC Puchheim III		</td>	<td>	<strong>	Herren	</strong>	</td>	</tr>
+<tr>	<td align="right">	09:00	</td>	<td>	S1	</td>	<td>	<strong>	Herren 40	</strong>	</td>	<td>		TSV Zusmarshausen		</td>	</tr>
 
         </table>
 			</section>
