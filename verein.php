@@ -110,9 +110,9 @@ include 'header.php';
 				<h2>Der Vorstand</h2>
 				<article id="visitenkarten">
 					<div class="visitenkarte">
-						<img alt="Dr. Benjamin Vollrath" src="images/vorstand/benjamin_vollrath.jpg">
-						<div class="daten">1. Vorsitzender<br>Dr. Benjamin Vollrath<br>
-							<a href="mailto:benjamin.vollrath@tcolching.de">benjamin.vollrath@tcolching.de</a>
+						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.png">
+						<div class="daten">1. Vorsitzender<br>Conny Roloff<br>
+							<a href="mailto:conny.roloff@tcolching.de">conny.roloff@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
@@ -130,21 +130,21 @@ include 'header.php';
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Conny Roloff" src="images/vorstand/conny_roloff.jpg">
-						<div class="daten">Schriftführer und Webmaster<br>
-						Conny Roloff<br>
+						<img alt="Daniela Ulrich" src="images/vorstand/daniela_ulrich.jpg">
+						<div class="daten">Schriftführerin<br>
+						Daniela Ulrich<br>
             <a href="mailto:schriftführer@tcolching.de">schriftführer@tcolching.de</a>
             </div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Conny Dutka" src="images/vorstand/conny_dutka.jpg">
-						<div class="daten">Sportwartin<br>Conny Dutka<br>
+						<img alt="Thomas Schek" src="images/vorstand/thomas_schek.jpg">
+						<div class="daten">Sportwart<br>Thomas Schek<br>
 						<a href="mailto:sportwart@tcolching.de">sportwart@tcolching.de</a>
 						</div>
 					</div>
 					<div class="visitenkarte">
-						<img alt="Moni Traub" src="images/vorstand/moni_traub.jpg">
-						<div class="daten">Jugendwartin<br>Moni Traub<br>
+						<img alt="Heiko Tesche" src="images/vorstand/heiko_tesche.jpg">
+						<div class="daten">Jugendwart<br>Heiko Tesche<br>
 						<a href="mailto:jugendwart@tcolching.de">jugendwart@tcolching.de</a>
 						</div>
 					</div>

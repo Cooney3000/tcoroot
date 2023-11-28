@@ -10,7 +10,7 @@ require_once("inc/permissioncheck.inc.php");
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 $user = check_user();
 
-$title = "Intern Hall Of Fame";
+$title = "Hall Of Fame";
 include("inc/header.inc.php");
 ?>
 <script>
@@ -24,6 +24,40 @@ include("inc/header.inc.php");
 
 <div class="container main-container">
   <h1 class="h1">Hall of Fame</h1>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2023&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
+      <div class="col-sm">
+        <div class="klein my-2">Damen:</div>
+        <img class="breitebilder" src="/intern/history/turnier2023/images/elena_vogg.jpg" alt="Elena Vogg" />
+        <div class="h5 mb-2">Elena Vogg</div>
+      </div>
+      <div class="col-sm">
+        <div class="klein my-2">Herren:</div>
+        <img class="breitebilder" src="/intern/history/turnier2023/images/sascha_mischke.jpg" alt="Sascha Mischke" />
+        <div class="h5 mb-2">Sascha Mischke</div>
+      </div>
+    </div> <!-- row -->
+    <h2 class="display-5"><a href="/intern/history/turnier2023/">Zu weiteren Turnierdetails</a></h2>
+  </div> <!-- container -->
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2022&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
+      <div class="col-sm">
+        <div class="klein my-2">Damen:</div>
+        <img class="breitebilder" src="/intern/history/turnier2022/images/moni_traub.png" alt="Moni Traub" />
+        <div class="h5 mb-2">Moni Traub</div>
+      </div>
+      <div class="col-sm">
+        <div class="klein my-2">Herren:</div>
+        <img class="breitebilder" src="/intern/history/turnier2022/images/kai_kirchhoff.png" alt="Kai Kirchhoff" />
+        <div class="h5 mb-2">Kai Kirchhoff</div>
+      </div>
+    </div> <!-- row -->
+    <h2 class="display-5"><a href="/intern/history/turnier2022/">Zu weiteren Turnierdetails</a></h2>
+  </div> <!-- container -->
 
   <div class="container mt-4">
     <div class="row">
@@ -45,7 +79,6 @@ include("inc/header.inc.php");
       Das Wetter spielte mit und so wurde es ein vielfach gelobter Vereins-Event. Besonders interessant: Bei den Damen gab es einen Generationenwechsel!</p>
     <h2 class="display-5"><a href="/intern/history/turnier2021/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
-
 
   <div class="container mt-4">
     <div class="row">

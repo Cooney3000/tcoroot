@@ -9,9 +9,7 @@ define ("DBG", 50);
 
 // Verbindungsdaten zur Datenbank
 // HOSTNAME:DESKTOP-BRGTU5C oder prod?
-$localhost = gethostname() == 'JOIN-GM9H6G3' ? TRUE : FALSE;
-
-
+$localhost = gethostname() == 'connyDell23' ? TRUE : FALSE;
 
 if ($localhost) {
   $db_host = 'localhost';

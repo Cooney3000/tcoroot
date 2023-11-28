@@ -230,6 +230,35 @@ li.schlaeger {
   width: 100%;
 }
 
+.gallery-images {
+  overflow: hidden;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -5px; /* Negative Margin für konstanten Abstand */
+}
+
+.gallery-item {
+  flex: 0 0 calc(100% - 10px); /* Breite der Bilder mit Abstand */
+  margin: 5px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #0f422d;
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1); /* Vergrößerung bei Hover */
+}
+
 @media (min-width: 992px) {
   /* .container {
         max-width: 900px;
@@ -241,4 +270,9 @@ li.schlaeger {
   .formwidth {
     width: 50%;
   }
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px); /* Breite der Bilder mit Abstand */
+    margin: 5px;
+    overflow: hidden;
+  }  
 }

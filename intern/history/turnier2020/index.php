@@ -10,7 +10,7 @@ require_once("../../inc/permissioncheck.inc.php");
 //Der Aufruf von check_user() muss in alle internen Seiten eingebaut sein
 $user = check_user();
 
-$title = "Intern Historie Turnier 2019";
+$title = "Intern Historie Turnier 2020";
 include("../../inc/header.inc.php");
 ?>
 <script>

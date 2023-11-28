@@ -67,10 +67,10 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
     </article>
     <article>
       <h3>Unsere Jugend-Sponsoren</h3>
-      <a href="http://www.keller-rolladen.de/"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
-      <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
-      <a href="http://www.friseurkosmetik-fuchs.de/"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
-      <a href="http://www.maler-stephan.de/"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
+      <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail"/></a>
+      <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
+      <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
+      <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
     </article>
   </section>
 </div>
@@ -161,22 +161,6 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 </div>
 
 
-<div id="blatt4" class="blatt">
-  <section id="presse" class="seite">
-    <article>
-      <h3>Vier Teams steigen auf!</h3>
-      <img src="images/Presse_2023-07-30.jpg" class="w-100" alt="Artikel" />
-      <br>
-      <img src="images/Presse_2023-08-02.png" class="w-100" alt="Artikel" />
-    </article>
-    <article>
-      <h3>Kid's Day 2023 am 8. Mai 2023</h3>
-      <img src="images/Kids/Presse 2023-06-06 um 11.38.04.jpg" class="w-100" alt="Artikel" />
-    </article>
-
-  </section>
-</div>
-
 <div id="blatt3" class="blatt">
   <section id="neumitglieder" class="seite">
     <h2>Neumitglieder willkommen!</h2>
@@ -198,6 +182,46 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 					<iframe id="lkraceIframe" src="https://mybigpoint.tennis.de/services/?action=lkracenv&verband=BTV&cnt=5&verein=02262"></iframe>
 					<p style="font-size:smaller">Siehe hierzu auch <a href="datenschutzerklaerung.php#dsgvolkrace">DSGVO - LK Race</a></p>
 				</div> -->
+  </section>
+</div>
+
+
+<div id="blatt4" class="blatt">
+  <section id="presse" class="seite">
+<!-- ####  PRESSE #### -->
+<?php
+// Verzeichnis mit Presseartikeln
+$imageDirectory = 'images/presse';
+  $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+  rsort($images, SORT_REGULAR);
+?>
+
+<div class="container">
+    <h2>Pressespiegel</h2>
+    <div class="gallery-container">
+    <div class="container">
+        <div class="image-container">
+<?php   
+        foreach ($images as $image) {
+              $filename = substr(basename($image), 0, 8);
+              $ttmmjjjj = substr($filename, 6, 2).".".substr($filename, 4, 2).".".substr($filename, 0, 4);
+?>
+              <div class="image">
+                  <div><?= $ttmmjjjj ?></div>
+                    <a href="<?= $image ?>"><img src="<?php echo $image; ?>" alt="Bild"></a>
+                </div>
+<?php 
+        }; 
+?>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
   </section>
 </div>
 <!-- 
