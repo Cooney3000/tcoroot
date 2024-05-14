@@ -6,7 +6,8 @@
 	left: 0;
 	z-index:9999;
 }
-#toplink img{
+#toplink img
+{
 	width:40px;
 	height:40px;
 	opacity: 0.4;
@@ -106,9 +107,18 @@ nav li
 	padding: 0 10px 0 10px ;
 	float: left;
 }
+sup {
+	vertical-align: super;
+	font-size: smaller;
+	font-weight: bold;
+	color: #666;
+}
+ 
 th
 {
 	text-align: left;
+}
+.betont th {
 	color: white;
 	background-color: grey;
 }
@@ -132,6 +142,7 @@ th
 	width: auto;
 	height: 300px;
 }
+
 .siteMapAbschnitt:hover > .smSection 
 {
 /*
@@ -166,6 +177,10 @@ nav a:hover
 }
 .betont tr:nth-child(odd) {
    background-color: #DDDDDD;
+}
+.kleingedrucktes
+{
+	font-size:0.8em;
 }
 .breitebilder, .breit
 {
@@ -232,7 +247,8 @@ h3
 }
 #logotcoheader
 {
-	width:170px;
+	width:160px;
+	margin-left: 10px;
 }
 #latest_news
 {
@@ -267,11 +283,6 @@ h3
 	color:white;
 	text-align: center;
 	vertical-align: middle;
-}
-#sms_Message h1	
-{
-	font-size:1em;
-	font-weight:bold;
 }
 
 #aktuelles table, 
@@ -689,8 +700,6 @@ ul.schlaeger
 footer
 {
 	background-image:url(../images/sandkachel2.png);
-	width:auto;
-	height:auto;
 	font-size:0.8em;
 	line-height:1.4em;
 	color:#222222;
@@ -743,7 +752,21 @@ footer h4
 	width: 100%;
 	border-radius: 10px;
 }
-
+.persoenlich {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 1.4rem;
+  }
+  
+  .text-gross {
+	font-size: 2rem;
+  }
+  
+  .text-groesser {
+	font-size: 2rem;
+  }
+  .date-change {
+	border-top: 2px solid black;  /* Erstellt eine schwarze Linie oben an der Zeile */
+  }
   
 /* MEDIA QUERIES FOR A RESPONSIVE LAYOUT */
 
@@ -778,11 +801,28 @@ footer h4
 
 @media (max-width:695px)
 {
+
+/*
 	header h1
 	{
-		position:relative;
-		right:auto;
-		top:auto;
+		height:auto;
+		padding:0.5em 0 0 0;
+		position:absolute;
+		right:1em;
+		top:0;
+		color:white;
+		
+		font-size:4rem;
+		font-weight:bold;
+		font-style:italic;
+		text-shadow: 0.03rem 0.03rem #333;
+		font-family:'PT Sans', sans-serif;
+	}
+*/
+
+	header h1
+	{
+		position:absolute;
 		font-size:1.5rem;
 		padding: 0.4rem 0 0 0.4em;
 	}
@@ -850,7 +890,7 @@ footer h4
   }
   #logotcoheader
   {
-    width:60px;
+    width:70px;
   }
   
 

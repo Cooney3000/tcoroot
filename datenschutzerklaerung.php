@@ -9,7 +9,7 @@ include 'header.php';
 Amperau 14<br>
 82140 Olching<br>
 mail@TCOlching.de <br>
-Heiko Tesche<br>
+Conny Roloff<br>
 <a href="http://tcolching.de/index.php#impressum">Impressum: http://tcolching.de/index.php#impressum</a><br>
 </span></p><h3 id="dsg-general-datatype">Arten der verarbeiteten Daten:</h3><p>-	Bestandsdaten (z.B., Namen, Adressen).<br>
 -	Kontaktdaten (z.B., E-Mail, Telefonnummern).<br>

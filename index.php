@@ -5,6 +5,7 @@ $_verein = "";
 $_mannschaften = "";
 $_jugend = "";
 $_training = "";
+$_header = "Home";
 
 include 'header.php';
 
@@ -25,14 +26,19 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
   $smsMsgClass = "hidden";
 }
 
-// Jetzt noch die Gaststätte geöffnet/geschlossen-Meldung
+// Jetzt noch die Gaststätte geöffnet/geschlossen-Meldung. Geöffnet ist nur, wenn der Status von heute ist
 $file = "work/wirt.txt";
 $line = trim(file_get_contents($file));
 
 $wirtStatus = substr($line, 0, 1);
 $wirtAktivStatus = substr($line, 1, 1);
+$wirtStatusDatum = substr($line,2,8);
 $wirtStatusClass = ($wirtStatus) ? "btn-success" : "btn-danger";
+if ($wirtStatusDatum == date("d.m.y")) {
 $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
+} else {
+  $wirtStatusText = "geschlossen"; // wenn der Status nicht von heute ist, wird automatisch geschlossen angezeigt.
+}
 ?>
 <div id="blattSmsText">
   <section id="sms_Message" class="seite sms-danger <?= $smsMsgClass ?>">
@@ -53,21 +59,25 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 
       <!-- *******************
               SCHLAGZEILEN
-      -->  *******************
+      --> *******************
       <ul class="schlaeger">
-        <li><strong>Interesse an Tennis?</strong>
-          <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>
+      <li><strong>Ballschule, Comeback-Training, Sommertraining</strong>
+          <p>Diese Trainingsangebote gibt es auch dieses Jahr wieder! 
+          <p>Für Sommertraining, Ballschule, Comeback-Training und Schnupper-Jugendtraining gibt es alle Infos <a href="/training.php">hier.</a></p>
           <p><a href="/verein.php#mitgliedschaft">Mitgliedschafts-Optionen</a></p>
           <p><a href="/training.php">Trainingsangebote für Jugend und Erwachsene</a></p>
+        </li>
+        <li><strong>Interesse an Tennis?</strong>
+          <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>
         </li>
         <li><strong>Aktuelle News aus der Presse!</strong>
           <p><a href="#presse">Hier zu den Details</a></p>
         </li>
-     </ul>
+      </ul>
     </article>
     <article>
       <h3>Unsere Jugend-Sponsoren</h3>
-      <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail"/></a>
+      <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
       <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
       <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
       <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
@@ -188,37 +198,37 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 
 <div id="blatt4" class="blatt">
   <section id="presse" class="seite">
-<!-- ####  PRESSE #### -->
-<?php
-// Verzeichnis mit Presseartikeln
-$imageDirectory = 'images/presse';
-  $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-  rsort($images, SORT_REGULAR);
-?>
+    <!-- ####  PRESSE #### -->
+    <?php
+    // Verzeichnis mit Presseartikeln
+    $imageDirectory = 'images/presse';
+    $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+    rsort($images, SORT_REGULAR);
+    ?>
 
-<div class="container">
-    <h2>Pressespiegel</h2>
-    <div class="gallery-container">
     <div class="container">
-        <div class="image-container">
-<?php   
-        foreach ($images as $image) {
-              $filename = substr(basename($image), 0, 8);
-              $ttmmjjjj = substr($filename, 6, 2).".".substr($filename, 4, 2).".".substr($filename, 0, 4);
-?>
+      <h2>Pressespiegel</h2>
+      <div class="gallery-container">
+        <div class="container">
+          <div class="image-container">
+            <?php
+            foreach ($images as $image) {
+              [$datum, $publikation, $titel] = explode('_', basename($image));
+              $ttmmjjjj = substr($datum, 6, 2) . "." . substr($datum, 4, 2) . "." . substr($datum, 0, 4);
+            ?>
               <div class="image">
-                  <div><?= $ttmmjjjj ?></div>
-                    <a href="<?= $image ?>"><img src="<?php echo $image; ?>" alt="Bild"></a>
-                </div>
-<?php 
-        }; 
-?>
+                <div><?= $ttmmjjjj ?> - <?= $publikation ?></div>
+                <a href="<?= $image ?>"><img src="<?php echo $image; ?>" alt="Bild"></a>
+              </div>
+            <?php
+            };
+            ?>
 
+          </div>
         </div>
-    </div>
 
+      </div>
     </div>
-</div>
 
 
 

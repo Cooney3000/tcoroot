@@ -33,7 +33,7 @@ $fehlerMsg = array (
   'dbconnect' => 'Connection zur Datenbank fehlgeschlagen!',
   'platzParam' => 'Parameter für Tag oder Platz fehlen.',
 );
-$fehlerAction = 'Bitte benachrichtigen Sie conny.roloff@live.de';
+$fehlerAction = 'Bitte benachrichtigen Sie webmaster@tcolching.de';
 
 $CONFIG = array (
   'webmasterMailAddress' => 'webmaster@tcolching.de',
@@ -41,9 +41,7 @@ $CONFIG = array (
   'trainerVorname' => 'Michael',
   'trainerNachname' => 'Görzen',
   'optinLinkDuration' => 72,
-  'activeTournament' => 9,
-  // 'activeTournamentB' => 7,
-  // 'activeTournamentJ' => 5,
+  'activeTournament' => 10,
   'turniertyp' => "ts-turnier",
   'gastId' => 1,
   'gastJugId' => 28,

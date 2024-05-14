@@ -32,7 +32,7 @@ $kw = "champ2019";
     
   <h2>Spieltermine selbst vereinbaren!</h2>
   <p>
-Das Turnier findet während der Saison statt. Halbfinale und Finale werden an einem Septemberwoche gespielt. Alle Spiele bis dahin 
+Das Turnier findet während der Saison statt. Halbfinale und Finale werden an einem Septemberwochenende gespielt. Alle Spiele bis dahin 
 werden eigenverantwortlich mit den Gegnern vereinbart und in der Platzbuchung eingetragen. </p>
 <p><strong>Bitte beachten:</strong></p>
 <ul>

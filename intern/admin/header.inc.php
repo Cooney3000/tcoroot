@@ -24,16 +24,15 @@
 </head>
 
 <body class="admin">
-<?php
+  <?php
   $username = isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : ""
-?>
+  ?>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#d90429">
     <div class="mx-auto order-0">
       <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
     </div>
-    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -45,6 +44,9 @@
         </li>
         <li class="nav-item" id="nav-index">
           <a class="nav-link" href="/intern/admin/index.php">Mitglieder</a>
+        </li>
+        <li class="nav-item" id="nav-gastedit">
+          <a class="nav-link" href="/intern/admin/verein-aufnahmeantraege.php">Aufnahmeanträge</a>
         </li>
         <li class="nav-item" id="nav-gastedit">
           <a class="nav-link" href="/intern/admin/gastedit.php">Gastbuchungen</a>

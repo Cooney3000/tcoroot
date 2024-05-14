@@ -6,7 +6,7 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TC Olching Home</title>
+	<title>TC Olching <?= $_header ?></title>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -15,11 +15,13 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="theme-color" content="#ffffff">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 	<script src="/js/vendor/modernizr.min.js"></script>
 	<script src="/js/vendor/respond.min.js"></script>
 
@@ -79,7 +81,8 @@
 	<a id="toplink" href="#top"><img src="/images/icons/top.gif" alt="Nach oben"></a>
 	<div class="headerbackground">
 		<header>
-			<img id="logotcoheader" src="/images/tcoplain_0,33x.png" alt="Logo">
+			<img id="logotcoheader" src="/images/TCO-Logo 2022-final.png" alt="Logo">
+			<!-- <img id="logotcoheader" src="/images/tcoplain_0,33x.png" alt="Logo"> -->
 			<h1>TC Olching e.V.</h1>
 		</header>
 	</div>
@@ -91,7 +94,7 @@
 				<li class="<?= $_mannschaften ?>"><a href="mannschaften.php">Mannschaften</a></li>
 				<li class="<?= $_jugend ?>"><a href="jugend.php">Jugend</a></li>
 				<li class="<?= $_training ?>"><a href="training.php">Training</a></li>
-				<li><a href="/intern/internal.php">Intern</a></li>
+				<li><a href="/intern/index.php">Intern</a></li>
 				<!-- <li><a href="/intern/tafel/">Platzbuchung</a></li> -->
 			</ul>
 		</nav>
@@ -105,6 +108,6 @@
 			<img src="/images/sliders/kids.jpg" alt="Zuschauer">
 		</div>
 		<div id="latest_news">
-			<span class="text-success"><a href="https://www.tcolching.de/intern/tafel/">Direkt zur Platzbuchung<br>für Mitglieder</a></span>
+			<span class="text-success"><a href="training.php#angebote2024">Trainingsangebote<br><span class="persoenlich text-gross">2024</span></a></span>
 		</div>
 	</section>

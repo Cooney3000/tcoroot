@@ -39,7 +39,7 @@ include("inc/header.inc.php");
         <div class="h5 mb-2">Sascha Mischke</div>
       </div>
     </div> <!-- row -->
-    <h2 class="display-5"><a href="/intern/history/turnier2023/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2023/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
   <div class="container mt-4">
@@ -56,7 +56,7 @@ include("inc/header.inc.php");
         <div class="h5 mb-2">Kai Kirchhoff</div>
       </div>
     </div> <!-- row -->
-    <h2 class="display-5"><a href="/intern/history/turnier2022/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2022/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
   <div class="container mt-4">
@@ -77,7 +77,7 @@ include("inc/header.inc.php");
       waren schon zu spüren. Planungen waren aber nach wie vor ein Glücksspiel, daher entschieden wir uns
       zu einem Wochenende mit k.o.-System und B-Runde.
       Das Wetter spielte mit und so wurde es ein vielfach gelobter Vereins-Event. Besonders interessant: Bei den Damen gab es einen Generationenwechsel!</p>
-    <h2 class="display-5"><a href="/intern/history/turnier2021/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2021/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
   <div class="container mt-4">
@@ -97,7 +97,7 @@ include("inc/header.inc.php");
     <p>2020 war das erste Jahr unter Corona mit vielen Einschränkungen für die Tennissaison. Die Mannschaftsspiele wurden verzögert gestartet,
       das Clubturnier begann erst im Juni wurde als k.o.-System mit B-Runde ausgetragen.
       Corona zum Trotz wurde das Turnier gut angenommen und wurde so ein Erfolg.</p>
-    <h2 class="display-5"><a href="/intern/history/turnier2020/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2020/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
 
@@ -123,7 +123,7 @@ include("inc/header.inc.php");
     <p>Das erste Jahr der neuen Clubmeisterschaften, die von Norbert Maier frühzeitig geplant waren und verschiedene Spielklassen einführten. </p>
     <p>Conny Roloff programmierte eine elektronische Platztafel, auf der sich jede Paarung eintragen konnte. Jeder konnte sehen, wer wann spielt.
       Dadurch fanden sich an sonst leeren Wochenenden plötzlich Zuschauer ein und es ergaben sich gesellige Nachmittage.</p>
-    <h2 class="display-5"><a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2019/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
 
@@ -139,7 +139,7 @@ include("inc/header.inc.php");
     <p>Das war der erste Versuchsballon für ein Clubturnier. Unheimlich kurfristig auf die Beine gestellt, allerdings nur mit den Spielern der Herrenmannschaften.
       Deswegen gab es auch noch kein Plakat oder sonstige Zusatzorganisation.</p>
     <p>Die Online-Unterstützung für die Spielerpaarungen lief noch über ein geteiltes Excel und war etwas hakelig.</p>
-    <h2 class="display-5"><a href="/intern/history/turnier2018/">Zu weiteren Turnierdetails</a></h2>
+    <h2><a href="/intern/history/turnier2018/">Zu weiteren Turnierdetails</a></h2>
   </div> <!-- container -->
 
 

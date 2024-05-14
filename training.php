@@ -5,9 +5,11 @@ $_aktuell = "";
 $_verein = "";
 $_mannschaften = "";
 $_jugend = "";
+$_header = "Training";
 include 'header.php';
 ?>
 
+<?php /*
 <div id="blatt1">
 	<section id="KinderJugendTraining" class="seite">
 		<article>
@@ -50,26 +52,9 @@ include 'header.php';
 		</article>
 	</section>
 </div>
+*/ ?>
 
-<!-- 
-		<div id="blatt5">
-			<section id="trainer" class="seite">
-        <article>
-					<img style="float:left; padding-right:10px" alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen_portrait.png"/>
-          <h2>Michael Görzen: Unser Vereinstrainer</h2>
-          <p>Dies ist die Seite unseres Trainers Michael Görzen. Sein Profil findet Ihr weiter unten</p>
-				</article>
-      </section>
-		</div>
-		<div id="blatt1">
-			<section id="sommer" class="seite">
-				<h2>Training während des Sommercamps</h2>
-				<article>
-          Liebe TCO'ler, ich bin auch während des Sommercamps für Euch da!
-        </article>
-      </section>
-		</div>
- -->
+</div>
 <!-- <div id="blatt2">
 			<section id="sommercamp" class="seite">
 				<h2>Jugend-Sommercamp 2020!</h2>
@@ -104,41 +89,141 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			<p>Als Trainer arbeite ich seit 2001. Mein Ukraine-stämmiger Vater hat eine Tennisschule in Eching bei München.
 				Ich spreche Deutsch, Russisch, Englisch und etwas Französisch.</p>
 			</p>
+
 			<p><strong>Meine Kontaktdaten:</strong></p>
 			<p>Email: michael070985@icloud.com</p>
 			<p>WhatsApp: +49 179 5665353</p>
 			<p>Tel mobil: +49 176 74815404</p>
-			<p><strong>Gruppenpreise je Stunde:</strong></p>
-			<p>1 -2 Spieler: 44,00 EUR</p>
-			<p>3 Spieler: 45,00 EUR</p>
-			<p>4 Spieler: 48,00 EUR</p>
+			<p><strong>Preise je Stunde ab 2024:</strong></p>
+			<p>1 Spieler: 50,00 EUR</p>
+			<p>2 Spieler: 54,00 EUR</p>
+			<p>3 Spieler: 57,00 EUR</p>
+			<p>4 und mehr Spieler: 60,00 EUR</p>
 		</article>
 		<article>
-			<img alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen_portrait.png" />
+			<img class="w-25" alt="Trainer Michael Görzen" src="images/trainer/michael_goerzen_portrait.png" />
 		</article>
 	</section>
 </div>
-<div id="blatt4">
-	<!--			<section id="kindertraining" class="seite">
-				<h2>Wintertraining 2021/22 für Kinder und Jugendliche</h2>
-				<article>
-          <p>Die Einteilung für das Wintertraining ist abgeschlossen. Bitte direkt auf den Trainer zugehen, falls du noch mitmachen willst</p>
-					<table>
-						<tr>
-							<td>Trainer:   </td><td>Michael Görzen</td>
-						</tr>
-						<tr>
-							<td>Leistung: </td><td>11 Stunden Gruppentraining</td>
-						</tr>
-					</table>
-					
-            <p>Bei schlechtem Wetter wird das Training in die Tennishalle nach Gernlinden verlegt.</p> 
-         
-					<p>Die Trainingsgruppen werden nach Alter, Spielstärke und Mannschaftskonstellation zusammengestellt.<br>
-					<br>
-					<a href="downloads/Plakat_Kindertennis_02.pdf">Flyer Kindertennis</a> -->
-	</article>
+<div id="blatt1">
+	<section id="sommer" class="seite">
+		<h2>SOMMERSAISON</h2>
+		<article>
+
+			<h2>Start der Sommersaison: 22.04.24</h2>
+
+			<h2>Ferien</h2>
+			<p>Pfingsten: 20.05.24 - 02.06.24</p>
+			<p>Sommerferien: 29.07.24 - 08.09.24</p>
+
+			<h2>Camps</h2>
+			<p>1) Für Jugendliche des TCO: 29.07.24 - 01.08.24</p>
+			<p>2) Jugendwoche Stadt Olching: 05.08.24 - 08.08.24
+				(Jugendspieler des TCO dürfen sich hierfür auch anmelden)</p>
+
+			<h2>Ende der Sommersaison: 20.09.24</h2>
+
+			<h2>Beginn Wintersaison 07.10.2024 in der Tennishalle Gernlinden</h2>
+
+
+		</article>
 	</section>
-</div><?php
-		include 'footer.php';
-		?>
+</div>
+
+<div id="blatt2">
+	<section id="angebote2024" class="seite">
+		<p><span class="h2 persoenlich text-groesser">Spaß mit Tennis - </span><span class="h3">Angebote 2024</span></p>
+		<article>
+			<h2 class="border-top border-dark">MATCHTRAINING</h2>
+			<p>für jugendliche Mitglieder des TC Olching. Entfällt bei Regen</p>
+			<p>Das Matchtraining bildet den Übergang vom Training mit überwiegend technisch orientiertem Anteil, zum spielsituativen und taktischen Training im Einzel als auch beim Doppel.</p>
+			<table class="table-sm">
+<tr><td>Start: 	</td><td>06.05.2024</td></tr>
+<tr><td>Ende: 	</td><td>15.07.2024</td></tr>
+<tr><td>Trainingstag: 	</td><td>Montag</td></tr>
+<tr><td>Uhrzeit: 	</td><td>17:00 - 18:00 Uhr</td></tr>
+<tr><td>Kein Training: 	</td><td>20.05.24  und 27.05.24 (Pfingstferien)</td></tr>
+<tr><td>Anzahl der Einheiten: 	</td><td>9</td></tr>
+<tr><td>Preis: 	</td><td>100 €</td></tr>
+<tr><td>Anmeldeschluss: 	</td><td>02.05.2024 (später auf Anfrage)</td></tr>
+			</table>
+			<p>Anmeldung unter <a href="/intern/a_matchtraining.php">Aufnahmeantrag Online</a></p>
+		</article>
+
+
+		<article>
+			<h2 class="border-top border-dark">BALLSCHULE</h2>
+			<p>für Kinder von 5 bis 10 Jahren. Entfällt bei Regen</p>
+			<p>In unserer Ballschule steht der Spaß am Spiel mit verschiedenen Ballarten im Vordergrund.</p>
+			<ul>
+<li>Spielerisches Lernen von Ballgefühl und Koordination</li>
+<li>Werfen, Fangen, Prellen, Rollen und erste Übungen mit dem Tennisschläger</li>
+<li>Für den raschen Übergang zum Tennissport</li>
+</ul>
+			<table class="table-sm">
+<tr><td>Start: 	                           </td><td>06.05.2024</td></tr>
+<tr><td>Ende: 	                           </td><td>15.07.2024</td></tr>
+<tr><td>Trainingstag: 	                   </td><td>Montag</td></tr>
+<tr><td>Uhrzeit: 	                       </td><td>16:00 - 17:00 Uhr</td></tr>
+<tr><td>Kein Training: 	                   </td><td>20.05.24  und 27.05.24 (Pfingstferien)</td></tr>
+<tr><td>Anzahl der Einheiten: 	           </td><td>9</td></tr>
+<tr><td>Preis: 	                           </td><td>100 €</td></tr>
+<tr><td>Anmeldeschluss: 	               </td><td>02.05.2024 (später auf Anfrage)</td></tr>
+			</table>
+			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
+		</article>
+		<article>
+			<h2 class="border-top border-dark">JUGEND SCHNUPPERTRAINING</h2>
+			<p>für Jugendliche von 11 bis 18 Jahren. Entfällt bei Regen</p>
+			<p>Bei uns sind alle Spielerinnen und Spieler jeden Alters aber auch in jeder Spielstärke willkommen, deshalb haben wir ein Angebot für alle Jugendlichen erstellt, die Tennis mal ausprobieren und lernen möchten.</p>
+			<p>In unserem Angebot werden die Jugendlichen an das Tennisspiel herangeführt und auch regeltechnisch geschult.</p>
+			<p>Das Material (Tennisschläger) wird von uns zur Verfügung gestellt.</p>
+			<p>In unserem Angebot ist sowohl das Training als auch die Schnupper-Mitgliedschaft enthalten, mit der die Spielerinnen und Spieler zusätzlich auch selbstständig den Platz buchen und nutzen können, um ihr Gelerntes anzuwenden.</p>
+			
+			<table class="table-sm">
+<tr><td>Start: 	</td><td>11.05.2024</td></tr>
+<tr><td>Ende: 	</td><td>20.07.2024</td></tr>
+<tr><td>Trainingstag: 	</td><td>Samstag</td></tr>
+<tr><td>Uhrzeit: 	</td><td>11:30 - 12:30</td></tr>
+<tr><td>Kein Training: 	</td><td>25.05.24 und 01.06.24 (Pfingstferien)</td></tr>
+<tr><td>Anzahl der Einheiten: 	</td><td>9</td></tr>
+<tr><td>Mindestteilnehmerzahl: 	</td><td>4</td></tr>
+<tr><td>Preis: 	</td><td>160 € (inkl. Schnuppermitgliedschaft)</td></tr>
+
+<tr><td>Anmeldeschluss: 	               </td><td>02.05.2024 (später auf Anfrage)</td></tr>
+			</table>
+			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
+		</article>
+
+		<article class="border-top border-dark">
+			<h2>„COMEBACKTRAINING“</h2>
+			<p>für neu eingetretene Erwachsene. Entfällt bei Regen</p>
+			<p>Das Comebacktraining bietet neu eingetretenen Mitgliedern die Gelegenheit, entweder eingerostete vergangene Tenniskenntnisse zu reaktivieren oder aber auch einfach den richtigen Einstieg in den Tennissport zu bekommen. In beiden Fällen ist ein guter Trainer die beste Voraussetzung, in das neue (oder alte) Hobby mit Spaß und Freude zu starten und Frust zu vermeiden.</p>
+			
+			<table class="table-sm">
+<tr><td>Start: 	</td><td>11.05.2024</td></tr>
+<tr><td>Ende: 	</td><td>20.07.2024</td></tr>
+<tr><td>Trainingstag: 	</td><td>Samstag</td></tr>
+<tr><td>Uhrzeit: 	</td><td>A) 09:30 - 10:30 Uhr oder B) 10:30 - 11:30 Uhr</td></tr>
+<tr><td>Kein Training: 	</td><td>25.05.24 und 01.06.24 (Pfingstferien)</td></tr>
+<tr><td>Anzahl der Einheiten: 	</td><td>9</td></tr>
+<tr><td>Mindestteilnehmerzahl: 	</td><td>4</td></tr>
+<tr><td>Preis: 	</td><td>160 € (inkl. Schnuppermitgliedschaft)</td></tr>
+<tr><td>&nbsp;</td><td>Wenn es die Anzahl der Teilnehmer erlaubt, können auch bestehende Mitglieder dabei sein.  Preis: 135 €</td></tr>
+
+
+				<tr><td>Anmeldeschluss: 	               </td><td>02.05.2024 (später auf Anfrage)</td></tr>
+			</table>
+			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
+		</article>
+
+
+
+
+</section>
+</div>
+
+
+<?php
+include 'footer.php';
+?>

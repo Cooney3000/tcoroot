@@ -10,6 +10,12 @@ body {
   background-color: #f94144 !important;
 }
 
+.clear-fix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 p {
   margin: 5px 0 10px 0;
   line-height: 1.2em;

@@ -5,6 +5,7 @@ $_aktuell = "";
 $_verein = "";
 $_mannschaften = "";
 $_training = "";
+$_header = "Jugend";
 include 'header.php';
 ?>
 <?php
@@ -40,6 +41,7 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 	</section>
 </div>
 
+<?php /*
 <div id="blatt3">
 	<section id="kidsday" class="seite">
 		<h2>Kid's Day 2023</h2>
@@ -62,11 +64,12 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 				</p>
 			</strong>
 
-			<p>kindertennis@tcolching.de</p>
+			<p>Heiko Tesche: <a href="mailto:kindertennis@tcolching.de">kindertennis@tcolching.de</a></p>
 
 		</article>
 	</section>
 </div>
+*/ ?>
 
 <div id="blatt1">
 	<section id="kidsday22" class="seite">
@@ -83,32 +86,6 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 		<p><img alt="Kleinfeldspiel" class="w-100" src="images/jugendwoche/jw21_02.jpg" /></p>
 	</section>
 </div>
-
-<!--
-<div id="blatt3">
-	<section id="clubturnier2019" class="seite">
-		<h6>Pressemeldung vom 2.5.2019</h6>
-		<h2>Erfolgreiche Jugendclubmeisterschaften 2019 des TC Olching e.V.</h2>
-		<img alt="Siegerbild" class="w-100" src="images/jugendmeister2019.jpg" />
-		<p>Am Wochenende des 27. und 28. Aprils fanden auf der Anlage des Tennisclub Olching e.V. die diesjährigen Jugendclubmeisterschaften statt.
-			Bei kühlen Temperaturen kämpften 22 Kinder und Jugendliche zwischen 8 und 15 Jahren in vier Altersgruppen um den Titel.
-			Vereinsmeister bei den Knaben 16 wurde nach spannenden Duellen Rico Streif, vor Mario Michalsky und Nico Hochholzer.
-			Der Clubmeistertitel bei den Knaben 14 ging an Niklas Vogt. Platz 2 und 3 belegten in dieser Altersgruppe Sebastian Henke und Tobias Schreyer.
-			Die Mädchen 14 lieferten sich ebenfalls enge und vor allem lange Matches. Am Ende konnte sich Luna Streif vor
-			Fiona Roes und Sofie Traub durchsetzen. Auch die Bambinis von 8 - 12 zeigten vollen Einsatz und kämpften um jeden Punkt. Sieger in dieser
-			Kategorie wurde nach einem tollen Finalspiel Leo Traub vor Tim Schreyer und Stefan Popovic. Die Kinder konnten sich über Medaillen,
-			Urkunden und Sachpreise freuen. „Alle Kinder und Jugendliche waren mit großer Freude sowie mit viel Spaß und Engagement dabei. Alle
-			Teilnehmer lieferten sich spannende und faire Spiele und zeigten sich allesamt gut vorbereitet, um in die kommende Punktspielsaison zu
-			starten, die Mitte Mai beginnt“, freute sich Jugendwartin und Organisatorin Petra Streif.
-		</p>
-		<h6>zuständig für die Presse (Pressewart):</h6>
-		<h6>Thomas Stief</h6>
-		<h6>Tel.: 0172 / 784 59 38</h6>
-		<h6>E-Mail: presse@tcolching.de</h6>
-
-	</section>
-</div>
--->
 
 <div id="blatt4">
 	<section id="jugendleitung" class="seite">
@@ -139,14 +116,14 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 					<td><strong>Jugendwartin:</strong></td>
 				</tr>
 				<tr>
-					<td>Moni Traub und Conny Dutka</td>
+					<td>Heiko Tesche</td>
 					<td><a href="jugendwart@tcolching.de">jugendwart@tcolching.de</a></td>
 				</tr>
 				<tr>
 					<td><strong>Tennisballschule:</strong></td>
 				</tr>
 				<tr>
-					<td>Monika Traub</td>
+					<td>Heiko Tesche</td>
 					<td><a href="kindertennis@tcolching.de">kindertennis@tcolching.de</a></td>
 				</tr>
 			</table>

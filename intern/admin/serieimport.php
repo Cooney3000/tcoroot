@@ -36,8 +36,8 @@ VALUES
 EOT;
 
 $jetzt = date('Y-m-d H:m');
-$serieID = "Punktspiele 2023";
-$file = "spielplan2023.csv";
+$serieID = "Punktspiele 2024";
+$file = "spielplan2024.csv";
 $openfile = fopen($file, "r");
 $fileArray = explode("\r\n", fread($openfile, filesize($file)));
 $firstLine = true;
@@ -58,7 +58,7 @@ foreach($fileArray as $line) {
 }
 
 $sql .= substr($data,0,strlen($data) - 3);
-// TECHO(DEBUG, "<pre>$sql</pre>");
+TECHO(DEBUG, "<pre>$sql</pre>");
 $statement = $pdo->prepare($sql);
 $statement->execute();
 

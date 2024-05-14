@@ -20,7 +20,7 @@ include("../inc/header.inc.php");
 </script>
 
 <div class="container main-container">
-  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2023</h1>
+  <h1 class="mb-0">CLUBMEISTERSCHAFTEN 2024</h1>
   <!-- <h2 class="mt-0">(10.9. - 12.9.2021)</h2> -->
 <?php 
   require_once("turnierheader.inc.php");
@@ -30,7 +30,7 @@ include("../inc/header.inc.php");
 
     <?php
 
-    $showFormular = 0;
+    $showFormular = 1;
     $tid = $CONFIG['activeTournament'];
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);

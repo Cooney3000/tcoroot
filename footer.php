@@ -13,7 +13,7 @@
 					<div class="spalte2">
 							<h4>Kontakt:</h4>
 							Telefon: 08142 / 1 24 51 (Vereinsheim)<br>
-							eMail: <a href="mailto:mail@TCOlching.de">mail@TCOlching.de</a>
+							E-Mail: <a href="mailto:mail@TCOlching.de">mail@TCOlching.de</a>
 							<div id="datenschutz">
 								<a href="datenschutzerklaerung.php">Datenschutzerklärung</a><br>
 							</div>
@@ -32,7 +32,7 @@
 				<p class="clean">
 				Kontaktdaten der Vorstandsmitglieder gibt es unter <a href="verein.php#vorstand">Vorstand</a>.
 				Hier kannst du dich direkt an den TC Olching wenden.<br>
-					Anregungen und Hinweise zur Website bitte an unseren <a href="mailto://webmaster@tcolching.de">Webmaster Conny Roloff</a>.
+					Anregungen und Hinweise zur Website bitte an unseren <a href="mailto://webmaster@tcolching.de">Webmaster</a>.
 				</p>
 				<h3>Der TC Olching in den sozialen Medien</h3>
 				<article class="zweiSpalten">
@@ -85,5 +85,6 @@
 				</p>
 			</section>
 		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	</body>
 </html>

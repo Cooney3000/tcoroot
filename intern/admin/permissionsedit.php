@@ -6,7 +6,7 @@ require_once("../inc/permissioncheck.inc.php");
 
 $user = check_user();
 
-if (!checkPermissions(VORSTAND)) {
+if (!(checkPermissions(VORSTAND) OR checkPermissions(KASSIER))) {
   echo ("<html><body>");
   TECHO(DBG, "Für diese Seite besitzt du leider nicht die nötige Berechtigung", __LINE__);
   echo ("</body></html>");

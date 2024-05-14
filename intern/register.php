@@ -49,7 +49,10 @@ include("inc/header.inc.php")
     //   - Code in der DB lesen
     //   - Wenn vorhanden -> ok (am Ende nach Speichern der Daten Code löschen)
     //   - Wenn nicht vorhanden (=falsch), dann Fehlermeldung 
-    $result = $pdo->query("SELECT * FROM reg_codes WHERE regcode = '$regcode' AND created_at >= DATE_SUB(NOW(),INTERVAL 30 DAY)");
+    /* 
+      $result = $pdo->query("SELECT * FROM reg_codes WHERE regcode = '$regcode' AND created_at >= DATE_SUB(NOW(),INTERVAL 30 DAY)");
+ */
+    $result = $pdo->query("SELECT * FROM reg_codes WHERE regcode = '$regcode'");
     $count = $result->fetchColumn();
     if ($count > 0) {
 
@@ -151,8 +154,10 @@ EOT;
         }
       }
       // Zum Schluss den jetzt bereits genutzten Registrierungscode bzw. alle abgelaufenen Codes löschen
-      $statement = $pdo->prepare("DELETE FROM reg_codes WHERE regcode = ? OR created_at < DATE_SUB(NOW(),INTERVAL 30 DAY)");
-      $statement->execute(array($regcode));
+      if (!$error) {
+        $statement = $pdo->prepare("DELETE FROM reg_codes WHERE regcode = ? OR created_at < DATE_SUB(NOW(),INTERVAL 30 DAY)");
+        $statement->execute(array($regcode));
+      }
     } else // regCode falsch
     {
       echo ('<h2 class="text-danger">Registrierungscode nicht vorhanden oder abgelaufen. Bitte versuch es noch einmal oder wende dich an webmaster@tcolching.de</h2>');
@@ -160,11 +165,11 @@ EOT;
   }
 
   if ($showFormular) {
-    ?>
+  ?>
     <form action="?register=1" method="post" accept-charset="utf-8">
 
       <div class="form-group">
-        <p>Einen Registrierungscode bekommst du, nachdem du deinen ersten Beitrag bezahlt hast (-> <a href="downloads/TCO-Aufnahmeantrag2021.pdf">Aufnahmeantrag</a>). Bist du bereits Mitglied und ist dein Registrierungscode abgelaufen, dann beantrage bitte per formloser Mail an <a href="mailto:anmeldung@tcolching.de">anmeldung@tcolching.de</a> einen neuen.</p>
+        <p>Einen Registrierungscode bekommst du, nachdem du deinen ersten Beitrag bezahlt hast (-> <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a>). Bist du bereits Mitglied und ist dein Registrierungscode abgelaufen, dann beantrage bitte per formloser Mail an <a href="mailto:anmeldung@tcolching.de">anmeldung@tcolching.de</a> einen neuen.</p>
         <label for="inputRegCode">Registrierungscode:</label>
         <input type="text" id="inputRegCode" name="regcode" class="form-control" required>
       </div>

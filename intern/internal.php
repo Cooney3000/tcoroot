@@ -27,9 +27,10 @@ include("inc/header.inc.php");
     document.getElementById("nav-logout").classList.remove("active");
   }
 </script>
+
 <div class="container main-container">
 
-  <h2>Interner Bereich - du bist angemeldet als <?= htmlentities(trim($user['vorname']) . ' ' . trim($user['nachname'])) ?></h2>
+  <h2>Mitgliederbereich - du bist angemeldet als <?= htmlentities(trim($user['vorname']) . ' ' . trim($user['nachname'])) ?></h2>
   <!-- Links zu Events wie Anmeldungen etc. -->
 
   <div class="container mt-4">
@@ -44,18 +45,21 @@ include("inc/header.inc.php");
 
         $wirtStatus = substr($line, 0, 1);
         $wirtAktivStatus = substr($line, 1, 1);
+        $wirtStatusDatum = substr($line,2,8);
 
         if (isset($_GET['SWT'])) {
-          $wirtStatus = abs($wirtStatus - 1);
+          $wirtStatus = abs($wirtStatus - 1);           // ON wird OFF, OFF wird ON
+          $wirtStatusDatum = date("d.m.y");
         } else if (isset($_GET['SWS'])) {
-          $wirtAktivStatus = abs($wirtAktivStatus - 1);
+          $wirtAktivStatus = abs($wirtAktivStatus - 1); // ON wird OFF, OFF wird ON
+          $wirtStatusDatum = date("d.m.y");
         }
 
-        file_put_contents($file, $wirtStatus . $wirtAktivStatus);
+        file_put_contents($file, $wirtStatus . $wirtAktivStatus . $wirtStatusDatum);
 
-        $wirtStatusClass = ($wirtStatus) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
-        $wirtStatusText1 = ($wirtStatus) ? "geöffnet" : "geschlossen";
-        $wirtStatusText2 = ($wirtStatus) ? "Schließen" : "Öffnen";
+        $wirtStatusClass = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
+        $wirtStatusText1 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "geöffnet" : "geschlossen";
+        $wirtStatusText2 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "Schließen" : "Öffnen";
         $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
         $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
         $wirtAktivText2 = ($wirtAktivStatus) ? "Deaktivieren" : "Aktivieren";
@@ -76,35 +80,48 @@ include("inc/header.inc.php");
       <?php
       }
       ?>
-      
+
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="/intern/tafel/">Platzbuchungssystem</a>
-          <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
-          <p class="align-text-bottom">Platzbuchung bis zu 24h vorher möglich</p>
+          <a href="/intern/tafel/">
+          <span class="btn btn-success w-100 mb-2">Platzbuchungssystem</span>
+            <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
+            <p class="align-text-bottom">Platzbuchung bis zu 24h vorher möglich</p>
+          </a>
         </div>
       </div>
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="wintertraining.php">Wintertraining</a>
-          <img class="mw-100" src="/images/intern/halle.jpg" alt="Wintertraining">
-          <p class="align-text-bottom"><br><strong>Zur Anmeldung</strong></p>
-        </div>
-      </div>
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="/intern/turnier/">Clubturnier '23</a>
-          <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
-<!--
+          <a href="/intern/turnier/">
+            <span class="btn btn-success w-100 mb-2">Clubturnier '24</span>
+            <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
             <p class="align-text-bottom">Jetzt schon anmelden!</p>
--->
+          </a>
+        </div>
+      </div>
+      <!--
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a class="btn btn-success w-100 mb-2" href="sommertraining.php">Sommertraining</a>
+          <img class="mw-100" src="/images/intern/training_theorie.jpg" alt="Sommertraining">
+          <p class="align-text-bottom"><br><strong>Melde dich an!</strong></p>
         </div>
       </div>
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="halloffame.php">Hall of Fame</a>
-          <img class="mw-100" src="/intern/images/turniersieger/sieger2021.jpg" alt="Hall of Fame">
-          <p class="align-text-bottom">Ergebnisse, Sieger, Fotogalerien der Clubmeisterschaften</p>
+          <a class="btn btn-success w-100 mb-2" href="a_matchtraining.php">Matchtraining</a>
+          <img class="mw-100" src="/images/intern/matchtraining.png" alt="TCO Tippspiel">
+          <p class="align-text-bottom">zur Anmeldung für jugendliche Mitglieder</p>
+        </div>
+      </div>
+-->
+      <div class="col-sm mb-2">
+        <div class="bg-light p-2 h-100">
+          <a href="downloads/TCO Newbie-Guide 2024-05-08.pdf">
+            <div class="btn btn-success w-100 mb-2">Der TCO Newbie-Guide</div>
+            <img class="mx-auto" src="/images/intern/neu_beim_tco.png" alt="Newbie Guide">
+          </a>
+
         </div>
       </div>
 
@@ -113,119 +130,143 @@ include("inc/header.inc.php");
   </div> <!-- container -->
 
   <h2>Rundschreiben</h2>
+
+
   <?php
-	
-	foreach (scandir("rundschreiben", SCANDIR_SORT_DESCENDING) as $file) {
-	  if ($file === ".." or $file === ".") continue;
-		preg_match_all('!\d+!', $file, $datum);
-    if(isset($datum[0][0]) && isset($datum[0][2]) && isset($datum[0][2])) 
-    {
-      echo "<span><a class= \" btn btn-secondary btn-sm\" href =\"rundschreiben/$file\">Rundschreiben vom {$datum[0][2]}.{$datum[0][1]}.{$datum[0][0]}</a></span>\n";
-    }
-	}	
-  
+  $maxSichtbar = 8;
+  $anzZeilen = 0;
+  $thereAreHiddenArticles = false;
+  foreach (scandir("rundschreiben", SCANDIR_SORT_DESCENDING) as $file) {
+    $anzZeilen++;
+    if ($file === ".." or $file === ".") continue;
+    $info = pathinfo($file);
+    $filename = $info['filename'];
+    preg_match_all('!\d+!', $filename, $datum);
+    $chunks = preg_split('! - !', $filename);
+    $beschreibung = implode(' - ', array_slice($chunks, 1));
+    if (isset($datum[0][0]) && isset($datum[0][2]) && isset($datum[0][2])) {
+      if ($anzZeilen == $maxSichtbar) {
+        $thereAreHiddenArticles = true;
   ?>
-
-  <?php
-  if (checkPermissions(MANNSCHAFTSFUEHRER)) {
-    //
-    // Wurde einer der Buttons geklickt?
-    //
-    $buttonkey = '';
-
-
-    foreach (['activate', 'deactivate', 'delete'] as $k) {
-      // error_log( "[internal.php] $k=". $_POST[$k] . ' ### ' . isset($_POST[$k]) );
-      if (isset($_POST[$k])) {
-        $buttonkey = $k;
+        <p class="d-inline-flex gap-1">
+          <a class="btn btn-success btn-sm" data-bs-toggle="collapse" href="#collapseRundschreiben" id="toggleButton">...mehr Rundschreiben</a>
+        </p>
+        <div class="collapse" id="collapseRundschreiben">
+    <?php
       }
-    }
-    if ($buttonkey != '') {
-      $button = $_POST[$buttonkey];
-      //
-      // '-A' : Benutzer aktivieren (ist im Wartezustand 'W'), '-D' : Benutzer deaktivieren, '-X' : Löschen (wird tatsächlich aber nur gekennzeichnet mit X und nicht mehr angezeigt)
-      //
-      $pa = preg_split('/-/', $button);
 
-      // error_log("[internal.php] buttonkey: $buttonkey, button: $button, pa[0]: $pa[0], pa[1]: $pa[1]");
-
-      $statement = $pdo->prepare("UPDATE users SET status = ? WHERE id = ?");
-      $statement->execute([$pa[1], $pa[0]]);
+      echo "<div><a href =\"rundschreiben/$file\">{$datum[0][2]}.{$datum[0][1]}.{$datum[0][0]} - $beschreibung</a></div>\n";
     }
-    $statement = $pdo->prepare('(SELECT * FROM users WHERE status <> "T" AND status <> "X" ORDER BY status DESC, nachname, vorname)');
-    $result = $statement->execute();
-  ?>
-    <h2>Aktuell registrierte Benutzer (nur für Mannschaftsführer sichtbar)</h2>
-    <h3>(A = Aktiv, P = Passiv, D = Deaktiviert, W = Wartet auf Aktivierung)</h3>
-    <div class="mx-3">
-      <form action="internal.php" method="post">
-        <table class="table table-striped tbl-small">
-          <tr>
-            <th>S</th>
-            <th>#</th>
-            <th>Vorname</th>
-            <th>Nachname</th>
-            <th>E-Mail</th>
-            <th>Festnetz</th>
-            <th>Mobil</th>
-            <th>Geburtsjahr</th>
-            <!-- <th>Registriert am</th> -->
-            <?php
-            if (checkPermissions(VORSTAND)) { ?>
-              <th>Aktionen</th>
-              <th></th>
-            <?php } ?>
-          </tr>
-          <?php
-          $userCount = 0;
-          while ($row = $statement->fetch()) {
-            $userCount++;
-            $danger = ($row['status'] == 'W' || $row['status'] == 'D') ? true : false;
-            $classname = $danger ? 'text-gefahr' : '';
-          ?>
+  }
+  if ($thereAreHiddenArticles) {
+    echo "</div>\n";
+  }
+    ?>
+
+
+    <?php
+    if (checkPermissions(MANNSCHAFTSFUEHRER)) {
+      //
+      // Wurde einer der Buttons geklickt?
+      //
+      $buttonkey = '';
+
+
+      foreach (['activate', 'deactivate', 'delete'] as $k) {
+        // error_log( "[internal.php] $k=". $_POST[$k] . ' ### ' . isset($_POST[$k]) );
+        if (isset($_POST[$k])) {
+          $buttonkey = $k;
+        }
+      }
+      if ($buttonkey != '') {
+        $button = $_POST[$buttonkey];
+        //
+        // '-A' : Benutzer aktivieren (ist im Wartezustand 'W'), '-D' : Benutzer deaktivieren, '-X' : Löschen 
+        //
+        $pa = preg_split('/-/', $button);
+
+        // error_log("[internal.php] buttonkey: $buttonkey, button: $button, pa[0]: $pa[0], pa[1]: $pa[1]");
+
+        $statement = $pdo->prepare("UPDATE users SET status = ? WHERE id = ?");
+        $statement->execute([$pa[1], $pa[0]]);
+      }
+      $statement = $pdo->prepare("DELETE FROM users WHERE status = 'X'");
+      $statement->execute();
+
+      $statement = $pdo->prepare('(SELECT * FROM users WHERE status <> "T" AND status <> "X" ORDER BY status DESC, nachname, vorname)');
+      $result = $statement->execute();
+    ?>
+      <h2>Aktuell registrierte Benutzer (nur für Mannschaftsführer sichtbar)</h2>
+      <h3>(A = Aktiv, P = Passiv, D = Deaktiviert, W = Wartet auf Aktivierung)</h3>
+      <div class="mx-3">
+        <form action="internal.php" method="post">
+          <table class="table table-striped tbl-small">
             <tr>
-              <td class="<?= $classname ?>"><?= $row['status'] ?></td>
-              <td class="<?= $classname ?>"><?= $row['id'] ?></td>
-              <td class="<?= $classname ?>"><?= $row['vorname'] ?></td>
-              <td class="<?= $classname ?>"><?= $row['nachname'] ?></td>
-              <td class="<?= $classname ?>"><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a></td>
-              <td class="<?= $classname ?>"><?= $row['festnetz'] ?></td>
-              <td class="<?= $classname ?>"><?= $row['mobil'] ?></td>
-              <td class="<?= $classname ?> text-center"><?= substr($row['geburtsdatum'], 0, 4) ?></td>
-              <!-- <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td> -->
+              <th>S</th>
+              <th>#</th>
+              <th>Vorname</th>
+              <th>Nachname</th>
+              <th>E-Mail</th>
+              <th>Festnetz</th>
+              <th>Mobil</th>
+              <th>Geburtsjahr</th>
+              <!-- <th>Registriert am</th> -->
               <?php
               if (checkPermissions(VORSTAND)) { ?>
-                <td>
-                  <?php
-                  if ($danger) { ?>
-                    <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn btn-success btn-sm btn-block py-0">Aktivieren</button>
-                  <?php
-                  }
-                  if ($row['status'] == 'A') { ?>
-                    <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn btn-danger btn-sm btn-block py-0">Deaktivieren</button>
-                  <?php } ?>
-                </td>
-                <td>
-                  <?php
-                  if ($danger) { ?>
-                    <button type="submit" name="delete" value="<?= $row['id'] ?>-X" class="btn btn-danger btn-sm btn-block py-0">Löschen</button>
-                  <?php } ?>
-                </td>
+                <th>Aktionen</th>
+                <th></th>
               <?php } ?>
             </tr>
-          <?php
-          }
-          ?>
-        </table>
-      </form>
-      <div><?= $userCount ?> Benutzer</div>
-    </div>
-  <?php
-  }
-  ?>
+            <?php
+            $userCount = 0;
+            while ($row = $statement->fetch()) {
+              $userCount++;
+              $danger = ($row['status'] == 'W' || $row['status'] == 'D') ? true : false;
+              $classname = $danger ? 'text-gefahr' : '';
+            ?>
+              <tr>
+                <td class="<?= $classname ?>"><?= $row['status'] ?></td>
+                <td class="<?= $classname ?>"><?= $row['id'] ?></td>
+                <td class="<?= $classname ?>"><?= $row['vorname'] ?></td>
+                <td class="<?= $classname ?>"><?= $row['nachname'] ?></td>
+                <td class="<?= $classname ?>"><a href="mailto:<?= $row['email'] ?>"><?= $row['email'] ?></a></td>
+                <td class="<?= $classname ?>"><?= $row['festnetz'] ?></td>
+                <td class="<?= $classname ?>"><?= $row['mobil'] ?></td>
+                <td class="<?= $classname ?> text-center"><?= substr($row['geburtsdatum'], 0, 4) ?></td>
+                <!-- <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td> -->
+                <?php
+                if (checkPermissions(VORSTAND)) { ?>
+                  <td>
+                    <?php
+                    if ($danger) { ?>
+                      <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn btn-success btn-sm btn-block py-0">Aktivieren</button>
+                    <?php
+                    }
+                    if ($row['status'] == 'A') { ?>
+                      <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn btn-danger btn-sm btn-block py-0">Deaktivieren</button>
+                    <?php } ?>
+                  </td>
+                  <td>
+                    <?php
+                    if ($danger) { ?>
+                      <button type="submit" name="delete" value="<?= $row['id'] ?>-X" class="btn btn-danger btn-sm btn-block py-0">Löschen</button>
+                    <?php } ?>
+                  </td>
+                <?php } ?>
+              </tr>
+            <?php
+            }
+            ?>
+          </table>
+        </form>
+        <div><?= $userCount ?> Benutzer</div>
+      </div>
+    <?php
+    }
+    ?>
 
 
-</div>
-<?php
-include("inc/footer.inc.php")
-?>
+        </div>
+        <?php
+        include("inc/footer.inc.php")
+        ?>

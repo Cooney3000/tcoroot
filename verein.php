@@ -5,6 +5,7 @@ $_aktuell="";
 $_mannschaften="";
 $_jugend="";
 $_training="";
+$_header = "Verein";
 include 'header.php';
 ?>
 		<div id="blatt1">
@@ -54,10 +55,10 @@ include 'header.php';
                 selbstständig und rechtzeitig bis spätestens  31. Dezember eines jeden Jahres dem Verein vorliegen.
                 Nachträglich vorgelegte Bescheinigungen werden nicht rückwirkend berücksichtigt!
           </p>
-					<p>** Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
+					<p>** Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 20. Juli.
                 Wird bis zu diesem Datum die reguläre Mitgliedschaft beantragt, kann bis zum Saisonende ohne Mehrkosten gespielt werden.
           </p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></strong>.</h3>
+					<h3>Hier gibt es den <strong><a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
@@ -81,13 +82,13 @@ include 'header.php';
 						Mitgliedsantrag für das Folgejahr vorliegt (siehe unten)</li>
 					</ul>
 					<p>
-						<strong>Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 15. Juli.
+						<strong>Die Schnuppermitgliedschaft kann nur einmal in Anspruch genommen werden und endet automatisch am 20. Juli.
                 Wird bis zu diesem Datum die reguläre Mitgliedschaft für das Folgejahr beantragt, kann bis zum Saisonende ohne Mehrkosten weitergespielt werden!</strong>
 					</p>
 					<p>Bei Interesse erreichst du uns telefonisch unter (08142) 667869, per E-Mail unter <a href="anmeldung@tcolching.de">anmeldung@tcolching.de</a>. 
 					Während der Öffnungszeiten unseres Vereinsheimes kannst du auch gerne eine Nachricht bei unseren Wirtsleuten hinterlassen.
 					</p>
-					<h3>Hier gibt es den <strong><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></strong>.</h3>
+					<h3>Hier gibt es den <strong><a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></strong>.</h3>
 				</article>
 			</section>
 		</div>
@@ -269,7 +270,6 @@ include 'header.php';
 					<li><a href="downloads/Satzung_TCO.pdf">Satzung</a></li>
 					<li><a href="downloads/Gastspielordnung_2021.pdf">Gastspielordnung</a></li>
 					<li><a href="downloads/Platzordnung_2021.pdf">Platzordnung</a></li>
-					<li><a href="downloads/TCO-Aufnahmeantrag2022.pdf">Aufnahmeantrag</a></li>
 				</ul>
 			</section>	
 		</div>
