@@ -25,20 +25,33 @@ include("../inc/header.inc.php")
   require_once("turnierheader.inc.php");
 ?> 
 
-<h1>Turnierteilnehmer</h1>
+<h1>Turnierteilnehmer und -teilnehmerinnen</h1>
 
 <?php
 
 $order = [
   "nachname ASC, vorname ASC" => "nachname DESC, vorname DESC", 
   "LK ASC, t.created_at ASC" => "t.LK DESC, t.created_at ASC",
-  "t.created_at ASC" => "t.created_at DESC"
+  "t.created_at ASC" => "t.created_at DESC",
+  "geschlecht ASC, nachname ASC, vorname ASC" => "geschlecht DESC, nachname ASC, vorname ASC "
   ];
 
 $orderSQL = array_keys($order)[0];
 if (isset($_GET['o'])) {
   for($i = 0; $i < count($order); $i++) {
     if ($i == $_GET['o']) {
+      error_log(
+                'orderSQL: '
+                . $orderSQL
+                . ', $_GET[dir]: '
+                . $_GET['dir']
+                . ", "
+                . '$i: '
+                . $i . ", "
+                . array_keys($order)[$i] 
+                . " --- " 
+                . array_values($order)[$i]
+              ,0);
       $orderSQL = ($_GET['dir'] == 'asc') ? array_keys($order)[$i] : array_values($order)[$i];
     }
   }
@@ -60,6 +73,10 @@ if($result) {
             <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=0&dir=asc"></a>&nbsp;&nbsp;
             <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=0&dir=desc"></a>
           </th>
+          <th>m/w/d
+            <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=3&dir=asc"></a>&nbsp;&nbsp;
+            <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=3&dir=desc"></a>
+          </th>
           <th>Anm.
             <a class="fas fa-angle-up fa-1x" href="bereitsAngemeldet.php?o=2&dir=asc"></a>&nbsp;&nbsp;
             <a class="fas fa-angle-down fa-1x" href="bereitsAngemeldet.php?o=2&dir=desc"></a>
@@ -71,7 +88,7 @@ if($result) {
       </thead>
 <?php
   $gw = "###first###";
-  $order = ['nachname', 'lk', 'created_at'];
+  $order = ['nachname', 'lk', 'created_at', 'geschlecht'];
   $lfd = 1;
   while($row = $statement->fetch()) {
     // Gruppenwechsel - Trennlinie
@@ -86,8 +103,8 @@ if($result) {
         <tr>
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
+          <td><?=$row['geschlecht']?></td>
           <td><?=substr($row['created_at'],8,2).'.'.substr($row['created_at'],5,2).'.'?></td>
-          <!-- <td><?=$row['lk']?></td> -->
           <td><?=$row['mobil']?></td>
           <td><?=$row['comment']?></td>
         </tr>
