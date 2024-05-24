@@ -11,7 +11,7 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 
 $title = "Upload Turnierbaum";
-include("../inc/header.inc.php");
+include("../templates/header.inc.php");
 
 ?>
 <script src="../js/functions.js"></script>
@@ -96,7 +96,7 @@ include("../inc/header.inc.php");
     <h2>Damen</h2>
     <a href="turnierbaum/damen.png"><img id="damen" src="turnierbaum/damen.png?rnd=<?php echo time(); ?>" class="w-100" alt="Damen Turnierbaum"></a>
   </div>
-
+<!--
   <div>
     <h2>Herren B</h2>
     <a href="turnierbaum/herrenb.png"><img id="herren" src="turnierbaum/herrenb.png?rnd=<?php echo time(); ?>" class="w-75" alt="Herren B Turnierbaum"></a>
@@ -106,7 +106,7 @@ include("../inc/header.inc.php");
     <h2>Damen B</h2>
     <a href="turnierbaum/damenb.png"><img id="damen" src="turnierbaum/damenb.png?rnd=<?php echo time(); ?>" class="w-75" alt="Damen B Turnierbaum"></a>
   </div>
-
+-->
 
 <!--
 <div>
@@ -118,5 +118,5 @@ include("../inc/header.inc.php");
 </div>
 
 <?php
-include("../inc/footer.inc.php")
+include("../templates/footer.inc.php")
 ?>
