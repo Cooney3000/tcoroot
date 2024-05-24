@@ -53,7 +53,7 @@
           <li class="nav-item" id="nav-tafel">
             <a class="nav-link" href="/intern/tafel/" target="_blank">Platzbuchung</a>
           </li>
-          <?php if (checkPermissions(VORSTAND)) { ?>
+          <?php if (checkPermissions(T_ALL_PERMISSIONS)) { ?>
             <li class="nav-item" id="nav-admin">
               <a class="nav-link" href="/intern/admin/index.php">Admin</a>
             </li>

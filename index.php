@@ -32,10 +32,10 @@ $line = trim(file_get_contents($file));
 
 $wirtStatus = substr($line, 0, 1);
 $wirtAktivStatus = substr($line, 1, 1);
-$wirtStatusDatum = substr($line,2,8);
+$wirtStatusDatum = substr($line, 2, 8);
 $wirtStatusClass = ($wirtStatus) ? "btn-success" : "btn-danger";
 if ($wirtStatusDatum == date("d.m.y")) {
-$wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
+  $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
 } else {
   $wirtStatusText = "geschlossen"; // wenn der Status nicht von heute ist, wird automatisch geschlossen angezeigt.
 }
@@ -51,21 +51,28 @@ $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
     <article class="spalte1">
       <h6>Aktuelle Neuigkeiten</h6>
 
-      <?php if ($wirtAktivStatus == '1') {
-        echo "<p>Die Vereinsgaststätte ist <span class=\"$wirtStatusClass px-1\"> $wirtStatusText </span></p>";
-      } else {
-        echo "<p>&nbsp;</p>";
-      } ?>
-
       <!-- *******************
               SCHLAGZEILEN
       --> *******************
       <ul class="schlaeger">
-      <li><strong>Ballschule, Comeback-Training, Sommertraining</strong>
-          <p>Diese Trainingsangebote gibt es auch dieses Jahr wieder! 
-          <p>Für Sommertraining, Ballschule, Comeback-Training und Schnupper-Jugendtraining gibt es alle Infos <a href="/training.php">hier.</a></p>
-          <p><a href="/verein.php#mitgliedschaft">Mitgliedschafts-Optionen</a></p>
-          <p><a href="/training.php">Trainingsangebote für Jugend und Erwachsene</a></p>
+        <li><strong>Clubheim</strong>
+          <?php if ($wirtAktivStatus == '1') {
+            echo "<p>Die Vereinsgaststätte ist im Augenblick <span class=\"$wirtStatusClass px-1\"> $wirtStatusText.</span></p>";
+          } else {
+            echo "<p>&nbsp;</p>";
+          } ?>
+          <p>Öffnungszeiten während der Pfingstferien, soweit bisher bekannt:</p>
+          <div class="m-3">
+            <p><strong>Donnerstag</strong>, 22.05. ab 18:00 Uhr, nur Getränke</p>
+            <p><strong>Freitag</strong>, 23.05. ab 17:00 Uhr, nur Getränke</p>
+            <p><strong>Wochenende</strong>: Wetter mau, keine Besetzung</p>
+            <p><strong>Montag</strong>, 26.05. - ab 18:00 Uhr, nur Getränke</p>
+            <p><strong>Dienstag</strong>, 27.05. - ab 18:00 Uhr, nur Getränke</p>
+            <p><strong>Mittwoch</strong>, 28.05. - ab 18:00 Uhr, nur Getränke</p>
+            <p><strong>Donnerstag</strong>, 29.05., - Info kommt noch -</p>
+            <p><strong>Freitag</strong>, 30.05., - Info kommt noch -</p>
+            <p><strong>Wochenende</strong>: - Info kommt noch -</p>
+          </div>
         </li>
         <li><strong>Interesse an Tennis?</strong>
           <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>

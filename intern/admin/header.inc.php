@@ -21,18 +21,83 @@
   <!-- /Für die Tabellenformatierung und -sortierung -->
 
   <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
+
+  <?php if ($eventhack) 
+{
+  ?>
+<style>
+  .table-container {
+    overflow-y: auto;
+    max-height: 80vh; /* Anpassbar je nach Bedarf */
+    position: relative;
+  }
+
+  .table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+  }
+
+  .table input {
+    margin: 0;
+    padding: 0.375rem;
+    box-sizing: border-box;
+  }
+
+  .collapse-button {
+    cursor: pointer;
+  }
+
+  .collapsed-row {
+    display: none;
+  }
+  .table-container {
+    overflow-y: auto;
+    max-height: 80vh; /* Anpassbar je nach Bedarf */
+    position: relative;
+  }
+
+  .table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+  }
+
+  .table input {
+    margin: 0;
+    padding: 0.375rem;
+    box-sizing: border-box;
+  }
+
+  .collapse-button {
+    cursor: pointer;
+  }
+
+  .collapsed-row {
+    display: none;
+  }
+
+</style>
+<?php
+}
+?>
+
+
 </head>
 
 <body class="admin">
-  <?php
+<?php
   $username = isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : ""
-  ?>
+?>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#d90429">
     <div class="mx-auto order-0">
       <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
     </div>
-    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 

@@ -92,10 +92,10 @@ include("inc/header.inc.php");
       </div>
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a href="/intern/turnier/">
+          <a href="/intern/turnier/turnierbaum.php">
             <span class="btn btn-success w-100 mb-2">Clubturnier '24</span>
             <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
-            <p class="align-text-bottom">Jetzt schon anmelden!</p>
+            <p class="align-text-bottom">Die Spiele haben begonnen!</p>
           </a>
         </div>
       </div>
