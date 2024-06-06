@@ -30,8 +30,8 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 $file = "work/wirt.txt";
 $line = trim(file_get_contents($file));
 
-$wirtStatus = substr($line, 0, 1);
-$wirtAktivStatus = substr($line, 1, 1);
+$wirtStatus = substr($line, 0, 1);      // Ist die Gastro geöffnet/geschlossen?
+$wirtAktivStatus = substr($line, 1, 1); // Ist die Anzeige überhaupt aktiv/inaktiv?
 $wirtStatusDatum = substr($line, 2, 8);
 $wirtStatusClass = ($wirtStatus) ? "btn-success" : "btn-danger";
 if ($wirtStatusDatum == date("d.m.y")) {
@@ -61,18 +61,6 @@ if ($wirtStatusDatum == date("d.m.y")) {
           } else {
             echo "<p>&nbsp;</p>";
           } ?>
-          <p>Öffnungszeiten während der Pfingstferien, soweit bisher bekannt:</p>
-          <div class="m-3">
-            <p><strong>Donnerstag</strong>, 22.05. ab 18:00 Uhr, nur Getränke</p>
-            <p><strong>Freitag</strong>, 23.05. ab 17:00 Uhr, nur Getränke</p>
-            <p><strong>Wochenende</strong>: Wetter mau, keine Besetzung</p>
-            <p><strong>Montag</strong>, 26.05. - ab 18:00 Uhr, nur Getränke</p>
-            <p><strong>Dienstag</strong>, 27.05. - ab 18:00 Uhr, nur Getränke</p>
-            <p><strong>Mittwoch</strong>, 28.05. - ab 18:00 Uhr, nur Getränke</p>
-            <p><strong>Donnerstag</strong>, 29.05., - Info kommt noch -</p>
-            <p><strong>Freitag</strong>, 30.05., - Info kommt noch -</p>
-            <p><strong>Wochenende</strong>: - Info kommt noch -</p>
-          </div>
         </li>
         <li><strong>Interesse an Tennis?</strong>
           <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>

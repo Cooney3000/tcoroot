@@ -39,7 +39,7 @@ include("inc/header.inc.php");
       <!-- Für den Wirt -->
       <?php
 
-      if ((checkPermissions(WIRT) && (!checkPermissions(VORSTAND))) || checkPermissions(ADMINISTRATOR)) {
+      if (checkPermissions(WIRT) || checkPermissions(ADMINISTRATOR)) {
         $file = "../work/wirt.txt";
         $line = trim(file_get_contents($file));
 
