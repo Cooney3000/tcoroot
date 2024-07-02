@@ -29,13 +29,13 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 // Jetzt noch die Gaststätte geöffnet/geschlossen-Meldung. Geöffnet ist nur, wenn der Status von heute ist
 $file = "work/wirt.txt";
 $line = trim(file_get_contents($file));
-
+echo "<!-- ###### $line ###### -->\r\n";
 $wirtStatus = substr($line, 0, 1);      // Ist die Gastro geöffnet/geschlossen?
 $wirtAktivStatus = substr($line, 1, 1); // Ist die Anzeige überhaupt aktiv/inaktiv?
 $wirtStatusDatum = substr($line, 2, 8);
-$wirtStatusClass = ($wirtStatus) ? "btn-success" : "btn-danger";
+$wirtStatusClass = ($wirtStatus == '1') ? "btn-success" : "btn-danger";
 if ($wirtStatusDatum == date("d.m.y")) {
-  $wirtStatusText = ($wirtStatus) ? "geöffnet" : "geschlossen";
+  $wirtStatusText = ($wirtStatus == '1') ? "geöffnet" : "geschlossen";
 } else {
   $wirtStatusText = "geschlossen"; // wenn der Status nicht von heute ist, wird automatisch geschlossen angezeigt.
 }
@@ -55,11 +55,8 @@ if ($wirtStatusDatum == date("d.m.y")) {
               SCHLAGZEILEN
       --> *******************
       <ul class="schlaeger">
-        <li><strong>Clubheim</strong>
           <?php if ($wirtAktivStatus == '1') {
-            echo "<p>Die Vereinsgaststätte ist im Augenblick <span class=\"$wirtStatusClass px-1\"> $wirtStatusText.</span></p>";
-          } else {
-            echo "<p>&nbsp;</p>";
+            echo "<li><strong>Clubheim</strong>\r\n<p>Die Vereinsgaststätte ist im Augenblick <span class=\"$wirtStatusClass px-1\"> $wirtStatusText.</span></p>";
           } ?>
         </li>
         <li><strong>Interesse an Tennis?</strong>
@@ -70,6 +67,8 @@ if ($wirtStatusDatum == date("d.m.y")) {
         </li>
       </ul>
     </article>
+  </section>
+</div>
     <article>
       <h3>Unsere Jugend-Sponsoren</h3>
       <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>

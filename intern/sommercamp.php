@@ -26,34 +26,59 @@ include("inc/header.inc.php");
 </script>
 <div class="container main-container">
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 class="h3 persoenlich text-gross">Sommercamp 2024!</h1>
+      <p class="persoenlich">An alle Jugendlichen des TCO!</p>
+      <p>Auch in diesem Jahr führen wir wieder ein Tenniscamp für alle Jugendlichen, die Mitglied im TCO sind, in den Sommerferien durch.</p>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th scope="row"><strong>Datum:</strong></th>
+            <td>29.07.2024 - 01.08.2024</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Zeit:</strong></th>
+            <td>täglich von 10:00h - 15:00h</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Ablauf:</strong></th>
+            <td>2 Stunden Training, 1 Stunde Mittagspause (Essen incl.), 2 Stunden Training</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Mindestteilnehmerzahl:</strong></th>
+            <td>8</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Kosten:</strong></th>
+            <td>150 EUR</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Anmeldeschluss:</strong></th>
+            <td>21.07.2024</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mb-4 persoenlich">Euer Michael</p>
+      <p>P.S.: * falls ihr in der ersten Sommerferien-Woche nicht vor Ort seid aber dennoch Interesse an einem 
+        Tenniscamp habt; in der zweiten Sommerferien-Woche wird über die Stadt Olching ebenso wieder ein Tenniscamp 
+        bei uns durchgeführt. Hierfür muss man sich direkt über das „Ferienprogramm“ der Stadt Olching anmelden.</p>
+    </div>
+    <div class="col-lg-4 d-flex align-items-start">
+      <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-lg-right w-75" alt="Michael Görzen">
+    </div>
+  </div>
+</div>
 
 
-  <h1 class="h3 persoenlich text-gross">Jugend-Sommercamp 2020!</h1>
-  <img src="/images/trainer/michael_goerzen_2.png" class="rounded float-right w-25" alt="Michael Görzen">
-  <p class="persoenlich">Liebe Kinder und Eltern!</p>
-  <p>Aufgrund einiger Nachfragen biete ich ein Sommercamp an.</p>
-  <p><strong>Ort:</strong></p><p>TC Olching e.V.</p> 
-  <p><strong>Zeitraum:</strong></p><p> vom 17.08. – 21.08.2020</p> 
-  <p><strong>Training:</strong></p><p>Mo. - Do. 10:00 h - 13:00 h</p>
-  <p><strong>Turnier:</strong></p><p>Freitag 10:00 h bis 12:00 h</p>                                                                                          
-  <p>Einteilung voraussichtlich in 2 Trainingsgruppen, z. B.: </p>
-  <p>Gruppe 1: 6-11 Jahre: 10:00 h - 11:30 h</p>
-  <p>Gruppe 2: die Großen ab 12: 10:00 h - 11:30 h</p>
-  <p>Einteilung erfolgt nach Alter und Spielstärke!</p>
-  <p>So haben alle täglich 90 Minuten Training und anschließend den Tag für sich frei. 
-Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzusetzen, was sie gelernt haben! Bei großer Teilnehmerzahl habe ich einen Helfer.</p>
-  <p><strong>Gebühren pro Teilnehmer:</strong></p>
-  <p class="mb-4">Teilnehmerzahl: mind. 6 je Gruppe</p>
-  <p class="mb-4">Preis: 120 € / Teilnehmer, incl. Getränke und Snacks</p>
-  <p class="mb-4"><strong>Anmeldung bitte hier im Formular</strong></p>
-  <p class="mb-4 persoenlich">Euer Michael</p>
 
   <div class="registration-form">
 
     <?php
 
     $showFormular = 1;
-    $cid = 6; // campaign-Id
+    $cid = 12; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -170,7 +195,7 @@ EOT;
 <p>Hallo {$CONFIG['trainerVorname']} {$CONFIG['trainerNachname']},</p>
 
 <p>
-Ein Teilnehmer hat sich für das Jugend-Sommercamp 2020 angemeldet:
+Ein Teilnehmer hat sich für das Jugend-Sommercamp 2024 angemeldet:
 </p>
 <p>Nachname: $nachname      </p>
 <p>Vorname: $vorname       </p>
@@ -243,10 +268,7 @@ if($result) {
           <th>#</th>
           <th>Teilnehmer/in</th>
           <th>Tel</th>
-          <th>Ist dabei</th>
-          <th>Kind</th>
-          <th>Ausschlüsse</th>
-          <th>Anzahl Tage</th>
+          <th>Bin dabei</th>
           <th>Kommentar</th>
         </tr>
       </thead>
@@ -258,10 +280,11 @@ if($result) {
           <td><?=$lfd++?></td>
           <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
           <td><?=$row['mobil']?></td>
-          <td class="text-center"><?=$row['willing_to_attend']===NULL?'---':$row['willing_to_attend']==='1'?'J':'N'?></td>
-          <td><?=$row['nameKind']?></td>
-          <td><?=str_replace("\r\n","<br>",$row['ausschluesse'])?></td>
-          <td><?=$row['anzahlTage']?></td>
+          <td class="text-center">
+            <?php 
+              echo ($row['willing_to_attend']===NULL)?'---':(($row['willing_to_attend']==='1')?'J':'N'); 
+            ?>
+          </td>
           <td><?=$row['comment']?></td>
         </tr>
 <?php

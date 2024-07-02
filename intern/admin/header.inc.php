@@ -22,69 +22,6 @@
 
   <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
 
-  <?php if ($eventhack) 
-{
-  ?>
-<style>
-  .table-container {
-    overflow-y: auto;
-    max-height: 80vh; /* Anpassbar je nach Bedarf */
-    position: relative;
-  }
-
-  .table thead th {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1;
-  }
-
-  .table input {
-    margin: 0;
-    padding: 0.375rem;
-    box-sizing: border-box;
-  }
-
-  .collapse-button {
-    cursor: pointer;
-  }
-
-  .collapsed-row {
-    display: none;
-  }
-  .table-container {
-    overflow-y: auto;
-    max-height: 80vh; /* Anpassbar je nach Bedarf */
-    position: relative;
-  }
-
-  .table thead th {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1;
-  }
-
-  .table input {
-    margin: 0;
-    padding: 0.375rem;
-    box-sizing: border-box;
-  }
-
-  .collapse-button {
-    cursor: pointer;
-  }
-
-  .collapsed-row {
-    display: none;
-  }
-
-</style>
-<?php
-}
-?>
-
-
 </head>
 
 <body class="admin">

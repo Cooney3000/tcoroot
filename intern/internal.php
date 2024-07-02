@@ -45,17 +45,29 @@ include("inc/header.inc.php");
 
         $wirtStatus = substr($line, 0, 1);
         $wirtAktivStatus = substr($line, 1, 1);
-        $wirtStatusDatum = substr($line,2,8);
+        $wirtStatusDatum = substr($line, 2, 8);
 
-        if (isset($_GET['SWT'])) {
-          $wirtStatus = abs($wirtStatus - 1);           // ON wird OFF, OFF wird ON
-          $wirtStatusDatum = date("d.m.y");
-        } else if (isset($_GET['SWS'])) {
-          $wirtAktivStatus = abs($wirtAktivStatus - 1); // ON wird OFF, OFF wird ON
-          $wirtStatusDatum = date("d.m.y");
+        // Token generieren und in der Sitzung speichern, wenn es nicht existiert
+        if (empty($_SESSION['token'])) {
+          $_SESSION['token'] = bin2hex(random_bytes(32));
         }
+        $token = $_SESSION['token'];
 
-        file_put_contents($file, $wirtStatus . $wirtAktivStatus . $wirtStatusDatum);
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+          if (isset($_POST['SWT'])) {
+            $wirtStatus = abs($wirtStatus - 1); // ON wird OFF, OFF wird ON
+            $wirtStatusDatum = date("d.m.y");
+          } else if (isset($_POST['SWS'])) {
+            $wirtAktivStatus = abs($wirtAktivStatus - 1); // ON wird OFF, OFF wird ON
+            $wirtStatusDatum = date("d.m.y");
+          }
+
+          file_put_contents($file, $wirtStatus . $wirtAktivStatus . $wirtStatusDatum);
+
+          // Token nach Verwendung ungültig machen und neu generieren
+          unset($_SESSION['token']);
+          $_SESSION['token'] = bin2hex(random_bytes(32));
+        }
 
         $wirtStatusClass = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
         $wirtStatusText1 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "geöffnet" : "geschlossen";
@@ -69,11 +81,17 @@ include("inc/header.inc.php");
             <span class="btn btn-danger w-100 mb-2">Vereinsgaststätte</span>
             <p>
               Anzeige auf der Startseite ist <strong><?= $wirtAktivText1 ?></strong>.<br>
-              <a href="internal.php?SWS" style="text-decoration: none"><span class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></span></a>
+            <form method="post" action="internal.php">
+              <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+              <button type="submit" name="SWS" class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></button>
+            </form>
             </p>
             <p>
               Die Vereinsgaststätte ist <strong><?= $wirtStatusText1 ?></strong>.<br>
-              <a href="internal.php?SWT" style="text-decoration: none"><span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></span></a><br>
+            <form method="post" action="internal.php">
+              <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+              <button type="submit" name="SWT" class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></button>
+            </form>
             </p>
           </div>
         </div>
@@ -81,10 +99,12 @@ include("inc/header.inc.php");
       }
       ?>
 
+
+
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
           <a href="/intern/tafel/">
-          <span class="btn btn-success w-100 mb-2">Platzbuchungssystem</span>
+            <span class="btn btn-success w-100 mb-2">Platzbuchungssystem</span>
             <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
             <p class="align-text-bottom">Platzbuchung bis zu 24h vorher möglich</p>
           </a>
@@ -99,14 +119,16 @@ include("inc/header.inc.php");
           </a>
         </div>
       </div>
-      <!--
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="sommertraining.php">Sommertraining</a>
-          <img class="mw-100" src="/images/intern/training_theorie.jpg" alt="Sommertraining">
-          <p class="align-text-bottom"><br><strong>Melde dich an!</strong></p>
+          <a href="sommercamp.php">
+            <span class="btn btn-success w-100 mb-2">Sommercamp 2024</span>
+            <img class="mw-100" src="/images/intern/sommercamp.png" alt="Sommercamp">
+            <p class="align-text-bottom"><br>Melde dich an!</p>
+          </a>
         </div>
       </div>
+      <!--
       <div class="col-sm mb-2">
         <div class="bg-light p-2 h-100">
           <a class="btn btn-success w-100 mb-2" href="a_matchtraining.php">Matchtraining</a>
