@@ -70,86 +70,88 @@ include("inc/header.inc.php");
         }
 
         $wirtStatusClass = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
-        $wirtStatusText1 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "geöffnet" : "geschlossen";
+        $wirtStatusText1 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "Geöffnet" : "Geschlossen";
         $wirtStatusText2 = ($wirtStatus && $wirtStatusDatum == date("d.m.y")) ? "Schließen" : "Öffnen";
         $wirtAktivClass = ($wirtAktivStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
-        $wirtAktivText1 = ($wirtAktivStatus) ? " aktiviert" : " deaktiviert";
+        $wirtAktivText1 = ($wirtAktivStatus) ? "Aktiv" : " Deaktiviert";
         $wirtAktivText2 = ($wirtAktivStatus) ? "Deaktivieren" : "Aktivieren";
       ?>
-        <div class="col-sm mb-2">
-          <div class="bg-light p-2 h-100">
-            <span class="btn btn-danger w-100 mb-2">Vereinsgaststätte</span>
-            <p>
-              Anzeige auf der Startseite ist <strong><?= $wirtAktivText1 ?></strong>.<br>
-            <form method="post" action="internal.php">
-              <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
-              <button type="submit" name="SWS" class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></button>
-            </form>
-            </p>
-            <p>
-              Die Vereinsgaststätte ist <strong><?= $wirtStatusText1 ?></strong>.<br>
-            <form method="post" action="internal.php">
-              <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
-              <button type="submit" name="SWT" class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></button>
-            </form>
-            </p>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="bg-light p-2 h-100 kachel">
+            <span class="btn btn-danger w-100 mb-2">Gaststätte</span>
+            <p><strong><?= $wirtAktivText1 ?></strong></p>
+              <form method="post" action="internal.php">
+                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                <button type="submit" name="SWS" class="<?= $wirtAktivClass ?> px-1"><?= $wirtAktivText2 ?></button>
+              </form>
+            <p><strong><?= $wirtStatusText1 ?></strong>.<br></p>
+              <form method="post" action="internal.php">
+                <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+                <button type="submit" name="SWT" class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText2 ?></button>
+              </form>
           </div>
         </div>
       <?php
       }
       ?>
-
-
-
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
           <a href="/intern/tafel/">
-            <span class="btn btn-success w-100 mb-2">Platzbuchungssystem</span>
-            <img class="mw-100" src="/images/platzbuchung_thmb.png" alt="Platzbuchung">
+            <span class="btn btn-success w-100 mb-2">Platzbuchung</span>
+            <img class="w-100" src="/images/intern/platztafel.png" alt="Platzbuchung">
             <p class="align-text-bottom">Platzbuchung bis zu 24h vorher möglich</p>
           </a>
         </div>
       </div>
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
           <a href="/intern/turnier/turnierbaum.php">
-            <span class="btn btn-success w-100 mb-2">Clubturnier '24</span>
-            <img class="mw-100" src="/images/intern/turnier.png" alt="Clubturnier">
+            <span class="btn btn-success w-100 mb-2">Clubturnier&nbsp;'24</span>
+            <img class="w-100" src="/images/intern/turnier.png" alt="Clubturnier">
             <p class="align-text-bottom">Die Spiele haben begonnen!</p>
           </a>
         </div>
       </div>
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a href="sommercamp.php">
-            <span class="btn btn-success w-100 mb-2">Sommercamp 2024</span>
-            <img class="mw-100" src="/images/intern/sommercamp.png" alt="Sommercamp">
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
+          <a href="/intern/playersfriends.php">
+            <span class="btn btn-success w-100 mb-2">Players&nbsp;&amp;&nbsp;Friends&nbsp;'24</span>
+            <img class="w-100" src="/images/intern/PF_2024_logo.png" alt="Clubturnier">
+            <p class="align-text-bottom">Jetzt Karte kaufen!</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
+          <a href="wintertraining.php">
+            <span class="btn btn-success w-100 mb-2">Wintertraining</span>
+            <img class="w-100" src="/images/intern/wintertraining.png" alt="Wintertraining">
             <p class="align-text-bottom"><br>Melde dich an!</p>
           </a>
         </div>
       </div>
-      <!--
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a class="btn btn-success w-100 mb-2" href="a_matchtraining.php">Matchtraining</a>
-          <img class="mw-100" src="/images/intern/matchtraining.png" alt="TCO Tippspiel">
-          <p class="align-text-bottom">zur Anmeldung für jugendliche Mitglieder</p>
-        </div>
-      </div>
--->
-      <div class="col-sm mb-2">
-        <div class="bg-light p-2 h-100">
-          <a href="downloads/TCO Newbie-Guide 2024-05-08.pdf">
-            <div class="btn btn-success w-100 mb-2">Der TCO Newbie-Guide</div>
-            <img class="mx-auto" src="/images/intern/neu_beim_tco.png" alt="Newbie Guide">
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
+          <a href="sommercamp.php">
+            <span class="btn btn-success w-100 mb-2">Sommercamp&nbsp;2024</span>
+            <img class="w-100" src="/images/intern/sommercamp.png" alt="Sommercamp">
+            <p class="align-text-bottom"><br>Melde dich an!</p>
           </a>
-
         </div>
       </div>
-
-
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+        <div class="bg-light p-2 h-100 kachel">
+          <a href="downloads/TCO Newbie-Guide 2024-05-08.pdf">
+            <div class="btn btn-success w-100 mb-2">TCO Quickstart</div>
+            <img class="w-100" src="/images/intern/quickstart.png" alt="Newbie Guide">
+            <p class="align-text-bottom"><br>Du bist neu?</p>
+          </a>
+        </div>
+      </div>
     </div>
   </div> <!-- container -->
+
+
 
   <h2>Rundschreiben</h2>
 

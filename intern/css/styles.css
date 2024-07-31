@@ -152,6 +152,11 @@ th {
   font-size: 1.2rem;
 }
 
+.text-indent {
+  text-indent: 1em;
+}
+
+
 ul.aufzaehlung {
   list-style: square outside url("/images/icons/tennisschlaeger.gif");
 }
@@ -265,6 +270,11 @@ li.schlaeger {
   transform: scale(1.1); /* Vergrößerung bei Hover */
 }
 
+.kachel {
+  font-size: 0.8rem; /* Schriftgröße anpassen */
+}
+
+
 @media (min-width: 992px) {
   /* .container {
         max-width: 900px;
@@ -282,3 +292,22 @@ li.schlaeger {
     overflow: hidden;
   }  
 }
+
+@media (max-width: 767.98px) {
+  /* Für kleine Bildschirme: Bilder und Subtexte ausblenden, Schriftgröße anpassen */
+  .kachel img, .kachel p {
+    display: none;
+  }
+  .kachel .btn {
+    font-size: 0.7rem; /* Schriftgröße anpassen */
+    padding: 4px;
+  }
+}
+@media (max-width: 576px) {
+  /* Bei sehr kleinen Bildschirmen: Noch kleinere Schriftgröße */
+  .kachel .btn {
+    font-size: 0.6;
+    rem; /* Schriftgröße weiter verkleinern */
+  }
+}
+

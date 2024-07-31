@@ -12,17 +12,18 @@ define ("DBG", 50);
 $localhost = gethostname() == 'connyDell23' ? TRUE : FALSE;
 
 if ($localhost) {
-  $db_host = 'localhost';
+  define("DOMAIN", "tco.local");
+  $db_host = DOMAIN;
   define ("SHOWLOGS", DBG);
   define("DEBUG", true);
-  define ("HOSTNAME", "http://localhost");
+  define ("HOSTNAME", "http://tco.local");
 } else {
   $db_host = 'rdbms.strato.de';
-  define ("HOSTNAME", "https://www.tcolching.de");
+  define ("DOMAIN", "tcolching.de");
+  define ("HOSTNAME", "https://www." . DOMAIN);
   define ("SHOWLOGS", ERROR);
   define ("DEBUG", false);
 }
-
 $db_name = 'DB3601681';
 $db_user = 'U3601681';
 $db_password = 'klaP-54#bf';
@@ -50,4 +51,6 @@ $CONFIG = array (
   'delimiter' => "§§§",
   'anzahlPlaetze' => 6
 );
+
+
 ?>

@@ -11,7 +11,7 @@ require_once("inc/permissioncheck.inc.php");
 $user = check_user();
 // error_log (join(" # ", $user));
 
-$title = "Intern - Wintertraining";
+$title = "Intern - Players & Friends Kartenverkauf";
 include("inc/header.inc.php");
 ?>
 <script>
@@ -26,27 +26,56 @@ include("inc/header.inc.php");
 </script>
 <div class="container main-container">
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8">
-      <h1 class="h3 persoenlich text-gross mt-3">Wintertraining 2024!</h1>
-      <p class="h4">An alle Mitglieder des TCO!</p>
-      <p>Wie immer brauche ich für die Hallenplanung eine frühzeitige Anmeldung für das Wintertraining. 
-        Vielen Dank auch für ein paar Details, die mir die Gruppenbildung enorm erleichtern</p>
-      <p class="mb-4 persoenlich">Euer Michael</p>
-    </div>
-    <div class="col-lg-4 d-flex align-items-start">
-      <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-lg-right w-50" alt="Michael Görzen">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="h3 persoenlich text-gross my-3">Players & Friends Night 2024!</h1>
+        <p class="h4 my-4">An alle Mitglieder <strong>und Freunde</strong> des TCO!</p>
+        <div class="h5 lh-lg">
+          <p>Die erfolgreichste und fantastischste Tennis-Saisonabschlussparty der westlichen Hemisphäre, die Players & Friends
+            Night des TCO, findet auch in 2024 wieder statt - wenn Ihr Eure Karten früh kauft!</p>
+            <p><strong>Wir brauchen als Untergrenze 70 verkaufte Karten! Erreichen wir das nicht bis zum 15.&nbsp;September, können wir die Party nicht starten!</strong></p>
+            <p>Also: Schreibt Euch den Termin in den Kalender, bucht die Oma für die Kinder und kauft Euch Karten: <strong>15 Euro</strong>
+             für ein Armband, das Euch Eintritt und
+            kulinarische Genüsse sichert. </p>
+            <p>Bringt Eure Freunde und Freundinnen mit und stellt Euch auf eine lange Nacht ein!</p>
+          <ol>
+            <li><strong>Anmeldung</strong>
+              <p>Wenn du bis jetzt noch keine Karte hast: Bitte auf dieser Seite unten anmelden. 
+                Das erleichtert uns die Führung einer Liste. Die Karte/das Armband erhältst du 
+                dann am Einlass.</p>
+            </li>
+            <li>
+              <p><strong>Überweisung</strong></p>
+              <p>Überweist dann <stron>pro Karte 15 Euro</strong> wahlweise per PayPal oder Überweisung auf</p>
+                  <p><strong>PayPal: </strong></p>
+                  <p><a href="https://www.paypal.com/paypalme/connyroloff">@connyroloff</a></p>
+                  <p><strong class="w-75">Bank: </strong></p>
+                  <p>Conny Roloff<br>
+                  IBAN DE70120300000015437296</p>
+                </tr>
+                <tr>
+                  <p><strong>Verwendungszweck:</strong></p>
+                  <p>PF2024</p>
+                </tr>
+              </table>
+            </li>
+          </ol>
+          <p class="my-4 persoenlich">Euer Party-Kommitee: Norbert und Conny</p>
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex align-items-start">
+        <img src="/images/intern/playersfriends_plakat_2024.png" class="mt-3 rounded float-lg-right w-100" alt="Plakat">
+      </div>
     </div>
   </div>
-</div>
 
   <div class="registration-form">
 
     <?php
 
     $showFormular = 1;
-    $cid = 13; // campaign-Id
+    $cid = 14; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -94,8 +123,7 @@ include("inc/header.inc.php");
       $info6    = isset($_POST["info6"]) ? $_POST["info6"] : $info6;
       $info7    = isset($_POST["info7"]) ? $_POST["info7"] : $info7;
       //error_log("0000-10: $info1");
-    }
-    else {
+    } else {
       // Die Werte initial aus der DB lesen
       $sql = <<<EOT
       SELECT 
@@ -149,7 +177,7 @@ EOT;
       $willTeilnehmen = isset($result["wta"]) ? $result["wta"] : $willTeilnehmen;
       $kommentar   = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
       $info1       = isset($result["info1"]) ? $result["info1"] : $info1;
-/*
+      /*
       $info2       = isset($result["info2"]) ? $result["info2"] : $info2;
       $info3       = isset($result["info3"]) ? $result["info3"] : $info3;
       $info4       = isset($result["info4"]) ? $result["info4"] : $info4;
@@ -185,7 +213,7 @@ EOT;
     }
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Wintertraining-Anmeldung:</p>
+      <p class="h3 mt-4">Deine Players & Friends-Anmeldung:</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -201,7 +229,7 @@ EOT;
 
 
         <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Ich möchte im Winter trainieren:&nbsp;</span>
+          <span class="pr-3" for="inputZusage">Ich möchte bei der Players & Friends Night kommen!&nbsp;</span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willTeilnehmen" id="willTeilnehmenJA" value="1" <?= ($willTeilnehmen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willTeilnehmenJA">Ja</label>
@@ -213,16 +241,16 @@ EOT;
         </div>
 
         <div class="form-group">
-          <label for="kommentar">Erfahrung ( &lt;1 Jahr, 1-3 Jahre, Mannschaftsspieler und &ge; 3 Jahre):</label>
+          <label for="kommentar">Anzahl, ggf. für wen ich mitkaufe</label>
           <textarea class="form-control" name="kommentar" rows="3"><?= $kommentar ?></textarea>
         </div>
 
+        <?php /*
         <div class="form-group">
-          <label for="info1">Mögliche Tage, Mo - Sa. Mindestens zwei angeben:</label>
+          <label for="info1"> ############# </label>
           <textarea class="form-control" name="info1" rows="3"><?= $info1 ?></textarea>
         </div>
 
-<?php /*
         <div class="form-group">
           <label for="info2"> ############# </label>
           <textarea class="form-control" name="info2" rows="3"><?= $info2 ?></textarea>
@@ -257,31 +285,30 @@ EOT;
       </form>
 
       <p class="h4">Bereits angemeldet:</p>
-<?php
-$sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
-error_log("0012: $sql");
-$statement = $pdo->prepare($sql);
-$result = $statement->execute();
+      <?php
+      $sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
+      error_log("0012: $sql");
+      $statement = $pdo->prepare($sql);
+      $result = $statement->execute();
 
-//echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
+      //echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
 
-if($result) {
-  ?>
-    <br>
-    <div class="mx-3">
-      <table class="table table-bordered table-light tbl-small">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Teilnehmer/in</th>
-            <th>Tel</th>
-            <th>Ist dabei</th>
-            <th>Erfahrung</th>
-            <th>Termine</th>
-          </tr>
-        </thead>
-        <?php
-/*
+      if ($result) {
+      ?>
+        <br>
+        <div class="mx-3">
+          <table class="table table-bordered table-light tbl-small">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Teilnehmer/in</th>
+                <th>Tel</th>
+                <th>Ist dabei</th>
+                <th>Anzahl, für wen?</th>
+              </tr>
+            </thead>
+            <?php
+            /*
   try {
     $row = $statement->fetch();
   } catch (PDOException $Exception) {
@@ -291,17 +318,16 @@ if($result) {
 
 
 
-  $lfd = 1;
-  while($row = $statement->fetch()) {
-    ?>
-        <tr>
-          <td><?=$lfd++?></td>
-          <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
-          <td><?=$row['mobil']?></td>
-          <td class="text-center"><?=($row['willing_to_attend']===NULL?'---':($row['willing_to_attend']==='1'?'J':'N'))?></td>
-          <td><?=$row['comment']?></td>
-          <td><?=$row['info1']?></td>
-<?php /*
+            $lfd = 1;
+            while ($row = $statement->fetch()) {
+            ?>
+              <tr>
+                <td><?= $lfd++ ?></td>
+                <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
+                <td><?= $row['mobil'] ?></td>
+                <td class="text-center"><?= ($row['willing_to_attend'] === NULL ? '---' : ($row['willing_to_attend'] === '1' ? 'J' : 'N')) ?></td>
+                <td><?= $row['comment'] ?></td>
+                <?php /*
           <td><?=$row['info2']?></td>
           <td><?=$row['info3']?></td>
           <td><?=$row['info4']?></td>
@@ -309,24 +335,21 @@ if($result) {
           <td><?=$row['info6']?></td>
           <td><?=$row['info7']?></td>
 */ ?>
-        </tr>
-<?php
-  }
-  echo '</table>';
-} else {
-  echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
-}
+              </tr>
+        <?php
+            }
+            echo '</table>';
+          } else {
+            echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
+          }
+        } //Ende von if($showFormular)
+        ?>
 
 
-
-} //Ende von if($showFormular)
-?>
-
+        </div>
 
   </div>
 
-</div>
-
-<?php
-include("inc/footer.inc.php")
-?>
+  <?php
+  include("inc/footer.inc.php")
+  ?>

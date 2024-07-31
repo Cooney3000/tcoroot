@@ -2,6 +2,7 @@
 session_start();
 require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
+require_once("inc/permissioncheck.inc.php");
 
 $title = "Registrierung";
 include("inc/header.inc.php")
@@ -155,7 +156,8 @@ EOT;
       }
       // Zum Schluss den jetzt bereits genutzten Registrierungscode bzw. alle abgelaufenen Codes löschen
       if (!$error) {
-        $statement = $pdo->prepare("DELETE FROM reg_codes WHERE regcode = ? OR created_at < DATE_SUB(NOW(),INTERVAL 30 DAY)");
+//        $statement = $pdo->prepare("DELETE FROM reg_codes WHERE regcode = ? OR created_at < DATE_SUB(NOW(),INTERVAL 30 DAY)");
+        $statement = $pdo->prepare("DELETE FROM reg_codes WHERE regcode = ?");
         $statement->execute(array($regcode));
       }
     } else // regCode falsch

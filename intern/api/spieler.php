@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 }
 
 $sql = <<<EOT
-SELECT id, CONCAT(vorname, ' ', nachname) as spieler, geburtsdatum, schnupper FROM users WHERE status = "T" OR status = "A" ORDER BY status, vorname, nachname
+SELECT id, CONCAT(vorname, ' ', nachname) as spieler, geburtsdatum, schnupper FROM users WHERE (status = "T" OR status = "A") AND id <> 8 ORDER BY status, vorname, nachname
 EOT;
 
 // error_log($sql);

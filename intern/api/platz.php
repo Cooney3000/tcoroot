@@ -1,4 +1,11 @@
 <?php
+header ('Strict-Transport-Security: max-age=31536000');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header('Content-Type: text/html; charset=utf-8');
+
 //
 // Belegung CRUD
 // -----------------
@@ -17,11 +24,13 @@
 //      t - booking_type
 //      pr - price (für Gaststunden)
 //
-
+error_log("platz.php: " . http_build_query($_GET));
 require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 session_start();
+error_log("Session ID: " . session_id());
+error_log("Session Data: " . print_r($_SESSION, true));
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 //Der Aufruf von check_user_silent() muss in alle API-Skripten eingebaut sein

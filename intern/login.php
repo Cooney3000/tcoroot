@@ -18,7 +18,6 @@ if (isset($_POST['email']) && isset($_POST['passwort']))
   $user = $statement->fetch();
   
   //Überprüfung des Passworts
-  
   if ($user && password_verify($passwort, $user['passwort'])) 
   {
     $_SESSION['userid'] = $user['id'];
@@ -36,7 +35,6 @@ if (isset($_POST['email']) && isset($_POST['passwort']))
     //
     if (isset($_POST['angemeldet_bleiben'])) 
     {
-
       $identifier = random_string();
       $securitytoken = random_string();
       $insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
@@ -44,25 +42,28 @@ if (isset($_POST['email']) && isset($_POST['passwort']))
       setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); //Valid for 1 year
       setcookie("securitytoken", $securitytoken, time() + (3600 * 24 * 365), "/intern/"); //Valid for 1 year
     }
+    
     //
     // Befindet sich der Benutzer noch im Wartebereich?
     //
     if ($user['status'] == 'W') 
     {
-      $error_msg =  "Dein Account ist noch nicht aktiviert. Schreibe bitte eine Mail an webmaster@tcolching.de, falls das schon länger so ist.";
+      $error_msg = "Dein Account ist noch nicht aktiviert. Schreibe bitte eine Mail an webmaster@tcolching.de, falls das schon länger so ist.";
     }
     else 
     {
       //
       // Alles gut, weiter zum Internen Bereich als eingeloggter User
       //
-      header("location:internal.php");
+      $redirect_to = isset($_SESSION['redirect_to']) ? $_SESSION['redirect_to'] : 'internal.php';
+      unset($_SESSION['redirect_to']); // Ziel-URL aus der Session entfernen
+      header("Location: $redirect_to");
       exit;
     }
   }
   else 
   {
-    $error_msg =  "E-Mail oder Passwort war ungültig";
+    $error_msg = "E-Mail oder Passwort war ungültig";
   }
 }
 
@@ -102,7 +103,6 @@ include("inc/loginheader.inc.php");
   <p class="h5 my-2">Noch nicht registriert? <a href="register.php">Zur Registrierung</a></p>
 
 </div> <!-- /container -->
-
 
 <?php
 include("inc/footer.inc.php")
