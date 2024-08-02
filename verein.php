@@ -1,10 +1,7 @@
 <?php
-# In der Navigation den aktuellen Menüpunkt auf bold setzen
-$_verein = "navcurrent";
-$_aktuell="";
-$_mannschaften="";
-$_jugend="";
-$_training="";
+include 'lib/functions.php';
+
+$navigation = setNavigation('verein');
 $_header = "Verein";
 include 'header.php';
 ?>

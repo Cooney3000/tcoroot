@@ -1,64 +1,33 @@
 <?php
-# In der Navigation den aktuellen Menüpunkt auf bold setzen
-$_aktuell = "navcurrent";
-$_verein = "";
-$_mannschaften = "";
-$_jugend = "";
-$_training = "";
-$_header = "Home";
+include 'lib/functions.php';
 
+$navigation = setNavigation('aktuell');
+$_header = "Home";
 include 'header.php';
 
-/* 
-	Nachrichtenticker für den Trainer, wenn das Training z. B. in die Halle verlegt wird.
-	Die Nachricht kann in der Seite 
-				msg.php 
-	bearbeitet werden.
-*/
-// Die Nachricht nur ausgeben, wenn die Meldung nicht leer und von heute ist
-$file = "work/indexmessages.txt";
-$nachricht = file_get_contents($file);
-$datum = substr($nachricht, 0, 8);
-$nachricht = substr($nachricht, 9);
+/* Nachrichtenticker */
+list($nachricht, $smsMsgClass) = fetchMessage("work/indexmessages.txt");
 
-$smsMsgClass = "";
-if (date("d.m.y") != $datum || trim($nachricht) == "") {
-  $smsMsgClass = "hidden";
-}
-
-// Jetzt noch die Gaststätte geöffnet/geschlossen-Meldung. Geöffnet ist nur, wenn der Status von heute ist
-$file = "work/wirt.txt";
-$line = trim(file_get_contents($file));
-echo "<!-- ###### $line ###### -->\r\n";
-$wirtStatus = substr($line, 0, 1);      // Ist die Gastro geöffnet/geschlossen?
-$wirtAktivStatus = substr($line, 1, 1); // Ist die Anzeige überhaupt aktiv/inaktiv?
-$wirtStatusDatum = substr($line, 2, 8);
-$wirtStatusClass = ($wirtStatus == '1') ? "btn-success" : "btn-danger";
-if ($wirtStatusDatum == date("d.m.y")) {
-  $wirtStatusText = ($wirtStatus == '1') ? "geöffnet" : "geschlossen";
-} else {
-  $wirtStatusText = "geschlossen"; // wenn der Status nicht von heute ist, wird automatisch geschlossen angezeigt.
-}
+/* Gaststättenstatus */
+list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus("work/wirt.txt");
 ?>
+
 <div id="blattSmsText">
   <section id="sms_Message" class="seite sms-danger <?= $smsMsgClass ?>">
     <h1>Aktuelle Meldung:</h1>
-    <p><?= $nachricht ?></p>
+    <p><?= htmlspecialchars($nachricht) ?></p>
   </section>
 </div>
 <div id="blatt1" class="blatt">
   <section id="news" class="seite neues">
     <article class="spalte1">
       <h6>Aktuelle Neuigkeiten</h6>
-
-      <!-- *******************
-              SCHLAGZEILEN
-      --> *******************
       <ul class="schlaeger">
-          <?php if ($wirtAktivStatus == '1') {
-            echo "<li><strong>Clubheim</strong>\r\n<p>Die Vereinsgaststätte ist im Augenblick <span class=\"$wirtStatusClass px-1\"> $wirtStatusText.</span></p>";
-          } ?>
-        </li>
+        <?php if ($wirtAktivStatus == '1') : ?>
+          <li><strong>Clubheim</strong>
+            <p>Die Vereinsgaststätte ist im Augenblick <span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText ?></span>.</p>
+          </li>
+        <?php endif; ?>
         <li><strong>Interesse an Tennis?</strong>
           <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>
         </li>
@@ -69,14 +38,14 @@ if ($wirtStatusDatum == date("d.m.y")) {
     </article>
   </section>
 </div>
-    <article>
-      <h3>Unsere Jugend-Sponsoren</h3>
-      <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
-      <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
-      <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
-      <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
-    </article>
-  </section>
+<article>
+  <h3>Unsere Jugend-Sponsoren</h3>
+  <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
+  <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
+  <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
+  <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
+</article>
+</section>
 </div>
 
 <?php

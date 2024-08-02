@@ -1,10 +1,13 @@
 <?php
 # In der Navigation den aktuellen Menüpunkt auf bold setzen
-$_aktuell = "";
-$_verein = "";
-$_mannschaften = "";
-$_jugend = "";
-$_training = "";
+$navigation = [
+  'aktuell' => '',
+  'verein' => '',
+  'mannschaften' => '',
+  'jugend' => '',
+  'training' => '',
+];
+$_header = "Home Edit";
 include 'header.php';
 ?>
 		<div id="blatt1">

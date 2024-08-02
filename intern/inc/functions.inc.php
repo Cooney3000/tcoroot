@@ -190,6 +190,51 @@ function getFilename($fullpath) {
   $f = explode('.', $a);
 
   return ($f[0]);
+}
 
+function handleWirtStatus($file) {
+  if (!file_exists($file)) return ['geschlossen', 'hidden', 'Öffnen', 'hidden', 'Deaktiviert', 'Aktivieren'];
 
+  $line = trim(file_get_contents($file));
+  $status = substr($line, 0, 1);
+  $activeStatus = substr($line, 1, 1);
+  $statusDate = substr($line, 2, 8);
+
+  // Handle POST request to update status
+  if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+      if (isset($_POST['SWT'])) {
+          $status = abs($status - 1); // Toggle status
+          $statusDate = date("d.m.y");
+      } else if (isset($_POST['SWS'])) {
+          $activeStatus = abs($activeStatus - 1); // Toggle active status
+          $statusDate = date("d.m.y");
+      }
+
+      // Update the file with new status
+      file_put_contents($file, $status . $activeStatus . $statusDate);
+
+      // Regenerate CSRF token
+      unset($_SESSION['token']);
+      $_SESSION['token'] = bin2hex(random_bytes(32));
+  }
+
+  // Determine button classes and text based on status
+  $statusClass = ($status && $statusDate == date("d.m.y")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
+  $statusText1 = ($status && $statusDate == date("d.m.y")) ? "Geöffnet" : "Geschlossen";
+  $statusText2 = ($status && $statusDate == date("d.m.y")) ? "Schließen" : "Öffnen";
+  $activeClass = ($activeStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
+  $activeText1 = ($activeStatus) ? "Aktiv" : "Deaktiviert";
+  $activeText2 = ($activeStatus) ? "Deaktivieren" : "Aktivieren";
+
+  return [$statusText1, $statusClass, $statusText2, $activeClass, $activeText1, $activeText2];
+}
+function generate_csrf_token() {
+  if (empty($_SESSION['token'])) {
+      $_SESSION['token'] = bin2hex(random_bytes(32));
+  }
+  return $_SESSION['token'];
+}
+
+function validate_csrf_token($token) {
+  return hash_equals($_SESSION['token'], $token);
 }

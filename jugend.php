@@ -1,14 +1,9 @@
 <?php
-# In der Navigation den aktuellen Menüpunkt auf bold setzen
-$_jugend = "navcurrent";
-$_aktuell = "";
-$_verein = "";
-$_mannschaften = "";
-$_training = "";
+include 'lib/functions.php';
+
+$navigation = setNavigation('jugend');
 $_header = "Jugend";
 include 'header.php';
-?>
-<?php
 
 /* 
 	Nachrichtenticker für den Trainer, wenn das Training z. B. in die Halle verlegt wird.
