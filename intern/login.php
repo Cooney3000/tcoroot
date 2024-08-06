@@ -2,6 +2,7 @@
 session_start();
 require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
+require_once("inc/permissioncheck.inc.php");
 
 $error_msg = "";
 
@@ -78,7 +79,7 @@ include("inc/loginheader.inc.php");
                 <input type="checkbox" name="angemeldet_bleiben" value="1" checked> Angemeldet bleiben (außer, du machst einen Logout)
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
         <br>
         <p class="h5 my-2">Passwort vergessen? Setze dein Passwort selbst zurück: <a href="pwvergessen.php">Passwort zurücksetzen</a></p>
     </form>

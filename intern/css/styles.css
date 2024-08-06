@@ -262,8 +262,52 @@ li.schlaeger {
   transform: scale(1.1); /* Vergrößerung bei Hover */
 }
 
+/* Media Queries */
+@media (min-width: 992px) {
+  .tbl-small {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .formwidth {
+    width: 50%;
+  }
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px); /* Width of the images with spacing */
+    margin: 5px;
+    overflow: hidden;
+  }
+}
+
 .kachel {
-  font-size: 0.8rem; /* Schriftgröße anpassen */
+  font-size: 0.8rem; /* Adjust font size */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 20px; /* Add rounded corners */
+  overflow: hidden; /* Ensure content stays within rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add subtle shadow for better visual separation */
+}
+
+.kachel img {
+  width: 100%; /* Ensure images take the full width of the kachel */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  border-radius: 10px; /* Apply rounded corners to the image */
+}
+
+.kachel a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kachel .titel {
+  width: 100%; /* Ensure buttons take the full width */
+  border-radius: 10px; /* Add rounded corners */
+  color: black;
+  font-weight: bold;
+  line-height: 1;
 }
 
 /* Media Queries */
@@ -276,48 +320,50 @@ li.schlaeger {
     width: 50%;
   }
   .gallery-item {
-    flex: 0 0 calc(50% - 10px); /* Breite der Bilder mit Abstand */
+    flex: 0 0 calc(50% - 10px); /* Width of the images with spacing */
     margin: 5px;
     overflow: hidden;
-  }  
+  }
 }
 
 @media (max-width: 767.98px) {
-  .kachel img, .kachel p {
-    display: none;
+  .kachel img {
+    width: 100%; /* Ensure images take the full width */
+  }
+  .kachel p {
+    display: none; /* Hide text */
   }
   .kachel .btn {
-    font-size: 0.7rem; /* Schriftgröße anpassen */
+    font-size: 0.7rem; /* Adjust font size */
     padding: 4px;
+  }
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px; /* Reduce padding for less distance between cards */
+  }
+  .kachel {
+    margin-bottom: 10px; /* Reduce bottom margin for less distance between cards */
   }
 }
 
 @media (max-width: 576px) {
-  .kachel .btn {
-    font-size: 0.6rem; /* Schriftgröße weiter verkleinern */
+  .kachel {
+    flex: 0 0 calc(50% - 10px); /* Two cards per line */
+    margin: 5px;
   }
-}
-.row.justify-content-center {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-sm-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-small {
-  width: 100%;
-  height: 100px; /* Set a fixed height for the buttons */
-  font-size: calc(0.75rem + 0.25vw); /* Adjust font size based on viewport width */
-  padding: 10px; /* Ensure padding is consistent */
-  text-align: center; /* Center the text */
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .kachel img {
+    width: 100%; /* Ensure images take the full width */
+  }
+  .kachel .btn {
+    font-size: 0.6rem; /* Further reduce font size */
+  }
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 3px; /* Further reduce padding for less distance between cards */
+  }
+  .kachel {
+    margin-bottom: 5px; /* Further reduce bottom margin for less distance between cards */
+  }
 }

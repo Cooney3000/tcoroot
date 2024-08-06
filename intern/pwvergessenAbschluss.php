@@ -2,6 +2,7 @@
 session_start();
 require_once("inc/config.inc.php");
 require_once("inc/functions.inc.php");
+require_once("inc/permissioncheck.inc.php");
 
 $title = "Passwort neu vergeben";
 include("inc/header.inc.php");

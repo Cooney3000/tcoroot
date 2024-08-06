@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>TC Olching <?= $title ?></title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <!-- Custom styles for this template -->
-    <link href="/intern/css/styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
+    <?php include("dependencies.inc.php"); ?>
   </head>
   <body>
   
@@ -20,9 +14,6 @@
       
       <div>
         <a href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
-        <div class="klein">
-          <?= isset($user['vorname']) ? htmlentities(trim($user['vorname']).' '.trim($user['nachname'])) : "" ?>
-        </div>
       </div>
 
         </ul>
