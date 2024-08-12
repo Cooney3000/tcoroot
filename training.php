@@ -83,8 +83,7 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 		<article class="spalte1">
 			<p>Ich bin beim TCO Trainer in Vollzeit und für die Trainerposition in 2020 nach Olching umgesiedelt.</p>
 			<p>Ich bin ehemaliger 2. Bundesligaspieler und habe in internationalen Turnieren gespielt. </p>
-			<p>Als Trainer arbeite ich seit 2001. Mein Ukraine-stämmiger Vater hat eine Tennisschule in Eching bei München.
-				Ich spreche Deutsch, Russisch, Englisch und etwas Französisch.</p>
+			<p>Als Trainer arbeite ich seit 2001. Ich spreche Deutsch, Russisch, Englisch und etwas Französisch.</p>
 			</p>
 
 			<p><strong>Meine Kontaktdaten:</strong></p>

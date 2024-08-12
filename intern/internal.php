@@ -18,7 +18,7 @@ function generate_event_cards($events)
     $cards .= '
           <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2"> <!-- Adjusted column classes -->
             <div class="bg-light p-2 h-100 kachel">
-              <a href="' . $event[1] . '">
+              <a href="' . $event[1] . '"' . $event[3] . '>
                 <span class="titel mb-2">' . $event[0] . '</span>
                 <div class="icon-container">
                   <img src="' . $event[2] . '" alt="' . $event[0] . '">
@@ -31,12 +31,13 @@ function generate_event_cards($events)
 }
 
 $events = [
-  ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png"],
-  ["Clubturnier '24", "/intern/turnier/turnierbaum.php", "/images/intern/turnier.png"],
-  ["Players & Friends", "/intern/playersfriends.php", "/images/intern/PF_2024_logo.png"],
-  ["Wintertraining", "wintertraining.php", "/images/intern/wintertraining.png"],
-  ["Sommercamp 2024", "sommercamp.php", "/images/intern/sommercamp.png"],
-  ["TCO Quickstart", "downloads/TCO Newbie-Guide 2024-05-08.pdf", "/images/intern/quickstart.png"]
+  ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png", ""],
+  ["Clubturnier '24", "/intern/turnier/turnierbaum.php", "/images/intern/turnier.png", ""],
+  ["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", ""],
+  ["Wintertraining", "/intern/events/wintertraining.php", "/images/intern/wintertraining.png", ""],
+  ["Familienturnier 2024", "/intern/events/Familienturnier 2024.pdf", "/images/intern/familienturnier.png", 'target="_blank"'],
+  ["Kreismeisterschaft FFB 2024", "/intern/events/kreismeisterschaft.php", "/images/intern/KM2024.png", ''],
+  ["TCO Quickstart", "downloads/TCO Newbie-Guide 2024-05-08.pdf", "/images/intern/quickstart.png", ""]
 ];
 ?>
 

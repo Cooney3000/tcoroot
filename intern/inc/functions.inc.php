@@ -1,10 +1,4 @@
 <?php
-/**
- * A complete login script with registration and members area.
- *
- * @author: Nils Reimers / http://www.php-einfach.de/experte/php-codebeispiele/loginscript/
- * @license: GNU GPLv3
- */
 
 include_once("password.inc.php");
 
@@ -12,46 +6,38 @@ include_once("password.inc.php");
 // Checkt, ob der User eingeloggt ist und gibt die User-Daten zurück oder macht einen Redirect zur Login-Page
 //
 
+// Check if the user is logged in and return user data or redirect to the login page
 function check_user() {
-
   $user = check_user_silent();
-
-  if ( ! $user ) {
-    // neuer, unbekannter Benutzer
-    $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
-    header($targetPage);
-    exit; // WICHTIG falls der Browser nicht redirected
-  } 
-  else 
-  {
-    return $user;
+  if (!$user) {
+      // Redirect to login page
+      $targetPage = 'Location: ' . HOSTNAME . '/intern/login.php';
+      header($targetPage);
+      exit; // Important in case the browser does not redirect
+  } else {
+      return $user;
   }
 }
 
-//
-// Checkt, ob der User eingeloggt ist und gibt die User-Daten oder false zurück
-//
+// Check if the user is logged in and return user data or false
 function check_user_silent() {
   global $pdo;
 
-  // Serverdatum für die Javascript-App
+  // Set server time cookie
   setcookie("servertime", time() * 1000, time() + (3600 * 24 * 365), "/intern/"); // Valid for 1 year
 
-  // Testumgebungs-Setting
-  $localhost = gethostname() == 'connyDell23' ? true : false;
-
-  // Überprüfen, ob Session gestartet wurde
+  // Check if session is started
   if (session_status() == PHP_SESSION_NONE) {
       session_start();
   }
 
-  // Überprüfen, ob Benutzer bereits angemeldet ist
+  // Check if user is already logged in
   if (!isset($_SESSION['userid']) && isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
       $identifier = $_COOKIE['identifier'];
       $securitytoken = $_COOKIE['securitytoken'];
 
       $statement = $pdo->prepare("SELECT * FROM securitytokens WHERE identifier = ?");
-      $statement->execute(array($identifier));
+      $statement->execute([$identifier]);
       $securitytoken_row = $statement->fetch();
 
       if (!$securitytoken_row || sha1($securitytoken) !== $securitytoken_row['securitytoken']) {
@@ -59,28 +45,28 @@ function check_user_silent() {
           return false;
       }
 
-      // Neuen Token setzen
+      // Set new token
       $neuer_securitytoken = random_string();
       $insert = $pdo->prepare("UPDATE securitytokens SET securitytoken = :securitytoken WHERE identifier = :identifier");
-      $insert->execute(array('securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier));
-      setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); // 1 Jahr Gültigkeit
-      setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); // 1 Jahr Gültigkeit
+      $insert->execute(['securitytoken' => sha1($neuer_securitytoken), 'identifier' => $identifier]);
+      setcookie("identifier", $identifier, time() + (3600 * 24 * 365), "/intern/"); // 1 year validity
+      setcookie("securitytoken", $neuer_securitytoken, time() + (3600 * 24 * 365), "/intern/"); // 1 year validity
 
-      // Benutzer einloggen
+      // Log in user
       $_SESSION['userid'] = $securitytoken_row['user_id'];
   }
 
   if (!isset($_SESSION['userid'])) {
       error_log("Benutzer nicht eingeloggt");
       if (!empty($_SERVER['REQUEST_URI'])) {
-        $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
+          $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
       }
       return false;
   }
 
-  // Userdaten abrufen
+  // Retrieve user data
   $statement = $pdo->prepare("SELECT * FROM users WHERE id = :id AND NOT (status = 'D' OR status = 'W' OR status = 'X')");
-  $statement->execute(array('id' => $_SESSION['userid']));
+  $statement->execute(['id' => $_SESSION['userid']]);
   $user = $statement->fetch();
 
   if (!$user) {
@@ -88,19 +74,16 @@ function check_user_silent() {
       return false;
   }
 
-  // Berechtigungen abrufen
+  // Retrieve permissions
   $statement = $pdo->prepare("SELECT * FROM permissions WHERE user_id = :user_id");
-  $statement->execute(array('user_id' => $_SESSION['userid']));
+  $statement->execute(['user_id' => $_SESSION['userid']]);
   $permissions = $statement->fetch();
 
-  if (!$permissions) {
-      error_log("Berechtigungen nicht gefunden");
-      return false;
+  $_SESSION['permissions'] = $permissions ? $permissions['permissions'] : 0;
+
+  if (isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
+      TLOG("DEBUG", "check_user_silent(): identifier: " . $_COOKIE['identifier'] . ", securitytoken: " . $_COOKIE['securitytoken'], __LINE__);
   }
-
-  $_SESSION['permissions'] = $permissions['permissions'];
-
-  TLOG("DEBUG", "check_user_silent(): identifier: ". $_COOKIE['identifier'] . ", securitytoken: ". $_COOKIE['securitytoken'], __LINE__);
 
   return $user;
 }
