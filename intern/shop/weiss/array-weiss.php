@@ -47,7 +47,7 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL']
             ]
         ],
-        'image' => 'weiss/BIO-hoodie-unisex.png'
+        'image' => 'weiss/bio-hoodie-unisex.png'
     ],
     [
         'name' => 'BIO Hoodie Kinder',
@@ -58,7 +58,7 @@ $articles_weiss = [
                 'sizes' => ['XXS', 'XS', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'weiss/BIO-hoodie-kinder.png'
+        'image' => 'weiss/bio-hoodie-kinder.png'
     ],
     [
         'name' => 'BIO Hoodiejacke Unisex',
@@ -69,7 +69,7 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/BIO-hoodiejacke-unisex.png'
+        'image' => 'weiss/bio-hoodiejacke-unisex.png'
     ],
     [
         'name' => 'Hoodie Kinder',

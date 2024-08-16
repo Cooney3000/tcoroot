@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $orderDetails = $data['order_details'];
     $userId = $_SESSION['userid'];
 
+    TLOG(DEBUG, json_encode($orderDetails), __LINE__);
+
     try {
         // Start transaction
         $pdo->beginTransaction();
@@ -39,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderId = $pdo->lastInsertId();
         }
 
-        // Insert each order detail
-        $stmt = $pdo->prepare("INSERT INTO order_details (order_id, article_name, variant_name, size, quantity, price, total, color) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        // Insert each order detail including the comment
+        $stmt = $pdo->prepare("INSERT INTO order_details (order_id, article_name, variant_name, size, quantity, price, total, color, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         foreach ($orderDetails as $detail) {
             $stmt->execute([
@@ -51,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $detail['quantity'],
                 $detail['price'],
                 $detail['total'],
-                $detail['color']
+                $detail['color'],
+                $detail['comment'] // Save the comment with each order detail
             ]);
         }
 

@@ -69,7 +69,7 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/BIO-hoodiejacke-unisex.png'
+        'image' => 'schwarz/bio-hoodiejacke-unisex.png'
     ],
     [
         'name' => 'BIO Hoodiejacke Kids',
@@ -80,7 +80,7 @@ $articles_schwarz = [
                 'sizes' => ['92/98', '104/110', '116/122', '128/134', '140/146', '152/158']
             ]
         ],
-        'image' => 'schwarz/BIO-hoodiejacke-kids.png'
+        'image' => 'schwarz/bio-hoodiejacke-kids.png'
     ],
     [
         'name' => 'Hoodie Kinder',

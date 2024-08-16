@@ -194,6 +194,10 @@ li.schlaeger {
   list-style-position: outside;
 }
 
+.btn-outline-dark.active {
+  color: #000 !important;
+}
+
 .table td, .table th {
   padding: 0.5rem;
 }
