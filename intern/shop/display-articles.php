@@ -1,6 +1,9 @@
 <?php
 if (isset($articles)) {
-    foreach ($articles as $article) : ?>
+    foreach ($articles as $article) : 
+        $articleId = "$color-" . strtolower(str_replace(' ', '-', $article['name'])); // Erstelle eine eindeutige ID basierend auf dem Artikelnamen
+        $canBeLabeled = $article['can_be_labeled'] ?? false; // Lade den Wert von can_be_labeled für diesen Artikel
+?>
         <div class="col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
                 <img src="<?= $article['image'] ?>" class="card-img-top" alt="<?= $article['name'] ?>">
@@ -21,7 +24,8 @@ if (isset($articles)) {
                         }
                         ?>
                     </div>
-                    <div>
+                    <a href="#" class="toggle-sizes" data-target="sizes-<?= $articleId ?>">Größen &#9660;</a>
+                    <div id="sizes-<?= $articleId ?>" style="display: none;">
                         <?php
                         foreach ($article['variants'] as $variantName => $variant) {
                             foreach ($variant['sizes'] as $size) {
@@ -33,14 +37,16 @@ if (isset($articles)) {
 
                                 echo "<label>$variantName $size</label>";
                                 echo "<input type='number' name='$inputName' data-price='$price' min='0' placeholder='$size' value='$savedQuantity' class='form-control quantity-input mb-2'>";
-                                echo "<textarea name='comment_{$inputName}_$color' placeholder='Beschriftung' class='form-control mb-2'>$savedComment</textarea>";
+                                if ($canBeLabeled) {
+                                    echo "<textarea name='comment_{$inputName}_$color' placeholder='Beschriftung' class='form-control mb-2'>$savedComment</textarea>";
+                                }
                             }
                         }
                         ?>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <span class="article-total">0,00</span> €<br>
+                    <span class="article-total">0,00</span><br>
                 </div>
             </div>
         </div>

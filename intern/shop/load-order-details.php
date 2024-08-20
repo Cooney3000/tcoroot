@@ -19,10 +19,12 @@ foreach ($savedOrderRows as $row) {
         $quantity = $row['quantity'];
         $color = $row['color'];
         $comment = $row['comment'];
+        $canBeLabeled = $row['can_be_labeled'];
 
         $savedOrderDetails[$color][$articleName][$variantName][$size] = [
             'quantity' => $quantity,
-            'comment' => $comment
+            'comment' => $comment,
+            'can_be_labeled' => $canBeLabeled,
         ];
     }
 }

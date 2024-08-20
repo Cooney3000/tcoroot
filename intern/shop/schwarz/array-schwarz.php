@@ -10,7 +10,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/t-shirt-herren.png'
+        'image' => 'schwarz/t-shirt-herren.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'T-Shirt Damen',
@@ -21,7 +22,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'schwarz/t-shirt-damen.png'
+        'image' => 'schwarz/t-shirt-damen.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Polo Herren/Damen',
@@ -36,7 +38,8 @@ $articles_schwarz = [
                 'sizes' => ['S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/polo-herren.png'
+        'image' => 'schwarz/polo-herren.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'BIO Hoodie Unisex',
@@ -47,7 +50,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL']
             ]
         ],
-        'image' => 'schwarz/bio-hoodie-unisex.png'
+        'image' => 'schwarz/bio-hoodie-unisex.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'BIO Hoodie Kinder',
@@ -58,10 +62,11 @@ $articles_schwarz = [
                 'sizes' => ['XXS', 'XS', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'schwarz/bio-hoodie-kids.png'
+        'image' => 'schwarz/bio-hoodie-kids.png',
+        'can_be_labeled' => true 
     ],
     [
-        'name' => 'BIO Hoodiejacke Unisex',
+        'name' => 'BIO Jacke Unisex',
         'description' => '80% Bio-Baumwolle, 20% Recycelter Polyester<br>Größe XS-XXL',
         'variants' => [
             'Unisex' => [
@@ -69,10 +74,11 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/bio-hoodiejacke-unisex.png'
+        'image' => 'schwarz/bio-hoodiejacke-unisex.png',
+        'can_be_labeled' => true 
     ],
     [
-        'name' => 'BIO Hoodiejacke Kids',
+        'name' => 'BIO Jacke Kids',
         'description' => '100% Bio-Baumwolle<br>Größe 92/98; 104/110; 116/122; 128/134; 140/146; 152/158',
         'variants' => [
             'Kinder' => [
@@ -80,7 +86,8 @@ $articles_schwarz = [
                 'sizes' => ['92/98', '104/110', '116/122', '128/134', '140/146', '152/158']
             ]
         ],
-        'image' => 'schwarz/bio-hoodiejacke-kids.png'
+        'image' => 'schwarz/bio-hoodiejacke-kids.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Hoodie Kinder',
@@ -91,7 +98,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'schwarz/hoodie-kinder.png'
+        'image' => 'schwarz/hoodie-kinder.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Tank Top Damen',
@@ -102,7 +110,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/tank-top-damen.png'
+        'image' => 'schwarz/tank-top-damen.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Shorts schwarz',
@@ -113,7 +122,8 @@ $articles_schwarz = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'schwarz/shorts.png'
+        'image' => 'schwarz/shorts.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Tennisrock schwarz',
@@ -124,7 +134,8 @@ $articles_schwarz = [
                 'sizes' => ['36', '38', '40', '42', '44']
             ]
         ],
-        'image' => 'schwarz/tennisrock.png'
+        'image' => 'schwarz/tennisrock.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Caps',
@@ -139,7 +150,8 @@ $articles_schwarz = [
                 'sizes' => ['Kinder']
             ]
         ],
-        'image' => 'schwarz/caps.png'
+        'image' => 'schwarz/caps.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Shield',
@@ -150,7 +162,8 @@ $articles_schwarz = [
                 'sizes' => ['Einheitsgröße']  // Adding a generic size label
             ]
         ],
-        'image' => 'schwarz/shield.png'
+        'image' => 'schwarz/shield.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Handtuch 100% BW, Oekotex 100, 550 gr./qm',
@@ -164,7 +177,8 @@ $articles_schwarz = [
                 'sizes' => ['klein', 'groß']
             ]
         ],
-        'image' => 'schwarz/handtuch.png'
+        'image' => 'schwarz/handtuch.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Jogginghose schwarz',
@@ -183,6 +197,7 @@ $articles_schwarz = [
                 'sizes' => ['104', '116', '128', '140', '152']
             ]
         ],
-        'image' => 'schwarz/jogginghose.png'
+        'image' => 'schwarz/jogginghose.png',
+        'can_be_labeled' => true 
     ]
 ];

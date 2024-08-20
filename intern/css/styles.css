@@ -35,6 +35,11 @@ th a, th a:visited {
   cursor: pointer;
 }
 
+.sizes-container {
+  display: none;
+  transition: all 0.3s ease;
+}
+
 .div-table {
   display: table;
 }

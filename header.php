@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="cache-control" content="no-cache">
@@ -11,6 +12,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
@@ -32,7 +34,9 @@
         navigation: false,
         pagination: false,
         effect: {
-          fade: { speed: 400 }
+          fade: {
+            speed: 400
+          }
         },
         callback: {
           start: function(number) {
@@ -53,6 +57,7 @@
     });
   </script>
 </head>
+
 <body>
   <a id="toplink" href="#top"><img src="/images/icons/top.gif" alt="Nach oben"></a>
   <div class="headerbackground">
@@ -82,8 +87,9 @@
       <img src="/images/sliders/kids.jpg" alt="Zuschauer">
     </div>
     <div id="latest_news">
-      <span class="text-success"><a href="training.php#angebote2024">Trainingsangebote<br><span class="persoenlich text-gross">2024</span></a></span>
+      <span class="text-success"><a href="index.php#olchingopen">Olching Open<br><span class="persoenlich">Top Tennis!</span></a></span>
     </div>
   </section>
 </body>
+
 </html>

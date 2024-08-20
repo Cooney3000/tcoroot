@@ -18,12 +18,12 @@ header('Content-Disposition: attachment; filename=shop_orders.csv');
 $output = fopen('php://output', 'w');
 
 // Write the header row
-fputcsv($output, ['Vorname', 'Nachname', 'Artikel', 'Variante', 'Größe', 'Menge', 'Preis in €', 'Gesamt in €', 'Farbe', 'Kommentar']);
+fputcsv($output, ['Vorname', 'Nachname', 'Artikel', 'Variante', 'Größe', 'Menge', 'Preis in €', 'Gesamt in €', 'Farbe', 'Kommentar', 'BeschriftungJN']);
 
 // Fetch all orders and their details
 $sql = "
     SELECT users.vorname, users.nachname, order_details.article_name, order_details.variant_name, order_details.size,
-           order_details.quantity, order_details.price, order_details.total, order_details.color, order_details.comment
+           order_details.quantity, order_details.price, order_details.total, order_details.color, order_details.comment, order_details.can_be_labeled
     FROM orders
     INNER JOIN order_details ON orders.id = order_details.order_id
     INNER JOIN users ON orders.user_id = users.id
@@ -48,7 +48,8 @@ foreach ($rows as $row) {
         number_format($row['price'], 2, ',', '.'),
         number_format($row['total'], 2, ',', '.'),
         $row['color'],
-        $row['comment']
+        $row['comment'],
+        $row['can_be_labeled']
     ]);
 }
 

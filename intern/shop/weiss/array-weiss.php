@@ -10,7 +10,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/t-shirt-herren.png'
+        'image' => 'weiss/t-shirt-herren.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'T-Shirt Damen',
@@ -21,7 +22,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'weiss/t-shirt-damen.png'
+        'image' => 'weiss/t-shirt-damen.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Polo Herren/Damen',
@@ -36,7 +38,8 @@ $articles_weiss = [
                 'sizes' => ['S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/polo-herren.png'
+        'image' => 'weiss/polo-herren.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'BIO Hoodie Unisex',
@@ -47,7 +50,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL']
             ]
         ],
-        'image' => 'weiss/bio-hoodie-unisex.png'
+        'image' => 'weiss/bio-hoodie-unisex.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'BIO Hoodie Kinder',
@@ -58,10 +62,11 @@ $articles_weiss = [
                 'sizes' => ['XXS', 'XS', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'weiss/bio-hoodie-kinder.png'
+        'image' => 'weiss/bio-hoodie-kinder.png',
+        'can_be_labeled' => true 
     ],
     [
-        'name' => 'BIO Hoodiejacke Unisex',
+        'name' => 'BIO Jacke Unisex',
         'description' => '80% Bio-Baumwolle, 20% Recycelter Polyester<br>Größe XS-XXL',
         'variants' => [
             'Unisex' => [
@@ -69,7 +74,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/bio-hoodiejacke-unisex.png'
+        'image' => 'weiss/bio-hoodiejacke-unisex.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Hoodie Kinder',
@@ -80,7 +86,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL']
             ]
         ],
-        'image' => 'weiss/hoodie-kinder.png'
+        'image' => 'weiss/hoodie-kinder.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Tank Top Damen',
@@ -91,7 +98,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/tank-top-damen.png'
+        'image' => 'weiss/tank-top-damen.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Shorts weiß',
@@ -102,7 +110,8 @@ $articles_weiss = [
                 'sizes' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']
             ]
         ],
-        'image' => 'weiss/shorts.png'
+        'image' => 'weiss/shorts.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Tennisrock weiß',
@@ -113,7 +122,8 @@ $articles_weiss = [
                 'sizes' => ['36', '38', '40', '42', '44']
             ]
         ],
-        'image' => 'weiss/tennisrock.png'
+        'image' => 'weiss/tennisrock.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Caps',
@@ -128,7 +138,8 @@ $articles_weiss = [
                 'sizes' => ['Kinder']
             ]
         ],
-        'image' => 'weiss/caps.png'
+        'image' => 'weiss/caps.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Shield',
@@ -139,7 +150,8 @@ $articles_weiss = [
                 'sizes' => ['Einheitsgröße']  // Adding a generic size label
             ]
         ],
-        'image' => 'weiss/shield.png'
+        'image' => 'weiss/shield.png',
+        'can_be_labeled' => true 
     ],
     [
         'name' => 'Handtuch 100% BW, Oekotex 100, 550 gr./qm',
@@ -153,6 +165,35 @@ $articles_weiss = [
                 'sizes' => ['klein', 'groß']
             ]
         ],
-        'image' => 'weiss/handtuch.png'
+        'image' => 'weiss/handtuch.png',
+        'can_be_labeled' => true 
+    ],
+    [
+        'name' => 'Socken',
+        'description' => 'Weiße Socken mit TCO-Logo',
+        'variants' => [
+            'Socken' => [
+                'price' => [
+                    'S (30-35)' => 15.95,
+                    'M (36-40)' => 15.95,
+                    'L (41-47)' => 15.95,
+                ],
+                'sizes' => ['S (30-35)', 'M (36-40)', 'L (41-47)']
+            ]
+        ],
+        'image' => 'weiss/socken.png',
+        'can_be_labeled' => false 
+    ],
+    [
+        'name' => 'Stopper',
+        'description' => 'TCO-Stopper',
+        'variants' => [
+            'Unisex' => [
+                'price' => 3.00,
+                'sizes' => ['Einheitsgröße']
+            ]
+        ],
+        'image' => 'weiss/stopper.png',
+        'can_be_labeled' => false 
     ]
 ];

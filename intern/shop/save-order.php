@@ -41,10 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderId = $pdo->lastInsertId();
         }
 
-        // Insert each order detail including the comment
-        $stmt = $pdo->prepare("INSERT INTO order_details (order_id, article_name, variant_name, size, quantity, price, total, color, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        // Insert each order detail including the comment and can_be_labeled
+        $stmt = $pdo->prepare("INSERT INTO order_details (order_id, article_name, variant_name, size, quantity, price, total, color, comment, can_be_labeled) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         foreach ($orderDetails as $detail) {
+            $canBeLabeled = $detail['can_be_labeled'] ? 1 : 0;
+
             $stmt->execute([
                 $orderId,
                 $detail['article_name'],
@@ -54,7 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $detail['price'],
                 $detail['total'],
                 $detail['color'],
-                $detail['comment'] // Save the comment with each order detail
+                $detail['comment'], 
+                $canBeLabeled  // Verwende den richtigen Wert
             ]);
         }
 

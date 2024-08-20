@@ -1,5 +1,12 @@
 <?php
+session_start();
 include 'lib/functions.php';
+
+// Funktionen für rechteabhängige Funktionen START
+require_once("intern/inc/config.inc.php");
+require_once("intern/inc/functions.inc.php");
+require_once("intern/inc/permissioncheck.inc.php");
+// Funktionen für rechteabhängige Funktionen ENDE
 
 $navigation = setNavigation('aktuell');
 $_header = "Home";
@@ -36,51 +43,45 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
         </li>
       </ul>
     </article>
+    <article>
+      <h3>Unsere Jugend-Sponsoren</h3>
+      <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
+      <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
+      <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
+      <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
+    </article>
   </section>
 </div>
-<article>
-  <h3>Unsere Jugend-Sponsoren</h3>
-  <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
-  <a href="http://www.hapag-lloyd-reisebuero.de/index.asp?Agnt=48594" target="_blank"><img src="images/sponsoren/hlr_herz_header.png" alt="Hapag-Lloyd Reiseb&uuml;ro" class="img-thumbnail" /></a>
-  <a href="http://www.friseurkosmetik-fuchs.de/" target="_blank"><img src="images/sponsoren/fuchs.jpg" alt="Friseur- und Kosmetik G&uuml;nter Fuchs" class="img-thumbnail" /></a>
-  <a href="http://www.maler-stephan.de/" target="_blank"><img src="images/sponsoren/maler-stephan.gif" alt="Maler Stephan" class="img-thumbnail" /></a>
-</article>
-</section>
-</div>
 
-<?php
-/*
-
-<div id="blatt1" class="blatt">
+<div id="blatt5" class="blatt">
   <section id="olchingopen" class="seite">
     <article class="clean">
 
-      <h2>30. Olching Open 2023 - Spitzentennis live vom 01.09.-03.09!</h2>
+      <h2>31. Olching Open 2024 - Spitzentennis live vom 30.08.-01.09!</h2>
       <p>
-        <!-- In Olching wird Tennis der Spitzenklasse <strong>bei freiem Eintritt</strong> präsentiert.  -->
         Jedes Jahr richtet der TC Olching e.V. die Olching Open aus. Wir haben wie immer ein hochklassiges Teilnehmerfeld mit DTB-Ranglistenspieler:innen und spannenden Matches.
       </p>
       <p>
-      Von Freitag, 01.09, bis Sonntag, 03.09., haben Tennisbegeisterte wieder die Möglichkeit, Spitzenspiele live im Landkreis zu erleben. Denn an diesem Wochenende findet die 
-      Jubiläumsausgabe der Olching Open statt. Das vom Tennisclub Olching nun bereits zum 30. Mal ausgerichtete Traditionsturnier mit DTB-Ranglistenwertung ist eines der größten 
-      seiner Art in Bayern. Regelmäßig kämpfen Spitzenspieler aus der deutschen Rangliste und Bundesliga in Olching mit um den Bayer-Automobile-Cup. Gespielt wird in den 
-      Einzel-Disziplinen Herren, Damen und Herren 30. Es winken Pokale, Preisgelder und Sachpreise. Die Schirmherrschaft übernimmt wie immer der 1. Bürgermeister der Stadt Olching, 
-      Andreas Magg.
+        Von Freitag, 30.08., bis Sonntag, 01.09., haben Tennisbegeisterte wieder die Möglichkeit, Spitzenspiele live im Landkreis zu erleben. Denn an diesem Wochenende findet die
+        31. Ausgabe der Olching Open statt. Das vom Tennisclub Olching nun bereits zum 31. Mal ausgerichtete Traditionsturnier mit DTB-Ranglistenwertung ist eines der größten
+        seiner Art in Bayern. Regelmäßig kämpfen Spitzenspieler aus der deutschen Rangliste und Bundesliga in Olching mit um den Bayer-Automobile-Cup. Gespielt wird in den
+        Einzel-Disziplinen Herren, Damen und Herren 30. Es winken Pokale, Preisgelder und Sachpreise. Die Schirmherrschaft übernimmt wie immer der 1. Bürgermeister der Stadt Olching,
+        Andreas Magg.
       </p>
 
-      <p>Mit bis zu 160 Aktiven zählen die Olching Open zu den Turnieren mit den höchsten Teilnehmerzahlen in ganz Bayern. Um die enorme Anzahl der Matches an drei 
-      Tagen bewältigen zu können, wird das Turnier auf insgesamt 22 Sandplätzen 
-      des TC Olching und der benachbarten Vereine TSV Geiselbullach, TC Gernlinden, TC Puchheim und TC Eichenau ausgetragen. Für die Spieler steht 
-      entsprechend wieder ein Shuttle-Service bereit.</p>
+      <p>Mit bis zu 160 Aktiven zählen die Olching Open zu den Turnieren mit den höchsten Teilnehmerzahlen in ganz Bayern. Um die enorme Anzahl der Matches an drei
+        Tagen bewältigen zu können, wird das Turnier auf insgesamt 22 Sandplätzen
+        des TC Olching und der benachbarten Vereine TSV Geiselbullach, TC Gernlinden, TC Puchheim und TC Eichenau ausgetragen. Für die Spieler steht
+        entsprechend wieder ein Shuttle-Service bereit.</p>
       <p>
-      <strong>Komplette interaktive Ausschreibung zum Download</strong>: <a href="/downloads/OlchingOpen-Ausschreibung23_interaktiv.pdf">Ausschreibung</a>.
+        <strong>Komplette interaktive Ausschreibung zum Download</strong>: <a href="/downloads/OlchingOpen-Ausschreibung24_interaktiv.pdf">Ausschreibung</a>.
       </p>
       <p>
-      Der TC Olching, die Turnierleitung und natürlich besonders auch die Spieler freuen sich über zahlreiche Zuschauer. <strong>Der Eintritt ist, wie immer, an allen  drei Tagen und auf 
-      allen Anlagen frei.</strong> Für das leibliche Wohl ist gesorgt. Marco Tesche von der Turnierleitung: „Wir laden alle Tennisfans und -freunde herzlich ein, 
-      die Jubiläums-Olching-Open zu besuchen. Verpassen Sie nicht die Gelegenheit, absolut hochklassiges Tennis hautnah im Landkreis zu erleben.“
+        Der TC Olching, die Turnierleitung und natürlich besonders auch die Spieler freuen sich über zahlreiche Zuschauer. <strong>Der Eintritt ist, wie immer, an allen drei Tagen und auf
+          allen Anlagen frei.</strong> Für das leibliche Wohl ist gesorgt. Marco Tesche von der Turnierleitung: „Wir laden alle Tennisfans und -freunde herzlich ein,
+        die 31. Olching Open zu besuchen. Verpassen Sie nicht die Gelegenheit, absolut hochklassiges Tennis hautnah im Landkreis zu erleben.“
       </p>
-      <p><strong>Meldeschluss ist Dienstag, den 29.08.2023, 15:00 Uhr</strong>. Anmeldung über <a href="https://mybigpoint.tennis.de/">MyBigPoint</a>.</p>
+      <p><strong>Meldeschluss ist Dienstag, der 27.08.2024, 15:00 Uhr</strong>. Anmeldung über <a href="https://mybigpoint.tennis.de/" target="_blank">MyBigPoint</a>.</p>
       <p><strong>Übernachtungsmöglichkeiten</strong> in Olching findest du <a href="verein.php#uebernachtung">hier</a>.</p>
 
       <p>Ermöglicht wird dies durch das Engagement einer Vielzahl an freiwilligen
@@ -88,31 +89,28 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
       </p>
     </article>
     <article class="spalte1">
-      <img src="images/OlchingOpen/plakat_2023.png" alt="Olching Open" class="breitebilder" />
+      <img src="images/OlchingOpen/plakat_2024.png" alt="Olching Open" class="breitebilder" />
     </article>
     <article>
       <h4>Hauptsponsor</h4>
-      
+
       <a href="https://skoda-auto.de/" target="_blank"><img alt="Skoda" src="images/sponsoren/skoda.jpg" class="img-thumbnail"></a>
       <a href="https://bayer-automobile.skoda-auto.de/" target="_blank"><img alt="Bayer Skoda" src="images/sponsoren/bayer_automobile.png" class="img-thumbnail"></a>
       <h4>Weitere Sponsoren</h4>
       <a href="https://tennispark-gernlinden.de/" target="_blank"><img alt="Tennispark Gernlinden" src="images/sponsoren/tennispark_gernlinden.png" class="img-thumbnail"></a>
       <a href="https://www.jgwerbung.de/" target="_blank"><img alt="JG" src="images/sponsoren/jg_werbegesellschaft.png" class="img-thumbnail"></a>
       <a href="https://www.sparkasse-ffb.de/" target="_blank"><img alt="Sparkasse FFB" src="images/sponsoren/sparkasse_ffb.png" class="img-thumbnail"></a>
-      <a href="https://bayer-automobile.skoda-auto.de/ target="_blank""><img alt="Topspin" src="images/sponsoren/topspin.png" class="img-thumbnail"></a>
+      <a href="https://bayer-automobile.skoda-auto.de/" target="_blank"><img alt="Topspin" src="images/sponsoren/topspin.png" class="img-thumbnail"></a>
     </article>
     <br>
     <article>
       <p id="ooschirmherr"><strong>Schirmherrschaft:<br>
-          Andreas Magg</Strong><br>
+          Andreas Magg</strong><br>
         1. Bürgermeister v. Olching
       </p>
     </article>
   </section>
 </div>
-
-*/
-?>
 
 <div id="blatt2" class="blatt">
   <section id="willkommen" class="seite">
@@ -158,45 +156,121 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
   </section>
 </div>
 
-
+<!-- Anzeige der letzten 8 Presseartikel -->
 <div id="blatt4" class="blatt">
+  <?php if (isset($_SESSION['permissions']) && checkPermissions(VORSTAND)) : ?>
+    <!-- Button to toggle the form visibility -->
+    <button id="toggleFormBtn" class="btn btn-info btn-sm"><strong>Neuen Presseartikel hochladen</strong></button>
+
+    <!-- Form initially hidden -->
+    <div id="uploadForm" class="card mt-3" style="display: none;">
+      <div class="card-body">
+        <h2 class="card-title"><strong>Neuen Presseartikel hochladen</strong></h2>
+        <form id="uploadFormElement" action="upload.php" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="file" class="form-label">Wähle eine Datei aus. Der Dateiname
+              muss folgendes Format haben <strong class="font-monospace">JJJJMMTT_zeitung_thema.jpg</strong>,
+              also z. B. <strong class="font-monospace">20230905_Tagblatt_Olching Open Ankündigung.jpg</strong>
+            </label>
+            <input type="file" name="file" class="form-control" id="file" required>
+          </div>
+          <button type="submit" class="btn btn-success">Hochladen</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('toggleFormBtn').addEventListener('click', function() {
+        var form = document.getElementById('uploadForm');
+        if (form.style.display === 'none') {
+          form.style.display = 'block';
+          this.textContent = 'Formular ausblenden';
+        } else {
+          form.style.display = 'none';
+          this.textContent = 'Neuen Presseartikel hochladen';
+        }
+      });
+
+      document.getElementById('uploadFormElement').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData(this);
+
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'success') {
+              Swal.fire({
+                icon: 'success',
+                title: 'Erfolg',
+                text: 'Der Presseartikel wurde erfolgreich hochgeladen!'
+              }).then(() => {
+                // Seite nach dem Schließen des SweetAlert-Dialogs neu laden
+                window.location.reload();
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Fehler',
+                text: data.message || 'Beim Hochladen der Datei ist ein Fehler aufgetreten.'
+              });
+            }
+          })
+          .catch(error => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Fehler',
+              text: 'Beim Hochladen der Datei ist ein Fehler aufgetreten.'
+            });
+          });
+      });
+    </script>
+  <?php endif; ?>
+
+
   <section id="presse" class="seite">
-    <!-- ####  PRESSE #### -->
     <?php
-    // Verzeichnis mit Presseartikeln
     $imageDirectory = 'images/presse';
     $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     rsort($images, SORT_REGULAR);
+
+    // Nur die letzten 8 Artikel anzeigen
+    $images = array_slice($images, 0, 8);
     ?>
 
     <div class="container">
       <h2>Pressespiegel</h2>
-      <div class="gallery-container">
-        <div class="container">
-          <div class="image-container">
-            <?php
-            foreach ($images as $image) {
-              [$datum, $publikation, $titel] = explode('_', basename($image));
-              $ttmmjjjj = substr($datum, 6, 2) . "." . substr($datum, 4, 2) . "." . substr($datum, 0, 4);
-            ?>
-              <div class="image">
-                <div><?= $ttmmjjjj ?> - <?= $publikation ?></div>
-                <a href="<?= $image ?>"><img src="<?php echo $image; ?>" alt="Bild"></a>
+      <div class="press-gallery-container">
+        <div class="row">
+          <?php
+          foreach ($images as $image) {
+            [$datum, $publikation, $titel] = explode('_', basename($image));
+            $ttmmjjjj = substr($datum, 6, 2) . "." . substr($datum, 4, 2) . "." . substr($datum, 0, 4);
+          ?>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="press-image-card">
+                <div class="press-image-date"><?= $ttmmjjjj ?> - <?= htmlspecialchars($publikation) ?></div>
+                <a href="<?= htmlspecialchars($image) ?>" target="_blank">
+                  <div class="press-image-container">
+                    <img src="<?= htmlspecialchars($image) ?>" alt="Bild" class="press-image-thumbnail">
+                  </div>
+                </a>
               </div>
-            <?php
-            };
-            ?>
-
-          </div>
+            </div>
+          <?php
+          }
+          ?>
         </div>
-
       </div>
     </div>
 
 
-
   </section>
 </div>
+
 <!-- 
 <div id="blatt5" class="blatt">
   <section id="kreism" class="seite">
