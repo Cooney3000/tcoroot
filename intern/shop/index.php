@@ -10,8 +10,8 @@ $user = check_user();
 $title = "Intern - Shop";
 include("../inc/header.inc.php");
 
-// Laden Sie die Arrays für Schwarz und Weiß
-include("schwarz/array-schwarz.php"); // Dies definiert $articles_schwarz
+// Laden Sie die Arrays für Dunkel und Weiß
+include("dunkel/array-dunkel.php"); // Dies definiert $articles_dunkel
 include("weiss/array-weiss.php"); // Dies definiert $articles_weiss
 
 // Load order details and status
@@ -47,12 +47,17 @@ include("load-order-details.php");
 <body>
     <div class="container mt-4">
         <h2 class="text-center">Bestellung Herbst 2024</h2>
+        <p>Der Shop wird von Daniela Ulrich verwaltet (daniela.ulrich@tcolching.de).
+            Hier findet Ihr eine Info dazu von ihr:
+            <strong><a href="shop-info-herbst2024.pdf" target="_blank">Shop Herbst 2024-Info</a></strong>.
+        </p>
+        <p><strong>Bitte bis einschließlich 19.09.2024 bestellen!</strong></p>
 
         <?php include("order-status-message.php"); ?>
 
         <!-- Display totals -->
         <div id="totals" class="text-center">
-            <p><strong>Gesamtbetrag Schwarz: <span id="total-schwarz">0,00</span> €</strong></p>
+            <p><strong>Gesamtbetrag Dunkel: <span id="total-dunkel">0,00</span> €</strong></p>
             <p><strong>Gesamtbetrag Weiß: <span id="total-weiss">0,00</span> €</strong></p>
         </div>
 
@@ -61,15 +66,15 @@ include("load-order-details.php");
             <?php include("order-buttons.php"); ?>
 
             <div class="tabs mb-3 d-flex justify-content-center">
-                <div class="tab btn btn-outline-dark mb-3" data-tab="tab-schwarz">Schwarz</div>
+                <div class="tab btn btn-outline-dark mb-3" data-tab="tab-dunkel">Dunkel</div>
                 <div class="tab btn btn-outline-dark mb-3" data-tab="tab-weiss">Weiß</div>
             </div>
 
-            <div id="tab-schwarz" class="tab-content active">
+            <div id="tab-dunkel" class="tab-content active">
                 <div class="row">
                     <?php
-                    $color = 'schwarz';
-                    $articles = $articles_schwarz;
+                    $color = 'dunkel';
+                    $articles = $articles_dunkel;
                     include("display-articles.php");
                     ?>
                 </div>

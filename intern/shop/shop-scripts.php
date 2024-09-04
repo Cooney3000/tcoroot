@@ -1,8 +1,8 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const categories = ['schwarz', 'weiss'];
+        const categories = ['dunkel', 'weiss'];
         const totalElements = {
-            schwarz: document.getElementById('total-schwarz'),
+            dunkel: document.getElementById('total-dunkel'),
             weiss: document.getElementById('total-weiss')
         };
 
@@ -103,13 +103,13 @@
     document.getElementById('save-order').addEventListener('click', function() {
         const orderDetails = [];
 
-        // Schwarz articles
-        document.querySelectorAll('#tab-schwarz .card').forEach(function(card) {
+        // Dunkel articles
+        document.querySelectorAll('#tab-dunkel .card').forEach(function(card) {
             card.querySelectorAll('.quantity-input').forEach(function(input) {
                 const quantity = parseInt(input.value) || 0;
                 if (quantity > 0) {
                     const inputName = input.getAttribute('name');
-                    const commentInputName = `comment_${inputName}_schwarz`;
+                    const commentInputName = `comment_${inputName}_dunkel`;
                     const commentElement = document.querySelector(`[name='${commentInputName}']`);
                     const comment = commentElement ? commentElement.value.trim() : '';
 
@@ -122,7 +122,7 @@
                         quantity: quantity,
                         price: parseFloat(input.getAttribute('data-price')),
                         total: quantity * parseFloat(input.getAttribute('data-price')),
-                        color: 'schwarz',
+                        color: 'dunkel',
                         comment: comment,
                         can_be_labeled: canBeLabeled
                     });
@@ -164,7 +164,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    total_schwarz: document.getElementById('total-schwarz').textContent.replace(',', '.'),
+                    total_dunkel: document.getElementById('total-dunkel').textContent.replace(',', '.'),
                     total_weiss: document.getElementById('total-weiss').textContent.replace(',', '.'),
                     order_details: orderDetails
                 })
@@ -174,7 +174,7 @@
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Erfolg',
+                        title: 'Speichern',
                         text: 'Deine Daten wurden erfolgreich gespeichert!'
                     }).then(() => {
                         location.reload(); // Seite neu laden nach Erfolgsmeldung
@@ -204,12 +204,12 @@
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    const totalSum = parseFloat(document.getElementById('total-schwarz').textContent.replace(',', '.')) + parseFloat(document.getElementById('total-weiss').textContent.replace(',', '.'));
+                    const totalSum = parseFloat(document.getElementById('total-dunkel').textContent.replace(',', '.')) + parseFloat(document.getElementById('total-weiss').textContent.replace(',', '.'));
 
                     Swal.fire({
                         icon: 'success',
                         title: 'Bestellung abgeschlossen',
-                        text: `Die Bestellung ist abgeschlossen. Bitte überweise die Summe von ${totalSum.toFixed(2).replace('.', ',')} € auf das Paypal-Konto von Conny Roloff (https://www.paypal.com/paypalme/connyroloff).`
+                        text: `Die Bestellung ist abgeschlossen. Bitte überweise die Summe von ${totalSum.toFixed(2).replace('.', ',')} € auf das Paypal-Konto von Daniela Ulrich (@DanielaUlrich168).`
                     }).then(() => {
                         // Disable all form fields after the SweetAlert dialog is closed
                         document.querySelectorAll('input, textarea, button').forEach(field => {
@@ -232,8 +232,8 @@
     });
 
     document.getElementById('reset-amounts').addEventListener('click', function() {
-        // Set all quantity inputs to 0 in Schwarz section
-        document.querySelectorAll('#tab-schwarz .quantity-input').forEach(function(input) {
+        // Set all quantity inputs to 0 in Dunkel section
+        document.querySelectorAll('#tab-dunkel .quantity-input').forEach(function(input) {
             input.value = 0;
         });
 

@@ -33,6 +33,7 @@ function generate_event_cards($events)
 $events = [
   ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png", ""],
   ["Clubturnier '24", "/intern/turnier/turnierbaum.php", "/images/intern/turnier.png", ""],
+  ["TCOShop", "/intern/shop/", "/images/intern/shop.png", ""],
   ["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", ""],
   ["Wintertraining", "/intern/events/wintertraining.php", "/images/intern/wintertraining.png", ""],
   ["Familienturnier 2024", "/intern/events/Familienturnier 2024.pdf", "/images/intern/familienturnier.png", 'target="_blank"'],
@@ -100,7 +101,7 @@ $events = [
   ["18.08.2024", "Weißwurstturnier"],
   ["30.08.-01.09.2024", "Olching Open"],
   ["13.09.-15.09.2024", "Kreismeisterschaften Jugend/Erwachsene"],
-  ["21.09.2024 - 22.09.2024", "Jugendclubmeisterschaft, Comeback-DropIn, evtl. CM-Finale"],
+  ["21.09.2024 - 22.09.2024", "Jugendclubmeisterschaft, Comeback-DropIn. <p>Wir wollen unseren Kindern und Jugendlichen sowie unseren Comeback-Trainingsteilnehmern einen Saisonabschluss anbieten. Auch andere Neumitglieder des Jahres sind hier willkommen. Abhängig von der Anzahl der Anmeldungen findet das an einem oder zwei Tagen statt. Anmeldungen gerne an heiko.tesche@tcolching.de, thomas.schek@tcolching.de oder conny.roloff@tcolching.de. Hierzu gibt es im internen Bereich bisher noch keine detaillierteren Infos. Dies holen wir nächste Woche nach.</p>"],
   ["28.09.2024", "Familienturnier"],
   ["12.10.2024", "Players & Friends Night, inkl. Ehrungen"]
 ];

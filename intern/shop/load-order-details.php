@@ -1,7 +1,7 @@
 <?php
 
 $savedOrderDetails = [];
-$orderStatus = 'pending';
+$orderStatus = '';
 
 $stmt = $pdo->prepare("SELECT orders.status, order_details.* FROM orders 
                        LEFT JOIN order_details ON orders.id = order_details.order_id 

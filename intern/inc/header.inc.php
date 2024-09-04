@@ -12,13 +12,6 @@
 
   <!-- Custom styles for this template -->
   <style>
-    .navbar-nav .nav-link {
-      color: white !important;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #c44014 !important;
-    }
   </style>
 </head>
 
@@ -40,6 +33,7 @@
           $menuItems = [
             ['id' => 'nav-intern', 'text' => 'Events', 'href' => '/intern/'],
             ['id' => 'nav-turnier', 'text' => 'Turnier', 'href' => '/intern/turnier/index.php'],
+            ['id' => 'nav-shop', 'text' => 'TCO-Shop', 'href' => '/intern/shop/'],
             ['id' => 'nav-halloffame', 'text' => 'Hall Of Fame', 'href' => '/intern/halloffame.php'],
             ['id' => 'nav-tafel', 'text' => 'Platzbuchung', 'href' => '/intern/tafel/', 'target' => '_blank'],
             ['id' => 'nav-admin', 'text' => 'Admin', 'href' => '/intern/admin/index.php', 'permission' => T_ALL_PERMISSIONS],

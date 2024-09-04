@@ -81,10 +81,6 @@ function check_user_silent() {
 
   $_SESSION['permissions'] = $permissions ? $permissions['permissions'] : 0;
 
-  if (isset($_COOKIE['identifier']) && isset($_COOKIE['securitytoken'])) {
-      TLOG("DEBUG", "check_user_silent(): identifier: " . $_COOKIE['identifier'] . ", securitytoken: " . $_COOKIE['securitytoken'], __LINE__);
-  }
-
   return $user;
 }
 

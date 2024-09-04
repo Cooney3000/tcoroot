@@ -13,10 +13,25 @@ $_header = "Home";
 include 'header.php';
 
 /* Nachrichtenticker */
-list($nachricht, $smsMsgClass) = fetchMessage("work/indexmessages.txt");
+[$nachricht, $smsMsgClass] = fetchMessage("work/indexmessages.txt");
 
 /* Gaststättenstatus */
-list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus("work/wirt.txt");
+[$wirtStatusText, $wirtStatusClass, $wirtAktivStatus] = getRestaurantStatus("work/wirt.txt");
+// Überprüfen Sie, ob eine Nachricht in der Session gesetzt ist
+$swalMessage = '';
+$swalMessageType = 'success'; // Standardmäßig 'success', falls nicht anders gesetzt
+
+if (isset($_SESSION['message'])) {
+  $swalMessage = $_SESSION['message'];
+  if (isset($_SESSION['message_type'])) {
+    $swalMessageType = $_SESSION['message_type'];
+  }
+
+  // Löschen Sie die Nachricht aus der Session
+  unset($_SESSION['message']);
+  unset($_SESSION['message_type']);
+}
+
 ?>
 
 <div id="blattSmsText">
@@ -26,15 +41,20 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
   </section>
 </div>
 <div id="blatt1" class="blatt">
+  <?php if ($wirtAktivStatus == '1') : ?>
+    <section id="gaststaette" class="seite px-3 py-2 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
+      <div><strong>Clubheim</strong>
+        <p>Die Vereinsgaststätte ist im Augenblick <span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText ?></span>.</p>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <section id="news" class="seite neues">
-    <article class="spalte1">
-      <h6>Aktuelle Neuigkeiten</h6>
+    <article>
       <ul class="schlaeger">
-        <?php if ($wirtAktivStatus == '1') : ?>
-          <li><strong>Clubheim</strong>
-            <p>Die Vereinsgaststätte ist im Augenblick <span class="<?= $wirtStatusClass ?> px-1"><?= $wirtStatusText ?></span>.</p>
-          </li>
-        <?php endif; ?>
+        <li><strong>Deutsches Ranglistenturnier: Olching Open vom 30.08.-01.09.!</strong>
+          <p><a href="#olchingopen">Hier zu den Details</a></p>
+        </li>
         <li><strong>Interesse an Tennis?</strong>
           <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>
         </li>
@@ -43,6 +63,7 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
         </li>
       </ul>
     </article>
+
     <article>
       <h3>Unsere Jugend-Sponsoren</h3>
       <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
@@ -57,7 +78,7 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
   <section id="olchingopen" class="seite">
     <article class="clean">
 
-      <h2>31. Olching Open 2024 - Spitzentennis live vom 30.08.-01.09!</h2>
+      <h2>31. Olching Open 2024 - Spitzentennis live vom 30.08.-01.09.!</h2>
       <p>
         Jedes Jahr richtet der TC Olching e.V. die Olching Open aus. Wir haben wie immer ein hochklassiges Teilnehmerfeld mit DTB-Ranglistenspieler:innen und spannenden Matches.
       </p>
@@ -149,14 +170,9 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
       <p>Zu verschiedensten Ereignissen wie Mannschaftswettkämpfen oder Turnierspielen treffen sich häufig weitere Mitglieder als Zuschauer.</p>
       <p>Und nicht selten werden die Abende nach dem Training länger als man sich vorgenommen hat.</p>
 
-      <!-- <div class="spalte2">
-					<iframe id="lkraceIframe" src="https://mybigpoint.tennis.de/services/?action=lkracenv&verband=BTV&cnt=5&verein=02262"></iframe>
-					<p style="font-size:smaller">Siehe hierzu auch <a href="datenschutzerklaerung.php#dsgvolkrace">DSGVO - LK Race</a></p>
-				</div> -->
   </section>
 </div>
 
-<!-- Anzeige der letzten 8 Presseartikel -->
 <div id="blatt4" class="blatt">
   <?php if (isset($_SESSION['permissions']) && checkPermissions(VORSTAND)) : ?>
     <!-- Button to toggle the form visibility -->
@@ -166,7 +182,7 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
     <div id="uploadForm" class="card mt-3" style="display: none;">
       <div class="card-body">
         <h2 class="card-title"><strong>Neuen Presseartikel hochladen</strong></h2>
-        <form id="uploadFormElement" action="upload.php" method="post" enctype="multipart/form-data">
+        <form id="uploadFormElement" action="lib/upload.php" method="post" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="file" class="form-label">Wähle eine Datei aus. Der Dateiname
               muss folgendes Format haben <strong class="font-monospace">JJJJMMTT_zeitung_thema.jpg</strong>,
@@ -178,112 +194,29 @@ list($wirtStatusText, $wirtStatusClass, $wirtAktivStatus) = getRestaurantStatus(
         </form>
       </div>
     </div>
-
-    <script>
-      document.getElementById('toggleFormBtn').addEventListener('click', function() {
-        var form = document.getElementById('uploadForm');
-        if (form.style.display === 'none') {
-          form.style.display = 'block';
-          this.textContent = 'Formular ausblenden';
-        } else {
-          form.style.display = 'none';
-          this.textContent = 'Neuen Presseartikel hochladen';
-        }
-      });
-
-      document.getElementById('uploadFormElement').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
-
-        var formData = new FormData(this);
-
-        fetch('upload.php', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.status === 'success') {
-              Swal.fire({
-                icon: 'success',
-                title: 'Erfolg',
-                text: 'Der Presseartikel wurde erfolgreich hochgeladen!'
-              }).then(() => {
-                // Seite nach dem Schließen des SweetAlert-Dialogs neu laden
-                window.location.reload();
-              });
-            } else {
-              Swal.fire({
-                icon: 'error',
-                title: 'Fehler',
-                text: data.message || 'Beim Hochladen der Datei ist ein Fehler aufgetreten.'
-              });
-            }
-          })
-          .catch(error => {
-            Swal.fire({
-              icon: 'error',
-              title: 'Fehler',
-              text: 'Beim Hochladen der Datei ist ein Fehler aufgetreten.'
-            });
-          });
-      });
-    </script>
   <?php endif; ?>
 
-
+  <!-- Anzeige der Presseartikel -->
   <section id="presse" class="seite">
-    <?php
-    $imageDirectory = 'images/presse';
-    $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-    rsort($images, SORT_REGULAR);
-
-    // Nur die letzten 8 Artikel anzeigen
-    $images = array_slice($images, 0, 8);
-    ?>
-
-    <div class="container">
-      <h2>Pressespiegel</h2>
-      <div class="press-gallery-container">
-        <div class="row">
-          <?php
-          foreach ($images as $image) {
-            [$datum, $publikation, $titel] = explode('_', basename($image));
-            $ttmmjjjj = substr($datum, 6, 2) . "." . substr($datum, 4, 2) . "." . substr($datum, 0, 4);
-          ?>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="press-image-card">
-                <div class="press-image-date"><?= $ttmmjjjj ?> - <?= htmlspecialchars($publikation) ?></div>
-                <a href="<?= htmlspecialchars($image) ?>" target="_blank">
-                  <div class="press-image-container">
-                    <img src="<?= htmlspecialchars($image) ?>" alt="Bild" class="press-image-thumbnail">
-                  </div>
-                </a>
-              </div>
-            </div>
-          <?php
-          }
-          ?>
-        </div>
-      </div>
-    </div>
-
-
+    <?php displayPressArticles('images/presse'); ?>
   </section>
 </div>
 
-<!-- 
-<div id="blatt5" class="blatt">
-  <section id="kreism" class="seite">
-    <article>
-      <img src="images/kreism/ausschreibung.png" alt="Kreismeisterschaften 2022" class="breitebilder" />
-    </article>
-    <article>
-      <a href="/downloads/Ausschreibung Kreismeisterschaften2022_v220601-1220.pdf">Download der gesamten Ausschreibung</a>
-    </article>
-  </section>
-</div>
+<script src="js/public.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Laden von SweetAlert -->
 
- -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    <?php if ($swalMessage): ?>
+      Swal.fire({
+        icon: '<?= $swalMessageType ?>',
+        title: 'Hinweis',
+        text: '<?= $swalMessage ?>'
+      });
+    <?php endif; ?>
+  });
+</script>
+
 <?php
 include 'footer.php';
 ?>

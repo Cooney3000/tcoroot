@@ -8,32 +8,22 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title><?= $title ?> Admin</title>
 
-  <!-- Bootstrap core CSS -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <!-- Custom styles for this template -->
-  <link href="/intern/css/styles.css" rel="stylesheet">
-
-  <!-- Für die Tabellenformatierung und -sortierung -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-  <!-- /Für die Tabellenformatierung und -sortierung -->
+  <?php include(__DIR__ . "/../inc/dependencies.inc.php"); ?>
 
   <script src="https://kit.fontawesome.com/b20dcfa647.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body class="admin">
-<?php
+  <?php
   $username = isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : ""
-?>
+  ?>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#d90429">
     <div class="mx-auto order-0">
       <a class="navbar-brand ml-auto" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
     </div>
-    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+    <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,23 +31,42 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" id="nav-menue">
 
-        <li class="nav-item" id="nav-zurueck">
-          <a class="nav-link" href="/intern/index.php">Zurück</a>
+        <li class="nav-item mt-n3" id="nav-zurueck">
+          <a class="nav-link" href="/intern/index.php">
+            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <!-- Linker Schenkel des Dreiecks -->
+              <line x1="30" y1="50" x2="60" y2="30" stroke="white" stroke-width="3" />
+              <!-- Rechter Schenkel des Dreiecks -->
+              <line x1="30" y1="50" x2="60" y2="70" stroke="white" stroke-width="3" />
+              <!-- Horizontale Linie -->
+              <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="3" />
+
+              <!-- Text unter dem Pfeil -->
+              <text x="50" y="90" font-family="Arial" font-size="16" fill="white" text-anchor="middle">INTERN</text>
+            </svg>
+
+          </a>
         </li>
         <li class="nav-item" id="nav-index">
-          <a class="nav-link" href="/intern/admin/index.php">Mitglieder</a>
+          <a class="nav-link" href="/intern/admin/index.php">Start</a>
+        </li>
+        <li class="nav-item" id="nav-benutzer">
+          <a class="nav-link" href="/intern/admin/benutzer.php">Benutzer</a>
         </li>
         <li class="nav-item" id="nav-gastedit">
-          <a class="nav-link" href="/intern/admin/verein-aufnahmeantraege.php">Aufnahmeanträge</a>
+          <a class="nav-link" href="/intern/admin/verein-aufnahmeantraege.php">Neuaufnahme</a>
         </li>
         <li class="nav-item" id="nav-gastedit">
-          <a class="nav-link" href="/intern/admin/gastedit.php">Gastbuchungen</a>
+          <a class="nav-link" href="/intern/admin/gastedit.php">Gäste</a>
         </li>
         <li class="nav-item" id="nav-serieedit">
-          <a class="nav-link" href="/intern/admin/serieedit.php">Serienbuchungen</a>
+          <a class="nav-link" href="/intern/admin/serieedit.php">Serien</a>
         </li>
         <li class="nav-item" id="nav-permissionsedit">
           <a class="nav-link" href="/intern/admin/permissionsedit.php">Berechtigungen</a>
+        </li>
+        <li class="nav-item" id="nav-shop">
+          <a class="nav-link" href="/intern/admin/shop/">Shop</a>
         </li>
         <li class="nav-item" id="nav-funktionen">
           <a class="nav-link" href="/intern/admin/funktionen.php">Funktionen</a>
@@ -68,12 +77,15 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav navbar-nav .float-xs-right klein text-center" id="nav-login">
-          <a href="/intern/settings.php"><img src="/intern/images/user.png" alt="<?= $username ?> Bild"><br><?= $username ?></a>
+          <a href="/intern/settings.php">
+            <img src="/intern/images/user.png" alt="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?> Bild" title="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?>">
+          </a>
         </li>
       </ul>
     </div>
 
   </nav>
+<!--
   <script>
     document.getElementById("nav-index").classList.remove("active");
     document.getElementById("nav-gastedit").classList.remove("active");
@@ -81,3 +93,4 @@
     document.getElementById("nav-funktionen").classList.remove("active");
     document.getElementById("nav-logout").classList.remove("active");
   </script>
+-->

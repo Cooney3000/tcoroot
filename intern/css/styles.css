@@ -3,7 +3,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #222222;
   background-color: #90be6d;
-  line-height: 2rem;
 }
 
 .admin {
@@ -109,16 +108,23 @@ nav {
 nav a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #222222;
+  color: white;
   transition: all .25s ease;
 }
 
 nav a:hover {
-  color: #c44014;
+  color: #949494;
 }
 
 .nav-link {
   padding: 0;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #949494 !important;
 }
 
 th {
@@ -144,6 +150,22 @@ th {
 .persoenlich {
   font-family: 'Permanent Marker', cursive;
   font-size: 1.4rem;
+}
+
+.mt-n1 {
+  margin-top: -0.25rem !important;
+}
+
+.mt-n2 {
+  margin-top: -0.5rem !important;
+}
+
+.mt-n3 {
+  margin-top: -0.75rem !important;
+}
+
+.mt-n4 {
+  margin-top: -1rem !important;
 }
 
 .text-gross {
@@ -340,7 +362,6 @@ li.schlaeger {
   border-radius: 10px; /* Add rounded corners */
   color: black;
   font-weight: bold;
-  line-height: 1;
 }
 
 /* Media Queries */

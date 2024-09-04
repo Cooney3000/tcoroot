@@ -87,7 +87,7 @@
       <img src="/images/sliders/kids.jpg" alt="Zuschauer">
     </div>
     <div id="latest_news">
-      <span class="text-success"><a href="index.php#olchingopen">Olching Open<br><span class="persoenlich">Top Tennis!</span></a></span>
+      <span class="text-success"><a href="index.php#olchingopen"><span class="persoenlich">Top Tennis</span><br>bei den Olching Open!</a></span>
     </div>
   </section>
 </body>

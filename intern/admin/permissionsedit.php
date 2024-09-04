@@ -36,7 +36,7 @@ $perm_value = array_flip($perm_pattern);
 ?>
 
 <div class="container main-container">
-  <h2 class="h1">Berechtigungsvergabe</h2>
+  <h1>Berechtigungsvergabe</h1>
 
   <div class="container mt-4">
  <?php

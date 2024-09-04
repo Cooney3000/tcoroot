@@ -14,6 +14,18 @@ $articles_weiss = [
         'can_be_labeled' => true 
     ],
     [
+        'name' => 'T-Shirt Kinder',
+        'description' => '100% Polyester<br>Größe XS-XL',
+        'variants' => [
+            'Kinder' => [
+                'price' => 18.50,
+                'sizes' => ['XS (3/4J)', 'S (5/6J)', 'M(7/8J)', 'L (9/11J)', 'XL (12/13J)']
+            ]
+        ],
+        'image' => 'weiss/t-shirt-herren.png',
+        'can_be_labeled' => true 
+    ],
+    [
         'name' => 'T-Shirt Damen',
         'description' => '100% Polyester<br>Größe XS -XL',
         'variants' => [

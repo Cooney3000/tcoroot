@@ -7,7 +7,7 @@ require_once("../inc/permissioncheck.inc.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $totalSchwarz = $data['total_schwarz'];
+    $totalDunkel = $data['total_dunkel'];
     $totalWeiss = $data['total_weiss'];
     $orderDetails = $data['order_details'];
     $userId = $_SESSION['userid'];
@@ -26,16 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($existingOrder) {
             // If an order exists, update it and delete existing order details
             $orderId = $existingOrder['id'];
-            $stmt = $pdo->prepare("UPDATE orders SET total_schwarz = ?, total_weiss = ? WHERE id = ?");
-            $stmt->execute([$totalSchwarz, $totalWeiss, $orderId]);
+            $stmt = $pdo->prepare("UPDATE orders SET total_dunkel = ?, total_weiss = ? WHERE id = ?");
+            $stmt->execute([$totalDunkel, $totalWeiss, $orderId]);
 
             // Delete existing order details
             $stmt = $pdo->prepare("DELETE FROM order_details WHERE order_id = ?");
             $stmt->execute([$orderId]);
         } else {
             // If no order exists, create a new order
-            $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_schwarz, total_weiss) VALUES (?, ?, ?)");
-            $stmt->execute([$userId, $totalSchwarz, $totalWeiss]);
+            $stmt = $pdo->prepare("INSERT INTO orders (user_id, total_dunkel, total_weiss) VALUES (?, ?, ?)");
+            $stmt->execute([$userId, $totalDunkel, $totalWeiss]);
 
             // Get the last inserted order ID
             $orderId = $pdo->lastInsertId();
