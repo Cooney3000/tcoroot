@@ -27,7 +27,8 @@ a {
   cursor: pointer;
 }
 
-th a, th a:visited {
+th a,
+th a:visited {
   color: black;
   transition: color .5s ease;
   text-decoration: none;
@@ -43,7 +44,8 @@ th a, th a:visited {
   display: table;
 }
 
-.form-tr, .div-tr {
+.form-tr,
+.div-tr {
   display: table-row;
   height: 0.5rem;
 }
@@ -58,7 +60,7 @@ th a, th a:visited {
 }
 
 strong {
-  font-weight: 600; /* Corrected font-weight */
+  font-weight: 600;
 }
 
 /* HEADER */
@@ -76,9 +78,11 @@ header {
   height: auto;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
-  margin: 1.5rem 0; /* Reduced repeated values */
+  margin: 1.5rem 0;
 }
 
 h1 {
@@ -119,6 +123,7 @@ nav a:hover {
 .nav-link {
   padding: 0;
 }
+
 .navbar-nav .nav-link {
   color: white !important;
 }
@@ -141,7 +146,8 @@ th {
   background-color: #DDDDDD;
 }
 
-.breitebilder, .breit {
+.breitebilder,
+.breit {
   max-width: 100%;
   height: auto;
   padding: 5px;
@@ -225,7 +231,8 @@ li.schlaeger {
   color: #000 !important;
 }
 
-.table td, .table th {
+.table td,
+.table th {
   padding: 0.5rem;
 }
 
@@ -272,11 +279,11 @@ li.schlaeger {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: -5px; /* Negative Margin für konstanten Abstand */
+  margin: -5px;
 }
 
 .gallery-item {
-  flex: 0 0 calc(100% - 10px); /* Breite der Bilder mit Abstand */
+  flex: 0 0 calc(100% - 10px);
   margin: 5px;
   overflow: hidden;
 }
@@ -290,7 +297,7 @@ li.schlaeger {
 }
 
 .gallery-item img:hover {
-  transform: scale(1.1); /* Vergrößerung bei Hover */
+  transform: scale(1.1);
 }
 
 .tab-content {
@@ -317,38 +324,70 @@ li.schlaeger {
   border-bottom: none;
 }
 
-/* Media Queries */
 @media (min-width: 992px) {
   .tbl-small {
     font-size: 1rem;
     line-height: 1rem;
   }
+
   .formwidth {
     width: 50%;
   }
+
   .gallery-item {
-    flex: 0 0 calc(50% - 10px); /* Width of the images with spacing */
+    flex: 0 0 calc(50% - 10px);
     margin: 5px;
     overflow: hidden;
   }
 }
 
+/* Flexbox-basiertes Grid für die Kacheln */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.double-height {
+  grid-row: span 2;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* Single column for mobile devices */
+  }
+
+  .double-height {
+    grid-row: span 1;
+    /* Single height for mobile devices */
+  }
+}
+
 .kachel {
-  font-size: 0.8rem; /* Adjust font size */
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  border-radius: 20px; /* Add rounded corners */
-  overflow: hidden; /* Ensure content stays within rounded corners */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add subtle shadow for better visual separation */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .kachel img {
-  width: 100%; /* Ensure images take the full width of the kachel */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures image covers the area without distortion */
-  border-radius: 10px; /* Apply rounded corners to the image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .kachel a {
@@ -358,66 +397,59 @@ li.schlaeger {
 }
 
 .kachel .titel {
-  width: 100%; /* Ensure buttons take the full width */
-  border-radius: 10px; /* Add rounded corners */
-  color: black;
+  text-align: center;
+  width: 100%;
   font-weight: bold;
 }
 
-/* Media Queries */
-@media (min-width: 992px) {
-  .tbl-small {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-  .formwidth {
-    width: 50%;
-  }
-  .gallery-item {
-    flex: 0 0 calc(50% - 10px); /* Width of the images with spacing */
-    margin: 5px;
-    overflow: hidden;
-  }
+.kachel-links {
+  padding: 10px;
+  height: 100%;
 }
 
-@media (max-width: 767.98px) {
-  .kachel img {
-    width: 100%; /* Ensure images take the full width */
-  }
-  .kachel p {
-    display: none; /* Hide text */
-  }
-  .kachel .btn {
-    font-size: 0.7rem; /* Adjust font size */
-    padding: 4px;
-  }
-  .col-sm-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 5px; /* Reduce padding for less distance between cards */
-  }
-  .kachel {
-    margin-bottom: 10px; /* Reduce bottom margin for less distance between cards */
-  }
+.kachel-links div {
+  margin-bottom: 5px;
 }
 
+.kachel-btn {
+  padding: 3px;
+  border-style:none;
+  border-radius: 5px;
+  background-color: #188754;
+  text-align: center;
+  color: white;
+}
+
+.kachel-btn a:hover {
+  color: grey;
+}
+
+/* Weitere mobile Anpassungen */
 @media (max-width: 576px) {
-  .kachel {
-    flex: 0 0 calc(50% - 10px); /* Two cards per line */
-    margin: 5px;
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* Single column for very small screens */
   }
+
   .kachel img {
-    width: 100%; /* Ensure images take the full width */
+    width: 100%;
+    /* Ensure images take the full width */
   }
+
   .kachel .btn {
-    font-size: 0.6rem; /* Further reduce font size */
+    font-size: 0.6rem;
+    /* Further reduce font size */
   }
+
   .col-sm-6 {
     flex: 0 0 50%;
     max-width: 50%;
-    padding: 3px; /* Further reduce padding for less distance between cards */
+    padding: 3px;
+    /* Further reduce padding for less distance between cards */
   }
+
   .kachel {
-    margin-bottom: 5px; /* Further reduce bottom margin for less distance between cards */
+    margin-bottom: 5px;
+    /* Further reduce bottom margin for less distance between cards */
   }
 }

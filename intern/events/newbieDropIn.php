@@ -11,14 +11,13 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 // error_log (join(" # ", $user));
 
-$title = "Intern - Players & Friends Kartenverkauf";
+$title = "Intern - Newbie-DropIn";
 include("../inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
   // element.classList.add("active");
   document.getElementById("nav-intern").classList.remove("active");
-  document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
   document.getElementById("nav-login").classList.remove("active");
@@ -29,37 +28,19 @@ include("../inc/header.inc.php");
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <h1 class="h3 persoenlich text-gross my-3">Players & Friends Night 2024!</h1>
-        <div>
-            <p><strong>Wir brauchen für eine erfolgreiche Party mindestens 70 verkaufte Karten bis zum 15.&nbsp;September!</strong></p>
-            <p>Bringt Eure Freunde und Freundinnen mit und stellt Euch auf eine lange Nacht ein!</p>
-          <ol>
-            <li><strong>Anmeldung</strong>
-              <p>Wenn du bis jetzt noch keine Karte hast: Bitte auf dieser Seite unten anmelden und das Geld überweisen. 
-                Die Karte/das Armband erhältst du dann am Einlass.</p>
-            </li>
-            <li>
-              <p><strong>Überweisung</strong></p>
-              <p><strong>Pro Karte 15 Euro</strong> wahlweise per PayPal oder Überweisung auf</p>
-                  <p><strong>PayPal: </strong></p>
-                  <p><a href="https://www.paypal.com/paypalme/connyroloff">@connyroloff</a></p>
-                  <p><strong class="w-75">oder Bank: </strong></p>
-                  <p>Conny Roloff<br>
-                  IBAN DE70120300000015437296</p>
-                </tr>
-                <tr>
-                  <p><strong>Verwendungszweck:</strong></p>
-                  <p>PF2024</p>
-                </tr>
-              </table>
-            </li>
-          </ol>
-          <p class="my-4 persoenlich">Euer Party-Kommitee: Norbert und Conny</p>
-        </div>
+        <h1 class="h3 persoenlich text-gross mt-3">Das DropIn für unsere Neuzugänge 2024!</h1>
+        <p class="h4">An alle Neuzugänge des Jahres 2024!</p>
+        <p>Wir wollen für euch einen eigenen Saisonabschluss und Spaß anbieten. Beim DropIn zählt nicht wirklich, wer gewinnt. 
+          Im Vordergrund stehen Spiel, Spaß und Geselligkeit. Das Turnier findet am <strong>Samstag, den 21.09.2024 zwischen 14 und 16 Uhr</strong> statt. 
+          Anschließend sitzen wir noch mit Bier, Spritz oder einem kleinen Wasser zusammen und lassen euer Einstandsjahr Revue passieren. 
+          </p>
+        <p class="mb-4 persoenlich">Euer Heiko, Thomas und Conny</p>
       </div>
+      <!--
       <div class="col-lg-4 d-flex align-items-start">
-        <img src="/images/intern/playersfriends_plakat_2024.png" class="mt-3 rounded float-lg-right w-100" alt="Plakat">
+        <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-lg-right w-50" alt="Michael Görzen">
       </div>
+      -->
     </div>
   </div>
 
@@ -68,7 +49,7 @@ include("../inc/header.inc.php");
     <?php
 
     $showFormular = 1;
-    $cid = 14; // campaign-Id
+    $cid = 16; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -206,7 +187,7 @@ EOT;
     }
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Players & Friends-Anmeldung:</p>
+      <p class="h3 mt-4">Deine Newbie-DropIn-Anmeldung:</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -222,7 +203,7 @@ EOT;
 
 
         <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Ich möchte bei der Players & Friends Night kommen!&nbsp;</span>
+          <span class="pr-3" for="inputZusage">Ich bin beim Newbie-DropIn dabei!&nbsp;</span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willTeilnehmen" id="willTeilnehmenJA" value="1" <?= ($willTeilnehmen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willTeilnehmenJA">Ja</label>
@@ -234,13 +215,13 @@ EOT;
         </div>
 
         <div class="form-group">
-          <label for="kommentar">Anzahl, ggf. für wen ich mitkaufe</label>
+          <label for="kommentar">Kommentar:</label>
           <textarea class="form-control" name="kommentar" rows="3"><?= $kommentar ?></textarea>
-        </div>
-
-        <?php /*
+          </div>
+          
+<?php /*
         <div class="form-group">
-          <label for="info1"> ############# </label>
+          <label for="info1">Mögliche Tage, Mo - Sa. Mindestens zwei angeben:</label>
           <textarea class="form-control" name="info1" rows="3"><?= $info1 ?></textarea>
         </div>
 
@@ -274,7 +255,7 @@ EOT;
           <textarea class="form-control" name="info7" rows="3"><?= $info7 ?></textarea>
         </div>
 */ ?>
-        <button type="submit" class="btn btn-lg btn-success btn-block">Absenden</button>
+        <button type="submit" class="btn btn-success btn-block mt-2">Absenden</button>
       </form>
 
       <p class="h4">Bereits angemeldet:</p>
@@ -297,7 +278,7 @@ EOT;
                 <th>Teilnehmer/in</th>
                 <th>Tel</th>
                 <th>Ist dabei</th>
-                <th>Anzahl, für wen?</th>
+                <th>Kommentar</th>
               </tr>
             </thead>
             <?php
@@ -320,13 +301,14 @@ EOT;
                 <td><?= $row['mobil'] ?></td>
                 <td class="text-center"><?= ($row['willing_to_attend'] === NULL ? '---' : ($row['willing_to_attend'] === '1' ? 'J' : 'N')) ?></td>
                 <td><?= $row['comment'] ?></td>
-                <?php /*
-          <td><?=$row['info2']?></td>
-          <td><?=$row['info3']?></td>
-          <td><?=$row['info4']?></td>
-          <td><?=$row['info5']?></td>
-          <td><?=$row['info6']?></td>
-          <td><?=$row['info7']?></td>
+<?php /*
+                <td><?= $row['info1'] ?></td>
+                <td><?= $row['info2'] ?></td>
+                <td><?= $row['info3'] ?></td>
+                <td><?= $row['info4'] ?></td>
+                <td><?= $row['info5'] ?></td>
+                <td><?= $row['info6'] ?></td>
+                <td><?= $row['info7'] ?></td>
 */ ?>
               </tr>
         <?php

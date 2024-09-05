@@ -32,7 +32,7 @@
 <?php
           $menuItems = [
             ['id' => 'nav-intern', 'text' => 'Events', 'href' => '/intern/'],
-            ['id' => 'nav-turnier', 'text' => 'Turnier', 'href' => '/intern/turnier/index.php'],
+/*            ['id' => 'nav-turnier', 'text' => 'Turnier', 'href' => '/intern/turnier/index.php'], */
             ['id' => 'nav-shop', 'text' => 'TCO-Shop', 'href' => '/intern/shop/'],
             ['id' => 'nav-halloffame', 'text' => 'Hall Of Fame', 'href' => '/intern/halloffame.php'],
             ['id' => 'nav-tafel', 'text' => 'Platzbuchung', 'href' => '/intern/tafel/', 'target' => '_blank'],

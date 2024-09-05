@@ -11,34 +11,53 @@ $title = "Intern Startseite";
 include("inc/header.inc.php");
 
 // Function to generate event cards
-function generate_event_cards($events)
-{
-  $cards = '';
-  foreach ($events as $event) {
-    $cards .= '
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2"> <!-- Adjusted column classes -->
-            <div class="bg-light p-2 h-100 kachel">
-              <a href="' . $event[1] . '"' . $event[3] . '>
-                <span class="titel mb-2">' . $event[0] . '</span>
-                <div class="icon-container">
-                  <img src="' . $event[2] . '" alt="' . $event[0] . '">
-                </div>
-              </a>
-            </div>
-          </div>';
-  }
-  return $cards;
+function generate_event_cards($events) {
+    $cards = '';
+    foreach ($events as $event) {
+        $doubleHeightClass = $event[4] ? 'double-height' : ''; // Check if the event should have double height
+
+        // Check if the event has multiple links (array of links)
+        if (is_array($event[1])) {
+            $links = '';
+            foreach ($event[1] as $linkText => $linkURL) {
+                $links .= '<div class="kachel-btn"><a href="' . $linkURL . '">' . $linkText . '</a></div>';
+            }
+            $cards .= '
+                <div class="grid-item ' . $doubleHeightClass . '">
+                    <div class="kachel">
+                        <div class="titel mb-2">' . $event[0] . '</div>
+                        <div class="kachel-links">' . $links . '</div>
+                    </div>
+                </div>';
+        } else {
+            // Single link event
+            $cards .= '
+                <div class="grid-item ' . $doubleHeightClass . '">
+                    <div class="kachel">
+                        <a href="' . $event[1] . '"' . $event[3] . '>
+                            <span class="titel mb-2">' . $event[0] . '</span>
+                            <img src="' . $event[2] . '" alt="' . $event[0] . '">
+                        </a>
+                    </div>
+                </div>';
+        }
+    }
+    return $cards;
 }
 
-$events = [
-  ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png", ""],
-  ["Clubturnier '24", "/intern/turnier/turnierbaum.php", "/images/intern/turnier.png", ""],
-  ["TCOShop", "/intern/shop/", "/images/intern/shop.png", ""],
-  ["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", ""],
-  ["Wintertraining", "/intern/events/wintertraining.php", "/images/intern/wintertraining.png", ""],
-  ["Familienturnier 2024", "/intern/events/Familienturnier 2024.pdf", "/images/intern/familienturnier.png", 'target="_blank"'],
-  ["Kreismeisterschaft FFB 2024", "/intern/events/kreismeisterschaft.php", "/images/intern/KM2024.png", ''],
-  ["TCO Quickstart", "downloads/TCO Newbie-Guide 2024-05-08.pdf", "/images/intern/quickstart.png", ""]
+// Define events (with single links and multiple links)
+$cardEvents = [
+    ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png", "", false],
+    ["TCOShop", "/intern/shop/", "/images/intern/shop.png", "", false],
+    ["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", "", false],
+    ["Turniere/Anmeldung:", [
+        "Familienturnier" => "/intern/events/Familienturnier 2024.pdf",
+        "Jugendturnier" => "/intern/events/jugendturnier.php",
+        "Kreismeisterschaft" => "/intern/events/kreismeisterschaft.php",
+        "Clubturnier" => "/intern/turnier/",
+        "Newbie-DropIn" => "/intern/events/newbieDropIn.php",
+    ], "/images/intern/turniere.png", "", true], // Multi-link, double-height event
+    ["TCO Quickstart", "downloads/TCO Newbie-Guide 2024-05-08.pdf", "/images/intern/quickstart.png", "", false]
 ];
 ?>
 
@@ -56,38 +75,11 @@ $events = [
 </script>
 
 <div class="container main-container">
-
   <div class="container mt-4">
-  <div class="row gx-3 gy-2">
-    <?php if (checkPermissions(WIRT) || checkPermissions(ADMINISTRATOR)) : ?>
-      <?php list($wirtStatusText1, $wirtStatusClass, $wirtStatusText2, $wirtAktivClass, $wirtAktivText1, $wirtAktivText2) = handleWirtStatus("../work/wirt.txt"); ?>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-2"> <!-- Adjusted column classes -->
-        <div class="card smaller-card kachel"> <!-- Added kachel class for consistent styling -->
-          <div class="card-header bg-danger text-white">
-            <h4 class="h5">Gaststätte</h4>
-          </div>
-          <div class="card-body p-2">
-            <p class="d-inline-block mr-3 mb-1"><?= $wirtStatusText1 ?></p>
-            <form method="post" action="internal.php" class="d-inline-block mb-1">
-              <input type="hidden" name="token" value="<?= generate_csrf_token() ?>">
-              <button type="submit" name="SWT" class="<?= $wirtStatusClass ?>"><?= $wirtStatusText2 ?></button>
-            </form>
-            <br>
-            <p class="d-inline-block mr-3 ml-4 mb-1"><?= $wirtAktivText1 ?></p>
-            <form method="post" action="internal.php" class="d-inline-block mb-1">
-              <input type="hidden" name="token" value="<?= generate_csrf_token() ?>">
-              <button type="submit" name="SWS" class="<?= $wirtAktivClass ?>"><?= $wirtAktivText2 ?></button>
-            </form>
-          </div> 
-        </div>
-      </div>
-    <?php endif; ?>
-
-    <?= generate_event_cards($events); ?>
+    <div class="grid-container">
+      <?= generate_event_cards($cardEvents); ?>
+    </div>
   </div>
-</div>
-
-
 </div>
 
 <!--
@@ -98,10 +90,8 @@ $events = [
 
 <?php
 $events = [
-  ["18.08.2024", "Weißwurstturnier"],
-  ["30.08.-01.09.2024", "Olching Open"],
   ["13.09.-15.09.2024", "Kreismeisterschaften Jugend/Erwachsene"],
-  ["21.09.2024 - 22.09.2024", "Jugendclubmeisterschaft, Comeback-DropIn. <p>Wir wollen unseren Kindern und Jugendlichen sowie unseren Comeback-Trainingsteilnehmern einen Saisonabschluss anbieten. Auch andere Neumitglieder des Jahres sind hier willkommen. Abhängig von der Anzahl der Anmeldungen findet das an einem oder zwei Tagen statt. Anmeldungen gerne an heiko.tesche@tcolching.de, thomas.schek@tcolching.de oder conny.roloff@tcolching.de. Hierzu gibt es im internen Bereich bisher noch keine detaillierteren Infos. Dies holen wir nächste Woche nach.</p>"],
+  ["21.09.2024 - 22.09.2024", "Jugendclubmeisterschaft, Comeback-DropIn. <p>Wir wollen unseren Kindern und Jugendlichen sowie unseren Comeback-Trainingsteilnehmern einen Saisonabschluss anbieten.</p>"],
   ["28.09.2024", "Familienturnier"],
   ["12.10.2024", "Players & Friends Night, inkl. Ehrungen"]
 ];

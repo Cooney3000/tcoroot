@@ -11,14 +11,13 @@ require_once("../inc/permissioncheck.inc.php");
 $user = check_user();
 // error_log (join(" # ", $user));
 
-$title = "Intern - Wintertraining";
+$title = "Intern - Jugendturnier";
 include("../inc/header.inc.php");
 ?>
 <script>
   // var element = document.getElementById("nav-intern");
   // element.classList.add("active");
   document.getElementById("nav-intern").classList.remove("active");
-  document.getElementById("nav-turnier").classList.remove("active");
   document.getElementById("nav-halloffame").classList.remove("active");
   document.getElementById("nav-tafel").classList.remove("active");
   document.getElementById("nav-login").classList.remove("active");
@@ -26,27 +25,29 @@ include("../inc/header.inc.php");
 </script>
 <div class="container main-container">
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8">
-      <h1 class="h3 persoenlich text-gross mt-3">Wintertraining 2024!</h1>
-      <p class="h4">An alle Mitglieder des TCO!</p>
-      <p>Wie immer brauche ich für die Hallenplanung eine frühzeitige Anmeldung für das Wintertraining. 
-        Vielen Dank auch für ein paar Details, die mir die Gruppenbildung enorm erleichtern</p>
-      <p class="mb-4 persoenlich">Euer Michael</p>
-    </div>
-    <div class="col-lg-4 d-flex align-items-start">
-      <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-lg-right w-50" alt="Michael Görzen">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="h3 persoenlich text-gross mt-3">Jugendturnier 2024!</h1>
+        <p class="h4">An alle Jugendlichen und Kinder des TCO!</p>
+        <p>Nehmt bei unserem Jugendclubturnier teil und meldet euch hier an. Das Turnier findet am <strong>Samstag, den 21.09.2024 ab 10 Uhr</strong> statt.
+          Bei einer größeren Teilnehmerzahl kann es auch sein, dass der Sonntag (22.09.2024) dazu genommen wird.</p>
+        <p class="mb-4 persoenlich">Euer Heiko, Thomas und Conny</p>
+      </div>
+      <!--
+      <div class="col-lg-4 d-flex align-items-start">
+        <img src="/images/trainer/michael_goerzen_portrait.png" class="rounded float-lg-right w-50" alt="Michael Görzen">
+      </div>
+      -->
     </div>
   </div>
-</div>
 
   <div class="registration-form">
 
     <?php
 
     $showFormular = 1;
-    $cid = 13; // campaign-Id
+    $cid = 15; // campaign-Id
 
     $registrieren = isset($_GET["register"]) ? 1 : 0;
     // error_log("0001: " . $registrieren);
@@ -94,8 +95,7 @@ include("../inc/header.inc.php");
       $info6    = isset($_POST["info6"]) ? $_POST["info6"] : $info6;
       $info7    = isset($_POST["info7"]) ? $_POST["info7"] : $info7;
       //error_log("0000-10: $info1");
-    }
-    else {
+    } else {
       // Die Werte initial aus der DB lesen
       $sql = <<<EOT
       SELECT 
@@ -149,7 +149,7 @@ EOT;
       $willTeilnehmen = isset($result["wta"]) ? $result["wta"] : $willTeilnehmen;
       $kommentar   = isset($result["cmt"]) ? $result["cmt"] : $kommentar;
       $info1       = isset($result["info1"]) ? $result["info1"] : $info1;
-/*
+      /*
       $info2       = isset($result["info2"]) ? $result["info2"] : $info2;
       $info3       = isset($result["info3"]) ? $result["info3"] : $info3;
       $info4       = isset($result["info4"]) ? $result["info4"] : $info4;
@@ -185,7 +185,7 @@ EOT;
     }
     if ($showFormular) {
     ?>
-      <p class="h3 mt-4">Deine Wintertraining-Anmeldung:</p>
+      <p class="h3 mt-4">Deine Jugendturnier-Anmeldung:</p>
       <p>Name: <?= $vorname ?> <?= $nachname ?></p>
 
       <form id="registerTurnierForm" class="myform" action="?register=1" method="post">
@@ -201,7 +201,7 @@ EOT;
 
 
         <div class="form-group alert-danger px-3">
-          <span class="pr-3" for="inputZusage">Ich möchte im Winter trainieren:&nbsp;</span>
+          <span class="pr-3" for="inputZusage">Ich möchte beim Jugendturnier mitmachen!&nbsp;</span>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="willTeilnehmen" id="willTeilnehmenJA" value="1" <?= ($willTeilnehmen ? 'checked' : '') ?> required>
             <label class="form-check-label" for="willTeilnehmenJA">Ja</label>
@@ -213,16 +213,16 @@ EOT;
         </div>
 
         <div class="form-group">
-          <label for="kommentar">Erfahrung ( &lt;1 Jahr, 1-3 Jahre, Mannschaftsspieler und &ge; 3 Jahre):</label>
+          <label for="kommentar">Kommentar:</label>
           <textarea class="form-control" name="kommentar" rows="3"><?= $kommentar ?></textarea>
-        </div>
-
+          </div>
+          
+<?php /*
         <div class="form-group">
           <label for="info1">Mögliche Tage, Mo - Sa. Mindestens zwei angeben:</label>
           <textarea class="form-control" name="info1" rows="3"><?= $info1 ?></textarea>
         </div>
 
-<?php /*
         <div class="form-group">
           <label for="info2"> ############# </label>
           <textarea class="form-control" name="info2" rows="3"><?= $info2 ?></textarea>
@@ -253,35 +253,34 @@ EOT;
           <textarea class="form-control" name="info7" rows="3"><?= $info7 ?></textarea>
         </div>
 */ ?>
-        <button type="submit" class="btn btn-lg btn-success btn-block">Absenden</button>
+        <button type="submit" class="btn btn-success btn-block mt-2">Absenden</button>
       </form>
 
       <p class="h4">Bereits angemeldet:</p>
-<?php
-$sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
-error_log("0012: $sql");
-$statement = $pdo->prepare($sql);
-$result = $statement->execute();
+      <?php
+      $sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
+      error_log("0012: $sql");
+      $statement = $pdo->prepare($sql);
+      $result = $statement->execute();
 
-//echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
+      //echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
 
-if($result) {
-  ?>
-    <br>
-    <div class="mx-3">
-      <table class="table table-bordered table-light tbl-small">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Teilnehmer/in</th>
-            <th>Tel</th>
-            <th>Ist dabei</th>
-            <th>Erfahrung</th>
-            <th>Termine</th>
-          </tr>
-        </thead>
-        <?php
-/*
+      if ($result) {
+      ?>
+        <br>
+        <div class="mx-3">
+          <table class="table table-bordered table-light tbl-small">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Teilnehmer/in</th>
+                <th>Tel</th>
+                <th>Ist dabei</th>
+                <th>Kommentar</th>
+              </tr>
+            </thead>
+            <?php
+            /*
   try {
     $row = $statement->fetch();
   } catch (PDOException $Exception) {
@@ -291,42 +290,39 @@ if($result) {
 
 
 
-  $lfd = 1;
-  while($row = $statement->fetch()) {
-    ?>
-        <tr>
-          <td><?=$lfd++?></td>
-          <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
-          <td><?=$row['mobil']?></td>
-          <td class="text-center"><?=($row['willing_to_attend']===NULL?'---':($row['willing_to_attend']==='1'?'J':'N'))?></td>
-          <td><?=$row['comment']?></td>
-          <td><?=$row['info1']?></td>
+            $lfd = 1;
+            while ($row = $statement->fetch()) {
+            ?>
+              <tr>
+                <td><?= $lfd++ ?></td>
+                <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
+                <td><?= $row['mobil'] ?></td>
+                <td class="text-center"><?= ($row['willing_to_attend'] === NULL ? '---' : ($row['willing_to_attend'] === '1' ? 'J' : 'N')) ?></td>
+                <td><?= $row['comment'] ?></td>
 <?php /*
-          <td><?=$row['info2']?></td>
-          <td><?=$row['info3']?></td>
-          <td><?=$row['info4']?></td>
-          <td><?=$row['info5']?></td>
-          <td><?=$row['info6']?></td>
-          <td><?=$row['info7']?></td>
+                <td><?= $row['info1'] ?></td>
+                <td><?= $row['info2'] ?></td>
+                <td><?= $row['info3'] ?></td>
+                <td><?= $row['info4'] ?></td>
+                <td><?= $row['info5'] ?></td>
+                <td><?= $row['info6'] ?></td>
+                <td><?= $row['info7'] ?></td>
 */ ?>
-        </tr>
-<?php
-  }
-  echo '</table>';
-} else {
-  echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
-}
+              </tr>
+        <?php
+            }
+            echo '</table>';
+          } else {
+            echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
+          }
+        } //Ende von if($showFormular)
+        ?>
 
 
-
-} //Ende von if($showFormular)
-?>
-
+        </div>
 
   </div>
 
-</div>
-
-<?php
-include("../inc/footer.inc.php")
-?>
+  <?php
+  include("../inc/footer.inc.php")
+  ?>
