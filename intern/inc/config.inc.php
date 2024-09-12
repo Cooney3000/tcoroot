@@ -1,11 +1,14 @@
 <?php
 
+define('BASE_PATH', $_SERVER['DOCUMENT_ROOT']);
+
 // Msg-Levels
 define ("CRITICAL", 10);
 define ("ERROR", 20);
 define ("WARNING", 30);
 define ("INFO", 40);
 define ("DBG", 50);
+
 
 // Verbindungsdaten zur Datenbank
 // HOSTNAME:DESKTOP-BRGTU5C oder prod?

@@ -36,9 +36,9 @@ if (isset($articles)) {
                                 $savedComment = $savedOrderDetails[$color][$article['name']][$variantName][$size]['comment'] ?? '';
 
                                 echo "<label>$variantName $size</label>";
-                                echo "<input type='number' name='$inputName' data-price='$price' min='0' placeholder='$size' value='$savedQuantity' class='form-control quantity-input mb-2'>";
+                                echo "<input type='number' name='$inputName' data-price='$price' min='0' placeholder='$size' value='$savedQuantity' class='article-input form-control quantity-input mb-2'>";
                                 if ($canBeLabeled) {
-                                    echo "<textarea name='comment_{$inputName}_$color' placeholder='Beschriftung' class='form-control mb-2'>$savedComment</textarea>";
+                                    echo "<textarea name='comment_{$inputName}_$color' placeholder='Beschriftung' class='article-input form-control mb-2'>$savedComment</textarea>";
                                 }
                             }
                         }

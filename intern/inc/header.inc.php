@@ -8,16 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TC Olching <?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></title>
 
-  <?php include("dependencies.inc.php"); ?>
+  <?php 
+//  echo "<br>Verzeichnis: " . dirname(__FILE__) . "<br>";
+  include(dirname(__FILE__) . "/dependencies.inc.php"); 
+  ?>
 
-  <!-- Custom styles for this template -->
-  <style>
-  </style>
 </head>
 
 <body>
   <?php
-  $username = isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : "";
+  $username = (isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : "") 
+              . (isset($user['email']) ? " (" . htmlentities($user['email']) . ")" : "");
   ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
     <div class="container-fluid">
@@ -70,6 +71,3 @@
       </div>
     </div>
   </nav>
-</body>
-
-</html>

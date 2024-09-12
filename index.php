@@ -49,21 +49,29 @@ if (isset($_SESSION['message'])) {
     </section>
   <?php endif; ?>
 
-  <section id="news" class="seite neues">
-    <article>
-      <ul class="schlaeger">
-        <li><strong>Deutsches Ranglistenturnier: Olching Open vom 30.08.-01.09.!</strong>
-          <p><a href="#olchingopen">Hier zu den Details</a></p>
-        </li>
-        <li><strong>Interesse an Tennis?</strong>
-          <p>Bei uns findet ihr Schnupperangebote für die ganze Familie!</p>
-        </li>
-        <li><strong>Aktuelle News aus der Presse!</strong>
-          <p><a href="#presse">Hier zu den Details</a></p>
-        </li>
-      </ul>
-    </article>
 
+  <section id="news" class="seite neues">
+    <h2>Herzlich willkommen beim TC Olching!</h2>
+    <article>
+      <p>Wir freuen uns, dass du den Weg auf unsere Homepage gefunden hast.
+        Hier findest du die wichtigsten öffentlichen Informationen rund um den TC Olching über die laufende Saison, Angebote, Termine und
+        aktuelle Ereignisse und Ansprechpartner. Mitglieder finden in unserem internen Bereich viele weitere Informationen.</p>
+      <h3>Wir freuen uns über jedes neue Mitglied!</h3>
+        <a href="verein.php">Besondere Angebote</a> wie Schnuppermitgliedschaft und Comeback-Training</p>
+      <h3>Geselligkeit wird großgeschrieben</h3>
+      <p>Der TC Olching bietet ein gesellschaftliches Umfeld mit einer guten Bewirtung im Vereinsheim. Zu verschiedensten Ereignissen wie Mannschaftswettkämpfen oder Turnierspielen treffen sich häufig weitere Mitglieder als Zuschauer.</p>
+      <p>Nicht selten werden die Abende nach dem Training länger als man sich vorgenommen hat.</p>
+      <h3>Aktuelle News aus der Presse!</h3>
+      <p><a href="#presse">Zu den Presseartikeln</a></p>
+
+      <h3>Der TC Olching beim Bayerischen Tennisverband:</h3>
+      <table>
+        <tr>
+          <td>Mannschaften:</td>
+          <td><a href="mannschaften.php">Link</a></td>
+        </tr>
+      </table>
+    </article>
     <article>
       <h3>Unsere Jugend-Sponsoren</h3>
       <a href="http://www.keller-rolladen.de/" target="_blank"><img src="images/sponsoren/Logo-KR.gif" alt="Keller Rolladen" class="img-thumbnail" /></a>
@@ -74,6 +82,54 @@ if (isset($_SESSION['message'])) {
   </section>
 </div>
 
+<div id="blatt5" class="blatt">
+  <section id="olchingopen" class="seite">
+    <article class="clean">
+
+
+      <h2>Der TC Olching ist Veranstalter eines ranghohen DTB-Turniers - der Olching Open!</h2>
+      <p>
+        Jedes Jahr richtet der TC Olching e.V. die Olching Open aus. Wir haben wie immer ein hochklassiges Teilnehmerfeld mit DTB-Ranglistenspieler:innen und spannenden Matches.
+      </p>
+      <p>Zuletzt fanden die <a href="/events/olching_open_2024/">Olching Open 2024</a> vom 30.08.-01.09.2024 zum 31. Mal statt.</p>
+
+      <p>
+        Der TC Olching, die Turnierleitung und natürlich besonders auch die Spieler freuen sich über zahlreiche Zuschauer. <strong>Der Eintritt ist immer an allen drei Tagen und auf
+          allen Anlagen frei.</strong> Für das leibliche Wohl ist gesorgt. Marco Tesche von der Turnierleitung: „Wir laden alle Tennisfans und -freunde herzlich ein,
+        die Olching Open zu besuchen. Verpassen Sie nicht die Gelegenheit, absolut hochklassiges Tennis hautnah im Landkreis zu erleben.“
+      </p>
+      <p>Ermöglicht wird dies durch das Engagement einer Vielzahl an freiwilligen
+        Helfern und natürlich durch die Unterstützung unserer Sponsoren!
+      </p>
+    </article>
+    <article class="spalte1">
+      <img src="images/OlchingOpen/plakat_2024.png" alt="Plakat Olching Open 2024" class="breitebilder" />
+    </article>
+    <article>
+      <h4>Hauptsponsor</h4>
+
+      <a href="https://skoda-auto.de/" target="_blank"><img alt="Skoda" src="images/sponsoren/skoda.jpg" class="img-thumbnail"></a>
+      <a href="https://bayer-automobile.skoda-auto.de/" target="_blank"><img alt="Bayer Skoda" src="images/sponsoren/bayer_automobile.png" class="img-thumbnail"></a>
+      <h4>Weitere Sponsoren</h4>
+      <a href="https://tennispark-gernlinden.de/" target="_blank"><img alt="Tennispark Gernlinden" src="images/sponsoren/tennispark_gernlinden.png" class="img-thumbnail"></a>
+      <a href="https://www.jgwerbung.de/" target="_blank"><img alt="JG" src="images/sponsoren/jg_werbegesellschaft.png" class="img-thumbnail"></a>
+      <a href="https://www.sparkasse-ffb.de/" target="_blank"><img alt="Sparkasse FFB" src="images/sponsoren/sparkasse_ffb.png" class="img-thumbnail"></a>
+    </article>
+    <br>
+    <article>
+      <p id="ooschirmherr"><strong>Schirmherrschaft:<br>
+          Andreas Magg</strong><br>
+        1. Bürgermeister v. Olching
+      </p>
+    </article>
+  </section>
+</div>
+
+
+
+
+
+<?php /*
 <div id="blatt5" class="blatt">
   <section id="olchingopen" class="seite">
     <article class="clean">
@@ -121,7 +177,6 @@ if (isset($_SESSION['message'])) {
       <a href="https://tennispark-gernlinden.de/" target="_blank"><img alt="Tennispark Gernlinden" src="images/sponsoren/tennispark_gernlinden.png" class="img-thumbnail"></a>
       <a href="https://www.jgwerbung.de/" target="_blank"><img alt="JG" src="images/sponsoren/jg_werbegesellschaft.png" class="img-thumbnail"></a>
       <a href="https://www.sparkasse-ffb.de/" target="_blank"><img alt="Sparkasse FFB" src="images/sponsoren/sparkasse_ffb.png" class="img-thumbnail"></a>
-      <a href="https://bayer-automobile.skoda-auto.de/" target="_blank"><img alt="Topspin" src="images/sponsoren/topspin.png" class="img-thumbnail"></a>
     </article>
     <br>
     <article>
@@ -132,46 +187,8 @@ if (isset($_SESSION['message'])) {
     </article>
   </section>
 </div>
+*/ ?>
 
-<div id="blatt2" class="blatt">
-  <section id="willkommen" class="seite">
-    <h2>Herzlich willkommen beim TC Olching!</h2>
-    <article>
-      <p>Wir freuen uns, dass du den Weg auf unsere Homepage gefunden hast.
-        Hier wollen wir dir Informationen rund um den TC Olching wie die laufende Saison, Angebote, Termine und
-        aktuelle Ereignisse, Ansprechpartner und alles, was von Interesse für die Mitglieder und Freunde des
-        TC Olching ist, anbieten.</p>
-      <p>Der TC Olching beim Bayerischen Tennisverband: <br></p>
-      <table>
-        <tr>
-          <td>Mannschaften:</td>
-          <td><a href="mannschaften.php">Link</a></td>
-        </tr>
-      </table>
-    </article>
-  </section>
-</div>
-
-
-<div id="blatt3" class="blatt">
-  <section id="neumitglieder" class="seite">
-    <h2>Neumitglieder willkommen!</h2>
-    <div>
-      <h3>Wir freuen uns über jedes neue Mitglied!</h3>
-      <p>
-        Vergleiche hierzu unsere besonderen Angebote „Schnuppermitgliedschaft“ und „Comeback-Training“ unter
-        <a href="verein.php#schnuppern">Verein</a>.
-      </p>
-      <h3>Geselligkeit wird großgeschrieben</h3>
-      <p>Der TCO ist keine Tennisanlage, die man nach dem Spielen einfach so verlässt, sondern ein Verein, der ein gesellschaftliches Umfeld bietet.
-        Daher bemühen wir uns um eine kontinuierliche Bewirtung für unser Vereinsheim.</p>
-      <p>Die Mitglieder lieben es, nach dem Spiel noch das eine oder andere Getränk bei unseren Wirten zu genießen und bei einer netten Unterhaltung
-        das Spiel der anderen zu beobachten.</p>
-      <p>Zu verschiedensten Ereignissen wie Mannschaftswettkämpfen oder Turnierspielen treffen sich häufig weitere Mitglieder als Zuschauer.</p>
-      <p>Und nicht selten werden die Abende nach dem Training länger als man sich vorgenommen hat.</p>
-
-  </section>
-</div>
 
 <div id="blatt4" class="blatt">
   <?php if (isset($_SESSION['permissions']) && checkPermissions(VORSTAND)) : ?>
@@ -198,7 +215,8 @@ if (isset($_SESSION['message'])) {
 
   <!-- Anzeige der Presseartikel -->
   <section id="presse" class="seite">
-    <?php displayPressArticles('images/presse'); ?>
+    <?php displayPressArticles('images/presse', 8); ?>
+    <a href="presse.php">Alle Artikel anzeigen</a>
   </section>
 </div>
 

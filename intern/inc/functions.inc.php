@@ -1,6 +1,6 @@
 <?php
 
-include_once("password.inc.php");
+include_once(BASE_PATH . "intern/inc/password.inc.php");
 
 //
 // Checkt, ob der User eingeloggt ist und gibt die User-Daten zurück oder macht einen Redirect zur Login-Page
@@ -121,9 +121,9 @@ function getSiteURL() {
  * Outputs an error message and stops the further exectution of the script.
  */
 function error($error_msg) {
-  include("inc/header.inc.php");
-	include("inc/error.inc.php");
-	include("inc/footer.inc.php");
+  include(BASE_PATH . "intern/inc/header.inc.php");
+	include(BASE_PATH . "intern/inc/error.inc.php");
+	include(BASE_PATH . "intern/inc/footer.inc.php");
 	exit();
 }
 function endsWith($haystack, $needle)
@@ -198,12 +198,14 @@ function handleWirtStatus($file) {
   }
 
   // Determine button classes and text based on status
-  $statusClass = ($status && $statusDate == date("d.m.y")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm";
+  $statusClass = ($status && $statusDate == date("d.m.y")) ? "btn-danger" : "btn-success";
+  $statusClass .= " rounded  border-start-0 kachel-btn-sm";
   $statusText1 = ($status && $statusDate == date("d.m.y")) ? "Geöffnet" : "Geschlossen";
-  $statusText2 = ($status && $statusDate == date("d.m.y")) ? "Schließen" : "Öffnen";
-  $activeClass = ($activeStatus) ? "btn btn-secondary btn-sm" : "btn btn-dark btn-sm";
+  $statusText2 = ($status && $statusDate == date("d.m.y")) ? "Schließe" : "Öffne";
+  $activeClass = ($activeStatus) ? "btn-secondary" : "btn-dark";
+  $activeClass .= " rounded  border-start-0 kachel-btn-sm";
   $activeText1 = ($activeStatus) ? "Aktiv" : "Deaktiviert";
-  $activeText2 = ($activeStatus) ? "Deaktivieren" : "Aktivieren";
+  $activeText2 = ($activeStatus) ? "Deaktiviere" : "Aktiviere";
 
   return [$statusText1, $statusClass, $statusText2, $activeClass, $activeText1, $activeText2];
 }

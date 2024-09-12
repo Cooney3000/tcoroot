@@ -1,15 +1,17 @@
 <?php
 session_start();
-require_once("../../inc/config.inc.php");
-require_once("../../inc/functions.inc.php");
-require_once("../../inc/permissioncheck.inc.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "intern/inc/config.inc.php");
+require_once(BASE_PATH . "intern/inc/functions.inc.php");
+require_once(BASE_PATH . "intern/inc/permissioncheck.inc.php");
 
 //Überprüfe, dass der User eingeloggt und berechtigt ist
 $user = check_user();
 
 $title = "TCO Admin";
-include("../header.inc.php");
+include(BASE_PATH . "/intern/header.inc.php");
 $menuid = "nav-" . getFilename(__FILE__);
+TLOG(DBG, "menuid: $menuid", __LINE__);
+
 
 if (!checkPermissions(VORSTAND)) {
     echo ("<html><body>");
@@ -101,5 +103,5 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <?php
-include("../footer.inc.php")
+include(BASE_PATH . "intern/inc/footer.inc.php")
 ?>

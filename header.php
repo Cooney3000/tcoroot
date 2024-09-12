@@ -69,11 +69,11 @@
   <div id="navbackground">
     <nav>
       <ul>
-        <li class="<?= $navigation['aktuell'] ?>"><a href="index.php">Aktuell</a></li>
-        <li class="<?= $navigation['verein'] ?>"><a href="verein.php">Verein</a></li>
-        <li class="<?= $navigation['mannschaften'] ?>"><a href="mannschaften.php">Mannschaften</a></li>
-        <li class="<?= $navigation['jugend'] ?>"><a href="jugend.php">Jugend</a></li>
-        <li class="<?= $navigation['training'] ?>"><a href="training.php">Training</a></li>
+        <li class="<?= $navigation['aktuell'] ?>"><a href="/index.php">Aktuell</a></li>
+        <li class="<?= $navigation['verein'] ?>"><a href="/verein.php">Verein</a></li>
+        <li class="<?= $navigation['mannschaften'] ?>"><a href="/mannschaften.php">Mannschaften</a></li>
+        <li class="<?= $navigation['jugend'] ?>"><a href="/jugend.php">Jugend</a></li>
+        <li class="<?= $navigation['training'] ?>"><a href="/training.php">Training</a></li>
         <li><a href="/intern/index.php">Intern</a></li>
       </ul>
     </nav>
@@ -86,9 +86,11 @@
       <img src="/images/sliders/Zuschauer.jpg" alt="Zuschauer">
       <img src="/images/sliders/kids.jpg" alt="Zuschauer">
     </div>
+<?php /*
     <div id="latest_news">
       <span class="text-success"><a href="index.php#olchingopen"><span class="persoenlich">Top Tennis</span><br>bei den Olching Open!</a></span>
     </div>
+*/ ?>
   </section>
 </body>
 

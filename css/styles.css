@@ -534,7 +534,8 @@ h3 {
 }
 
 .seite h3 {
-	font-size: 1.5em;
+	font-size: 1.3em;
+	font-weight:600;
 	padding: 0.5em 0 0.5em 0;
 }
 
@@ -605,7 +606,10 @@ ul.schlaeger {
 	max-width: 450px;
 	margin: 0 auto 0 auto;
 }
-
+.volleBreite {
+	width: 100%;
+	max-width: 100%;
+}
 .fliessenderAbschnitt {
 	float: left;
 	border: 1px solid white;

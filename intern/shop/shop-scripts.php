@@ -75,7 +75,7 @@
             tabs.forEach(tab => {
                 tab.addEventListener('click', function() {
                     tabs.forEach(item => item.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.querySelectorAll('.tab-content-shop').forEach(content => content.classList.remove('active'));
 
                     this.classList.add('active');
                     document.getElementById(this.getAttribute('data-tab')).classList.add('active');

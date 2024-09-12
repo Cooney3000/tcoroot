@@ -31,12 +31,12 @@ function getRestaurantStatus($file) {
     $statusText = ($statusDate == date("d.m.y")) ? (($status == '1') ? "geöffnet" : "geschlossen") : "geschlossen";
     return [$statusText, $statusClass, $activeStatus];
 }
-function displayPressArticles($imageDirectory) {
+function displayPressArticles($imageDirectory, $amount) {
     $images = glob($imageDirectory . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
     rsort($images, SORT_REGULAR);
 
-    // Nur die letzten 8 Artikel anzeigen
-    $images = array_slice($images, 0, 8);
+    // Nur die letzten x Artikel anzeigen. Ist $amount == 0, werden alle angezeigt
+    $images = $amount == 0 ? array_slice($images, 0) : array_slice($images, 0, $amount);
 
     echo '<div class="container">
             <h2>Pressespiegel</h2>

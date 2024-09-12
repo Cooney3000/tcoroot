@@ -1,14 +1,13 @@
 <?php
 session_start();
-require_once("../inc/config.inc.php");
-require_once("../inc/functions.inc.php");
-require_once("../inc/permissioncheck.inc.php");
-
+require_once(dirname(__FILE__) . "/../inc/config.inc.php");
+require_once(dirname(__FILE__) . "/../inc/functions.inc.php");
+require_once(dirname(__FILE__) . "/../inc/permissioncheck.inc.php");
 // Ensure user is authenticated
 $user = check_user();
 
 $title = "Intern - Shop";
-include("../inc/header.inc.php");
+include(dirname(__FILE__) . "/../inc/header.inc.php");
 
 // Laden Sie die Arrays für Dunkel und Weiß
 include("dunkel/array-dunkel.php"); // Dies definiert $articles_dunkel
@@ -23,7 +22,7 @@ include("load-order-details.php");
     const orderStatus = <?= json_encode($orderStatus) ?>;
 
     document.addEventListener('DOMContentLoaded', function() {
-        const navItems = ['intern', 'turnier', 'halloffame', 'tafel', 'login', 'logout'];
+        const navItems = ['intern', 'shop', 'halloffame', 'tafel', 'login', 'logout'];
         navItems.forEach(item => {
             const element = document.getElementById(`nav-${item}`);
             if (element) {
@@ -37,10 +36,15 @@ include("load-order-details.php");
     });
 
     function disableForm() {
-        document.querySelectorAll('input, textarea, button').forEach(field => {
+        // Deaktiviere die drei Buttons "Speichern", "Bestellen", "Alles auf 0"
+        document.getElementById('save-order').disabled = true;
+        document.getElementById('close-order').disabled = true;
+        document.getElementById('reset-amounts').disabled = true;
+
+        // Deaktiviere alle Artikel-Eingabefelder (z. B. input-Felder für Artikelanzahl)
+        document.querySelectorAll('.article-input').forEach(field => {
             field.disabled = true;
         });
-        document.getElementById('close-order').disabled = true;
     }
 </script>
 
@@ -70,7 +74,7 @@ include("load-order-details.php");
                 <div class="tab btn btn-outline-dark mb-3" data-tab="tab-weiss">Weiß</div>
             </div>
 
-            <div id="tab-dunkel" class="tab-content active">
+            <div id="tab-dunkel" class="tab-content-shop active">
                 <div class="row">
                     <?php
                     $color = 'dunkel';
@@ -80,7 +84,7 @@ include("load-order-details.php");
                 </div>
             </div>
 
-            <div id="tab-weiss" class="tab-content">
+            <div id="tab-weiss" class="tab-content-shop">
                 <div class="row">
                     <?php
                     $color = 'weiss';
@@ -93,7 +97,5 @@ include("load-order-details.php");
     </div>
 
     <?php include("shop-scripts.php"); ?>
-    <?php include("../inc/footer.inc.php"); ?>
-</body>
 
-</html>
+    <?php include(dirname(__FILE__) . "/../inc/footer.inc.php"); ?>

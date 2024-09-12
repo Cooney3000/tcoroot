@@ -114,7 +114,7 @@ Vielen Dank für Eure Bearbeitung.
 <p>Lieber Antragsteller,</p>
 
 <p>
-vielen Dank für Dein Interesse an unserem Verein. Wir freuen uns, dass wir Deinen Aufnahmeantrag beim TC Olching mit folgenden Daten entgegennehmen konnten:
+vielen Dank für dein Interesse an unserem Verein. Wir freuen uns, dass wir deinen Aufnahmeantrag beim TC Olching mit folgenden Daten entgegennehmen konnten:
 </p>
 
 <table>

@@ -92,10 +92,10 @@ include("inc/loginheader.inc.php");
                 <input type="checkbox" name="angemeldet_bleiben" value="1" checked> Angemeldet bleiben (außer, du machst einen Logout)
             </label>
         </div>
-        <button class="btn btn-success btn-block" type="submit">Login</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
         <br>
+        <p class="h5 my-2">Passwort vergessen? Setze dein Passwort selbst zurück: <a href="pwvergessen.php">Passwort zurücksetzen</a></p>
     </form>
-    <p class="h5 my-2">Passwort vergessen? <a href="pwvergessen.php">Passwort zurücksetzen</a></p>
     <p class="h5 my-2">Noch nicht registriert? <a href="register.php">Zur Registrierung</a></p>
 </div>
 

@@ -1,11 +1,12 @@
 <?php
-require_once("../inc/functions.inc.php");
-require_once("../inc/config.inc.php");
-
 // header ('Strict-Transport-Security: max-age=31536000');
 header("Access-Control-Allow-Origin: *");
 // header("Access-Control-Allow-Origin: *");
 header('Content-Type: multipart/form-data; charset=utf-8');
+
+require_once(dirname(__FILE__) . "/../inc/config.inc.php");
+require_once(dirname(__FILE__) . "/../inc/functions.inc.php");
+
 
 // API - User Check In
 
@@ -24,5 +25,7 @@ if (DEBUG) error_log('[' . basename($_SERVER['PHP_SELF']) . "], result:\r\n" . j
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 // echo('{"records":[{' . $rc . '}]}');
+
+
 
 ?>

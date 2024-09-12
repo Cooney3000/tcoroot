@@ -77,7 +77,7 @@ include 'header.php';
 					<div class="form-group">
 						<label for="spiellevel">* Spiellevel:</label>
 						<select class="form-control" id="spiellevel" name="spiellevel" required>
-							<option value="">Bitte wählen Sie Ihr Spiellevel</option>
+							<option value="">Bitte wähle dein Spiellevel</option>
 							<option value="Noch nie gespielt">Anfänger - Ich habe noch nie Tennis gespielt oder gerade erst begonnen.</option>
 							<option value="Anfänger">Fortgeschrittener Anfänger - Ich kann den Ball im Spiel halten, aber habe Schwierigkeiten, gezielt zu spielen.</option>
 							<option value="Kann den Ball halten">Freizeitspieler - Ich kann regelmäßig den Ball im Spiel halten und beginne, gezielter zu spielen.</option>
@@ -278,7 +278,7 @@ include 'header.php';
 					<h2>Weitere Informationen / Bemerkungen</h2>
 					<label for="bemerkungen" class="form-label">Bemerkungen</label>
 					<textarea class="form-control" id="bemerkungen" name="bemerkungen" rows="3" 
-						placeholder="Fügen Sie hier Ihre Kommentare hinzu. Bei Familien oder Ehepaaren sind hier die Namen aller weiteren Familienmitglieder mit Geburtsdatum hilfreich. Oder teilen Sie uns Ihre BTV-Leistungsklasse mit, falls Sie eine haben."></textarea>
+						placeholder="Füge hier deine Kommentare hinzu. Bei Familien oder Ehepaaren sind hier die Namen aller weiteren Familienmitglieder mit Geburtsdatum hilfreich. Oder teilen Sie uns Ihre BTV-Leistungsklasse (LK) mit, falls du eine hast."></textarea>
 				</div>
 
 				<button type="submit" class="btn btn-primary">Antrag senden</button>

@@ -146,7 +146,7 @@ EOT;
 <p>Hallo $vorname $nachname,</p>
 
 <p>
-vielen Dank für Dein Interesse am TC Olching für eine Mitgliedschaft als: $mitgliedschaft. 
+vielen Dank für dein Interesse am TC Olching für eine Mitgliedschaft als: $mitgliedschaft. 
 <strong>Bestätige den Antrag jetzt, indem du diesen Link anklickst: <a href="https://www.tcolching.de/verein-aufnahme_3.php?t=$email_verification_token">Aufnahmeantrag bestätigen</a><strong><br>
 </p>
 
