@@ -219,3 +219,79 @@ function generate_csrf_token() {
 function validate_csrf_token($token) {
   return hash_equals($_SESSION['token'], $token);
 }
+
+function uploadProfilePic($userId, $croppedImageData, $pdo) {
+  // Entferne den Base64-Header
+  list($type, $croppedImageData) = explode(';', $croppedImageData);
+  if (strpos($croppedImageData, ',') !== false) {
+      list(, $croppedImageData) = explode(',', $croppedImageData);
+  } else {
+      return "Ungültiges Bildformat. Das Bild konnte nicht verarbeitet werden.";
+  }
+
+  // Definiere einen Dateinamen für das neue Bild
+  $newFileName = uniqid('profile_', true) . '.jpg';
+  $uploadFileDir = './uploads/profile_pics/';
+
+  // Überprüfen, ob das Verzeichnis existiert, wenn nicht, erstellen
+  if (!is_dir($uploadFileDir)) {
+      mkdir($uploadFileDir, 0755, true);  // Verzeichnis erstellen
+  }
+
+  $dest_path = $uploadFileDir . $newFileName;
+
+  // Zuerst das alte Profilbild aus der Datenbank holen
+  $stmt = $pdo->prepare("SELECT profile_pic FROM users WHERE id = :userid");
+  $stmt->bindValue(':userid', $userId, PDO::PARAM_INT);
+  $stmt->execute();
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  // Überprüfen, ob es ein altes Profilbild gibt und es löschen
+  if (!empty($result['profile_pic'])) {
+      $oldFilePath = $uploadFileDir . $result['profile_pic'];
+      if (file_exists($oldFilePath)) {
+          unlink($oldFilePath);  // Altes Bild löschen
+      }
+  }
+
+  // Speicher das neue Bild
+  $croppedImageData = base64_decode($croppedImageData);
+  if (file_put_contents($dest_path, $croppedImageData)) {
+      // Optional: Bildgröße anpassen
+      resizeImage($dest_path, 150, 150);
+
+      // Bildpfad in die Datenbank speichern
+      $stmt = $pdo->prepare("UPDATE users SET profile_pic = :profile_pic WHERE id = :userid");
+      $stmt->bindValue(':profile_pic', $newFileName, PDO::PARAM_STR);
+      $stmt->bindValue(':userid', $userId, PDO::PARAM_INT);
+
+      if ($stmt->execute()) {
+          return "Profilbild erfolgreich hochgeladen.";
+      } else {
+          return "Fehler beim Speichern des Profilbilds in der Datenbank.";
+      }
+  } else {
+      return "Fehler beim Speichern des Bildes.";
+  }
+}
+
+function resizeImage($file, $width, $height) {
+  list($orig_width, $orig_height) = getimagesize($file);
+  $image_p = imagecreatetruecolor($width, $height);
+  $image = imagecreatefromjpeg($file);
+  imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $orig_width, $orig_height);
+  imagejpeg($image_p, $file, 90);  // Qualität auf 90 setzen
+}
+
+function getProfilePicPath($userId, $pdo) {
+  $stmt = $pdo->prepare("SELECT profile_pic FROM users WHERE id = :userid");
+  $stmt->bindValue(':userid', $userId, PDO::PARAM_INT);
+  $stmt->execute();
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  if (!empty($result['profile_pic'])) {
+      return './uploads/profile_pics/' . $result['profile_pic'];
+  } else {
+      return '/intern/images/user.png';  // Standardbild
+  }
+}

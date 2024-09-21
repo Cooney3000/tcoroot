@@ -55,7 +55,7 @@ include("load-order-details.php");
             Hier findet Ihr eine Info dazu von ihr:
             <strong><a href="shop-info-herbst2024.pdf" target="_blank">Shop Herbst 2024-Info</a></strong>.
         </p>
-        <p><strong>Bitte bis einschließlich 19.09.2024 bestellen!</strong></p>
+        <p><strong><s>Bitte bis einschließlich 19.09.2024 bestellen!</s><p>Nächste Bestellung im Frühjahr wieder möglich. Wir geben Bescheid!</p></strong></p>
 
         <?php include("order-status-message.php"); ?>
 

@@ -11,6 +11,10 @@
   <?php 
 //  echo "<br>Verzeichnis: " . dirname(__FILE__) . "<br>";
   include(dirname(__FILE__) . "/dependencies.inc.php"); 
+
+  // Anzeige des Profilbilds
+  $profilePicPath = getProfilePicPath($user['id'], $pdo);
+
   ?>
 
 </head>
@@ -64,7 +68,7 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item text-center" id="nav-settings">
-            <a href="/intern/settings.php"><img src="/intern/images/user.png" alt="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?> Bild" title="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?>">
+            <a href="/intern/settings.php"><img class="profilpic kleiner" src="<?php echo htmlentities($profilePicPath); ?>" alt="<?= $username ?> Bild">
             </a>
           </li>
         </ul>

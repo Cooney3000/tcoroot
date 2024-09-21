@@ -21,7 +21,13 @@
          // Setze die aktive Klasse auf das geklickte Tab
          const tabId = this.getAttribute('data-tab');
          this.classList.add('active');
-         document.getElementById(tabId).classList.add('active');
+         const targetElement = document.getElementById(tabId);
+
+         if (targetElement) {
+           targetElement.classList.add('active');
+         } else {
+           console.error(`Element mit ID ${tabId} wurde nicht gefunden.`);
+         }
        });
      });
    });

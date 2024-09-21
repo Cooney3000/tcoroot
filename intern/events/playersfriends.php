@@ -31,26 +31,26 @@ include("../inc/header.inc.php");
       <div class="col-lg-8">
         <h1 class="h3 persoenlich text-gross my-3">Players & Friends Night 2024!</h1>
         <div>
-            <p><strong>Wir brauchen für eine erfolgreiche Party mindestens 70 verkaufte Karten bis zum 15.&nbsp;September!</strong></p>
-            <p>Bringt Eure Freunde und Freundinnen mit und stellt Euch auf eine lange Nacht ein!</p>
+          <p><strong>Wir brauchen für eine erfolgreiche Party mindestens 70 verkaufte Karten bis zum 16.&nbsp;September!</strong></p>
+          <p>Bringt Eure Freunde und Freundinnen mit und stellt Euch auf eine lange Nacht ein!</p>
           <ol>
             <li><strong>Anmeldung</strong>
-              <p>Wenn du bis jetzt noch keine Karte hast: Bitte auf dieser Seite unten anmelden und das Geld überweisen. 
+              <p>Wenn du bis jetzt noch keine Karte hast: Bitte auf dieser Seite unten anmelden und das Geld überweisen.
                 Die Karte/das Armband erhältst du dann am Einlass.</p>
             </li>
             <li>
               <p><strong>Überweisung</strong></p>
               <p><strong>Pro Karte 15 Euro</strong> wahlweise per PayPal oder Überweisung auf</p>
-                  <p><strong>PayPal: </strong></p>
-                  <p><a href="https://www.paypal.com/paypalme/connyroloff">@connyroloff</a></p>
-                  <p><strong class="w-75">oder Bank: </strong></p>
-                  <p>Conny Roloff<br>
-                  IBAN DE70120300000015437296</p>
-                </tr>
-                <tr>
-                  <p><strong>Verwendungszweck:</strong></p>
-                  <p>PF2024</p>
-                </tr>
+              <p><strong>PayPal: </strong></p>
+              <p><a href="https://www.paypal.com/paypalme/connyroloff">@connyroloff</a></p>
+              <p><strong class="w-75">oder Bank: </strong></p>
+              <p>Conny Roloff<br>
+                IBAN DE70120300000015437296</p>
+              </tr>
+              <tr>
+                <p><strong>Verwendungszweck:</strong></p>
+                <p>PF2024</p>
+              </tr>
               </table>
             </li>
           </ol>
@@ -183,7 +183,6 @@ EOT;
     if ($registrieren) {
 
       $sql = "UPDATE users SET festnetz = '$festnetz', mobil = '$mobil' WHERE id = {$user['id']}";
-      // error_log("0004: " . $sql);
       $pdo->query($sql);
       $sql = <<<EOT
     INSERT INTO campaign_users (campaign_id, user_id, willing_to_attend, comment, info1, info2, info3, info4, info5, info6, info7) 
@@ -200,7 +199,6 @@ EOT;
       info6 = "$info6", 
       info7 = "$info7"
 EOT;
-      error_log("0005: " . $sql);
       $statement = $pdo->query($sql);
       echo ('<br><strong class="text-success">Deine Anmeldung/Absage wurde gespeichert!</strong><br>');
     }
@@ -277,72 +275,70 @@ EOT;
         <button type="submit" class="btn btn-lg btn-success btn-block">Absenden</button>
       </form>
 
-      <p class="h4">Bereits angemeldet:</p>
+      <!--      <p class="h4">Bereits angemeldet:</p> -->
       <?php
-      $sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
-      error_log("0012: $sql");
-      $statement = $pdo->prepare($sql);
-      $result = $statement->execute();
+      if (checkPermissions(VORSTAND)) {
+        $sql = "SELECT * FROM users u, campaign_users c where u.id = user_id AND c.willing_to_attend = 1 AND campaign_id = $cid ORDER BY u.nachname, u.vorname";
+        error_log("0012: $sql");
+        $statement = $pdo->prepare($sql);
+        $result = $statement->execute();
 
-      //echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
+        //echo "<p><strong>TESTAUSGABEN<br>SQL: $sql<br>result: $result</strong></p>)";
 
-      if ($result) {
+        if ($result) {
       ?>
-        <br>
-        <div class="mx-3">
-          <table class="table table-bordered table-light tbl-small">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Teilnehmer/in</th>
-                <th>Tel</th>
-                <th>Ist dabei</th>
-                <th>Anzahl, für wen?</th>
-              </tr>
-            </thead>
-            <?php
-            /*
-  try {
-    $row = $statement->fetch();
-  } catch (PDOException $Exception) {
-    echo "<p>". $Exception->getMessage() . "</p>";
-  }
-*/
-
-
-
-            $lfd = 1;
-            while ($row = $statement->fetch()) {
-            ?>
-              <tr>
-                <td><?= $lfd++ ?></td>
-                <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
-                <td><?= $row['mobil'] ?></td>
-                <td class="text-center"><?= ($row['willing_to_attend'] === NULL ? '---' : ($row['willing_to_attend'] === '1' ? 'J' : 'N')) ?></td>
-                <td><?= $row['comment'] ?></td>
-                <?php /*
-          <td><?=$row['info2']?></td>
-          <td><?=$row['info3']?></td>
-          <td><?=$row['info4']?></td>
-          <td><?=$row['info5']?></td>
-          <td><?=$row['info6']?></td>
-          <td><?=$row['info7']?></td>
+          <br>
+          <div class="mx-3">
+            <table class="table table-bordered table-light tbl-small">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Teilnehmer/in</th>
+                  <th>Tel</th>
+                  <th>Ist dabei</th>
+                  <th>Anzahl, für wen?</th>
+                </tr>
+              </thead>
+              <?php
+              try {
+                $row = $statement->fetch();
+              } catch (PDOException $Exception) {
+                echo "<p>" . $Exception->getMessage() . "</p>";
+              }
+              $lfd = 1;
+              while ($row = $statement->fetch()) {
+              ?>
+                <tr>
+                  <td><?= $lfd++ ?></td>
+                  <td><?= $row['nachname'] . ' ' . $row['vorname'] ?></td>
+                  <td><?= $row['mobil'] ?></td>
+                  <td class="text-center"><?= ($row['willing_to_attend'] === NULL ? '---' : ($row['willing_to_attend'] === '1' ? 'J' : 'N')) ?></td>
+                  <td><?= $row['comment'] ?></td>
+                  <?php /*
+                  <td><?= $row['info2'] ?></td>
+                  <td><?= $row['info3'] ?></td>
+                  <td><?= $row['info4'] ?></td>
+                  <td><?= $row['info5'] ?></td>
+                  <td><?= $row['info6'] ?></td>
+                  <td><?= $row['info7'] ?></td>
 */ ?>
-              </tr>
+                </tr>
         <?php
+              }
+              echo '</table>';
+            } else {
+              echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
             }
-            echo '</table>';
-          } else {
-            echo 'Beim Lesen der Daten ist leider ein Fehler aufgetreten. Bitte benachrichtige conny.roloff@tcolching.de<br>';
           }
         } //Ende von if($showFormular)
         ?>
 
 
-        </div>
+          </div>
 
   </div>
+</div>
 
-  <?php
-  include("../inc/footer.inc.php")
-  ?>
+<?php
+include("../inc/footer.inc.php")
+?>
