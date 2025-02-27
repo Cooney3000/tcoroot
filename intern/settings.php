@@ -137,14 +137,12 @@ $profilePicPath = getProfilePicPath($user['id'], $pdo);
 
 	<?php if (isset($success_msg) && !empty($success_msg)): ?>
 		<div class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<?php echo $success_msg; ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if (isset($error_msg) && !empty($error_msg)): ?>
 		<div class="alert alert-danger">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<?php echo $error_msg; ?>
 		</div>
 	<?php endif; ?>
@@ -153,7 +151,7 @@ $profilePicPath = getProfilePicPath($user['id'], $pdo);
 		<!-- Nav tabs -->
 		<div class="custom-tab">
 			<ul class="tab-list">
-				<li class="tab-item active" data-tab="data">Persönliche Daten</li>
+				<li class="tab-item active" data-tab="data">Persönliches</li>
 				<li class="tab-item" data-tab="email">E-Mail</li>
 				<li class="tab-item" data-tab="profil">Bild</li>
 				<li class="tab-item" data-tab="passwort">Passwort</li>
@@ -203,16 +201,16 @@ $profilePicPath = getProfilePicPath($user['id'], $pdo);
 							<label for="spiel_level" class="col-sm-2 control-label">Spiel-Level</label>
 							<div class="col-sm-10">
 								<select name="spiel_level" id="spiel_level" class="form-control">
-									<option value="Anfänger" <?php if ($user['spiel_level'] == 'Anfänger') echo 'selected'; ?>>Anfänger</option>
+									<option value="Beginnend" <?php if ($user['spiel_level'] == 'Beginnend') echo 'selected'; ?>>Beginnend</option>
 									<option value="Fortgeschritten" <?php if ($user['spiel_level'] == 'Fortgeschritten') echo 'selected'; ?>>Fortgeschritten</option>
-									<option value="Profi" <?php if ($user['spiel_level'] == 'Profi') echo 'selected'; ?>>Profi</option>
+									<option value="Mit LK-Punkten" <?php if ($user['spiel_level'] == 'Mit LK-Punkten') echo 'selected'; ?>>Mit LK-Punkten</option>
 								</select>
 							</div>
 						</div>
 
 						<!-- Über mich -->
 						<div class="form-group">
-							<label for="ueber_mich" class="col-sm-2 control-label">Über mich</label>
+							<label for="ueber_mich" class="col-sm-2 control-label">Über mich / ich suche...</label>
 							<div class="col-sm-10">
 								<textarea name="ueber_mich" id="ueber_mich" rows="4" class="form-control"><?php echo htmlentities($user['ueber_mich']); ?></textarea>
 							</div>
@@ -220,10 +218,9 @@ $profilePicPath = getProfilePicPath($user['id'], $pdo);
 
 						<!-- Suche Tennis-Partner -->
 						<div class="form-group">
-							<label for="suche_tennis_partner" class="col-sm-2 control-label">Suche Tennis-Partner</label>
-							<div class="col-sm-10">
+							<div class="col-sm-10 my-3">
 								<input type="checkbox" name="suche_tennis_partner" id="suche_tennis_partner" value="1" <?php if ($user['suche_tennis_partner']) echo 'checked'; ?>>
-								<label for="suche_tennis_partner">Ich suche einen Tennis-Partner, bitte melden! (erscheint auf der Startseite)</label>
+								<label for="suche_tennis_partner">Ich erlaube die Sichbarkeit für andere, z. B. für die Suche nach Spielpartnern</label>
 							</div>
 						</div>
 

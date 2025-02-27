@@ -5,7 +5,7 @@ $_aktuell = "";
 $_mannschaften = "";
 $_jugend = "";
 $_training = "";
-$_header = "Verein - Aufnahme 1";
+$_header = "Verein - Antrag 1";
 include 'header.php';
 ?>
 <div id="blatt2">
@@ -13,12 +13,12 @@ include 'header.php';
 
 		<div class="container mt-5">
 			<form action="verein-aufnahme_2.php" method="post">
-				<h2>Aufnahmeantrag</h2>
+				<h2>Antrag auf Aufnahme oder zu einem Saisonprogramm</h2>
 				<p class="kleingedrucktes">Alle Eingabedaten werden sicher verschlüsselt übertragen und ausschließlich im Rahmen der Verwaltung deiner Mitgliedschaft verarbeitet.
 				<div class="form-group">
-					<label for="vorname">* Künftiges Mitglied<div class="pl-3">Vorname:</div></label>
+					<label for="vorname" class="pl-3">* Vorname:</label>
 					<input type="text" class="form-control" id="vorname" name="vorname" required>
-					<label for="vorname" class="pl-3">Nachname:</label>
+					<label for="vorname" class="pl-3">* 	Nachname:</label>
 					<input type="text" class="form-control" id="nachname" name="nachname" required>
 					<label for="name" class="pl-3">ggf. Erziehungsberechtigte/r - Name, Vorname:</label>
 					<input type="text" class="form-control" id="erziehungsberechtigter" name="erziehungsberechtigter">
@@ -90,7 +90,7 @@ include 'header.php';
 
 
 				<div class="mb-3">
-					<h2>Art der Mitgliedschaft</h2>
+					<h2>Mitgliedschaft oder Programm</h2>
 					<section>
 						<table>
 							<thead>
@@ -195,10 +195,10 @@ include 'header.php';
 									<td>
 										<div class="form-check">
 											<input class="form-check-input" type="radio" id="comeback" name="mitgliedschaft" value="Comebacktraining" required>
-											<label class="form-check-label" for="comeback">Schnuppermitglied inkl. <a href="/training.php#angebote2024">"Comebacktraining"</a> <sup>2</sup></label>
+											<label class="form-check-label" for="comeback">Schnuppermitglied inkl. <a href="/training.php#angebote2024">"Start-Up-Ttraining"</a> <sup>2</sup></label>
 										</div>
 									</td>
-									<td class="geldbetrag">160,00 EUR</td>
+									<td class="geldbetrag">190,00 EUR</td>
 								</tr>
 								<tr>
 									<td>
@@ -207,8 +207,9 @@ include 'header.php';
 											<label class="form-check-label" for="jugSchnuppermitglied"><a href="/training.php#angebote2024">Jugend Schnuppertraining</a> <sup>2</sup></label>
 										</div>
 									</td>
-									<td class="geldbetrag">160,00 EUR</td>
+									<td class="geldbetrag">190,00 EUR</td>
 								</tr>
+								<th>* Programm (ohne Mitgliedschaft)</th>
 								<tr>
 									<td>
 										<div class="form-check">
@@ -216,7 +217,7 @@ include 'header.php';
 											<label class="form-check-label" for="ballschule"><a href="/training.php#angebote2024">Ballschule</a> <sup>3</sup></label>
 										</div>
 									</td>
-									<td class="geldbetrag">100,00 EUR</td>
+									<td class="geldbetrag">135,00 EUR</td>
 								</tr>
 
 							</tbody>
@@ -228,8 +229,7 @@ include 'header.php';
 						<p class="kleingedrucktes"><sup>2</sup> Die Schnuppermitgliedschaft, auch Jugend, kann nur einmal in Anspruch genommen werden und endet automatisch am 20. Juli.
 							Wird bis zu diesem Datum die reguläre Mitgliedschaft beantragt, kann bis zum Saisonende ohne Mehrkosten gespielt werden.
 						</p>
-						<p class="kleingedrucktes"><sup>3</sup> Die Mitgliedschaft für die Ballschule endet automatisch am 20. Juli.
-							Wird bis zu diesem Datum die reguläre Mitgliedschaft beantragt, kann bis zum Saisonende ohne Mehrkosten gespielt werden.
+						<p class="kleingedrucktes"><sup>3</sup> Die Ballschule beinhaltet keine Mitgliedschaft. Die Kinder sind pauschal über den BLSV versichert.
 						</p>
 					</section>
 
@@ -278,7 +278,7 @@ include 'header.php';
 					<h2>Weitere Informationen / Bemerkungen</h2>
 					<label for="bemerkungen" class="form-label">Bemerkungen</label>
 					<textarea class="form-control" id="bemerkungen" name="bemerkungen" rows="3" 
-						placeholder="Füge hier deine Kommentare hinzu. Bei Familien oder Ehepaaren sind hier die Namen aller weiteren Familienmitglieder mit Geburtsdatum hilfreich. Oder teilen Sie uns Ihre BTV-Leistungsklasse (LK) mit, falls du eine hast."></textarea>
+						placeholder="Füge hier deine Kommentare hinzu. Bei Familien oder Ehepaaren sind hier die Namen aller weiteren Familienmitglieder mit Geburtsdatum hilfreich. Oder teile uns deine BTV-Leistungsklasse (LK) mit, falls du eine hast."></textarea>
 				</div>
 
 				<button type="submit" class="btn btn-primary">Antrag senden</button>

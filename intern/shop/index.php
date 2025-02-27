@@ -49,13 +49,17 @@ include("load-order-details.php");
 </script>
 
 <body>
+
     <div class="container mt-4">
-        <h2 class="text-center">Bestellung Herbst 2024</h2>
+        <h2 class="text-center">Nächste Bestellmöglichkeit im Frühjahr 2025</h2>
         <p>Der Shop wird von Daniela Ulrich verwaltet (daniela.ulrich@tcolching.de).
             Hier findet Ihr eine Info dazu von ihr:
             <strong><a href="shop-info-herbst2024.pdf" target="_blank">Shop Herbst 2024-Info</a></strong>.
         </p>
-        <p><strong><s>Bitte bis einschließlich 19.09.2024 bestellen!</s><p>Nächste Bestellung im Frühjahr wieder möglich. Wir geben Bescheid!</p></strong></p>
+        <p><strong>
+                <s>Bitte bis einschließlich 19.09.2024 bestellen!</s>
+                <p>Nächste Bestellung im Frühjahr wieder möglich. Wir geben Bescheid!</p>
+            </strong></p>
 
         <?php include("order-status-message.php"); ?>
 
@@ -95,6 +99,12 @@ include("load-order-details.php");
             </div>
         </form>
     </div>
+
+    <!-- ##################### BESTELLUNG FÜR DEN HERBST DEAKTIVIERT ############################# -->
+    <script>
+        disableForm();
+    </script>
+    <!-- ##################### BESTELLUNG FÜR DEN HERBST DEAKTIVIERT ############################# -->
 
     <?php include("shop-scripts.php"); ?>
 

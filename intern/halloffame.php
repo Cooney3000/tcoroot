@@ -27,6 +27,23 @@ include("inc/header.inc.php");
 
   <div class="container mt-4">
     <div class="row">
+      <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2024&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
+      <div class="col-sm">
+        <div class="klein my-2">Damen:</div>
+        <img class="breitebilder" src="/intern/history/turnier2024/images/_elena_vogg.jpg" alt="Elena Vogg" />
+        <div class="h5 mb-2">Elena Vogg</div>
+      </div>
+      <div class="col-sm">
+        <div class="klein my-2">Herren:</div>
+        <img class="breitebilder" src="/intern/history/turnier2023/images/sascha_mischke.jpg" alt="Sascha Mischke" />
+        <div class="h5 mb-2">Sascha Mischke</div>
+      </div>
+    </div> <!-- row -->
+    <h2><a href="/intern/history/turnier2023/">Zu weiteren Turnierdetails</a></h2>
+  </div> <!-- container -->
+
+  <div class="container mt-4">
+    <div class="row">
       <div class="h2 px-3 py-1 bg-success h-100 w-100 text-white">Die Clubmeister 2023&nbsp;&nbsp;&nbsp;<img class="img-fluid" src="/intern/images/siegplakette.png" alt="Siegplakette" /></div>
       <div class="col-sm">
         <div class="klein my-2">Damen:</div>

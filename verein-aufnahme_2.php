@@ -6,7 +6,7 @@ $_aktuell = "";
 $_mannschaften = "";
 $_jugend = "";
 $_training = "";
-$_header = "Verein - Aufnahme 2";
+$_header = "Verein - Antrag 2";
 include 'header.php';
 
 ?>
@@ -136,7 +136,7 @@ EOT;
 
             // Mail versenden
             $empfaenger = "$email";
-            $betreff = "Deinen Aufnahmeantrag beim TC Olching abschließen";
+            $betreff = "Deinen Antrag beim TC Olching abschließen";
             $from = "From: " . $CONFIG['webmasterMailAddress'] . "\r\n";
             $from .= "Bcc: " . $CONFIG['webmasterMailAddress'] . "\r\n";
             $from .= "Reply-To: " . $CONFIG['webmasterMailAddress'] . "\r\n";
@@ -147,7 +147,7 @@ EOT;
 
 <p>
 vielen Dank für dein Interesse am TC Olching für eine Mitgliedschaft als: $mitgliedschaft. 
-<strong>Bestätige den Antrag jetzt, indem du diesen Link anklickst: <a href="https://www.tcolching.de/verein-aufnahme_3.php?t=$email_verification_token">Aufnahmeantrag bestätigen</a><strong><br>
+<strong>Bestätige den Antrag jetzt, indem du diesen Link anklickst: <a href="https://www.tcolching.de/verein-aufnahme_3.php?t=$email_verification_token">Antrag bestätigen</a><strong><br>
 </p>
 
 <p>Vielen Dank und beste Grüße</p>
@@ -158,7 +158,7 @@ EOT;
                 echo ("<pre>mail($empfaenger, $betreff, $text, $from)</pre>");
             } else {
                 if (mail($empfaenger, $betreff, $text, $from)) {
-                    echo '<br><div class="h5 my-2">Vielen Dank! <br><strong>Bitte überprüfe Deine Mails und bestätige den Aufnahmeantrag.</strong></div><br>';
+                    echo '<br><div class="h5 my-2">Vielen Dank! <br><strong>Bitte überprüfe Deine Mails und bestätige den Antrag.</strong></div><br>';
                 } else {
                     die('<div class="h5 text-danger my-2">Beim Versenden der Bestätigungsmail ist leider ein Fehler aufgetreten. Bitte benachrichtige ' . $CONFIG['webmasterMailAddress'] . '<br></div>');
                 }

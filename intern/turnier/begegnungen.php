@@ -131,5 +131,5 @@ if($result) {
 ?>
 </div>
 <?php 
-include("../templates/footer.inc.php")
+include("../inc/footer.inc.php")
 ?>

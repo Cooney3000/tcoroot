@@ -36,7 +36,6 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 	</section>
 </div>
 
-<?php /*
 <div id="blatt3">
 	<section id="kidsday" class="seite">
 		<h2>Kid's Day 2023</h2>
@@ -64,7 +63,6 @@ if (date("d.m.y") != $datum || trim($nachricht) == "") {
 		</article>
 	</section>
 </div>
-*/ ?>
 
 <div id="blatt1">
 	<section id="kidsday22" class="seite">

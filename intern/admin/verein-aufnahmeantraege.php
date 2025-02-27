@@ -13,7 +13,7 @@ if (!(checkPermissions(TRAINER) || checkPermissions(KASSIER))) {
   die("Keine Berechtigung");
 }
 
-$title = "TCO Aufnahmeanträge";
+$title = "TCO Anträge";
 include("header.inc.php");
 $menuid = "nav-serieedit";
 ?>

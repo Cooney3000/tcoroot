@@ -15,9 +15,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/css/styles.css?v=2.2" type="text/css" media="screen" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
   <script src="/js/vendor/modernizr.min.js"></script>
   <script src="/js/vendor/respond.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -26,6 +27,7 @@
   </script>
   <script src="/js/vendor/prefixfree.min.js"></script>
   <script src="/js/vendor/jquery.slides.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
   <script src="/js/script.js"></script>
   <script>
     $(function() {
@@ -55,10 +57,25 @@
         }
       });
     });
+
+    function acceptCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookieAccepted', 'true');
+    }
+
+    window.onload = function() {
+      if (localStorage.getItem('cookieAccepted') === 'true') {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+    }
   </script>
 </head>
 
 <body>
+  <div id="cookie-banner" class="mb-1">
+    Diese Website verwendet notwendige Cookies, um die grundlegende Funktionalität sicherzustellen. Mehr Informationen finden Sie in unserer <a href="/datenschutzerklaerung.php" target="_blank">Datenschutzerklärung</a>.
+    <button onclick="acceptCookies()" class="btn btn-light btn-sm border-dark">OK</button>
+  </div>
   <a id="toplink" href="#top"><img src="/images/icons/top.gif" alt="Nach oben"></a>
   <div class="headerbackground">
     <header>
@@ -84,9 +101,11 @@
       <img src="/images/sliders/1und2.jpg" alt="Platz 1 und 2">
       <img src="/images/sliders/Clubheim.jpg" alt="Das Clubheim">
       <img src="/images/sliders/Zuschauer.jpg" alt="Zuschauer">
-      <img src="/images/sliders/kids.jpg" alt="Zuschauer">
+      <img src="/images/sliders/kids.jpg" alt="Kids">
+      <img src="/images/sliders/playersfriends.jpg" alt="Party">
+      <img src="/images/sliders/geschichte.jpg" alt="Vereinsgeschichte">
     </div>
-<?php /*
+    <?php /*
     <div id="latest_news">
       <span class="text-success"><a href="index.php#olchingopen"><span class="persoenlich">Top Tennis</span><br>bei den Olching Open!</a></span>
     </div>

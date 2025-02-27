@@ -90,7 +90,7 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			<p>Email: michael070985@icloud.com</p>
 			<p>WhatsApp: +49 179 5665353</p>
 			<p>Tel mobil: +49 176 74815404</p>
-			<p><strong>Preise je Stunde ab 2024:</strong></p>
+			<p><strong>Preise je Stunde:</strong></p>
 			<p>1 Spieler: 50,00 EUR</p>
 			<p>2 Spieler: 54,00 EUR</p>
 			<p>3 Spieler: 57,00 EUR</p>
@@ -106,21 +106,20 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 		<h2>SOMMERSAISON</h2>
 		<article>
 
-			<h2>Start der Sommersaison: 22.04.24</h2>
+			<h2>Start der Sommersaison: 28.04.25</h2>
 
 			<h2>Ferien</h2>
-			<p>Pfingsten: 20.05.24 - 02.06.24</p>
-			<p>Sommerferien: 29.07.24 - 08.09.24</p>
+			<p>Pfingsten: 10.06.25 - 20.06.25</p>
+			<p>Sommerferien: 01.08.25 - 15.09.25</p>
 
 			<h2>Camps</h2>
-			<p>1) Für Jugendliche des TCO: 29.07.24 - 01.08.24</p>
-			<p>2) Jugendwoche Stadt Olching: 05.08.24 - 08.08.24
+			<p>1) Für Jugendliche des TCO: -	05.08.25 - 08.08.25 (5 Tage!)</p>
+			<p>2) Jugendwoche Stadt Olching: -	11.08.25 - 14.08.25 
 				(Jugendspieler des TCO dürfen sich hierfür auch anmelden)</p>
 
-			<h2>Ende der Sommersaison: 20.09.24</h2>
+			<h2>Ende der Sommersaison: 26.09.25</h2>
 
-			<h2>Beginn Wintersaison 07.10.2024 in der Tennishalle Gernlinden</h2>
-
+			<h2>Beginn Wintersaison 06.10.25 in der Tennishalle Gernlinden</h2>
 
 		</article>
 	</section>
@@ -136,11 +135,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			<table class="table-sm">
 				<tr>
 					<td>Start: </td>
-					<td>06.05.2024</td>
+					<td>28.04.2025</td>
 				</tr>
 				<tr>
 					<td>Ende: </td>
-					<td>15.07.2024</td>
+					<td>30.07.2025</td>
 				</tr>
 				<tr>
 					<td>Trainingstag: </td>
@@ -152,19 +151,19 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Kein Training: </td>
-					<td>20.05.24 und 27.05.24 (Pfingstferien)</td>
+					<td>09.06.25 bis 20.06.25 (Pfingstferien)</td>
 				</tr>
 				<tr>
 					<td>Anzahl der Einheiten: </td>
-					<td>9</td>
+					<td>12 (3 mehr als in 2024)</td>
 				</tr>
 				<tr>
 					<td>Preis: </td>
-					<td>100 €</td>
+					<td>135 €</td>
 				</tr>
 				<tr>
 					<td>Anmeldeschluss: </td>
-					<td>02.05.2024 (später auf Anfrage)</td>
+					<td>22.04.25 (später auf Anfrage)</td>
 				</tr>
 			</table>
 			<p>Anmeldung unter <a href="/intern/a_matchtraining.php">Aufnahmeantrag Online</a></p>
@@ -183,11 +182,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			<table class="table-sm">
 				<tr>
 					<td>Start: </td>
-					<td>06.05.2024</td>
+					<td>28.04.2025</td>
 				</tr>
 				<tr>
 					<td>Ende: </td>
-					<td>15.07.2024</td>
+					<td>30.07.2025</td>
 				</tr>
 				<tr>
 					<td>Trainingstag: </td>
@@ -199,19 +198,19 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Kein Training: </td>
-					<td>20.05.24 und 27.05.24 (Pfingstferien)</td>
+					<td>09.06.25 bis 20.06.25 (Pfingstferien)</td>
 				</tr>
 				<tr>
 					<td>Anzahl der Einheiten: </td>
-					<td>9</td>
+					<td>12 (3 mehr als in 2024)</td>
 				</tr>
 				<tr>
 					<td>Preis: </td>
-					<td>100 €</td>
+					<td>135 €</td>
 				</tr>
 				<tr>
 					<td>Anmeldeschluss: </td>
-					<td>02.05.2024 (später auf Anfrage)</td>
+					<td>22.04.2025 (später auf Anfrage)</td>
 				</tr>
 			</table>
 			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
@@ -229,11 +228,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 			<table class="table-sm">
 				<tr>
 					<td>Start: </td>
-					<td>11.05.2024</td>
+					<td>28.04.2025</td>
 				</tr>
 				<tr>
 					<td>Ende: </td>
-					<td>20.07.2024</td>
+					<td>30.07.2025</td>
 				</tr>
 				<tr>
 					<td>Trainingstag: </td>
@@ -245,11 +244,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Kein Training: </td>
-					<td>25.05.24 und 01.06.24 (Pfingstferien)</td>
+					<td>07.06.25 bis 27.06.25 (Pfingstferien)</td>
 				</tr>
 				<tr>
 					<td>Anzahl der Einheiten: </td>
-					<td>9</td>
+					<td>11 (2 mehr als in 2024)</td>
 				</tr>
 				<tr>
 					<td>Mindestteilnehmerzahl: </td>
@@ -257,30 +256,30 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Preis: </td>
-					<td>160 € (inkl. Schnuppermitgliedschaft)</td>
+					<td>190 € (inkl. Schnuppermitgliedschaft)</td>
 				</tr>
 
 				<tr>
 					<td>Anmeldeschluss: </td>
-					<td>02.05.2024 (später auf Anfrage)</td>
+					<td>22.04.25 (später auf Anfrage)</td>
 				</tr>
 			</table>
 			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
 		</article>
 
 		<article class="border-top border-dark">
-			<h2>„COMEBACKTRAINING“</h2>
+			<h2>„START-UP-TRAINING“ (früher: "Comebacktraining")</h2>
 			<p>für neu eingetretene Erwachsene. Entfällt bei Regen</p>
 			<p>Das Comebacktraining bietet neu eingetretenen Mitgliedern die Gelegenheit, entweder eingerostete vergangene Tenniskenntnisse zu reaktivieren oder aber auch einfach den richtigen Einstieg in den Tennissport zu bekommen. In beiden Fällen ist ein guter Trainer die beste Voraussetzung, in das neue (oder alte) Hobby mit Spaß und Freude zu starten und Frust zu vermeiden.</p>
 
 			<table class="table-sm">
 				<tr>
 					<td>Start: </td>
-					<td>11.05.2024</td>
+					<td>28.04.2025</td>
 				</tr>
 				<tr>
 					<td>Ende: </td>
-					<td>20.07.2024</td>
+					<td>30.07.2025</td>
 				</tr>
 				<tr>
 					<td>Trainingstag: </td>
@@ -292,11 +291,11 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Kein Training: </td>
-					<td>25.05.24 und 01.06.24 (Pfingstferien)</td>
+					<td>07.06.25 bis 27.06.25 (Pfingstferien)</td>
 				</tr>
 				<tr>
 					<td>Anzahl der Einheiten: </td>
-					<td>9</td>
+					<td>11 (2 mehr als in 2024)</td>
 				</tr>
 				<tr>
 					<td>Mindestteilnehmerzahl: </td>
@@ -304,24 +303,21 @@ Freitags würde ich gerne ein Turnier machen, damit die Kids versuchen, das umzu
 				</tr>
 				<tr>
 					<td>Preis: </td>
-					<td>160 € (inkl. Schnuppermitgliedschaft)</td>
+					<td>190 € (inkl. Schnuppermitgliedschaft)</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td>Wenn es die Anzahl der Teilnehmer erlaubt, können auch bestehende Mitglieder dabei sein. Preis: 135 €</td>
+					<td>Wenn es die Anzahl der Teilnehmer erlaubt, können auch bestehende Mitglieder dabei sein. Preis: 165 €</td>
 				</tr>
 
 
 				<tr>
 					<td>Anmeldeschluss: </td>
-					<td>02.05.2024 (später auf Anfrage)</td>
+					<td>22.04.2025 (später auf Anfrage)</td>
 				</tr>
 			</table>
 			<p>Anmeldung unter <a href="verein-aufnahmeantrag.php">Aufnahmeantrag Online</a></p>
 		</article>
-
-
-
 
 	</section>
 </div>

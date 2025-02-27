@@ -30,37 +30,41 @@ include("inc/header.inc.php");
 
     <p class="h3 persoenlich text-gross">MATCHTRAINING</p>
     <h3>für jugendliche Mitglieder des TC Olching</h3>
-    <p>Für das Matchtraining im Sommer '24 könnt Ihr die Kinder jetzt hier anmelden!</p>
+    <p>Für das Matchtraining im Sommer '25 könnt Ihr die Kinder jetzt hier anmelden!</p>
     <p> Matchtraining bildet den Übergang vom Training mit überwiegend technisch orientiertem Anteil, zum spielsituativen und taktischen Training im Einzel als auch beim Doppel.</p>
     <p class="my-4"><strong>Bezahlung direkt beim Trainer selbst, das wird nicht über den Verein verwaltet!</strong></p>
     <table class="table table-sm table-success table-striped">
       <tr>
-        <td>Start:</td>
-        <td>06.05.2024</td>
+        <td>Start: </td>
+        <td>28.04.2025</td>
       </tr>
       <tr>
-        <td>Ende:</td>
-        <td> 15.07.2024</td>
+        <td>Ende: </td>
+        <td>30.07.2025</td>
       </tr>
       <tr>
-        <td>Trainingstag:</td>
-        <td> Montag</td>
+        <td>Trainingstag: </td>
+        <td>Montag</td>
       </tr>
       <tr>
-        <td>Uhrzeit:</td>
-        <td> 17:00 - 18:00 Uhr</td>
+        <td>Uhrzeit: </td>
+        <td>17:00 - 18:00 Uhr</td>
       </tr>
       <tr>
-        <td>Kein Training:</td>
-        <td> 20.05.24 und 27.05.24 (Pfingstferien)</td>
+        <td>Kein Training: </td>
+        <td>09.06.25 bis 20.06.25 (Pfingstferien)</td>
       </tr>
       <tr>
-        <td>Anzahl der Einheiten:</td>
-        <td> 9</td>
+        <td>Anzahl der Einheiten: </td>
+        <td>12 (3 mehr als in 2024)</td>
       </tr>
       <tr>
-        <td>Preis:</td>
-        <td> 100 €</td>
+        <td>Preis: </td>
+        <td>135 €</td>
+      </tr>
+      <tr>
+        <td>Anmeldeschluss: </td>
+        <td>22.04.25 (später auf Anfrage)</td>
       </tr>
     </table>
 

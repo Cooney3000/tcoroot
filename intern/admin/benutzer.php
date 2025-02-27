@@ -4,7 +4,7 @@ require_once("../inc/config.inc.php");
 require_once("../inc/functions.inc.php");
 require_once("../inc/permissioncheck.inc.php");
 
-//Überprüfe, dass der User eingeloggt und berechtigt ist
+// Überprüfe, dass der User eingeloggt und berechtigt ist
 $user = check_user();
 
 $title = "TCO Benutzer";
@@ -17,161 +17,174 @@ $menuid = "nav-" . getFilename(__FILE__);
 </script>
 
 <?php
-$delimiter = '§§§';
-if (checkPermissions(VORSTAND) ) 
-{
-  //
-  // Wurde einer der Buttons geklickt?
-  //
-  $buttonkey = '';
-  
-  
-  foreach(['activate', 'deactivate', 'delete', 'schnupper'] as $k) {
-    // error_log( "[internal.php] $k=". $_POST[$k] . ' ### ' . isset($_POST[$k]) );
-    if (isset($_POST[$k])) {
-      $buttonkey = $k;
-    }
-  }
-  if ($buttonkey != '') {
-    $button = $_POST[$buttonkey];
-    //
-    // '-A' : Benutzer aktivieren (ist im Wartezustand 'W'), '-D' : Benutzer deaktivieren, '-X' : Löschen (wird tatsächlich aber nur gekennzeichnet mit X und nicht mehr angezeigt)
-    //
-    $pa = preg_split('/-/', $button);
+if (checkPermissions(VORSTAND)) {
+    // Verarbeite Schaltflächenaktionen
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $userId = $_POST['user_id'] ?? null;
+        $action = $_POST['action'] ?? '';
 
-    // error_log("[internal.php] buttonkey: $buttonkey, button: $button, pa[0]: $pa[0], pa[1]: $pa[1]");
+        if ($userId && $action) {
+            switch ($action) {
+                case 'activate':
+                    $query = "UPDATE users SET status = 'A' WHERE id = ?";
+                    break;
+                case 'deactivate':
+                    $query = "UPDATE users SET status = 'D' WHERE id = ?";
+                    break;
+                case 'delete':
+                    $query = "DELETE FROM users WHERE id = ?";
+                    break;
+                case 'update':
+                    $column = $_POST['column'] ?? '';
+                    $value = $_POST['value'] ?? '';
+                    
+                    // Verarbeitung von Datumsformaten zurück in MySQL-Format (yyyy-mm-dd)
+                    if ($column === 'geburtsdatum') {
+                        $dateParts = explode('.', $value);
+                        if (count($dateParts) === 3) {
+                            $value = "{$dateParts[2]}-{$dateParts[1]}-{$dateParts[0]}";
+                        }
+                    }
 
-    if ($buttonkey == 'schnupper') {
-      $statement = $pdo->prepare("UPDATE users SET schnupper = ? WHERE id = ?");
-    } 
-    else {
-      $statement = $pdo->prepare("UPDATE users SET status = ? WHERE id = ?");
-    }
-    $statement->execute([$pa[1], $pa[0]]);
-  }
+                    $query = "UPDATE users SET {$column} = ? WHERE id = ?";
+                    break;
+                default:
+                    $query = null;
+            }
 
-
-  $order = (isset($_GET['o'])) ? $_GET['o'] : 'nachname, vorname';
-  $direction = (isset($_GET['dir'])) ? $_GET['dir'] : 'asc';
-
-  $sql = 'SELECT * FROM users WHERE status <> "T" AND status <> "X" ORDER BY '."$order $direction";
-  // TECHO(DBG, $sql);
-  $statement = $pdo->prepare($sql);
-  $result = $statement->execute();
-  ?>
-  <h1>Benutzer</h1>
-  <h3>Aktuell registrierte Benutzer (A = Aktiv, P = Passiv, D = Deaktiviert, W = Wartet auf Aktivierung)</h3>
-  <div class="mx-3">
-    <form action="index.php" method="post">
-      <table class="table table-bordered table-light tbl-small">
-        <tr>
-          <th>S<br>
-            <a class="fas fa-angle-up fa-1x" href="index.php?o=status&dir=asc"></a> 
-            <a class="fas fa-angle-down fa-1x" href="index.php?o=status&dir=desc"></a></th>
-          <th>#</th>
-          <th>Vorname</th>
-          <th>Nachname<br>
-            <a class="fas fa-angle-up fa-1x" href="index.php?o=nachname&dir=asc"></a>&nbsp;&nbsp;
-            <a class="fas fa-angle-down fa-1x" href="index.php?o=nachname&dir=desc"></a></th>
-          <th>E-Mail<br>
-            <a class="fas fa-angle-up fa-1x" href="index.php?o=email&dir=asc"></a>&nbsp;&nbsp;
-            <a class="fas fa-angle-down fa-1x" href="index.php?o=email&dir=desc"></a></th>
-          <th>Festnetz</th>
-          <th>Mobil</th>
-          <th>Geburtsdatum</th>
-          <th>Registriert am<br>
-            <a class="fas fa-angle-up fa-1x" href="index.php?o=created_at&dir=asc"></a>&nbsp;&nbsp;
-            <a class="fas fa-angle-down fa-1x" href="index.php?o=created_at&dir=desc"></a></th>
-          <th>SchnM<br>
-            <a class="fas fa-angle-up fa-1x" href="index.php?o=schnupper&dir=asc"></a>&nbsp;&nbsp;
-            <a class="fas fa-angle-down fa-1x" href="index.php?o=schnupper&dir=desc"></a></th>
-          <th>Aktionen</th><th></th>
-        </tr>
-        <?php
-        $userCount = 0;
-        while ($row = $statement->fetch()) {
-          $userCount++;
-          $danger = ($row['status'] == 'W' || $row['status'] == 'D') ? true : false;
-          $classname = $danger ? 'text-gefahr' : '';
-          if ($row['schnupper'] == '1') {
-            $check =  true;
-            $checked = 'checked';
-          } 
-          else {
-            $check =  false;
-            $checked = '';
-          }
-      
-        ?>
-          <tr>
-            <td class="<?= $classname ?>"><?= $row['status'] ?></td>
-            <td class="<?= $classname ?>"><?= $row['id'] ?></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>vorname"  type="text" value="<?= $row['vorname'] ?>"/></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>nachname"  type="text" value="<?= $row['nachname'] ?>"/></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>email"  type="text" value="<?= $row['email'] ?>"/></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>festnetz"  type="text" value="<?= $row['festnetz'] ?>"/></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>mobil"  type="text" value="<?= $row['mobil'] ?>"/></td>
-            <td class="align-middle"><input class="form-control form-control-sm" onchange="hasChanged(this)" id="<?= $row['id'].$delimiter ?>geburtsdatum"  type="text" value="<?= $row['geburtsdatum'] ?>"/></td>
-            <td class="<?= $classname ?>"><?= substr($row['created_at'], 0, 10) ?></td>
-            <td class="align-middle">
-              <input type="checkbox"  onclick="hasChanged(this)" id="<?= $row['id'] . $delimiter . "schnupper"   ?>"  value="<?= $check ?>" <?= $checked ?>/>
-            </td>
-            <td>
-              <?php
-              if ($danger) { ?>
-                <button type="submit" name="activate" value="<?= $row['id'] ?>-A" class="btn btn-success btn-sm btn-block py-0">Aktivieren</button>
-              <?php
+            if ($query) {
+              $statement = $pdo->prepare($query);
+              
+              // Überprüfen, ob die Query nur einen oder zwei Parameter benötigt
+              if ($action === 'activate' || $action === 'deactivate' || $action === 'delete') {
+                  $statement->execute([$userId]);
+              } else {
+                  $statement->execute([$value, $userId]);
               }
-              if ($row['status'] == 'A') { ?>
-                <button type="submit" name="deactivate" value="<?= $row['id'] ?>-D" class="btn btn-danger btn-sm btn-block py-0">Deaktivieren</button>
-              <?php } ?>
-            </td>
-            <td>
-              <?php
-              if ($danger) { ?>
-                <button type="submit" name="delete" value="<?= $row['id'] ?>-X" class="btn btn-danger btn-sm btn-block py-0">Löschen</button>
-              <?php } ?>
-            </td>
-          </tr>
-        <?php
-        }
-        ?>
-      </table>
-    </form>
-    <div><?= $userCount ?> Benutzer</div>
-  </div>
-<?php
-}
-?>
+          }
+                  }
+    }
 
+    $order = $_GET['o'] ?? 'nachname, vorname';
+    $direction = $_GET['dir'] ?? 'asc';
+    $newDirection = ($direction === 'asc') ? 'desc' : 'asc'; // Umschalten der Sortierrichtung
 
-</div>
-<?php
-include("footer.inc.php")
-?>
+    $sql = 'SELECT * FROM users WHERE status NOT IN ("T", "X") ORDER BY ' . $order . ' ' . $direction;
+    $statement = $pdo->query($sql);
+    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <h1>Benutzer</h1>
+    <h3>Aktuell registrierte Benutzer (A = Aktiv, P = Passiv, D = Deaktiviert, W = Wartet auf Aktivierung)</h3>
+    <div class="mx-3">
+        <form id="user-management-form" method="post">
+            <table class="table table-bordered table-light tbl-small">
+                <thead>
+                    <tr>
+                        <?php
+                        $columns = [
+                            'status' => 'S',
+                            'id' => '#',
+                            'vorname' => 'Vorname',
+                            'nachname' => 'Nachname',
+                            'email' => 'E-Mail',
+                            'festnetz' => 'Festnetz',
+                            'mobil' => 'Mobil',
+                            'geburtsdatum' => 'Geburtsdatum',
+                            'created_at' => 'Registriert am',
+                            'schnupper' => 'SchnM'
+                        ];
+
+                        foreach ($columns as $key => $label) {
+                            echo "<th>{$label}";
+                            if (in_array($key, ['status', 'nachname', 'email', 'created_at', 'schnupper'])) {
+                                // Sortierbare Symbole hinzufügen
+                                echo "<a href='?o={$key}&dir=asc'>&uarr;</a>";
+                                echo "<a href='?o={$key}&dir=desc'>&darr;</a>";
+                            }
+                            echo "</th>";
+                        }
+                        ?>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($users as $row): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($row['status']) ?></td>
+                            <td><?= htmlspecialchars($row['id']) ?></td>
+                            <td><input type="text" class="form-control form-control-sm" value="<?= htmlspecialchars($row['vorname']) ?>" onchange="updateUser(<?= $row['id'] ?>, 'vorname', this.value)"></td>
+                            <td><input type="text" class="form-control form-control-sm" value="<?= htmlspecialchars($row['nachname']) ?>" onchange="updateUser(<?= $row['id'] ?>, 'nachname', this.value)"></td>
+                            <td><input type="email" class="form-control form-control-sm" value="<?= htmlspecialchars($row['email']) ?>" onchange="updateUser(<?= $row['id'] ?>, 'email', this.value)"></td>
+                            <td><input type="text" class="form-control form-control-sm" value="<?= htmlspecialchars($row['festnetz']) ?>" onchange="updateUser(<?= $row['id'] ?>, 'festnetz', this.value)"></td>
+                            <td><input type="text" class="form-control form-control-sm" value="<?= htmlspecialchars($row['mobil']) ?>" onchange="updateUser(<?= $row['id'] ?>, 'mobil', this.value)"></td>
+                            <td><input type="text" class="form-control form-control-sm" value="<?= date('d.m.Y', strtotime($row['geburtsdatum'])) ?>" onchange="updateUser(<?= $row['id'] ?>, 'geburtsdatum', this.value)"></td>
+                            <td><?= date('d.m.Y', strtotime($row['created_at'])) ?></td>
+                            <td><input type="checkbox" <?= $row['schnupper'] == 1 ? 'checked' : '' ?> onchange="updateUser(<?= $row['id'] ?>, 'schnupper', this.checked ? 1 : 0)"></td>
+                            <td>
+                                <?php if ($row['status'] === 'A'): ?>
+                                    <button type="button" onclick="submitUserAction('deactivate', <?= $row['id'] ?>)" class="btn btn-danger btn-sm">Deaktivieren</button>
+                                <?php elseif ($row['status'] === 'D' || $row['status'] === 'W'): ?>
+                                    <button type="button" onclick="submitUserAction('activate', <?= $row['id'] ?>)" class="btn btn-success btn-sm">Aktivieren</button>
+                                    <button type="button" onclick="submitUserAction('delete', <?= $row['id'] ?>)" class="btn btn-danger btn-sm">Löschen</button>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </form>
+        <div><?= count($users) ?> Benutzer</div>
+    </div>
+<?php } ?>
+
+<?php include("footer.inc.php") ?>
 
 <script>
-function hasChanged(e) {
-  const p = e.id.split('<?= $delimiter ?>');
-  const id = "i=" + p[0];
-  const col = "&col=" + p[1];
-  let v;
-  if (p[1]=='schnupper') {
-    v = "&v=" + (e.checked ? 1 : 0);
-  }
-  else {
-    v = "&v=" + e.value;
-  }
-  const url = "/intern/api/userUpdate.php?" + id + col + v;
-  // console.log(url);
-  fetch(url, {credentials: 'same-origin'})
-    .then(result => {
-      if (result.ok) {
-        // console.log(result);
-        return true;
-      } else {
-        throw new Error('Fehler beim Erzeugen/Updaten der Daten' + this.state.r.id);
-      }
-    });
+// Funktion zur Aktualisierung der Benutzerdaten
+async function updateUser(userId, column, value) {
+    const formData = new FormData();
+    formData.append('action', 'update');
+    formData.append('user_id', userId);
+    formData.append('column', column);
+    formData.append('value', value);
+
+    try {
+        const response = await fetch(window.location.href, {
+            method: 'POST',
+            body: formData,
+            credentials: 'same-origin'
+        });
+
+        if (!response.ok) {
+            throw new Error('Aktualisierung fehlgeschlagen');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Fehler beim Aktualisieren der Daten.');
+    }
+}
+
+async function submitUserAction(action, userId) {
+    const formData = new FormData();
+    formData.append('action', action);
+    formData.append('user_id', userId);
+
+    try {
+        const response = await fetch(window.location.href, {
+            method: 'POST',
+            body: formData,
+            credentials: 'same-origin'
+        });
+
+        if (response.ok) {
+            location.reload(); // Seite aktualisieren, damit die Änderungen sichtbar werden
+        } else {
+            throw new Error('Aktion fehlgeschlagen');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Fehler beim Ausführen der Aktion.');
+    }
 }
 </script>

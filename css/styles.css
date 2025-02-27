@@ -92,7 +92,7 @@ body {
 }
 
 p {
-	margin: 5px 0 10px 0;
+	margin: 0px 0 10px 0;
 	line-height: 1.4rem;
 }
 
@@ -174,10 +174,6 @@ th {
 .betont th {
 	color: white;
 	background-color: grey;
-}
-
-.sms-danger {
-	background-color: #ff3300;
 }
 
 .smSection {
@@ -284,6 +280,14 @@ li {
 
 .mittig {
 	text-align: center;
+}
+
+.bg-red-600 {
+	background-color: #b02a37;
+}
+
+.bg-red-700 {
+	background-color: #842029;
 }
 
 /* SLIDESHOW */
@@ -535,7 +539,7 @@ h3 {
 
 .seite h3 {
 	font-size: 1.3em;
-	font-weight:600;
+	font-weight: 600;
 	padding: 0.5em 0 0.5em 0;
 }
 
@@ -606,10 +610,12 @@ ul.schlaeger {
 	max-width: 450px;
 	margin: 0 auto 0 auto;
 }
+
 .volleBreite {
 	width: 100%;
 	max-width: 100%;
 }
+
 .fliessenderAbschnitt {
 	float: left;
 	border: 1px solid white;
@@ -622,17 +628,6 @@ ul.schlaeger {
 	margin: 0 10px 5px 10px;
 }
 
-/* .sponsor
-{
-	position: relative;
-	float:left;
-	width:200px;
-	height:160px;
-}
-.sponsor img
-{
-    position: absolute;
-} */
 #footerSitemap .siteMapAbschnitt {
 	font-size: 1em;
 	line-height: 1.1em;
@@ -648,20 +643,21 @@ ul.schlaeger {
 }
 
 .visitenkarte {
-	float: left;
-	width: 200px;
-	height: 230px;
-	/*
-	background-color:white;
-*/
-	font-size: 0.8em;
-	margin: 5px 10px 0 0;
-	padding: 5px 5px 5px 5px;
-	line-height: 1em;
+	/* Entferne float */
+	float: none;
+	/* Passe Breite und Höhe entsprechend dem Bootstrap-Grid an */
+	width: 100%;
+	height: auto;
+	margin: 0;
+	/* Bootstrap-Spalten haben bereits Margin durch mb-3 */
+	padding: 0;
 }
 
 .visitenkarte img {
-	height: 177px;
+	height: auto;
+	/* Automatische Höhe */
+	max-width: 100%;
+	/* Bild sollte die Breite des Containers nicht überschreiten */
 	border: 6px solid white;
 }
 
@@ -673,24 +669,90 @@ ul.schlaeger {
 	background-color: #DDDDDD;
 }
 
-#willkommen .sponsoren {
-	float: right;
-	width: 40%;
-	margin: 0 auto 0 auto;
+.impressionen-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	/* Pfeile werden mittig ausgerichtet */
+	gap: 10px;
+	padding: 10px;
+	border-bottom: 2px solid #ddd;
 }
 
-#willkommen .sponsor {
-	float: left;
-	width: 100px;
-	height: 80px;
-	top: 10px;
-	background-color: white;
-	margin: 3px 3px 3px 3px;
+.impressionen-track {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	/* Fügt auf mobilen Geräten ein smoothes Scrollen hinzu */
+	width: 100%;
+	height: 300px;
 }
 
-#willkommen .sponsor img {
-	width: 90px;
-	margin: auto auto auto auto;
+.impressionen-item {
+	flex: 0 0 auto;
+	height: 100%;
+	/* Einheitliche Höhe für alle Bilder */
+	width: auto;
+	margin-right: 10px;
+}
+
+.impressionen-image {
+	height: 100%;
+	width: auto;
+	object-fit: cover;
+	/* Stellt sicher, dass das Bild die volle Höhe füllt */
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.impressionen-image:hover {
+	transform: scale(1.05);
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 24px;
+	z-index: 10;
+}
+
+.left-arrow {
+	left: 10px;
+}
+
+.right-arrow {
+	right: 10px;
+}
+
+.arrow:focus {
+	outline: none;
+}
+
+.sponsoren-grid {
+	display: grid;
+	gap: 20px;
+	margin: 20px 0;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.sponsoren-grid a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sponsoren-grid img {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 #trainer img {
@@ -704,28 +766,8 @@ ul.schlaeger {
 	margin: 20px auto auto auto !important;
 }
 
-#olchingopen .sponsoren {
-	background-color: white;
-	width: 100%;
-	margin: 0 0 0 0;
-}
-
-#olchingopen .sponsor {
-	background-color: white;
-	margin: 0px 0 0px 0;
-}
-
-#olchingopen .sponsor img {
-	top: 30px;
-}
-
 .spalte1 h3 {
 	padding: 10px 0px 10px 0px;
-}
-
-.sponsoren h3,
-.sponsor {
-	padding: 10px 2px 20px 2px;
 }
 
 #slides {
@@ -812,6 +854,53 @@ footer h4 {
 	border-radius: 10px;
 }
 
+.image-pleasant {
+	width: 50%;		/* will be >50% in mobile views */
+}
+
+.text-mit-bild {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	margin-bottom: 20px;
+	align-items: flex-start;
+	/* Flexbox richtet die Container oben aus */
+}
+
+.text-mit-bild .text {
+	flex: 1 1 70%;
+	/* Text nimmt mindestens 70% der Breite ein */
+}
+
+.text-mit-bild .bild {
+	flex: 1 1 25%;
+	/* Bild nimmt maximal 25% der Breite ein */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	/* Bild wird oben ausgerichtet */
+}
+
+.text-mit-bild .bild img {
+	max-width: 100%;
+	height: auto;
+	/* Automatische Anpassung der Höhe, um das Seitenverhältnis beizubehalten */
+	max-height: 100%;
+	/* Bild wird in der Höhe auf den Text begrenzt */
+	object-fit: contain;
+	/* Passt das Bild an, ohne es zu verzerren */
+}
+
+@media (max-width: 768px) {
+	.text-mit-bild {
+		flex-direction: column;
+	}
+
+	.text-mit-bild .bild {
+		margin-top: 20px;
+	}
+}
+
 .persoenlich {
 	font-family: 'Permanent Marker', cursive;
 	font-size: 1.4rem;
@@ -869,6 +958,24 @@ footer h4 {
 	}
 }
 
+/* --- */
+
+@media (min-width: 768px) {
+	.sponsoren-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* --- */
+
+@media (max-width: 767px) {
+	.sponsoren-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* --- */
+
 @media (max-width:695px) {
 	header h1 {
 		position: absolute;
@@ -882,7 +989,11 @@ footer h4 {
 		margin: 0 0 0 0;
 	}
 
-	.siteMapAbschnitt {
+	.image-pleasant {
+		width: 90%;		
+	}
+	
+		.siteMapAbschnitt {
 		margin: 0 5px 0 5px;
 	}
 
@@ -894,24 +1005,15 @@ footer h4 {
 		width: 200px;
 	}
 
-	.sponsor {
-		width: 150px;
-	}
-
 	#latest_news {
 		width: 15em;
 		height: 5em;
 		font-weight: normal;
 		font-size: 0.8em;
 		line-height: 1rem;
-}
-
-	#willkommen .spalte1 {
-		float: none;
-		width: auto;
 	}
 
-	#willkommen .sponsoren {
+	#willkommen .spalte1 {
 		float: none;
 		width: auto;
 	}
@@ -919,19 +1021,6 @@ footer h4 {
 	#olchingopen .spalte1 {
 		float: none;
 		width: auto;
-	}
-
-	#olchingopen .sponsor {
-		float: left;
-		width: 100px;
-		height: 80px;
-		background-color: white;
-		margin: 3px 3px 3px 3px;
-	}
-
-	#olchingopen .sponsor img {
-		width: 90px;
-		margin: auto auto auto auto;
 	}
 
 	.spalte1 {
@@ -942,6 +1031,8 @@ footer h4 {
 		width: 70px;
 	}
 }
+
+/* --- */
 
 @media (max-width: 410px) {
 	.seite h2 {
@@ -954,10 +1045,6 @@ footer h4 {
 
 	.neues li {
 		font-size: 1.2rem;
-	}
-
-	.neues p {
-		font-size: 0.8rem;
 	}
 
 	.spalte1 {

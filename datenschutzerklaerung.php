@@ -40,22 +40,6 @@ Zu den Maßnahmen gehören insbesondere die Sicherung der Vertraulichkeit, Integ
 Sofern wir Dritte mit der Verarbeitung von Daten auf Grundlage eines sog. „Auftragsverarbeitungsvertrages“ beauftragen, geschieht dies auf Grundlage des Art. 28 DSGVO.</p><h3 id="dsg-general-thirdparty">Übermittlungen in Drittländer</h3><p>Sofern wir Daten in einem Drittland (d.h. außerhalb der Europäischen Union (EU) oder des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder dies im Rahmen der Inanspruchnahme von Diensten Dritter oder Offenlegung, bzw. Übermittlung von Daten an Dritte geschieht, erfolgt dies nur, wenn es zur Erfüllung unserer (vor)vertraglichen Pflichten, auf Grundlage Ihrer Einwilligung, aufgrund einer rechtlichen Verpflichtung oder auf Grundlage unserer berechtigten Interessen geschieht. Vorbehaltlich gesetzlicher oder vertraglicher Erlaubnisse, verarbeiten oder lassen wir die Daten in einem Drittland nur beim Vorliegen der besonderen Voraussetzungen der Art. 44 ff. DSGVO verarbeiten. D.h. die Verarbeitung erfolgt z.B. auf Grundlage besonderer Garantien, wie der offiziell anerkannten Feststellung eines der EU entsprechenden Datenschutzniveaus (z.B. für die USA durch das „Privacy Shield“) oder Beachtung offiziell anerkannter spezieller vertraglicher Verpflichtungen (so genannte „Standardvertragsklauseln“).</p>
 
 
-<h3 id="dsgvolkrace">LK Race</h3>
-<p>
-Auf unserer Webseite setzen wir LK Race ein. Hierfür wird ein Widget verwendet. LK Race ist ein Angebot der TDS Tennis Deutschland Service GmbH, Georg-Brauchle Ring 93, 80992 München, Deutschland. Das Widget verwendet das Analyse-Tool Google Analytics der Google Inc., Mountain View, Kalifornien, USA (Google). Wie die TDS Tennis Deutschland Service GmbH Google Analytics einsetzt, erfahren Sie unter <a href="https://mybigpoint.tennis.de/web/guest/privacy">https://mybigpoint.tennis.de/web/guest/privacy</a>. Hierbei wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google zusammengeführt und IP-Adressen werden anonymisiert, so dass eine Zuordnung nicht möglich ist (IP-Masking).Weitere Informationen zum Datenschutz im Zusammenhang mit Google Analytics finden Sie in der Google Analytics-Hilfe unter <a href="https://support.google.com/analytics/answer/6004245?hl=de">https://support.google.com/analytics/answer/6004245?hl=de</a>.
-</p>
-<p>
-Wir verwenden LK Race im Interesse einer ansprechenden Darstellung unserer Website und zur Information über die Leistungsklassen unserer aktiven Mitglieder. Dies stellt ein berechtigtes Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO dar.
-</p>
-<p>
-Sie können der Erhebung Ihrer Daten durch das Widget bzw. Google Analytics verhindern, indem Sie in Ihren Browsereinstellungen die Ausführung von Javascript deaktivieren. Allerdings wird Ihnen dann das Widget nicht mehr angezeigt. Außerdem können Sie die Erfassung und Verarbeitung Ihrer Daten durch Google Analytics verhindern, indem Sie das Browser-Add-on unter https://tools.google.com/dlpage/gaoptout?hl=de herunterladen und installieren.
-</p>
-
-
-
-
-
-
 <h3 id="dsg-general-rightssubject">Rechte der betroffenen Personen</h3><p>Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten entsprechend Art. 15 DSGVO.<br>
 <br>
 Sie haben entsprechend. Art. 16 DSGVO das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.<br>

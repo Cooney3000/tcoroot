@@ -6,7 +6,7 @@ $_aktuell = "";
 $_mannschaften = "";
 $_jugend = "";
 $_training = "";
-$_header = "Verein - Aufnahme 3";
+$_header = "Verein - Antrag 3";
 include 'header.php';
 ?>
 <div id="blatt1">

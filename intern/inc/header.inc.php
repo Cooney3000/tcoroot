@@ -21,9 +21,12 @@
 
 <body>
   <?php
-  $username = (isset($user['vorname']) ? htmlentities(strtoupper(trim($user['vorname']) . ' ' . trim($user['nachname']))) : "") 
-              . (isset($user['email']) ? " (" . htmlentities($user['email']) . ")" : "");
-  ?>
+/*
+  $username = (isset($user['vorname']) ? htmlentities(ucfirst(trim($user['vorname'])) . ' ' . ucfirst(trim($user['nachname']))) : "") 
+  . (isset($user['email']) ? " (" . htmlentities($user['email']) . ")" : "");
+*/
+  $username = htmlentities($user['email']);
+?>
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img src="/images/tcoplain_0,1x.png" alt="TCO Logo"></a>
@@ -68,7 +71,9 @@
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item text-center" id="nav-settings">
-            <a href="/intern/settings.php"><img class="profilpic kleiner" src="<?php echo htmlentities($profilePicPath); ?>" alt="<?= $username ?> Bild">
+            <?= DEBUG ? "<span>". $user['id'] ."</span>" : "" ?>
+            <a href="/intern/settings.php"><img class="profilpic kleiner" src="<?php echo htmlentities($profilePicPath); ?>" alt="<?= $username ?>">
+            <div class="nav-none font-sm"><?= $username ?></div>
             </a>
           </li>
         </ul>

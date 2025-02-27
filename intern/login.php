@@ -48,7 +48,7 @@ function set_login_cookies($user_id, $pdo) {
 if (isset($_POST['email']) && isset($_POST['passwort'])) {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $passwort = $_POST['passwort'];
-    TLOG(DEBUG, "User: $email Passwort: $passwort", __LINE__);
+    //TLOG(DEBUG, "User: $email Passwort: $passwort", __LINE__);
     $user = handle_login($pdo, $email, $passwort);
 
     if ($user && password_verify($passwort, $user['passwort'])) {

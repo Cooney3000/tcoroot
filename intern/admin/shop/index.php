@@ -171,7 +171,7 @@ $pendingOrders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Total Dunkel</th>
                 <th>Total Weiß</th>
                 <th>Erstellt am</th>
-                <th>Status</th>
+                <th>Benutzerstatus</th>
                 <th>Lieferstatus</th>
                 <th>Bezahlt</th>
                 <th>Details</th>
@@ -223,7 +223,7 @@ $pendingOrders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Total Dunkel</th>
                 <th>Total Weiß</th>
                 <th>Erstellt am</th>
-                <th>Status</th>
+                <th>Benutzerstatus</th>
                 <th>Lieferstatus</th>
                 <th>Bezahlt</th>
                 <th>Details</th>

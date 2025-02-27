@@ -10,57 +10,96 @@ $user = check_user();
 $title = "Intern Startseite";
 include(dirname(__FILE__) . "/inc/header.inc.php");
 
-// Function to generate event cards
-function generate_event_cards($events)
+// Funktion zum Generieren der Event-Cards
+function generate_event_cards($events, $user)
 {
-  $cards = '';
-  foreach ($events as $event) {
-    $doubleHeightClass = $event[4] ? 'double-height' : ''; // Check if the event should have double height
+    $cards = '';
+    foreach ($events as $event) {
+        $doubleHeightClass = $event[4] ? 'double-height' : ''; // Überprüfen, ob die Card doppelthoch sein soll
 
-    // Check if the event has multiple links (array of links)
-    if (is_array($event[1])) {
-      $links = '';
-      foreach ($event[1] as $linkText => $linkURL) {
-        $links .= '<div class="kachel-btn"><a href="' . $linkURL . '">' . $linkText . '</a></div>';
-      }
-      $cards .= '
+        // Individuelle Darstellung für die "Suche Tennis-Partner"-Card
+        if (isset($event[5]) && $event[5] === true) {
+            $profilePicPath = "/intern/uploads/profile_pics/" . getUserPic($user); // Pfad zum Profilbild des Benutzers
+            $questionMarkPath = "/intern/images/suche_user.png"; // Pfad zum Fragezeichen-Bild
+
+            $cards .= '
                 <div class="grid-item ' . $doubleHeightClass . '">
                     <div class="kachel">
-                        <div class="titel mb-2">' . $event[0] . '</div>
-                        <div class="kachel-links">' . $links . '</div>
-                    </div>
-                </div>';
-    } else {
-      // Single link event
-      $cards .= '
-                <div class="grid-item ' . $doubleHeightClass . '">
-                    <div class="kachel">
-                        <a href="' . $event[1] . '"' . $event[3] . '>
+                        <a href="' . $event[1] . '">
                             <span class="titel mb-2">' . $event[0] . '</span>
-                            <img src="' . $event[2] . '" alt="' . $event[0] . '">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="' . htmlspecialchars($profilePicPath) . '" alt="Benutzerbild" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                                <span style="font-size: 50px; margin-right: 10px;">+</span>
+                                <img src="' . $questionMarkPath . '" alt="Fragezeichen" style="width: 50px; height: 50px;">
+                            </div>
+                            <div class="kachel-btn mx-1 mb-2"><a href="/intern/settings.php">Ändere Dein Profilbild!</a></div>
                         </a>
                     </div>
                 </div>';
+        } else {
+            // Überprüfung auf Einzellink oder mehrere Links
+            if (is_array($event[1])) {
+                $links = '';
+                foreach ($event[1] as $linkText => $linkInfo) {
+                    // Überprüfen, ob $linkInfo ein Array ist und den Link-Status enthält
+                    if (is_array($linkInfo)) {
+                        $linkURL = $linkInfo[0];
+                        $isLink = $linkInfo[1];
+
+                        if ($isLink) {
+                            // Darstellung als Link
+                            $links .= '<div class="kachel-btn"><a href="' . $linkURL . '">' . $linkText . '</a></div>';
+                        } else {
+                            // Darstellung als reiner Text
+                            $links .= '<div class="kachel-btn kachel-btn-off"><span>' . $linkText . '</span></div>';
+                        }
+                    } else {
+                        // Fallback für den Fall, dass der Link nicht als Array definiert ist (alte Daten)
+                        $links .= '<div class="kachel-btn"><a href="' . $linkInfo . '">' . $linkText . '</a></div>';
+                    }
+                }
+                $cards .= '
+                    <div class="grid-item ' . $doubleHeightClass . '">
+                        <div class="kachel">
+                            <div class="titel mb-2">' . $event[0] . '</div>
+                            <div class="kachel-links">' . $links . '</div>
+                        </div>
+                    </div>';
+            } else {
+                // Einzelne Link-Darstellung
+                $cards .= '
+                    <div class="grid-item ' . $doubleHeightClass . '">
+                        <div class="kachel">
+                            <a href="' . $event[1] . '"' . $event[3] . '>
+                                <span class="titel mb-2">' . $event[0] . '</span>
+                                <img src="' . $event[2] . '" alt="' . $event[0] . '">
+                            </a>
+                        </div>
+                    </div>';
+            }
+        }
     }
-  }
-  return $cards;
+    return $cards;
 }
 
 // Define events (with single links and multiple links)
 $cardEvents = [
   ["Platzbuchung", "/intern/tafel/", "/images/intern/platztafel.png", "", false],
+  ["Jugendmannschaft 2025", "/intern/events/jugendmannschaften-2025.php", "/images/intern/jugend_mannschaft.png", "", false],
+  ["Suche Tennis-Partner", "/intern/suche_partner.php", "/images/intern/tennis_partner.png", "", false, true],
   ["Turniere/Anmeldung:", [
-    "Familienturnier" => "/intern/events/Familienturnier 2024.pdf",
-    "Jugendturnier" => "/intern/events/jugendturnier.php",
-    "Kreismeisterschaft" => "/intern/events/kreismeisterschaft.php",
-    "Clubturnier" => "/intern/turnier/",
-    "Newbie-DropIn" => "/intern/events/newbieDropIn.php",
+    "Familienturnier" => ["/intern/events/Familienturnier 2024.pdf", false],
+    "Jugendturnier" => ["/intern/events/jugendturnier.php", false],
+    "Kreismeisterschaft" => ["/intern/events/kreismeisterschaft.php", false],
+    "Clubturnier" => ["/intern/turnier/", true],
+    "Newbie-DropIn" => ["Nur Textbeschreibung für Newbies", false],
   ], "/images/intern/turniere.png", "", true], // Multi-link, double-height event
   ["TCOShop", "/intern/shop/", "/images/intern/shop.png", "", false],
-  ["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", "", false],
+//["Players & Friends", "/intern/events/playersfriends.php", "/images/intern/PF_2024_logo.png", "", false], 
   ["Wintertraining", "/intern/wintertraining.php", "/images/intern/wintertraining.png", "", false],
   ["TCO Quickstart", "downloads/TCO Newbie-Guide 2024-05-08.pdf", "/images/intern/quickstart.png", "", false]
 ];
+
 ?>
 
 <script>
@@ -105,7 +144,7 @@ $cardEvents = [
           </div>
         </div>
       <?php endif; ?>
-      <?= generate_event_cards($cardEvents); ?>
+      <?= generate_event_cards($cardEvents, $user); ?>
     </div>
   </div>
 </div>
@@ -118,9 +157,6 @@ $cardEvents = [
 
 <?php
 $events = [
-  ["13.09.-15.09.2024", "Kreismeisterschaften Jugend/Erwachsene"],
-  ["21.09.2024 - 22.09.2024", "Jugendclubmeisterschaft, Comeback-DropIn. <p>Wir wollen unseren Kindern und Jugendlichen sowie unseren Comeback-Trainingsteilnehmern einen Saisonabschluss anbieten.</p>"],
-  ["28.09.2024", "Familienturnier"],
   ["12.10.2024", "Players & Friends Night, inkl. Ehrungen"]
 ];
 ?>
